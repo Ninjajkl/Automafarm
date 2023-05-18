@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"E:\\Epic_Unreal\\Unreal\\Projects\\Automafarm 5.2\\Source\\Automafarm\\Automafarm.Build.cs",
+		"E:\\Epic_Unreal\\Unreal\\Projects\\Automafarm 5.2\\Source\\Automafarm.Target.cs",
+		"E:\\Epic_Unreal\\Unreal\\Projects\\Automafarm 5.2\\Source\\AutomafarmEditor.Target.cs"
+	],
+	"EngineVersion": "5.2.0"
+}

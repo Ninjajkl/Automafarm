@@ -1,0 +1,24 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"E:/Epic_Unreal/Unreal/Projects/Automafarm/Content/Maps/Farm.umap",
+				"E:/Epic_Unreal/Unreal/Projects/Automafarm/Content/Input/IMC_Initial.uasset",
+				"E:/Epic_Unreal/Unreal/Projects/Automafarm/Content/Input/IA_Interact.uasset",
+				"E:/Epic_Unreal/Unreal/Projects/Automafarm/Content/FirstPerson/Blueprints/BP_FirstPersonCharacter.uasset",
+				"E:/Epic_Unreal/Unreal/Projects/Automafarm/Content/Blueprints/BP_MyAutomafarmCharacter.uasset",
+				"E:/Epic_Unreal/Unreal/Projects/Automafarm/Content/Blueprints/BP_Corn.uasset",
+				"E:/Epic_Unreal/Unreal/Projects/Automafarm 5.2/Content/Maps/Farm.umap",
+				"E:/Epic_Unreal/Unreal/Projects/Automafarm 5.2/Content/Blueprints/BP_Corn.uasset",
+				"E:/Epic_Unreal/Unreal/Projects/Automafarm 5.2/Content/Blueprints/BP_MyAutomafarmCharacter.uasset",
+				"E:/Epic_Unreal/Unreal/Projects/Automafarm/Content/Blueprints/BP_Crop.uasset",
+				"E:/Epic_Unreal/Unreal/Projects/Automafarm/Content/Blueprints/BP_PaperPivot.uasset",
+				"E:/Epic_Unreal/Unreal/Projects/Automafarm/Content/Blueprints/BP_PivotPaper.uasset",
+				"E:/Epic_Unreal/Unreal/Projects/Automafarm/Content/Input/IA_Fire.uasset"
+			]
+		}
+	]
+}
