@@ -38,14 +38,4 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
-	UProceduralMeshComponent* ProceduralMesh;
-	TArray<FVector> Vertices;
-	TArray<int> Triangles;
-	TArray<FVector2D> UV0;
-	TArray<FVector> Normals;
-	TArray<struct FProcMeshTangent> Tangents;
-
-	void CreateVertices();
-	void CreateTriangles();
 };

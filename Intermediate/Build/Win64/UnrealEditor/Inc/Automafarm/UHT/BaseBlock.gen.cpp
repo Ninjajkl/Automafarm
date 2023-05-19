@@ -12,6 +12,7 @@ void EmptyLinkFunctionForGeneratedCodeBaseBlock() {}
 	AUTOMAFARM_API UClass* Z_Construct_UClass_UBaseBlock();
 	AUTOMAFARM_API UClass* Z_Construct_UClass_UBaseBlock_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UInstancedStaticMeshComponent_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_UMaterialInterface_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UPrimitiveComponent();
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMesh_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_Automafarm();
@@ -42,6 +43,10 @@ void EmptyLinkFunctionForGeneratedCodeBaseBlock() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_BlockMesh_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_BlockMesh;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Material_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_Material;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -82,10 +87,20 @@ void EmptyLinkFunctionForGeneratedCodeBaseBlock() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UBaseBlock_Statics::NewProp_BlockMesh = { "BlockMesh", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UBaseBlock, BlockMesh), Z_Construct_UClass_UInstancedStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UBaseBlock_Statics::NewProp_BlockMesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UBaseBlock_Statics::NewProp_BlockMesh_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UBaseBlock_Statics::NewProp_Material_MetaData[] = {
+		{ "Category", "BaseBlock" },
+		{ "Comment", "//virtual void OnConstruction(const FTransform& Transform) override;\n" },
+		{ "ModuleRelativePath", "BaseBlock.h" },
+		{ "ToolTip", "virtual void OnConstruction(const FTransform& Transform) override;" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UBaseBlock_Statics::NewProp_Material = { "Material", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UBaseBlock, Material), Z_Construct_UClass_UMaterialInterface_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UBaseBlock_Statics::NewProp_Material_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UBaseBlock_Statics::NewProp_Material_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UBaseBlock_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UBaseBlock_Statics::NewProp_TileLength,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UBaseBlock_Statics::NewProp_StaticMesh,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UBaseBlock_Statics::NewProp_BlockMesh,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UBaseBlock_Statics::NewProp_Material,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_UBaseBlock_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<UBaseBlock>::IsAbstract,
@@ -124,9 +139,9 @@ void EmptyLinkFunctionForGeneratedCodeBaseBlock() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_BaseBlock_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UBaseBlock, UBaseBlock::StaticClass, TEXT("UBaseBlock"), &Z_Registration_Info_UClass_UBaseBlock, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UBaseBlock), 701414828U) },
+		{ Z_Construct_UClass_UBaseBlock, UBaseBlock::StaticClass, TEXT("UBaseBlock"), &Z_Registration_Info_UClass_UBaseBlock, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UBaseBlock), 2679705023U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_BaseBlock_h_1762898718(TEXT("/Script/Automafarm"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_BaseBlock_h_1941682318(TEXT("/Script/Automafarm"),
 		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_BaseBlock_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_BaseBlock_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

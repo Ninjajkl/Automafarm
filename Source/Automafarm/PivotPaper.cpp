@@ -54,13 +54,7 @@ void APivotPaper::SetPPCWRotation(FRotator rotator)
 	PivotPaperComp->SetWorldRotation(rotator);
 }
 
-/*
-void APivotPaper::PlayerMoved() 
-{
-	SetPPCWRotation(FRotator(0, UKismetMathLibrary::FindLookAtRotation(GetPPCWLocation(), playerCharacter->GetFirstPersonCameraComponent()->GetComponentLocation()).Yaw - 90, 0));
-}
-*/
-
+//Rotates to face the Player
 void APivotPaper::PlayerMoved(FVector PlayerLoc)
 {
 	SetPPCWRotation(FRotator(0, UKismetMathLibrary::FindLookAtRotation(GetPPCWLocation(), PlayerLoc).Yaw - 90, 0));

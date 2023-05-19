@@ -22,13 +22,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		UInstancedStaticMeshComponent* BlockMesh;
 protected:
-	// Called when the game starts or when spawned
-	/*virtual void BeginPlay() override;*/
-	//virtual void OnConstruction(const FTransform& Transform) override;
-
+	UPROPERTY(EditAnywhere)
+		UMaterialInterface* Material;
 public:	
-	// Called every frame
-	//virtual void Tick(float DeltaTime) override;
 	void AddBlock(FTransform BlockTransform);
 	void AddBlock(FVector BlockLocation);
 	void ClearBlocks();
