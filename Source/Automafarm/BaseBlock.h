@@ -7,7 +7,7 @@
 #include "Components/PrimitiveComponent.h"
 #include "BaseBlock.generated.h"
 
-UCLASS(Blueprintable)
+UCLASS(Blueprintable, BlueprintType)
 class AUTOMAFARM_API UBaseBlock : public UPrimitiveComponent
 {
 	GENERATED_BODY()
@@ -18,12 +18,8 @@ public:
 	UPROPERTY(EditAnywhere, Meta = (ClampMin = 0.000001))
 		float TileLength = 100.0f;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-		UStaticMesh* StaticMesh;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		UInstancedStaticMeshComponent* BlockMesh;
 protected:
-	UPROPERTY(EditAnywhere)
-		UMaterialInterface* Material;
 public:	
 	void AddBlock(FTransform BlockTransform);
 	void AddBlock(FVector BlockLocation);

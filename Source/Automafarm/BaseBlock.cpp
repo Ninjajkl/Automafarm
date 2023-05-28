@@ -1,7 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "Components/InstancedStaticMeshComponent.h"
 #include "BaseBlock.h"
+
+#include "Components/InstancedStaticMeshComponent.h"
 
 // Sets default values
 UBaseBlock::UBaseBlock()

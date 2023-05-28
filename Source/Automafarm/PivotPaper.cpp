@@ -1,8 +1,9 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
+#include "PivotPaper.h"
+
 #include "PaperFlipbook.h"
 #include "PaperFlipbookComponent.h"
-#include "PivotPaper.h"
 #include "Kismet/KismetMathLibrary.h"
 #include "AutomafarmCharacter.h"
 #include "Camera/CameraComponent.h"

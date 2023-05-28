@@ -5,9 +5,10 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "ProceduralMeshComponent.h"
+#include "BaseBlock.h"
 #include "TerrainGenerator.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class AUTOMAFARM_API ATerrainGenerator : public AActor
 {
 	GENERATED_BODY()
@@ -22,19 +23,14 @@ public:
 		int YSize = 0; //Number of squares along Y axis
 	UPROPERTY(EditAnywhere, Meta = (ClampMin = 0.000001))
 		float TileLength = 100.0f;
-	UPROPERTY(EditAnywhere, Meta = (ClampMin = 0.000001))
-		float UVScale = 1.0f;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-		UStaticMesh* StaticMesh;
+		TSubclassOf<UBaseBlock> PrimaryBlockType;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		TSubclassOf<UBaseBlock> SecondaryBlockType;
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 	virtual void OnConstruction(const FTransform& Transform) override;
-
-	UPROPERTY(EditAnywhere)
-		UMaterialInterface* Material;
-	UPROPERTY(EditAnywhere)
-		UMaterialInterface* SecondaryMaterial;
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;

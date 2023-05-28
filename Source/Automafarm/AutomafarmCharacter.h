@@ -96,7 +96,7 @@ protected:
 	// End of APawn interface
 
 	UPROPERTY(EditDefaultsOnly)
-	TSubclassOf<ACrop> CropClass;
+		TSubclassOf<ACrop> CropClass;
 
 public:
 	/** Returns Mesh1P subobject **/

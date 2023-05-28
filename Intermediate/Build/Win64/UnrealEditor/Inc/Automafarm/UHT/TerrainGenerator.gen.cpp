@@ -11,9 +11,9 @@ void EmptyLinkFunctionForGeneratedCodeTerrainGenerator() {}
 // Cross Module References
 	AUTOMAFARM_API UClass* Z_Construct_UClass_ATerrainGenerator();
 	AUTOMAFARM_API UClass* Z_Construct_UClass_ATerrainGenerator_NoRegister();
+	AUTOMAFARM_API UClass* Z_Construct_UClass_UBaseBlock_NoRegister();
+	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
-	ENGINE_API UClass* Z_Construct_UClass_UMaterialInterface_NoRegister();
-	ENGINE_API UClass* Z_Construct_UClass_UStaticMesh_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_Automafarm();
 // End Cross Module References
 	void ATerrainGenerator::StaticRegisterNativesATerrainGenerator()
@@ -43,21 +43,13 @@ void EmptyLinkFunctionForGeneratedCodeTerrainGenerator() {}
 #endif
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_TileLength;
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_UVScale_MetaData[];
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_PrimaryBlockType_MetaData[];
 #endif
-		static const UECodeGen_Private::FFloatPropertyParams NewProp_UVScale;
+		static const UECodeGen_Private::FClassPropertyParams NewProp_PrimaryBlockType;
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_StaticMesh_MetaData[];
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_SecondaryBlockType_MetaData[];
 #endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_StaticMesh;
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_Material_MetaData[];
-#endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_Material;
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_SecondaryMaterial_MetaData[];
-#endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_SecondaryMaterial;
+		static const UECodeGen_Private::FClassPropertyParams NewProp_SecondaryBlockType;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -68,7 +60,9 @@ void EmptyLinkFunctionForGeneratedCodeTerrainGenerator() {}
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATerrainGenerator_Statics::Class_MetaDataParams[] = {
+		{ "BlueprintType", "true" },
 		{ "IncludePath", "TerrainGenerator.h" },
+		{ "IsBlueprintBase", "true" },
 		{ "ModuleRelativePath", "TerrainGenerator.h" },
 	};
 #endif
@@ -101,42 +95,25 @@ void EmptyLinkFunctionForGeneratedCodeTerrainGenerator() {}
 #endif
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ATerrainGenerator_Statics::NewProp_TileLength = { "TileLength", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ATerrainGenerator, TileLength), METADATA_PARAMS(Z_Construct_UClass_ATerrainGenerator_Statics::NewProp_TileLength_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATerrainGenerator_Statics::NewProp_TileLength_MetaData)) };
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATerrainGenerator_Statics::NewProp_UVScale_MetaData[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATerrainGenerator_Statics::NewProp_PrimaryBlockType_MetaData[] = {
 		{ "Category", "TerrainGenerator" },
-		{ "ClampMin", "0.000001" },
 		{ "ModuleRelativePath", "TerrainGenerator.h" },
 	};
 #endif
-	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ATerrainGenerator_Statics::NewProp_UVScale = { "UVScale", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ATerrainGenerator, UVScale), METADATA_PARAMS(Z_Construct_UClass_ATerrainGenerator_Statics::NewProp_UVScale_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATerrainGenerator_Statics::NewProp_UVScale_MetaData)) };
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_ATerrainGenerator_Statics::NewProp_PrimaryBlockType = { "PrimaryBlockType", nullptr, (EPropertyFlags)0x0014000000000005, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ATerrainGenerator, PrimaryBlockType), Z_Construct_UClass_UClass, Z_Construct_UClass_UBaseBlock_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ATerrainGenerator_Statics::NewProp_PrimaryBlockType_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATerrainGenerator_Statics::NewProp_PrimaryBlockType_MetaData)) };
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATerrainGenerator_Statics::NewProp_StaticMesh_MetaData[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATerrainGenerator_Statics::NewProp_SecondaryBlockType_MetaData[] = {
 		{ "Category", "TerrainGenerator" },
 		{ "ModuleRelativePath", "TerrainGenerator.h" },
 	};
 #endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATerrainGenerator_Statics::NewProp_StaticMesh = { "StaticMesh", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ATerrainGenerator, StaticMesh), Z_Construct_UClass_UStaticMesh_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ATerrainGenerator_Statics::NewProp_StaticMesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATerrainGenerator_Statics::NewProp_StaticMesh_MetaData)) };
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATerrainGenerator_Statics::NewProp_Material_MetaData[] = {
-		{ "Category", "TerrainGenerator" },
-		{ "ModuleRelativePath", "TerrainGenerator.h" },
-	};
-#endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATerrainGenerator_Statics::NewProp_Material = { "Material", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ATerrainGenerator, Material), Z_Construct_UClass_UMaterialInterface_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ATerrainGenerator_Statics::NewProp_Material_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATerrainGenerator_Statics::NewProp_Material_MetaData)) };
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATerrainGenerator_Statics::NewProp_SecondaryMaterial_MetaData[] = {
-		{ "Category", "TerrainGenerator" },
-		{ "ModuleRelativePath", "TerrainGenerator.h" },
-	};
-#endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATerrainGenerator_Statics::NewProp_SecondaryMaterial = { "SecondaryMaterial", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ATerrainGenerator, SecondaryMaterial), Z_Construct_UClass_UMaterialInterface_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ATerrainGenerator_Statics::NewProp_SecondaryMaterial_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATerrainGenerator_Statics::NewProp_SecondaryMaterial_MetaData)) };
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_ATerrainGenerator_Statics::NewProp_SecondaryBlockType = { "SecondaryBlockType", nullptr, (EPropertyFlags)0x0014000000000005, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ATerrainGenerator, SecondaryBlockType), Z_Construct_UClass_UClass, Z_Construct_UClass_UBaseBlock_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ATerrainGenerator_Statics::NewProp_SecondaryBlockType_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATerrainGenerator_Statics::NewProp_SecondaryBlockType_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ATerrainGenerator_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATerrainGenerator_Statics::NewProp_XSize,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATerrainGenerator_Statics::NewProp_YSize,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATerrainGenerator_Statics::NewProp_TileLength,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATerrainGenerator_Statics::NewProp_UVScale,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATerrainGenerator_Statics::NewProp_StaticMesh,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATerrainGenerator_Statics::NewProp_Material,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATerrainGenerator_Statics::NewProp_SecondaryMaterial,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATerrainGenerator_Statics::NewProp_PrimaryBlockType,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATerrainGenerator_Statics::NewProp_SecondaryBlockType,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ATerrainGenerator_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ATerrainGenerator>::IsAbstract,
@@ -175,9 +152,9 @@ void EmptyLinkFunctionForGeneratedCodeTerrainGenerator() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_TerrainGenerator_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ATerrainGenerator, ATerrainGenerator::StaticClass, TEXT("ATerrainGenerator"), &Z_Registration_Info_UClass_ATerrainGenerator, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATerrainGenerator), 3039974645U) },
+		{ Z_Construct_UClass_ATerrainGenerator, ATerrainGenerator::StaticClass, TEXT("ATerrainGenerator"), &Z_Registration_Info_UClass_ATerrainGenerator, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATerrainGenerator), 1858638976U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_TerrainGenerator_h_2127146845(TEXT("/Script/Automafarm"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_TerrainGenerator_h_1120095467(TEXT("/Script/Automafarm"),
 		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_TerrainGenerator_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_TerrainGenerator_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

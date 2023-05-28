@@ -11,6 +11,8 @@
     <None Include="..\..\Source\AutomafarmEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.gitattributes" />
+    <None Include="..\..\.gitignore" />
     <None Include="..\..\.vsconfig" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
@@ -60,12 +62,6 @@
     <ClInclude Include="..\..\Source\Automafarm\AutomafarmCharacter.h">
       <Filter>Source\Automafarm</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\Automafarm\AutomafarmGameMode.cpp">
-      <Filter>Source\Automafarm</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Automafarm\AutomafarmGameMode.h">
-      <Filter>Source\Automafarm</Filter>
-    </ClInclude>
     <ClCompile Include="..\..\Source\Automafarm\AutomafarmProjectile.cpp">
       <Filter>Source\Automafarm</Filter>
     </ClCompile>
@@ -82,6 +78,12 @@
       <Filter>Source\Automafarm</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Automafarm\Crop.h">
+      <Filter>Source\Automafarm</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Automafarm\FarmGameStateBase.cpp">
+      <Filter>Source\Automafarm</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Automafarm\FarmGameStateBase.h">
       <Filter>Source\Automafarm</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Automafarm\PivotPaper.cpp">
@@ -113,6 +115,18 @@
     </ClCompile>
     <ClInclude Include="..\..\Source\Automafarm\TP_WeaponComponent.h">
       <Filter>Source\Automafarm</Filter>
+    </ClInclude>
+    <Filter Include="Source\Automafarm\Private">
+      <UniqueIdentifier>{C1A170FA-4E50-32C6-AA34-9F99082A600E}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Automafarm\Private\TileHolder.cpp">
+      <Filter>Source\Automafarm\Private</Filter>
+    </ClCompile>
+    <Filter Include="Source\Automafarm\Public">
+      <UniqueIdentifier>{584B8870-FEA6-3050-A161-80F16E029F5F}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Automafarm\Public\TileHolder.h">
+      <Filter>Source\Automafarm\Public</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
