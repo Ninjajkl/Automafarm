@@ -9,10 +9,12 @@
 #include "Crop.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
+#include "FarmGameStateBase.h"
 #include "Kismet/KismetMathLibrary.h"
 #include "Math/TransformNonVectorized.h"
 #include "Math/UnrealMathUtility.h"
 #include "Misc/CoreDelegates.h"
+#include "TileHolder.h"
 #include "Engine/World.h"
 
 #define PlaceTrace ECC_GameTraceChannel1
@@ -20,6 +22,8 @@
 
 //////////////////////////////////////////////////////////////////////////
 // AAutomafarmCharacter
+
+AFarmGameStateBase* myGameState;
 
 AAutomafarmCharacter::AAutomafarmCharacter()
 {
@@ -45,6 +49,8 @@ AAutomafarmCharacter::AAutomafarmCharacter()
 	Mesh1P->SetRelativeLocation(FVector(-30.f, 0.f, -150.f));
 
 	CropClass = ACrop::StaticClass();
+
+	myGameState = GetWorld() != NULL ? GetWorld()->GetGameState<AFarmGameStateBase>() : NULL;
 }
 
 void AAutomafarmCharacter::BeginPlay()
@@ -133,17 +139,44 @@ void AAutomafarmCharacter::Interact(const FInputActionValue& Value)
 			//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, Cast<UInstancedStaticMeshComponent>(HitResult.Component)->GetMaterial(0)->GetName());
 		}
 		FVector SelectedTileKey = AbsoluteToGrid(HitResult.ImpactPoint+HitResult.ImpactNormal);
-		if(!ObjectGrid.Contains(SelectedTileKey))
+		//if(!myGameState->LevelMap.Contains(SelectedTileKey))
+		if(ValidPlacement(CropClass, SelectedTileKey))
 		{
 			ACrop* newCrop = GetWorld()->SpawnActor<ACrop>(CropClass, FTransform(SelectedTileKey*TileLength));
 			newCrop->SetPPCWRotation(FRotator(0,UKismetMathLibrary::FindLookAtRotation(newCrop->GetPPCWLocation(), WLocation).Yaw-90,0));
-			ObjectGrid.Add(SelectedTileKey, newCrop);
+			AddToLevelMap(newCrop, SelectedTileKey);
 		}
 	}
 }
 
 FVector AAutomafarmCharacter::AbsoluteToGrid(FVector aCoords) {
 	return FVector(floor(aCoords[0]/TileLength), floor(aCoords[1] / TileLength), floor(aCoords[2] / TileLength));
+}
+
+bool AAutomafarmCharacter::ValidPlacement(UClass* PlacedObjectClass, FVector TileKey)
+{
+	ACrop* CropClassCDO = Cast<ACrop>(PlacedObjectClass->GetDefaultObject());
+	for(int i = 0; i < CropClassCDO->TilesToFill.Num(); i++)
+	{
+		if (myGameState->LevelMap.Contains(TileKey + CropClassCDO->TilesToFill[i]))
+		{
+			return false;
+		}
+	}
+	return true;
+}
+
+void AAutomafarmCharacter::AddToLevelMap(ACrop* newCrop, FVector TileKey) 
+{
+	FTileHolder newCoreTile;
+	newCoreTile.CorePivotPaper = Cast<APivotPaper>(newCrop);
+	newCoreTile.TileType = ETileType::PIVOTPAPER;
+	while (!newCoreTile.CorePivotPaper->TilesToFill.IsEmpty()) 
+	{
+		FVector newTileKey = TileKey + newCoreTile.CorePivotPaper->TilesToFill.Pop();
+		newCoreTile.CorePivotPaper->FilledTiles.Add(newTileKey);
+		myGameState->LevelMap.Add(newTileKey, newCoreTile);
+	}
 }
 
 void AAutomafarmCharacter::SetHasRifle(bool bNewHasRifle)

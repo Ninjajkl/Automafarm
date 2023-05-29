@@ -60,25 +60,22 @@ public:
 		
 	/** Look Input Action */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
-	class UInputAction* LookAction;
+		class UInputAction* LookAction;
 
 	/** Bool for AnimBP to switch to another animation set */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Weapon)
-	bool bHasRifle;
+		bool bHasRifle;
 
 	/** Setter to set the bool */
 	UFUNCTION(BlueprintCallable, Category = Weapon)
-	void SetHasRifle(bool bNewHasRifle);
+		void SetHasRifle(bool bNewHasRifle);
 
 	/** Getter for the bool */
 	UFUNCTION(BlueprintCallable, Category = Weapon)
-	bool GetHasRifle();
+		bool GetHasRifle();
 
 	UPROPERTY(EditAnywhere, Meta = (ClampMin = 0.000001))
-	float TileLength = 100.0f;
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-	TMap<FVector, ACrop*> ObjectGrid;
+		float TileLength = 100.0f;
 
 protected:
 	/** Called for movement input */
@@ -95,7 +92,7 @@ protected:
 	virtual void SetupPlayerInputComponent(UInputComponent* InputComponent) override;
 	// End of APawn interface
 
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditAnywhere)
 		TSubclassOf<ACrop> CropClass;
 
 public:
@@ -105,5 +102,9 @@ public:
 	UCameraComponent* GetFirstPersonCameraComponent() const { return FirstPersonCameraComponent; }
 
 	FVector AbsoluteToGrid(FVector aCoords);
+
+	void AddToLevelMap(ACrop* newCrop, FVector TileKey);
+
+	bool ValidPlacement(UClass* PlacedObjectClass, FVector TileKey);
 };
 

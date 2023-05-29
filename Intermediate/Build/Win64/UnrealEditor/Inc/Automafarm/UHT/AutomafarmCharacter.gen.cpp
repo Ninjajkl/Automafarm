@@ -221,12 +221,6 @@ void FKFOnPlayerMoved_DelegateWrapper(const FMulticastScriptDelegate& KFOnPlayer
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_TileLength_MetaData[];
 #endif
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_TileLength;
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_ObjectGrid_ValueProp;
-		static const UECodeGen_Private::FStructPropertyParams NewProp_ObjectGrid_Key_KeyProp;
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_ObjectGrid_MetaData[];
-#endif
-		static const UECodeGen_Private::FMapPropertyParams NewProp_ObjectGrid;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_CropClass_MetaData[];
 #endif
@@ -348,15 +342,6 @@ void FKFOnPlayerMoved_DelegateWrapper(const FMulticastScriptDelegate& KFOnPlayer
 	};
 #endif
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_TileLength = { "TileLength", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AAutomafarmCharacter, TileLength), METADATA_PARAMS(Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_TileLength_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_TileLength_MetaData)) };
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_ObjectGrid_ValueProp = { "ObjectGrid", nullptr, (EPropertyFlags)0x0000000000020001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 1, Z_Construct_UClass_ACrop_NoRegister, METADATA_PARAMS(nullptr, 0) };
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_ObjectGrid_Key_KeyProp = { "ObjectGrid_Key", nullptr, (EPropertyFlags)0x0000000000020001, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_ObjectGrid_MetaData[] = {
-		{ "Category", "AutomafarmCharacter" },
-		{ "ModuleRelativePath", "AutomafarmCharacter.h" },
-	};
-#endif
-	const UECodeGen_Private::FMapPropertyParams Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_ObjectGrid = { "ObjectGrid", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AAutomafarmCharacter, ObjectGrid), EMapPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_ObjectGrid_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_ObjectGrid_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_CropClass_MetaData[] = {
 		{ "Category", "AutomafarmCharacter" },
@@ -365,7 +350,7 @@ void FKFOnPlayerMoved_DelegateWrapper(const FMulticastScriptDelegate& KFOnPlayer
 		{ "ToolTip", "End of APawn interface" },
 	};
 #endif
-	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_CropClass = { "CropClass", nullptr, (EPropertyFlags)0x0024080000010001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AAutomafarmCharacter, CropClass), Z_Construct_UClass_UClass, Z_Construct_UClass_ACrop_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_CropClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_CropClass_MetaData)) };
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_CropClass = { "CropClass", nullptr, (EPropertyFlags)0x0024080000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AAutomafarmCharacter, CropClass), Z_Construct_UClass_UClass, Z_Construct_UClass_ACrop_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_CropClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_CropClass_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AAutomafarmCharacter_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_Mesh1P,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_FirstPersonCameraComponent,
@@ -377,9 +362,6 @@ void FKFOnPlayerMoved_DelegateWrapper(const FMulticastScriptDelegate& KFOnPlayer
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_LookAction,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_bHasRifle,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_TileLength,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_ObjectGrid_ValueProp,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_ObjectGrid_Key_KeyProp,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_ObjectGrid,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_CropClass,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AAutomafarmCharacter_Statics::StaticCppClassTypeInfo = {
@@ -419,9 +401,9 @@ void FKFOnPlayerMoved_DelegateWrapper(const FMulticastScriptDelegate& KFOnPlayer
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AAutomafarmCharacter, AAutomafarmCharacter::StaticClass, TEXT("AAutomafarmCharacter"), &Z_Registration_Info_UClass_AAutomafarmCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAutomafarmCharacter), 3253109628U) },
+		{ Z_Construct_UClass_AAutomafarmCharacter, AAutomafarmCharacter::StaticClass, TEXT("AAutomafarmCharacter"), &Z_Registration_Info_UClass_AAutomafarmCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAutomafarmCharacter), 4042376955U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_3065055234(TEXT("/Script/Automafarm"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_3218080482(TEXT("/Script/Automafarm"),
 		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

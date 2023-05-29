@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "Components/InstancedStaticMeshComponent.h"
 #include "Components/PrimitiveComponent.h"
+#include "Templates/Tuple.h"
 #include "BaseBlock.generated.h"
 
 UCLASS(Blueprintable, BlueprintType)
@@ -17,6 +18,8 @@ public:
 
 	UPROPERTY(EditAnywhere, Meta = (ClampMin = 0.000001))
 		float TileLength = 100.0f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		TArray<FVector> FilledTiles;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		UInstancedStaticMeshComponent* BlockMesh;
 protected:

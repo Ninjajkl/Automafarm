@@ -3,25 +3,24 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "../BaseBlock.h"
+#include "../PivotPaper.h"
+#include "AutomafarmEnums.h"
 #include "TileHolder.generated.h"
 
 /**
  * 
  */
-UCLASS()
-class AUTOMAFARM_API UTileHolder : public UClass
+
+USTRUCT(BlueprintType)
+struct FTileHolder
 {
 	GENERATED_BODY()
-public:
-	UTileHolder();
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-		TileTypeEnum TileType;
-};
-
-UENUM(BlueprintType)
-enum class TileTypeEnum : uint8 {
-	BLOCK = 0 UMETA(DisplayName = "Block"),
-	PIVOTPAPER = 1 UMETA(DisplayName = "PivotPaper"),
-	FILLER = 2 UMETA(DisplayName = "Filler")
+		ETileType TileType;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+		UBaseBlock* CoreBlock;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+		APivotPaper* CorePivotPaper;
 };

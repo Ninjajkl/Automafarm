@@ -19,6 +19,10 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		UPaperFlipbookComponent* PivotPaperComp;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		TArray<FVector> TilesToFill;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+		TArray<FVector> FilledTiles;
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

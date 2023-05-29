@@ -19,5 +19,5 @@ public:
 	AFarmGameStateBase();
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Terrain")
-		TMap<int32, UTileHolder*> LevelMap;
+		TMap<FVector, FTileHolder> LevelMap;
 };

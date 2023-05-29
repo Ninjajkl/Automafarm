@@ -119,12 +119,18 @@
     <Filter Include="Source\Automafarm\Private">
       <UniqueIdentifier>{C1A170FA-4E50-32C6-AA34-9F99082A600E}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\Automafarm\Private\AutomafarmEnums.cpp">
+      <Filter>Source\Automafarm\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Automafarm\Private\TileHolder.cpp">
       <Filter>Source\Automafarm\Private</Filter>
     </ClCompile>
     <Filter Include="Source\Automafarm\Public">
       <UniqueIdentifier>{584B8870-FEA6-3050-A161-80F16E029F5F}</UniqueIdentifier>
     </Filter>
+    <ClInclude Include="..\..\Source\Automafarm\Public\AutomafarmEnums.h">
+      <Filter>Source\Automafarm\Public</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\Automafarm\Public\TileHolder.h">
       <Filter>Source\Automafarm\Public</Filter>
     </ClInclude>
