@@ -6,6 +6,7 @@
 #include "GameFramework/Actor.h"
 #include "PaperFlipbook.h"
 #include "PaperFlipbookComponent.h"
+#include "PaperZDAnimationComponent.h"
 #include "PivotPaper.generated.h"
 
 UCLASS()
@@ -17,8 +18,10 @@ public:
 	// Sets default values for this actor's properties
 	APivotPaper();
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+		UPaperFlipbookComponent* FlipbookComp;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-		UPaperFlipbookComponent* PivotPaperComp;
+		UPaperZDAnimationComponent* ZDAnimComp;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		TArray<FVector> TilesToFill;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)

@@ -4,6 +4,7 @@
 
 #include "PaperFlipbook.h"
 #include "PaperFlipbookComponent.h"
+#include "PaperZDAnimationComponent.h"
 #include "Kismet/KismetMathLibrary.h"
 #include "AutomafarmCharacter.h"
 #include "Camera/CameraComponent.h"
@@ -18,10 +19,11 @@ APivotPaper::APivotPaper()
 	PrimaryActorTick.bCanEverTick = true;
 
 	RootComponent = CreateDefaultSubobject<USceneComponent>("RootComponent");
-	PivotPaperComp = CreateDefaultSubobject<UPaperFlipbookComponent>("PivotPaperComp");
-	PivotPaperComp->SetupAttachment(RootComponent);
-	PivotPaperComp->SetRelativeScale3D(FVector(6.25, 6.25, 6.25));
-
+	FlipbookComp = CreateDefaultSubobject<UPaperFlipbookComponent>("FlipbookComp");
+	FlipbookComp->SetupAttachment(RootComponent);
+	FlipbookComp->SetRelativeScale3D(FVector(6.25, 6.25, 6.25));
+	ZDAnimComp = CreateDefaultSubobject<UPaperZDAnimationComponent>("ZDAnimComp");
+	ZDAnimComp->InitRenderComponent(FlipbookComp);
 }
 
 void APivotPaper::OnConstruction(const FTransform& Transform)
@@ -47,12 +49,12 @@ void APivotPaper::Tick(float DeltaTime)
 
 FVector APivotPaper::GetPPCWLocation() 
 {
-	return PivotPaperComp->GetComponentLocation();
+	return FlipbookComp->GetComponentLocation();
 }
 
 void APivotPaper::SetPPCWRotation(FRotator rotator)
 {
-	PivotPaperComp->SetWorldRotation(rotator);
+	FlipbookComp->SetWorldRotation(rotator);
 }
 
 //Rotates to face the Player

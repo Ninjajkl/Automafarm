@@ -14,6 +14,7 @@ void EmptyLinkFunctionForGeneratedCodePivotPaper() {}
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	PAPER2D_API UClass* Z_Construct_UClass_UPaperFlipbookComponent_NoRegister();
+	PAPERZD_API UClass* Z_Construct_UClass_UPaperZDAnimationComponent_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_Automafarm();
 // End Cross Module References
 	DEFINE_FUNCTION(APivotPaper::execPlayerMoved)
@@ -77,9 +78,13 @@ void EmptyLinkFunctionForGeneratedCodePivotPaper() {}
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_PivotPaperComp_MetaData[];
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_FlipbookComp_MetaData[];
 #endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_PivotPaperComp;
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_FlipbookComp;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_ZDAnimComp_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_ZDAnimComp;
 		static const UECodeGen_Private::FStructPropertyParams NewProp_TilesToFill_Inner;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_TilesToFill_MetaData[];
@@ -108,13 +113,21 @@ void EmptyLinkFunctionForGeneratedCodePivotPaper() {}
 	};
 #endif
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APivotPaper_Statics::NewProp_PivotPaperComp_MetaData[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APivotPaper_Statics::NewProp_FlipbookComp_MetaData[] = {
 		{ "Category", "PivotPaper" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "PivotPaper.h" },
 	};
 #endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APivotPaper_Statics::NewProp_PivotPaperComp = { "PivotPaperComp", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(APivotPaper, PivotPaperComp), Z_Construct_UClass_UPaperFlipbookComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_APivotPaper_Statics::NewProp_PivotPaperComp_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APivotPaper_Statics::NewProp_PivotPaperComp_MetaData)) };
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APivotPaper_Statics::NewProp_FlipbookComp = { "FlipbookComp", nullptr, (EPropertyFlags)0x00100000000a000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(APivotPaper, FlipbookComp), Z_Construct_UClass_UPaperFlipbookComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_APivotPaper_Statics::NewProp_FlipbookComp_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APivotPaper_Statics::NewProp_FlipbookComp_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APivotPaper_Statics::NewProp_ZDAnimComp_MetaData[] = {
+		{ "Category", "PivotPaper" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "PivotPaper.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APivotPaper_Statics::NewProp_ZDAnimComp = { "ZDAnimComp", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(APivotPaper, ZDAnimComp), Z_Construct_UClass_UPaperZDAnimationComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_APivotPaper_Statics::NewProp_ZDAnimComp_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APivotPaper_Statics::NewProp_ZDAnimComp_MetaData)) };
 	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_APivotPaper_Statics::NewProp_TilesToFill_Inner = { "TilesToFill", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APivotPaper_Statics::NewProp_TilesToFill_MetaData[] = {
@@ -132,7 +145,8 @@ void EmptyLinkFunctionForGeneratedCodePivotPaper() {}
 #endif
 	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_APivotPaper_Statics::NewProp_FilledTiles = { "FilledTiles", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(APivotPaper, FilledTiles), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_APivotPaper_Statics::NewProp_FilledTiles_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APivotPaper_Statics::NewProp_FilledTiles_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_APivotPaper_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APivotPaper_Statics::NewProp_PivotPaperComp,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APivotPaper_Statics::NewProp_FlipbookComp,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APivotPaper_Statics::NewProp_ZDAnimComp,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APivotPaper_Statics::NewProp_TilesToFill_Inner,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APivotPaper_Statics::NewProp_TilesToFill,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APivotPaper_Statics::NewProp_FilledTiles_Inner,
@@ -175,9 +189,9 @@ void EmptyLinkFunctionForGeneratedCodePivotPaper() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_PivotPaper_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_APivotPaper, APivotPaper::StaticClass, TEXT("APivotPaper"), &Z_Registration_Info_UClass_APivotPaper, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APivotPaper), 3225409254U) },
+		{ Z_Construct_UClass_APivotPaper, APivotPaper::StaticClass, TEXT("APivotPaper"), &Z_Registration_Info_UClass_APivotPaper, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APivotPaper), 2295807783U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_PivotPaper_h_3442080380(TEXT("/Script/Automafarm"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_PivotPaper_h_147676396(TEXT("/Script/Automafarm"),
 		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_PivotPaper_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_PivotPaper_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
