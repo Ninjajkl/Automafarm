@@ -110,6 +110,6 @@ public:
 
 	void AddToLevelMap(ETileType TileType, FVector TileKey, APivotPaper* newPivotPaper = nullptr, UBaseBlock* newBlock = nullptr);
 
-	bool ValidPlacement(TArray<FVector> TilesToCheck, FVector TileKey);
+	bool ValidPlacement(TArray<FVector> TilesToCheck, FVector TileKey, bool checkEntities = false, FCollisionShape collisionShape = FCollisionShape::MakeSphere(-1.f));
 };
 

@@ -24,5 +24,6 @@ void AFarmGameStateBase::InitializeTerrain()
 	if(!TerrainHolder->IsValidLowLevelFast())
 	{
 		TerrainHolder = GetWorld()->SpawnActor<AActor>();
+		TerrainHolder->SetActorLabel(TEXT("TerrainHolder"));
 	}
 }

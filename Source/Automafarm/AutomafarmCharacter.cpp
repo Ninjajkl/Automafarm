@@ -134,10 +134,12 @@ void AAutomafarmCharacter::Interact(const FInputActionValue& Value)
 		//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, HitResult.ImpactPoint.ToString());
 		//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, HitResult.Component->ComponentHasTag("BlockMesh") ? "Yes" : "No");
 		//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, HitResult.Component->GetClass()->GetName());
+		/*
 		if (HitResult.Component->ComponentHasTag("BlockMesh")) 
 		{
-			//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, Cast<UInstancedStaticMeshComponent>(HitResult.Component)->GetMaterial(0)->GetName());
+			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, Cast<UInstancedStaticMeshComponent>(HitResult.Component)->GetMaterial(0)->GetName());
 		}
+		*/
 		FVector SelectedTileKey = AbsoluteToGrid(HitResult.ImpactPoint+HitResult.ImpactNormal);
 		
 		/*
@@ -148,12 +150,11 @@ void AAutomafarmCharacter::Interact(const FInputActionValue& Value)
 			AddToLevelMap(newPivotPaper, SelectedTileKey);
 		}
 		*/
-		//UBaseBlock* BlockClassCDO = Cast<UBaseBlock>(BlockClass->GetDefaultObject());
-		if (ValidPlacement((Cast<UBaseBlock>(BlockClass->GetDefaultObject()))->TilesToFill, SelectedTileKey) && myGameState->InitilizeUniqueBlock(BlockClass, SelectedTileKey))
+		if (ValidPlacement((Cast<UBaseBlock>(BlockClass->GetDefaultObject()))->TilesToFill, SelectedTileKey, true, FCollisionShape::MakeBox(FVector(49.9999f))) && myGameState->InitilizeUniqueBlock(BlockClass, SelectedTileKey))
 		{
-			myGameState->BlockMap[BlockClass]->AddBlock(SelectedTileKey * TileLength + FVector(50, 50, 50));
 			AddToLevelMap(ETileType::BLOCK, SelectedTileKey, nullptr, myGameState->BlockMap[BlockClass]);
 		}
+
 	}
 }
 
@@ -162,11 +163,12 @@ FVector AAutomafarmCharacter::AbsoluteToGrid(FVector aCoords)
 	return FVector(floor(aCoords[0]/TileLength), floor(aCoords[1] / TileLength), floor(aCoords[2] / TileLength));
 }
 
-bool AAutomafarmCharacter::ValidPlacement(TArray<FVector> TilesToCheck, FVector TileKey)
+bool AAutomafarmCharacter::ValidPlacement(TArray<FVector> TilesToCheck, FVector TileKey, bool checkEntities, FCollisionShape collisionShape)
 {
 	for(int i = 0; i < TilesToCheck.Num(); i++)
 	{
-		if (myGameState->LevelMap.Contains(TileKey + TilesToCheck[i]))
+		if (myGameState->LevelMap.Contains(TileKey + TilesToCheck[i]) || 
+			(checkEntities && GetWorld()->OverlapAnyTestByChannel((TileKey + TilesToCheck[i]) * TileLength + FVector(50, 50, 50), FQuat(), PlaceTrace, collisionShape)))
 		{
 			return false;
 		}
