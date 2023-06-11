@@ -17,10 +17,11 @@ struct FTileHolder
 {
 	GENERATED_BODY()
 
+	//Defaults to PivotPaper
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-		ETileType TileType;
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-		UBaseBlock* CoreBlock;
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-		APivotPaper* CorePivotPaper;
+		ETileType TileType = ETileType::PIVOTPAPER;
+	UPROPERTY()
+		UBaseBlock* CoreBlock = nullptr;
+	UPROPERTY()
+		APivotPaper* CorePivotPaper = nullptr;
 };

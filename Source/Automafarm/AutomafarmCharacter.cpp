@@ -6,7 +6,7 @@
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "Components/InstancedStaticMeshComponent.h"
-#include "Crop.h"
+#include "PivotPaper.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "FarmGameStateBase.h"
@@ -48,7 +48,7 @@ AAutomafarmCharacter::AAutomafarmCharacter()
 	//Mesh1P->SetRelativeRotation(FRotator(0.9f, -19.19f, 5.2f));
 	Mesh1P->SetRelativeLocation(FVector(-30.f, 0.f, -150.f));
 
-	CropClass = ACrop::StaticClass();
+	PivPClass = APivotPaper::StaticClass();
 
 	myGameState = GetWorld() != NULL ? GetWorld()->GetGameState<AFarmGameStateBase>() : NULL;
 }
@@ -139,26 +139,34 @@ void AAutomafarmCharacter::Interact(const FInputActionValue& Value)
 			//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, Cast<UInstancedStaticMeshComponent>(HitResult.Component)->GetMaterial(0)->GetName());
 		}
 		FVector SelectedTileKey = AbsoluteToGrid(HitResult.ImpactPoint+HitResult.ImpactNormal);
-		//if(!myGameState->LevelMap.Contains(SelectedTileKey))
-		if(ValidPlacement(CropClass, SelectedTileKey))
+		
+		/*
+		if(ValidPlacement(PivPClass, SelectedTileKey))
 		{
-			ACrop* newCrop = GetWorld()->SpawnActor<ACrop>(CropClass, FTransform(SelectedTileKey*TileLength));
-			newCrop->SetPPCWRotation(FRotator(0,UKismetMathLibrary::FindLookAtRotation(newCrop->GetPPCWLocation(), WLocation).Yaw-90,0));
-			AddToLevelMap(newCrop, SelectedTileKey);
+			APivotPaper* newPivotPaper = GetWorld()->SpawnActor<APivotPaper>(PivPClass, FTransform(SelectedTileKey*TileLength));
+			newPivotPaper->SetPPCWRotation(FRotator(0,UKismetMathLibrary::FindLookAtRotation(newPivotPaper->GetPPCWLocation(), WLocation).Yaw-90,0));
+			AddToLevelMap(newPivotPaper, SelectedTileKey);
+		}
+		*/
+		//UBaseBlock* BlockClassCDO = Cast<UBaseBlock>(BlockClass->GetDefaultObject());
+		if (ValidPlacement((Cast<UBaseBlock>(BlockClass->GetDefaultObject()))->TilesToFill, SelectedTileKey) && myGameState->InitilizeUniqueBlock(BlockClass, SelectedTileKey))
+		{
+			myGameState->BlockMap[BlockClass]->AddBlock(SelectedTileKey * TileLength + FVector(50, 50, 50));
+			AddToLevelMap(ETileType::BLOCK, SelectedTileKey, nullptr, myGameState->BlockMap[BlockClass]);
 		}
 	}
 }
 
-FVector AAutomafarmCharacter::AbsoluteToGrid(FVector aCoords) {
+FVector AAutomafarmCharacter::AbsoluteToGrid(FVector aCoords) 
+{
 	return FVector(floor(aCoords[0]/TileLength), floor(aCoords[1] / TileLength), floor(aCoords[2] / TileLength));
 }
 
-bool AAutomafarmCharacter::ValidPlacement(UClass* PlacedObjectClass, FVector TileKey)
+bool AAutomafarmCharacter::ValidPlacement(TArray<FVector> TilesToCheck, FVector TileKey)
 {
-	ACrop* CropClassCDO = Cast<ACrop>(PlacedObjectClass->GetDefaultObject());
-	for(int i = 0; i < CropClassCDO->TilesToFill.Num(); i++)
+	for(int i = 0; i < TilesToCheck.Num(); i++)
 	{
-		if (myGameState->LevelMap.Contains(TileKey + CropClassCDO->TilesToFill[i]))
+		if (myGameState->LevelMap.Contains(TileKey + TilesToCheck[i]))
 		{
 			return false;
 		}
@@ -166,16 +174,34 @@ bool AAutomafarmCharacter::ValidPlacement(UClass* PlacedObjectClass, FVector Til
 	return true;
 }
 
-void AAutomafarmCharacter::AddToLevelMap(ACrop* newCrop, FVector TileKey) 
+void AAutomafarmCharacter::AddToLevelMap(ETileType TileType, FVector TileKey, APivotPaper* newPivotPaper, UBaseBlock* newBlock)
 {
 	FTileHolder newCoreTile;
-	newCoreTile.CorePivotPaper = Cast<APivotPaper>(newCrop);
-	newCoreTile.TileType = ETileType::PIVOTPAPER;
-	while (!newCoreTile.CorePivotPaper->TilesToFill.IsEmpty()) 
+	newCoreTile.TileType = TileType;
+	TArray<FVector> TilesToFill;
+	TArray<FVector> FilledTiles;
+	if (TileType == ETileType::PIVOTPAPER) {
+		newCoreTile.CorePivotPaper = newPivotPaper;
+		TilesToFill = newCoreTile.CorePivotPaper->TilesToFill;
+		
+	} else {
+		newCoreTile.CoreBlock = newBlock;
+		TilesToFill = newCoreTile.CoreBlock->TilesToFill;
+	}
+	while (!TilesToFill.IsEmpty())
 	{
-		FVector newTileKey = TileKey + newCoreTile.CorePivotPaper->TilesToFill.Pop();
-		newCoreTile.CorePivotPaper->FilledTiles.Add(newTileKey);
+		FVector newTileKey = TileKey + TilesToFill.Pop();
+		if(TileType == ETileType::BLOCK){
+			myGameState->BlockMap[BlockClass]->AddBlock(newTileKey * TileLength + FVector(50, 50, 50));
+		}
+		FilledTiles.Add(newTileKey);
 		myGameState->LevelMap.Add(newTileKey, newCoreTile);
+	}
+	if (TileType == ETileType::PIVOTPAPER) {
+		newCoreTile.CorePivotPaper->FilledTiles = FilledTiles;
+
+	} else {
+		newCoreTile.CoreBlock->FilledTiles = FilledTiles;
 	}
 }
 

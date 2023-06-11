@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "AutomafarmEnums.h"
 #include "GameFramework/Character.h"
 #include "InputActionValue.h"
 #include "Misc/CoreDelegates.h"
@@ -15,6 +16,8 @@ class UCameraComponent;
 class UAnimMontage;
 class USoundBase;
 class ACrop;
+class APivotPaper;
+class UBaseBlock;
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FKFOnPlayerMoved,FVector,PlayerLoc);
 
@@ -93,7 +96,9 @@ protected:
 	// End of APawn interface
 
 	UPROPERTY(EditAnywhere)
-		TSubclassOf<ACrop> CropClass;
+		TSubclassOf<APivotPaper> PivPClass;
+	UPROPERTY(EditAnywhere)
+		TSubclassOf<UBaseBlock> BlockClass;
 
 public:
 	/** Returns Mesh1P subobject **/
@@ -103,8 +108,8 @@ public:
 
 	FVector AbsoluteToGrid(FVector aCoords);
 
-	void AddToLevelMap(ACrop* newCrop, FVector TileKey);
+	void AddToLevelMap(ETileType TileType, FVector TileKey, APivotPaper* newPivotPaper = nullptr, UBaseBlock* newBlock = nullptr);
 
-	bool ValidPlacement(UClass* PlacedObjectClass, FVector TileKey);
+	bool ValidPlacement(TArray<FVector> TilesToCheck, FVector TileKey);
 };
 

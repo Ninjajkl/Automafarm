@@ -20,4 +20,13 @@ public:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Terrain")
 		TMap<FVector, FTileHolder> LevelMap;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Terrain")
+		TArray<TSubclassOf<UBaseBlock>> InitializedBlocks;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Terrain")
+		TMap<TSubclassOf<UBaseBlock>, UBaseBlock*> BlockMap;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Terrain")
+		AActor* TerrainHolder;
+
+	bool InitilizeUniqueBlock(TSubclassOf<UBaseBlock> BlockClass, FVector TileKey);
+	void InitializeTerrain();
 };

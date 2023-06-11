@@ -19,6 +19,8 @@ public:
 	UPROPERTY(EditAnywhere, Meta = (ClampMin = 0.000001))
 		float TileLength = 100.0f;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		TArray<FVector> TilesToFill;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		TArray<FVector> FilledTiles;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		UInstancedStaticMeshComponent* BlockMesh;

@@ -14,25 +14,25 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define AUTOMAFARM_AutomafarmCharacter_generated_h
 
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_19_DELEGATE \
+#define FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_22_DELEGATE \
 AUTOMAFARM_API void FKFOnPlayerMoved_DelegateWrapper(const FMulticastScriptDelegate& KFOnPlayerMoved, FVector PlayerLoc);
 
 
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_24_SPARSE_DATA
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_24_RPC_WRAPPERS \
+#define FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_27_SPARSE_DATA
+#define FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_27_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execGetHasRifle); \
 	DECLARE_FUNCTION(execSetHasRifle);
 
 
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_24_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_27_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execGetHasRifle); \
 	DECLARE_FUNCTION(execSetHasRifle);
 
 
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_24_ACCESSORS
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_24_INCLASS_NO_PURE_DECLS \
+#define FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_27_ACCESSORS
+#define FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_27_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAAutomafarmCharacter(); \
 	friend struct Z_Construct_UClass_AAutomafarmCharacter_Statics; \
@@ -41,7 +41,7 @@ public: \
 	DECLARE_SERIALIZER(AAutomafarmCharacter)
 
 
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_24_INCLASS \
+#define FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_27_INCLASS \
 private: \
 	static void StaticRegisterNativesAAutomafarmCharacter(); \
 	friend struct Z_Construct_UClass_AAutomafarmCharacter_Statics; \
@@ -50,7 +50,7 @@ public: \
 	DECLARE_SERIALIZER(AAutomafarmCharacter)
 
 
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_24_STANDARD_CONSTRUCTORS \
+#define FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_27_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AAutomafarmCharacter(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AAutomafarmCharacter) \
@@ -64,7 +64,7 @@ public: \
 	NO_API virtual ~AAutomafarmCharacter();
 
 
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_24_ENHANCED_CONSTRUCTORS \
+#define FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_27_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AAutomafarmCharacter(AAutomafarmCharacter&&); \
@@ -76,27 +76,27 @@ public: \
 	NO_API virtual ~AAutomafarmCharacter();
 
 
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_21_PROLOG
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_24_GENERATED_BODY_LEGACY \
+#define FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_24_PROLOG
+#define FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_27_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_24_SPARSE_DATA \
-	FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_24_RPC_WRAPPERS \
-	FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_24_ACCESSORS \
-	FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_24_INCLASS \
-	FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_24_STANDARD_CONSTRUCTORS \
+	FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_27_SPARSE_DATA \
+	FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_27_RPC_WRAPPERS \
+	FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_27_ACCESSORS \
+	FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_27_INCLASS \
+	FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_27_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_24_GENERATED_BODY \
+#define FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_27_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_24_SPARSE_DATA \
-	FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_24_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_24_ACCESSORS \
-	FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_24_INCLASS_NO_PURE_DECLS \
-	FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_24_ENHANCED_CONSTRUCTORS \
+	FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_27_SPARSE_DATA \
+	FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_27_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_27_ACCESSORS \
+	FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_27_INCLASS_NO_PURE_DECLS \
+	FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_27_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
