@@ -11,9 +11,8 @@ void EmptyLinkFunctionForGeneratedCodeBaseBlock() {}
 // Cross Module References
 	AUTOMAFARM_API UClass* Z_Construct_UClass_UBaseBlock();
 	AUTOMAFARM_API UClass* Z_Construct_UClass_UBaseBlock_NoRegister();
-	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
+	AUTOMAFARM_API UClass* Z_Construct_UClass_UPlaceableObject();
 	ENGINE_API UClass* Z_Construct_UClass_UInstancedStaticMeshComponent_NoRegister();
-	ENGINE_API UClass* Z_Construct_UClass_UPrimitiveComponent();
 	UPackage* Z_Construct_UPackage__Script_Automafarm();
 // End Cross Module References
 	void UBaseBlock::StaticRegisterNativesUBaseBlock()
@@ -34,16 +33,6 @@ void EmptyLinkFunctionForGeneratedCodeBaseBlock() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_TileLength_MetaData[];
 #endif
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_TileLength;
-		static const UECodeGen_Private::FStructPropertyParams NewProp_TilesToFill_Inner;
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_TilesToFill_MetaData[];
-#endif
-		static const UECodeGen_Private::FArrayPropertyParams NewProp_TilesToFill;
-		static const UECodeGen_Private::FStructPropertyParams NewProp_FilledTiles_Inner;
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_FilledTiles_MetaData[];
-#endif
-		static const UECodeGen_Private::FArrayPropertyParams NewProp_FilledTiles;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_BlockMesh_MetaData[];
 #endif
@@ -53,7 +42,7 @@ void EmptyLinkFunctionForGeneratedCodeBaseBlock() {}
 		static const UECodeGen_Private::FClassParams ClassParams;
 	};
 	UObject* (*const Z_Construct_UClass_UBaseBlock_Statics::DependentSingletons[])() = {
-		(UObject* (*)())Z_Construct_UClass_UPrimitiveComponent,
+		(UObject* (*)())Z_Construct_UClass_UPlaceableObject,
 		(UObject* (*)())Z_Construct_UPackage__Script_Automafarm,
 	};
 #if WITH_METADATA
@@ -73,22 +62,6 @@ void EmptyLinkFunctionForGeneratedCodeBaseBlock() {}
 	};
 #endif
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UBaseBlock_Statics::NewProp_TileLength = { "TileLength", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UBaseBlock, TileLength), METADATA_PARAMS(Z_Construct_UClass_UBaseBlock_Statics::NewProp_TileLength_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UBaseBlock_Statics::NewProp_TileLength_MetaData)) };
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UBaseBlock_Statics::NewProp_TilesToFill_Inner = { "TilesToFill", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UBaseBlock_Statics::NewProp_TilesToFill_MetaData[] = {
-		{ "Category", "BaseBlock" },
-		{ "ModuleRelativePath", "BaseBlock.h" },
-	};
-#endif
-	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UBaseBlock_Statics::NewProp_TilesToFill = { "TilesToFill", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UBaseBlock, TilesToFill), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_UBaseBlock_Statics::NewProp_TilesToFill_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UBaseBlock_Statics::NewProp_TilesToFill_MetaData)) };
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UBaseBlock_Statics::NewProp_FilledTiles_Inner = { "FilledTiles", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UBaseBlock_Statics::NewProp_FilledTiles_MetaData[] = {
-		{ "Category", "BaseBlock" },
-		{ "ModuleRelativePath", "BaseBlock.h" },
-	};
-#endif
-	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UBaseBlock_Statics::NewProp_FilledTiles = { "FilledTiles", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UBaseBlock, FilledTiles), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_UBaseBlock_Statics::NewProp_FilledTiles_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UBaseBlock_Statics::NewProp_FilledTiles_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UBaseBlock_Statics::NewProp_BlockMesh_MetaData[] = {
 		{ "Category", "BaseBlock" },
@@ -99,10 +72,6 @@ void EmptyLinkFunctionForGeneratedCodeBaseBlock() {}
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UBaseBlock_Statics::NewProp_BlockMesh = { "BlockMesh", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UBaseBlock, BlockMesh), Z_Construct_UClass_UInstancedStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UBaseBlock_Statics::NewProp_BlockMesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UBaseBlock_Statics::NewProp_BlockMesh_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UBaseBlock_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UBaseBlock_Statics::NewProp_TileLength,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UBaseBlock_Statics::NewProp_TilesToFill_Inner,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UBaseBlock_Statics::NewProp_TilesToFill,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UBaseBlock_Statics::NewProp_FilledTiles_Inner,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UBaseBlock_Statics::NewProp_FilledTiles,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UBaseBlock_Statics::NewProp_BlockMesh,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_UBaseBlock_Statics::StaticCppClassTypeInfo = {
@@ -142,9 +111,9 @@ void EmptyLinkFunctionForGeneratedCodeBaseBlock() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_BaseBlock_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UBaseBlock, UBaseBlock::StaticClass, TEXT("UBaseBlock"), &Z_Registration_Info_UClass_UBaseBlock, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UBaseBlock), 3751551715U) },
+		{ Z_Construct_UClass_UBaseBlock, UBaseBlock::StaticClass, TEXT("UBaseBlock"), &Z_Registration_Info_UClass_UBaseBlock, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UBaseBlock), 553168791U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_BaseBlock_h_1525620353(TEXT("/Script/Automafarm"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_BaseBlock_h_850865980(TEXT("/Script/Automafarm"),
 		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_BaseBlock_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_BaseBlock_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

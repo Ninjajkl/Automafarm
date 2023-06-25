@@ -8,5 +8,6 @@
 UENUM(BlueprintType)
 enum class ETileType : uint8 {
 	BLOCK UMETA(DisplayName = "Block"),
-	PIVOTPAPER UMETA(DisplayName = "PivotPaper")
+	PIVOTPAPER UMETA(DisplayName = "PivotPaper"),
+	DEFAULT UMETA(DisplayName = "Default")
 };

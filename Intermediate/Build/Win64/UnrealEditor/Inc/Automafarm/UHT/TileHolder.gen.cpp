@@ -9,8 +9,8 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeTileHolder() {}
 // Cross Module References
-	AUTOMAFARM_API UClass* Z_Construct_UClass_APivotPaper_NoRegister();
 	AUTOMAFARM_API UClass* Z_Construct_UClass_UBaseBlock_NoRegister();
+	AUTOMAFARM_API UClass* Z_Construct_UClass_UPivotPaper_NoRegister();
 	AUTOMAFARM_API UEnum* Z_Construct_UEnum_Automafarm_ETileType();
 	AUTOMAFARM_API UScriptStruct* Z_Construct_UScriptStruct_FTileHolder();
 	UPackage* Z_Construct_UPackage__Script_Automafarm();
@@ -70,7 +70,7 @@ template<> AUTOMAFARM_API UScriptStruct* StaticStruct<FTileHolder>()
 		{ "ToolTip", "Defaults to PivotPaper" },
 	};
 #endif
-	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UScriptStruct_FTileHolder_Statics::NewProp_TileType = { "TileType", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FTileHolder, TileType), Z_Construct_UEnum_Automafarm_ETileType, METADATA_PARAMS(Z_Construct_UScriptStruct_FTileHolder_Statics::NewProp_TileType_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FTileHolder_Statics::NewProp_TileType_MetaData)) }; // 2629470500
+	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UScriptStruct_FTileHolder_Statics::NewProp_TileType = { "TileType", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FTileHolder, TileType), Z_Construct_UEnum_Automafarm_ETileType, METADATA_PARAMS(Z_Construct_UScriptStruct_FTileHolder_Statics::NewProp_TileType_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FTileHolder_Statics::NewProp_TileType_MetaData)) }; // 3146826733
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FTileHolder_Statics::NewProp_CoreBlock_MetaData[] = {
 		{ "EditInline", "true" },
@@ -80,10 +80,11 @@ template<> AUTOMAFARM_API UScriptStruct* StaticStruct<FTileHolder>()
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FTileHolder_Statics::NewProp_CoreBlock = { "CoreBlock", nullptr, (EPropertyFlags)0x0010000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FTileHolder, CoreBlock), Z_Construct_UClass_UBaseBlock_NoRegister, METADATA_PARAMS(Z_Construct_UScriptStruct_FTileHolder_Statics::NewProp_CoreBlock_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FTileHolder_Statics::NewProp_CoreBlock_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FTileHolder_Statics::NewProp_CorePivotPaper_MetaData[] = {
+		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Public/TileHolder.h" },
 	};
 #endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FTileHolder_Statics::NewProp_CorePivotPaper = { "CorePivotPaper", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FTileHolder, CorePivotPaper), Z_Construct_UClass_APivotPaper_NoRegister, METADATA_PARAMS(Z_Construct_UScriptStruct_FTileHolder_Statics::NewProp_CorePivotPaper_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FTileHolder_Statics::NewProp_CorePivotPaper_MetaData)) };
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FTileHolder_Statics::NewProp_CorePivotPaper = { "CorePivotPaper", nullptr, (EPropertyFlags)0x0010000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FTileHolder, CorePivotPaper), Z_Construct_UClass_UPivotPaper_NoRegister, METADATA_PARAMS(Z_Construct_UScriptStruct_FTileHolder_Statics::NewProp_CorePivotPaper_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FTileHolder_Statics::NewProp_CorePivotPaper_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FTileHolder_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FTileHolder_Statics::NewProp_TileType_Underlying,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FTileHolder_Statics::NewProp_TileType,
@@ -116,9 +117,9 @@ template<> AUTOMAFARM_API UScriptStruct* StaticStruct<FTileHolder>()
 		static const FStructRegisterCompiledInInfo ScriptStructInfo[];
 	};
 	const FStructRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_TileHolder_h_Statics::ScriptStructInfo[] = {
-		{ FTileHolder::StaticStruct, Z_Construct_UScriptStruct_FTileHolder_Statics::NewStructOps, TEXT("TileHolder"), &Z_Registration_Info_UScriptStruct_TileHolder, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FTileHolder), 1801689747U) },
+		{ FTileHolder::StaticStruct, Z_Construct_UScriptStruct_FTileHolder_Statics::NewStructOps, TEXT("TileHolder"), &Z_Registration_Info_UScriptStruct_TileHolder, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FTileHolder), 2260507822U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_TileHolder_h_756829806(TEXT("/Script/Automafarm"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_TileHolder_h_2139562629(TEXT("/Script/Automafarm"),
 		nullptr, 0,
 		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_TileHolder_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_TileHolder_h_Statics::ScriptStructInfo),
 		nullptr, 0);

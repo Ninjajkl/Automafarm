@@ -5,24 +5,22 @@
 #include "CoreMinimal.h"
 #include "Components/InstancedStaticMeshComponent.h"
 #include "Components/PrimitiveComponent.h"
+#include "PlaceableObject.h"
 #include "Templates/Tuple.h"
+#include "PlaceableObject.h"
 #include "BaseBlock.generated.h"
 
 UCLASS(Blueprintable, BlueprintType)
-class AUTOMAFARM_API UBaseBlock : public UPrimitiveComponent
+class AUTOMAFARM_API UBaseBlock : public UPlaceableObject
 {
 	GENERATED_BODY()
 public:	
 	// Sets default values for this actor's properties
 	UBaseBlock();
 
-	UPROPERTY(EditAnywhere, Meta = (ClampMin = 0.000001))
+	UPROPERTY(EditAnywhere, Meta = (ClampMin = 0.000001), Category = "BaseBlock")
 		float TileLength = 100.0f;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-		TArray<FVector> TilesToFill;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-		TArray<FVector> FilledTiles;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "BaseBlock")
 		UInstancedStaticMeshComponent* BlockMesh;
 protected:
 public:	

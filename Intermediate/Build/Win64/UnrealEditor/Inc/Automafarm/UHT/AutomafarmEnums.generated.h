@@ -20,7 +20,8 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 #define FOREACH_ENUM_ETILETYPE(op) \
 	op(ETileType::BLOCK) \
-	op(ETileType::PIVOTPAPER) 
+	op(ETileType::PIVOTPAPER) \
+	op(ETileType::DEFAULT) 
 
 enum class ETileType : uint8;
 template<> struct TIsUEnumClass<ETileType> { enum { Value = true }; };

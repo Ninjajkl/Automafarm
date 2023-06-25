@@ -11,8 +11,9 @@ void EmptyLinkFunctionForGeneratedCodeAutomafarmCharacter() {}
 // Cross Module References
 	AUTOMAFARM_API UClass* Z_Construct_UClass_AAutomafarmCharacter();
 	AUTOMAFARM_API UClass* Z_Construct_UClass_AAutomafarmCharacter_NoRegister();
-	AUTOMAFARM_API UClass* Z_Construct_UClass_APivotPaper_NoRegister();
 	AUTOMAFARM_API UClass* Z_Construct_UClass_UBaseBlock_NoRegister();
+	AUTOMAFARM_API UClass* Z_Construct_UClass_UPivotPaper_NoRegister();
+	AUTOMAFARM_API UClass* Z_Construct_UClass_UPlaceableObject_NoRegister();
 	AUTOMAFARM_API UFunction* Z_Construct_UDelegateFunction_Automafarm_KFOnPlayerMoved__DelegateSignature();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
@@ -65,109 +66,8 @@ void FKFOnPlayerMoved_DelegateWrapper(const FMulticastScriptDelegate& KFOnPlayer
 	Parms.PlayerLoc=PlayerLoc;
 	KFOnPlayerMoved.ProcessMulticastDelegate<UObject>(&Parms);
 }
-	DEFINE_FUNCTION(AAutomafarmCharacter::execGetHasRifle)
-	{
-		P_FINISH;
-		P_NATIVE_BEGIN;
-		*(bool*)Z_Param__Result=P_THIS->GetHasRifle();
-		P_NATIVE_END;
-	}
-	DEFINE_FUNCTION(AAutomafarmCharacter::execSetHasRifle)
-	{
-		P_GET_UBOOL(Z_Param_bNewHasRifle);
-		P_FINISH;
-		P_NATIVE_BEGIN;
-		P_THIS->SetHasRifle(Z_Param_bNewHasRifle);
-		P_NATIVE_END;
-	}
 	void AAutomafarmCharacter::StaticRegisterNativesAAutomafarmCharacter()
 	{
-		UClass* Class = AAutomafarmCharacter::StaticClass();
-		static const FNameNativePtrPair Funcs[] = {
-			{ "GetHasRifle", &AAutomafarmCharacter::execGetHasRifle },
-			{ "SetHasRifle", &AAutomafarmCharacter::execSetHasRifle },
-		};
-		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
-	}
-	struct Z_Construct_UFunction_AAutomafarmCharacter_GetHasRifle_Statics
-	{
-		struct AutomafarmCharacter_eventGetHasRifle_Parms
-		{
-			bool ReturnValue;
-		};
-		static void NewProp_ReturnValue_SetBit(void* Obj);
-		static const UECodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
-		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
-#endif
-		static const UECodeGen_Private::FFunctionParams FuncParams;
-	};
-	void Z_Construct_UFunction_AAutomafarmCharacter_GetHasRifle_Statics::NewProp_ReturnValue_SetBit(void* Obj)
-	{
-		((AutomafarmCharacter_eventGetHasRifle_Parms*)Obj)->ReturnValue = 1;
-	}
-	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AAutomafarmCharacter_GetHasRifle_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, sizeof(bool), sizeof(AutomafarmCharacter_eventGetHasRifle_Parms), &Z_Construct_UFunction_AAutomafarmCharacter_GetHasRifle_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(nullptr, 0) };
-	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AAutomafarmCharacter_GetHasRifle_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AAutomafarmCharacter_GetHasRifle_Statics::NewProp_ReturnValue,
-	};
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AAutomafarmCharacter_GetHasRifle_Statics::Function_MetaDataParams[] = {
-		{ "Category", "Weapon" },
-		{ "Comment", "/** Getter for the bool */" },
-		{ "ModuleRelativePath", "AutomafarmCharacter.h" },
-		{ "ToolTip", "Getter for the bool" },
-	};
-#endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AAutomafarmCharacter_GetHasRifle_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AAutomafarmCharacter, nullptr, "GetHasRifle", nullptr, nullptr, sizeof(Z_Construct_UFunction_AAutomafarmCharacter_GetHasRifle_Statics::AutomafarmCharacter_eventGetHasRifle_Parms), Z_Construct_UFunction_AAutomafarmCharacter_GetHasRifle_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AAutomafarmCharacter_GetHasRifle_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AAutomafarmCharacter_GetHasRifle_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AAutomafarmCharacter_GetHasRifle_Statics::Function_MetaDataParams)) };
-	UFunction* Z_Construct_UFunction_AAutomafarmCharacter_GetHasRifle()
-	{
-		static UFunction* ReturnFunction = nullptr;
-		if (!ReturnFunction)
-		{
-			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AAutomafarmCharacter_GetHasRifle_Statics::FuncParams);
-		}
-		return ReturnFunction;
-	}
-	struct Z_Construct_UFunction_AAutomafarmCharacter_SetHasRifle_Statics
-	{
-		struct AutomafarmCharacter_eventSetHasRifle_Parms
-		{
-			bool bNewHasRifle;
-		};
-		static void NewProp_bNewHasRifle_SetBit(void* Obj);
-		static const UECodeGen_Private::FBoolPropertyParams NewProp_bNewHasRifle;
-		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
-#endif
-		static const UECodeGen_Private::FFunctionParams FuncParams;
-	};
-	void Z_Construct_UFunction_AAutomafarmCharacter_SetHasRifle_Statics::NewProp_bNewHasRifle_SetBit(void* Obj)
-	{
-		((AutomafarmCharacter_eventSetHasRifle_Parms*)Obj)->bNewHasRifle = 1;
-	}
-	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AAutomafarmCharacter_SetHasRifle_Statics::NewProp_bNewHasRifle = { "bNewHasRifle", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, sizeof(bool), sizeof(AutomafarmCharacter_eventSetHasRifle_Parms), &Z_Construct_UFunction_AAutomafarmCharacter_SetHasRifle_Statics::NewProp_bNewHasRifle_SetBit, METADATA_PARAMS(nullptr, 0) };
-	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AAutomafarmCharacter_SetHasRifle_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AAutomafarmCharacter_SetHasRifle_Statics::NewProp_bNewHasRifle,
-	};
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AAutomafarmCharacter_SetHasRifle_Statics::Function_MetaDataParams[] = {
-		{ "Category", "Weapon" },
-		{ "Comment", "/** Setter to set the bool */" },
-		{ "ModuleRelativePath", "AutomafarmCharacter.h" },
-		{ "ToolTip", "Setter to set the bool" },
-	};
-#endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AAutomafarmCharacter_SetHasRifle_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AAutomafarmCharacter, nullptr, "SetHasRifle", nullptr, nullptr, sizeof(Z_Construct_UFunction_AAutomafarmCharacter_SetHasRifle_Statics::AutomafarmCharacter_eventSetHasRifle_Parms), Z_Construct_UFunction_AAutomafarmCharacter_SetHasRifle_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AAutomafarmCharacter_SetHasRifle_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AAutomafarmCharacter_SetHasRifle_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AAutomafarmCharacter_SetHasRifle_Statics::Function_MetaDataParams)) };
-	UFunction* Z_Construct_UFunction_AAutomafarmCharacter_SetHasRifle()
-	{
-		static UFunction* ReturnFunction = nullptr;
-		if (!ReturnFunction)
-		{
-			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AAutomafarmCharacter_SetHasRifle_Statics::FuncParams);
-		}
-		return ReturnFunction;
 	}
 	IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(AAutomafarmCharacter);
 	UClass* Z_Construct_UClass_AAutomafarmCharacter_NoRegister()
@@ -177,7 +77,6 @@ void FKFOnPlayerMoved_DelegateWrapper(const FMulticastScriptDelegate& KFOnPlayer
 	struct Z_Construct_UClass_AAutomafarmCharacter_Statics
 	{
 		static UObject* (*const DependentSingletons[])();
-		static const FClassFunctionLinkInfo FuncInfo[];
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
@@ -214,11 +113,6 @@ void FKFOnPlayerMoved_DelegateWrapper(const FMulticastScriptDelegate& KFOnPlayer
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_LookAction;
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_bHasRifle_MetaData[];
-#endif
-		static void NewProp_bHasRifle_SetBit(void* Obj);
-		static const UECodeGen_Private::FBoolPropertyParams NewProp_bHasRifle;
-#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_TileLength_MetaData[];
 #endif
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_TileLength;
@@ -230,6 +124,10 @@ void FKFOnPlayerMoved_DelegateWrapper(const FMulticastScriptDelegate& KFOnPlayer
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_BlockClass_MetaData[];
 #endif
 		static const UECodeGen_Private::FClassPropertyParams NewProp_BlockClass;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_PlaceableClass_MetaData[];
+#endif
+		static const UECodeGen_Private::FClassPropertyParams NewProp_PlaceableClass;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -237,10 +135,6 @@ void FKFOnPlayerMoved_DelegateWrapper(const FMulticastScriptDelegate& KFOnPlayer
 	UObject* (*const Z_Construct_UClass_AAutomafarmCharacter_Statics::DependentSingletons[])() = {
 		(UObject* (*)())Z_Construct_UClass_ACharacter,
 		(UObject* (*)())Z_Construct_UPackage__Script_Automafarm,
-	};
-	const FClassFunctionLinkInfo Z_Construct_UClass_AAutomafarmCharacter_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_AAutomafarmCharacter_GetHasRifle, "GetHasRifle" }, // 3966382722
-		{ &Z_Construct_UFunction_AAutomafarmCharacter_SetHasRifle, "SetHasRifle" }, // 2183917890
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAutomafarmCharacter_Statics::Class_MetaDataParams[] = {
@@ -327,19 +221,6 @@ void FKFOnPlayerMoved_DelegateWrapper(const FMulticastScriptDelegate& KFOnPlayer
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_LookAction = { "LookAction", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AAutomafarmCharacter, LookAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_LookAction_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_LookAction_MetaData)) };
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_bHasRifle_MetaData[] = {
-		{ "Category", "Weapon" },
-		{ "Comment", "/** Bool for AnimBP to switch to another animation set */" },
-		{ "ModuleRelativePath", "AutomafarmCharacter.h" },
-		{ "ToolTip", "Bool for AnimBP to switch to another animation set" },
-	};
-#endif
-	void Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_bHasRifle_SetBit(void* Obj)
-	{
-		((AAutomafarmCharacter*)Obj)->bHasRifle = 1;
-	}
-	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_bHasRifle = { "bHasRifle", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, sizeof(bool), sizeof(AAutomafarmCharacter), &Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_bHasRifle_SetBit, METADATA_PARAMS(Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_bHasRifle_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_bHasRifle_MetaData)) };
-#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_TileLength_MetaData[] = {
 		{ "Category", "AutomafarmCharacter" },
 		{ "ClampMin", "0.000001" },
@@ -355,7 +236,7 @@ void FKFOnPlayerMoved_DelegateWrapper(const FMulticastScriptDelegate& KFOnPlayer
 		{ "ToolTip", "End of APawn interface" },
 	};
 #endif
-	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_PivPClass = { "PivPClass", nullptr, (EPropertyFlags)0x0024080000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AAutomafarmCharacter, PivPClass), Z_Construct_UClass_UClass, Z_Construct_UClass_APivotPaper_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_PivPClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_PivPClass_MetaData)) };
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_PivPClass = { "PivPClass", nullptr, (EPropertyFlags)0x0024080000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AAutomafarmCharacter, PivPClass), Z_Construct_UClass_UClass, Z_Construct_UClass_UPivotPaper_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_PivPClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_PivPClass_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_BlockClass_MetaData[] = {
 		{ "Category", "AutomafarmCharacter" },
@@ -363,6 +244,13 @@ void FKFOnPlayerMoved_DelegateWrapper(const FMulticastScriptDelegate& KFOnPlayer
 	};
 #endif
 	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_BlockClass = { "BlockClass", nullptr, (EPropertyFlags)0x0024080000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AAutomafarmCharacter, BlockClass), Z_Construct_UClass_UClass, Z_Construct_UClass_UBaseBlock_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_BlockClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_BlockClass_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_PlaceableClass_MetaData[] = {
+		{ "Category", "AutomafarmCharacter" },
+		{ "ModuleRelativePath", "AutomafarmCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_PlaceableClass = { "PlaceableClass", nullptr, (EPropertyFlags)0x0024080000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AAutomafarmCharacter, PlaceableClass), Z_Construct_UClass_UClass, Z_Construct_UClass_UPlaceableObject_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_PlaceableClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_PlaceableClass_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AAutomafarmCharacter_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_Mesh1P,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_FirstPersonCameraComponent,
@@ -372,10 +260,10 @@ void FKFOnPlayerMoved_DelegateWrapper(const FMulticastScriptDelegate& KFOnPlayer
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_InteractAction,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_OnPlayerMoved,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_LookAction,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_bHasRifle,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_TileLength,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_PivPClass,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_BlockClass,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAutomafarmCharacter_Statics::NewProp_PlaceableClass,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AAutomafarmCharacter_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AAutomafarmCharacter>::IsAbstract,
@@ -385,11 +273,11 @@ void FKFOnPlayerMoved_DelegateWrapper(const FMulticastScriptDelegate& KFOnPlayer
 		"Game",
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
-		FuncInfo,
+		nullptr,
 		Z_Construct_UClass_AAutomafarmCharacter_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
-		UE_ARRAY_COUNT(FuncInfo),
+		0,
 		UE_ARRAY_COUNT(Z_Construct_UClass_AAutomafarmCharacter_Statics::PropPointers),
 		0,
 		0x008000A4u,
@@ -414,9 +302,9 @@ void FKFOnPlayerMoved_DelegateWrapper(const FMulticastScriptDelegate& KFOnPlayer
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AAutomafarmCharacter, AAutomafarmCharacter::StaticClass, TEXT("AAutomafarmCharacter"), &Z_Registration_Info_UClass_AAutomafarmCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAutomafarmCharacter), 1279222414U) },
+		{ Z_Construct_UClass_AAutomafarmCharacter, AAutomafarmCharacter::StaticClass, TEXT("AAutomafarmCharacter"), &Z_Registration_Info_UClass_AAutomafarmCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAutomafarmCharacter), 1478502582U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_2080869418(TEXT("/Script/Automafarm"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_3434768970(TEXT("/Script/Automafarm"),
 		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

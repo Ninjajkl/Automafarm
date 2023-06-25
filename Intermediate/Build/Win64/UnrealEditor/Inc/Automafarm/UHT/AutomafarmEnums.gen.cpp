@@ -36,12 +36,15 @@ void EmptyLinkFunctionForGeneratedCodeAutomafarmEnums() {}
 	const UECodeGen_Private::FEnumeratorParam Z_Construct_UEnum_Automafarm_ETileType_Statics::Enumerators[] = {
 		{ "ETileType::BLOCK", (int64)ETileType::BLOCK },
 		{ "ETileType::PIVOTPAPER", (int64)ETileType::PIVOTPAPER },
+		{ "ETileType::DEFAULT", (int64)ETileType::DEFAULT },
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UEnum_Automafarm_ETileType_Statics::Enum_MetaDataParams[] = {
 		{ "BLOCK.DisplayName", "Block" },
 		{ "BLOCK.Name", "ETileType::BLOCK" },
 		{ "BlueprintType", "true" },
+		{ "DEFAULT.DisplayName", "Default" },
+		{ "DEFAULT.Name", "ETileType::DEFAULT" },
 		{ "ModuleRelativePath", "Public/AutomafarmEnums.h" },
 		{ "PIVOTPAPER.DisplayName", "PivotPaper" },
 		{ "PIVOTPAPER.Name", "ETileType::PIVOTPAPER" },
@@ -72,9 +75,9 @@ void EmptyLinkFunctionForGeneratedCodeAutomafarmEnums() {}
 		static const FEnumRegisterCompiledInInfo EnumInfo[];
 	};
 	const FEnumRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_AutomafarmEnums_h_Statics::EnumInfo[] = {
-		{ ETileType_StaticEnum, TEXT("ETileType"), &Z_Registration_Info_UEnum_ETileType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 2629470500U) },
+		{ ETileType_StaticEnum, TEXT("ETileType"), &Z_Registration_Info_UEnum_ETileType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3146826733U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_AutomafarmEnums_h_1094504827(TEXT("/Script/Automafarm"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_AutomafarmEnums_h_171081893(TEXT("/Script/Automafarm"),
 		nullptr, 0,
 		nullptr, 0,
 		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_AutomafarmEnums_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_AutomafarmEnums_h_Statics::EnumInfo));

@@ -7,36 +7,30 @@
 #include "PaperFlipbook.h"
 #include "PaperFlipbookComponent.h"
 #include "PaperZDAnimationComponent.h"
+#include "PlaceableObject.h"
 #include "PivotPaper.generated.h"
 
 UCLASS()
-class AUTOMAFARM_API APivotPaper : public AActor
+class AUTOMAFARM_API UPivotPaper : public UPlaceableObject
 {
 	GENERATED_BODY()
 	
 public:	
 	// Sets default values for this actor's properties
-	APivotPaper();
+	UPivotPaper();
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "PivotPaper")
 		UPaperFlipbookComponent* FlipbookComp;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PivotPaper")
 		UPaperZDAnimationComponent* ZDAnimComp;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-		TArray<FVector> TilesToFill;
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-		TArray<FVector> FilledTiles;
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-	virtual void OnConstruction(const FTransform& Transform) override;
 
+public:
 	UFUNCTION()
 		void PlayerMoved(FVector PlayerLoc);
+	FVector GetPPCWLocation();
+	void SetPPCWRotation(FRotator rotator);
 
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
-	virtual FVector GetPPCWLocation();
-	virtual void SetPPCWRotation(FRotator rotator);
 };

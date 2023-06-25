@@ -92,34 +92,22 @@
     <ClInclude Include="..\..\Source\Automafarm\PivotPaper.h">
       <Filter>Source\Automafarm</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\Automafarm\SamplePrimitiveComponent.cpp">
-      <Filter>Source\Automafarm</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Automafarm\SamplePrimitiveComponent.h">
-      <Filter>Source\Automafarm</Filter>
-    </ClInclude>
     <ClCompile Include="..\..\Source\Automafarm\TerrainGenerator.cpp">
       <Filter>Source\Automafarm</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Automafarm\TerrainGenerator.h">
       <Filter>Source\Automafarm</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\Automafarm\TP_PickUpComponent.cpp">
-      <Filter>Source\Automafarm</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Automafarm\TP_PickUpComponent.h">
-      <Filter>Source\Automafarm</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Automafarm\TP_WeaponComponent.cpp">
-      <Filter>Source\Automafarm</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Automafarm\TP_WeaponComponent.h">
-      <Filter>Source\Automafarm</Filter>
-    </ClInclude>
     <Filter Include="Source\Automafarm\Private">
       <UniqueIdentifier>{C1A170FA-4E50-32C6-AA34-9F99082A600E}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Automafarm\Private\AutomafarmEnums.cpp">
+      <Filter>Source\Automafarm\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Automafarm\Private\Item.cpp">
+      <Filter>Source\Automafarm\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Automafarm\Private\PlaceableObject.cpp">
       <Filter>Source\Automafarm\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\Automafarm\Private\TileHolder.cpp">
@@ -129,6 +117,12 @@
       <UniqueIdentifier>{584B8870-FEA6-3050-A161-80F16E029F5F}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\Automafarm\Public\AutomafarmEnums.h">
+      <Filter>Source\Automafarm\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Automafarm\Public\Item.h">
+      <Filter>Source\Automafarm\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Automafarm\Public\PlaceableObject.h">
       <Filter>Source\Automafarm\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Automafarm\Public\TileHolder.h">

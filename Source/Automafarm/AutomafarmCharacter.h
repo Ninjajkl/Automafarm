@@ -15,9 +15,10 @@ class USceneComponent;
 class UCameraComponent;
 class UAnimMontage;
 class USoundBase;
-class ACrop;
-class APivotPaper;
+class UCrop;
+class UPivotPaper;
 class UBaseBlock;
+class UPlaceableObject;
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FKFOnPlayerMoved,FVector,PlayerLoc);
 
@@ -65,18 +66,6 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 		class UInputAction* LookAction;
 
-	/** Bool for AnimBP to switch to another animation set */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Weapon)
-		bool bHasRifle;
-
-	/** Setter to set the bool */
-	UFUNCTION(BlueprintCallable, Category = Weapon)
-		void SetHasRifle(bool bNewHasRifle);
-
-	/** Getter for the bool */
-	UFUNCTION(BlueprintCallable, Category = Weapon)
-		bool GetHasRifle();
-
 	UPROPERTY(EditAnywhere, Meta = (ClampMin = 0.000001))
 		float TileLength = 100.0f;
 
@@ -96,10 +85,11 @@ protected:
 	// End of APawn interface
 
 	UPROPERTY(EditAnywhere)
-		TSubclassOf<APivotPaper> PivPClass;
+		TSubclassOf<UPivotPaper> PivPClass;
 	UPROPERTY(EditAnywhere)
 		TSubclassOf<UBaseBlock> BlockClass;
-
+	UPROPERTY(EditAnywhere)
+		TSubclassOf<UPlaceableObject> PlaceableClass;
 public:
 	/** Returns Mesh1P subobject **/
 	USkeletalMeshComponent* GetMesh1P() const { return Mesh1P; }
@@ -108,8 +98,8 @@ public:
 
 	FVector AbsoluteToGrid(FVector aCoords);
 
-	void AddToLevelMap(ETileType TileType, FVector TileKey, APivotPaper* newPivotPaper = nullptr, UBaseBlock* newBlock = nullptr);
+	void PlaceHeldItem(TSubclassOf<UPlaceableObject> placeableClass, FVector TileKey);
 
-	bool ValidPlacement(TArray<FVector> TilesToCheck, FVector TileKey, bool checkEntities = false, FCollisionShape collisionShape = FCollisionShape::MakeSphere(-1.f));
+	bool ValidPlacement(TSubclassOf<UPlaceableObject> placeableClass, FVector TileKey);
 };
 

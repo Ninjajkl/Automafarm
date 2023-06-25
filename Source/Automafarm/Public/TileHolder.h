@@ -19,9 +19,9 @@ struct FTileHolder
 
 	//Defaults to PivotPaper
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-		ETileType TileType = ETileType::PIVOTPAPER;
+		ETileType TileType = ETileType::DEFAULT;
 	UPROPERTY()
 		UBaseBlock* CoreBlock = nullptr;
 	UPROPERTY()
-		APivotPaper* CorePivotPaper = nullptr;
+		UPivotPaper* CorePivotPaper = nullptr;
 };
