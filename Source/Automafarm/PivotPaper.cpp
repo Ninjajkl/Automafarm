@@ -27,9 +27,9 @@ UPivotPaper::UPivotPaper()
 
 	FlipbookComp = CreateDefaultSubobject<UPaperFlipbookComponent>("FlipbookComp");
 	//FlipbookComp->SetupAttachment(this);
-	FlipbookComp->SetRelativeScale3D(FVector(6.25, 6.25, 6.25));
+	//FlipbookComp->SetRelativeScale3D(FVector(6.25, 6.25, 6.25));
 	ZDAnimComp = CreateDefaultSubobject<UPaperZDAnimationComponent>("ZDAnimComp");
-	ZDAnimComp->InitRenderComponent(FlipbookComp);
+	//ZDAnimComp->InitRenderComponent(FlipbookComp);
 }
 
 // Called when the game starts or when spawned

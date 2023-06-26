@@ -101,5 +101,9 @@ public:
 	void PlaceHeldItem(TSubclassOf<UPlaceableObject> placeableClass, FVector TileKey);
 
 	bool ValidPlacement(TSubclassOf<UPlaceableObject> placeableClass, FVector TileKey);
+
+	FVector RotateByYaw(FVector Position, FVector ForwardVector);
+	FVector RoundVector(const FVector Vector);
+	TArray<FVector> RotateByYaw(TArray<FVector> Positions, FVector ForwardVector);
 };
 

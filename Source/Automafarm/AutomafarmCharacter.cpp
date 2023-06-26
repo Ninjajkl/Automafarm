@@ -138,7 +138,7 @@ void AAutomafarmCharacter::Interact(const FInputActionValue& Value)
 		}
 		*/
 		FVector SelectedTile = AbsoluteToGrid(HitResult.ImpactPoint+HitResult.ImpactNormal);
-	
+		
 		if(ValidPlacement(PlaceableClass, SelectedTile))
 		{
 			PlaceHeldItem(PlaceableClass, SelectedTile);
@@ -146,14 +146,43 @@ void AAutomafarmCharacter::Interact(const FInputActionValue& Value)
 	}
 }
 
+TArray<FVector> AAutomafarmCharacter::RotateByYaw(TArray<FVector> Positions, FVector ForwardVector)
+{
+	// Get the absolute values of X and Y components
+	float AbsX = FMath::Abs(ForwardVector.X);
+	float AbsY = FMath::Abs(ForwardVector.Y);
+
+	FVector AbsRotationAngle = AbsX > AbsY ? FVector(0, FMath::Sign(ForwardVector.X), 0) : FVector(-FMath::Sign(ForwardVector.Y), 0, 0);
+
+	// Calculate the Yaw angle
+	float YawAngle = AbsRotationAngle.Rotation().Yaw;
+
+	// Create a rotation quaternion based on the yaw angle
+	FQuat RotationQuat(FVector::UpVector, FMath::DegreesToRadians(YawAngle));
+
+	TArray<FVector> rotatedPositions = TArray<FVector>();
+
+	for(FVector position : Positions)
+	{
+		rotatedPositions.Add(RoundVector(RotationQuat.RotateVector(position)));
+	}
+
+	return rotatedPositions;
+}
+
 FVector AAutomafarmCharacter::AbsoluteToGrid(FVector aCoords) 
 {
 	return FVector(floor(aCoords[0]/TileLength), floor(aCoords[1] / TileLength), floor(aCoords[2] / TileLength));
 }
 
+FVector AAutomafarmCharacter::RoundVector(const FVector Vector)
+{
+	return FVector(FMath::RoundToInt(Vector.X), FMath::RoundToInt(Vector.Y), FMath::RoundToInt(Vector.Z));
+}
+
 bool AAutomafarmCharacter::ValidPlacement(TSubclassOf<UPlaceableObject> placeableClass, FVector TileKey)
 {
-	TArray<FVector> TilesToCheck = Cast<UPlaceableObject>(placeableClass->GetDefaultObject())->TilesToFill;
+	TArray<FVector> TilesToCheck = RotateByYaw(Cast<UPlaceableObject>(placeableClass->GetDefaultObject())->TilesToFill, GetFirstPersonCameraComponent()->GetForwardVector());
 	for (int i = 0; i < TilesToCheck.Num(); i++)
 	{
 		if (myGameState->LevelMap.Contains(TileKey + TilesToCheck[i]) ||
@@ -170,8 +199,7 @@ void AAutomafarmCharacter::PlaceHeldItem(TSubclassOf<UPlaceableObject> placeable
 	UPlaceableObject* placeableObject = Cast<UPlaceableObject>(placeableClass->GetDefaultObject());
 	FTileHolder newCoreTile;
 	newCoreTile.TileType = placeableObject->TileType;
-	TArray<FVector> TilesToFill = placeableObject->TilesToFill;
-	TArray<FVector> FilledTiles = placeableObject->FilledTiles;
+	TArray<FVector> TilesToFill = RotateByYaw(placeableObject->TilesToFill, GetFirstPersonCameraComponent()->GetForwardVector());
 	if (newCoreTile.TileType == ETileType::PIVOTPAPER) {
 		myGameState->AddPivotPaperComponent(placeableClass, TileKey * TileLength + FVector(50, 50, 150), GetFirstPersonCameraComponent()->GetComponentLocation());
 	}
@@ -185,7 +213,7 @@ void AAutomafarmCharacter::PlaceHeldItem(TSubclassOf<UPlaceableObject> placeable
 		if (newCoreTile.TileType == ETileType::BLOCK) {
 			Cast<UBaseBlock>(myGameState->InstancedObjectMap[placeableClass])->AddBlock(newTileKey * TileLength + FVector(50, 50, 50));
 		}
-		FilledTiles.Add(newTileKey);
+		placeableObject->FilledTiles.Add(newTileKey);
 		myGameState->LevelMap.Add(newTileKey, newCoreTile);
 	}
 }

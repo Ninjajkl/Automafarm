@@ -26,6 +26,7 @@ void AFarmGameStateBase::AddPivotPaperComponent(TSubclassOf<UPlaceableObject> Pi
 	UPivotPaper* NewPivotPaper = Cast<UPivotPaper>(TerrainHolder->AddComponentByClass(PivotClass, 0, FTransform(TileLoc), 0));
 	NewPivotPaper->FlipbookComp->SetRelativeLocation(TileLoc);
 	NewPivotPaper->PlayerMoved(PlayerLocation);
+	NewPivotPaper->ZDAnimComp->InitRenderComponent(NewPivotPaper->FlipbookComp);
 }
 
 void AFarmGameStateBase::InitializeTerrain()
@@ -35,5 +36,7 @@ void AFarmGameStateBase::InitializeTerrain()
 		TerrainHolder = GetWorld()->SpawnActor<AActor>();
 		TerrainHolder->SetActorLabel(TEXT("TerrainHolder"));
 		TerrainHolder->AddComponentByClass(UPrimitiveComponent::StaticClass(), 0, FTransform(FVector(0, 0, 0)), 0);
+		UPrimitiveComponent* newPrim = Cast<UPrimitiveComponent>(TerrainHolder->AddComponentByClass(UPrimitiveComponent::StaticClass(), 0, FTransform(FVector(0, 0, 0)), 0));
+		newPrim->SetupAttachment(TerrainHolder->GetRootComponent());
 	}
 }
