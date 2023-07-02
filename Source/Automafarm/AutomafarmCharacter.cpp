@@ -10,11 +10,13 @@
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "FarmGameStateBase.h"
+#include "GameFramework/PlayerInput.h"
+#include "GameFramework/CharacterMovementComponent.h"
 #include "Kismet/KismetMathLibrary.h"
 #include "Math/TransformNonVectorized.h"
 #include "Math/UnrealMathUtility.h"
 #include "Misc/CoreDelegates.h"
-#include "TileHolder.h"
+#include "Structs.h"
 #include "Engine/World.h"
 
 #define PlaceTrace ECC_GameTraceChannel1
@@ -45,8 +47,6 @@ AAutomafarmCharacter::AAutomafarmCharacter()
 	//Mesh1P->SetRelativeRotation(FRotator(0.9f, -19.19f, 5.2f));
 	Mesh1P->SetRelativeLocation(FVector(-30.f, 0.f, -150.f));
 
-	PivPClass = UPivotPaper::StaticClass();
-
 	myGameState = GetWorld() != NULL ? GetWorld()->GetGameState<AFarmGameStateBase>() : NULL;
 }
 
@@ -63,7 +63,7 @@ void AAutomafarmCharacter::BeginPlay()
 			Subsystem->AddMappingContext(DefaultMappingContext, 0);
 		}
 	}
-
+	GetCharacterMovement()->JumpZVelocity = JumpHeight;
 }
 
 //////////////////////////////////////////////////////////////////////////// Input

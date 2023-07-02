@@ -9,7 +9,7 @@
 #include "AutomafarmCharacter.h"
 #include "FarmGameStateBase.h"
 #include "Camera/CameraComponent.h"
-#include "TileHolder.h"
+#include "Structs.h"
 #include "Kismet/GameplayStatics.h"
 
 #define PlaceTrace ECC_GameTraceChannel1

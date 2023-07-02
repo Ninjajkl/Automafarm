@@ -4,17 +4,17 @@
 	DO NOT modify this manually! Edit the corresponding .h files instead!
 ===========================================================================*/
 
-// IWYU pragma: private, include "TileHolder.h"
+// IWYU pragma: private, include "Structs.h"
 #include "UObject/ObjectMacros.h"
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
-#ifdef AUTOMAFARM_TileHolder_generated_h
-#error "TileHolder.generated.h already included, missing '#pragma once' in TileHolder.h"
+#ifdef AUTOMAFARM_Structs_generated_h
+#error "Structs.generated.h already included, missing '#pragma once' in Structs.h"
 #endif
-#define AUTOMAFARM_TileHolder_generated_h
+#define AUTOMAFARM_Structs_generated_h
 
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_TileHolder_h_18_GENERATED_BODY \
+#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Structs_h_18_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FTileHolder_Statics; \
 	AUTOMAFARM_API static class UScriptStruct* StaticStruct();
 
@@ -22,7 +22,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 template<> AUTOMAFARM_API UScriptStruct* StaticStruct<struct FTileHolder>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Projects_Automafarm_5_2_Source_Automafarm_Public_TileHolder_h
+#define CURRENT_FILE_ID FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Structs_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

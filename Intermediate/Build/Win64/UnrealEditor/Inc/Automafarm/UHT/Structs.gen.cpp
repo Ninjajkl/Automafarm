@@ -5,9 +5,9 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Automafarm/Public/TileHolder.h"
+#include "Automafarm/Public/Structs.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
-void EmptyLinkFunctionForGeneratedCodeTileHolder() {}
+void EmptyLinkFunctionForGeneratedCodeStructs() {}
 // Cross Module References
 	AUTOMAFARM_API UClass* Z_Construct_UClass_UBaseBlock_NoRegister();
 	AUTOMAFARM_API UClass* Z_Construct_UClass_UPivotPaper_NoRegister();
@@ -53,8 +53,8 @@ template<> AUTOMAFARM_API UScriptStruct* StaticStruct<FTileHolder>()
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FTileHolder_Statics::Struct_MetaDataParams[] = {
 		{ "BlueprintType", "true" },
-		{ "Comment", "/**\n * \n */" },
-		{ "ModuleRelativePath", "Public/TileHolder.h" },
+		{ "Comment", "/**\n *\n */" },
+		{ "ModuleRelativePath", "Public/Structs.h" },
 	};
 #endif
 	void* Z_Construct_UScriptStruct_FTileHolder_Statics::NewStructOps()
@@ -66,7 +66,7 @@ template<> AUTOMAFARM_API UScriptStruct* StaticStruct<FTileHolder>()
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FTileHolder_Statics::NewProp_TileType_MetaData[] = {
 		{ "Category", "TileHolder" },
 		{ "Comment", "//Defaults to PivotPaper\n" },
-		{ "ModuleRelativePath", "Public/TileHolder.h" },
+		{ "ModuleRelativePath", "Public/Structs.h" },
 		{ "ToolTip", "Defaults to PivotPaper" },
 	};
 #endif
@@ -74,14 +74,14 @@ template<> AUTOMAFARM_API UScriptStruct* StaticStruct<FTileHolder>()
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FTileHolder_Statics::NewProp_CoreBlock_MetaData[] = {
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "Public/TileHolder.h" },
+		{ "ModuleRelativePath", "Public/Structs.h" },
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FTileHolder_Statics::NewProp_CoreBlock = { "CoreBlock", nullptr, (EPropertyFlags)0x0010000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FTileHolder, CoreBlock), Z_Construct_UClass_UBaseBlock_NoRegister, METADATA_PARAMS(Z_Construct_UScriptStruct_FTileHolder_Statics::NewProp_CoreBlock_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FTileHolder_Statics::NewProp_CoreBlock_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FTileHolder_Statics::NewProp_CorePivotPaper_MetaData[] = {
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "Public/TileHolder.h" },
+		{ "ModuleRelativePath", "Public/Structs.h" },
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FTileHolder_Statics::NewProp_CorePivotPaper = { "CorePivotPaper", nullptr, (EPropertyFlags)0x0010000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FTileHolder, CorePivotPaper), Z_Construct_UClass_UPivotPaper_NoRegister, METADATA_PARAMS(Z_Construct_UScriptStruct_FTileHolder_Statics::NewProp_CorePivotPaper_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FTileHolder_Statics::NewProp_CorePivotPaper_MetaData)) };
@@ -112,15 +112,15 @@ template<> AUTOMAFARM_API UScriptStruct* StaticStruct<FTileHolder>()
 		}
 		return Z_Registration_Info_UScriptStruct_TileHolder.InnerSingleton;
 	}
-	struct Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_TileHolder_h_Statics
+	struct Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Structs_h_Statics
 	{
 		static const FStructRegisterCompiledInInfo ScriptStructInfo[];
 	};
-	const FStructRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_TileHolder_h_Statics::ScriptStructInfo[] = {
-		{ FTileHolder::StaticStruct, Z_Construct_UScriptStruct_FTileHolder_Statics::NewStructOps, TEXT("TileHolder"), &Z_Registration_Info_UScriptStruct_TileHolder, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FTileHolder), 2260507822U) },
+	const FStructRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Structs_h_Statics::ScriptStructInfo[] = {
+		{ FTileHolder::StaticStruct, Z_Construct_UScriptStruct_FTileHolder_Statics::NewStructOps, TEXT("TileHolder"), &Z_Registration_Info_UScriptStruct_TileHolder, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FTileHolder), 1056413998U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_TileHolder_h_2139562629(TEXT("/Script/Automafarm"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Structs_h_932544450(TEXT("/Script/Automafarm"),
 		nullptr, 0,
-		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_TileHolder_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_TileHolder_h_Statics::ScriptStructInfo),
+		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Structs_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Structs_h_Statics::ScriptStructInfo),
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

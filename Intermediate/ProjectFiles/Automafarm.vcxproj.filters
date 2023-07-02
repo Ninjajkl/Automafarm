@@ -110,7 +110,7 @@
     <ClCompile Include="..\..\Source\Automafarm\Private\PlaceableObject.cpp">
       <Filter>Source\Automafarm\Private</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\Automafarm\Private\TileHolder.cpp">
+    <ClCompile Include="..\..\Source\Automafarm\Private\Structs.cpp">
       <Filter>Source\Automafarm\Private</Filter>
     </ClCompile>
     <Filter Include="Source\Automafarm\Public">
@@ -125,7 +125,7 @@
     <ClInclude Include="..\..\Source\Automafarm\Public\PlaceableObject.h">
       <Filter>Source\Automafarm\Public</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\Automafarm\Public\TileHolder.h">
+    <ClInclude Include="..\..\Source\Automafarm\Public\Structs.h">
       <Filter>Source\Automafarm\Public</Filter>
     </ClInclude>
   </ItemGroup>

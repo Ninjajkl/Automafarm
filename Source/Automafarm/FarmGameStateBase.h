@@ -4,12 +4,15 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameStateBase.h"
-#include "TileHolder.h"
+#include "Structs.h"
+#include "Misc/CoreDelegates.h"
 #include "FarmGameStateBase.generated.h"
 
 /**
  * 
  */
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FKFOnHourPassed, FTimespan, GameTimePassed);
+
 UCLASS()
 class AUTOMAFARM_API AFarmGameStateBase : public AGameStateBase
 {
@@ -18,6 +21,13 @@ class AUTOMAFARM_API AFarmGameStateBase : public AGameStateBase
 public:
 	AFarmGameStateBase();
 
+	UPROPERTY(BlueprintAssignable)
+		FKFOnHourPassed OnHourPassed;
+
+public:
+	virtual void Tick(float DeltaSeconds) override;
+
+	//Terrain Properties and Functions
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Terrain")
 		TMap<FVector, FTileHolder> LevelMap;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Terrain")
@@ -30,4 +40,14 @@ public:
 	bool InitializeInstanceableObject(TSubclassOf<UPlaceableObject> BlockClass);
 	void AddPivotPaperComponent(TSubclassOf<UPlaceableObject> PivotClass, FVector TileLoc, FVector PlayerLocation);
 	void InitializeTerrain();
+
+	//Time System Properties and Functions
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "TimeSystem")
+		FTimespan GameTimeSpan;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TimeSystem")
+		double TimeMultiplier;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TimeSystem")
+		double StartingHour;
+
+	virtual void BeginPlay() override;
 };

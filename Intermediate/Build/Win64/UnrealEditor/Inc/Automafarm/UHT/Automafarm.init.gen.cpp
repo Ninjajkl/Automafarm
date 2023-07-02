@@ -7,6 +7,7 @@
 #include "UObject/GeneratedCppIncludes.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeAutomafarm_init() {}
+	AUTOMAFARM_API UFunction* Z_Construct_UDelegateFunction_Automafarm_KFOnHourPassed__DelegateSignature();
 	AUTOMAFARM_API UFunction* Z_Construct_UDelegateFunction_Automafarm_KFOnPlayerMoved__DelegateSignature();
 	static FPackageRegistrationInfo Z_Registration_Info_UPackage__Script_Automafarm;
 	FORCENOINLINE UPackage* Z_Construct_UPackage__Script_Automafarm()
@@ -14,6 +15,7 @@ void EmptyLinkFunctionForGeneratedCodeAutomafarm_init() {}
 		if (!Z_Registration_Info_UPackage__Script_Automafarm.OuterSingleton)
 		{
 			static UObject* (*const SingletonFuncArray[])() = {
+				(UObject* (*)())Z_Construct_UDelegateFunction_Automafarm_KFOnHourPassed__DelegateSignature,
 				(UObject* (*)())Z_Construct_UDelegateFunction_Automafarm_KFOnPlayerMoved__DelegateSignature,
 			};
 			static const UECodeGen_Private::FPackageParams PackageParams = {
@@ -21,13 +23,13 @@ void EmptyLinkFunctionForGeneratedCodeAutomafarm_init() {}
 				SingletonFuncArray,
 				UE_ARRAY_COUNT(SingletonFuncArray),
 				PKG_CompiledIn | 0x00000000,
-				0x6C4374E5,
-				0x8189FBEA,
+				0x6DFFD912,
+				0x0607BC54,
 				METADATA_PARAMS(nullptr, 0)
 			};
 			UECodeGen_Private::ConstructUPackage(Z_Registration_Info_UPackage__Script_Automafarm.OuterSingleton, PackageParams);
 		}
 		return Z_Registration_Info_UPackage__Script_Automafarm.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_Automafarm(Z_Construct_UPackage__Script_Automafarm, TEXT("/Script/Automafarm"), Z_Registration_Info_UPackage__Script_Automafarm, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x6C4374E5, 0x8189FBEA));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_Automafarm(Z_Construct_UPackage__Script_Automafarm, TEXT("/Script/Automafarm"), Z_Registration_Info_UPackage__Script_Automafarm, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x6DFFD912, 0x0607BC54));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

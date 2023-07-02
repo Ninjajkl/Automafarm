@@ -7,10 +7,37 @@
 #include "GameFramework/Character.h"
 #include "BaseBlock.h"
 
+double gameSecondsPassed;
+
 AFarmGameStateBase::AFarmGameStateBase()
 {
-
+	PrimaryActorTick.bCanEverTick = true;
 }
+
+void AFarmGameStateBase::BeginPlay()
+{
+	gameSecondsPassed = 0;
+	GameTimeSpan = FTimespan::FromHours(StartingHour);
+	OnHourPassed.Broadcast(GameTimeSpan);
+}
+
+//General Game Functions
+
+void AFarmGameStateBase::Tick(float DeltaSeconds)
+{
+	Super::Tick(DeltaSeconds);
+	GameTimeSpan += FTimespan::FromSeconds(DeltaSeconds * TimeMultiplier);
+	gameSecondsPassed += DeltaSeconds*TimeMultiplier;
+	//Number of seconds in an hour
+	if(gameSecondsPassed >= 3600)
+	{
+		gameSecondsPassed -= 3600;
+		OnHourPassed.Broadcast(GameTimeSpan);
+	}
+}
+
+
+//Terrain Functions
 
 bool AFarmGameStateBase::InitializeInstanceableObject(TSubclassOf<UPlaceableObject> instanceableClass)
 {

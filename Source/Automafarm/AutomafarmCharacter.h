@@ -69,6 +69,9 @@ public:
 	UPROPERTY(EditAnywhere, Meta = (ClampMin = 0.000001))
 		float TileLength = 100.0f;
 
+	UPROPERTY(EditAnywhere, Meta = (ClampMin = 0.000001))
+		float JumpHeight = 100.0f;
+
 protected:
 	/** Called for movement input */
 	void Move(const FInputActionValue& Value);
@@ -84,10 +87,6 @@ protected:
 	virtual void SetupPlayerInputComponent(UInputComponent* InputComponent) override;
 	// End of APawn interface
 
-	UPROPERTY(EditAnywhere)
-		TSubclassOf<UPivotPaper> PivPClass;
-	UPROPERTY(EditAnywhere)
-		TSubclassOf<UBaseBlock> BlockClass;
 	UPROPERTY(EditAnywhere)
 		TSubclassOf<UPlaceableObject> PlaceableClass;
 public:
