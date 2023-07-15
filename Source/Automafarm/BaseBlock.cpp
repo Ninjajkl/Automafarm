@@ -8,7 +8,7 @@
 #define PlaceTrace ECC_GameTraceChannel1
 
 // Sets default values
-UBaseBlock::UBaseBlock()
+ABaseBlock::ABaseBlock()
 {
 	AFarmGameStateBase* myGameState;
 	BlockMesh = CreateDefaultSubobject<UInstancedStaticMeshComponent>("BlockMesh");
@@ -16,19 +16,19 @@ UBaseBlock::UBaseBlock()
 }
 
 //Creates an instance of the block
-void UBaseBlock::AddBlock(FTransform BlockTransform) 
+void ABaseBlock::AddBlock(FTransform BlockTransform) 
 {
 	BlockMesh->AddInstance(BlockTransform);
 }
 
 //Creates an instance of the block
-void UBaseBlock::AddBlock(FVector BlockLocation)
+void ABaseBlock::AddBlock(FVector BlockLocation)
 {
 	AddBlock(FTransform(BlockLocation));
 }
 
 //Clears all blocks of this instance
-void UBaseBlock::ClearBlocks() 
+void ABaseBlock::ClearBlocks() 
 {
 	BlockMesh->ClearInstances();
 }

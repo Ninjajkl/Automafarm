@@ -24,9 +24,9 @@ public:
 	UPROPERTY(EditAnywhere, Meta = (ClampMin = 0.000001))
 		float TileLength = 100.0f;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-		TSubclassOf<UBaseBlock> PrimaryBlockType;
+		TSubclassOf<ABaseBlock> PrimaryBlockType;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-		TSubclassOf<UBaseBlock> SecondaryBlockType;
+		TSubclassOf<ABaseBlock> SecondaryBlockType;
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

@@ -6,6 +6,8 @@
 #include "GameFramework/GameStateBase.h"
 #include "Structs.h"
 #include "Misc/CoreDelegates.h"
+#include "Public/PlaceableObject.h"
+#include "PivotPaper.h"
 #include "FarmGameStateBase.generated.h"
 
 /**
@@ -29,16 +31,16 @@ public:
 
 	//Terrain Properties and Functions
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Terrain")
-		TMap<FVector, FTileHolder> LevelMap;
+		TMap<FVector, APlaceableObject*> LevelMap;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Terrain")
-		TArray<TSubclassOf<UPlaceableObject>> InstancedObjects;
+		TArray<TSubclassOf<APlaceableObject>> InstancedObjects;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Terrain")
-		TMap<TSubclassOf<UPlaceableObject>, UPlaceableObject*> InstancedObjectMap;
+		TMap<TSubclassOf<APlaceableObject>, APlaceableObject*> InstancedObjectMap;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Terrain")
 		AActor* TerrainHolder;
 
-	bool InitializeInstanceableObject(TSubclassOf<UPlaceableObject> BlockClass);
-	void AddPivotPaperComponent(TSubclassOf<UPlaceableObject> PivotClass, FVector TileLoc, FVector PlayerLocation);
+	bool InitializeInstanceableObject(TSubclassOf<APlaceableObject> BlockClass);
+	APivotPaper* AddPivotPaper(TSubclassOf<APlaceableObject> PivotClass, FVector TileLoc, FVector PlayerLocation);
 	void InitializeTerrain();
 
 	//Time System Properties and Functions

@@ -39,21 +39,19 @@ void AFarmGameStateBase::Tick(float DeltaSeconds)
 
 //Terrain Functions
 
-bool AFarmGameStateBase::InitializeInstanceableObject(TSubclassOf<UPlaceableObject> instanceableClass)
+bool AFarmGameStateBase::InitializeInstanceableObject(TSubclassOf<APlaceableObject> instanceableClass)
 {
 	if (InstancedObjectMap.Contains(instanceableClass)) { return true; }
 	InitializeTerrain();
 	InstancedObjects.AddUnique(instanceableClass);
-	InstancedObjectMap.Add(instanceableClass, Cast<UBaseBlock>(TerrainHolder->AddComponentByClass(instanceableClass, 0, FTransform(FVector(0, 0, 0)), 0)));
+	InstancedObjectMap.Add(instanceableClass, GetWorld()->SpawnActor<APlaceableObject>(instanceableClass));
 	return true;
 }
-void AFarmGameStateBase::AddPivotPaperComponent(TSubclassOf<UPlaceableObject> PivotClass, FVector TileLoc, FVector PlayerLocation)
+APivotPaper* AFarmGameStateBase::AddPivotPaper(TSubclassOf<APlaceableObject> PivotClass, FVector TileLoc, FVector PlayerLocation)
 {
-	InitializeTerrain();
-	UPivotPaper* NewPivotPaper = Cast<UPivotPaper>(TerrainHolder->AddComponentByClass(PivotClass, 0, FTransform(TileLoc), 0));
-	NewPivotPaper->FlipbookComp->SetRelativeLocation(TileLoc);
-	NewPivotPaper->PlayerMoved(PlayerLocation);
-	NewPivotPaper->ZDAnimComp->InitRenderComponent(NewPivotPaper->FlipbookComp);
+	APivotPaper* newPivotPaper = GetWorld()->SpawnActor<APivotPaper>(PivotClass, FTransform(TileLoc));
+	newPivotPaper->PlayerMoved(PlayerLocation);
+	return newPivotPaper;
 }
 
 void AFarmGameStateBase::InitializeTerrain()

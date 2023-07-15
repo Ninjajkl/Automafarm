@@ -7,17 +7,39 @@
 #include "PivotPaper.h"
 #include "Crop.generated.h"
 
+class UPaperZDAnimSequence;
+
 UCLASS()
-class AUTOMAFARM_API UCrop : public UPivotPaper
+class AUTOMAFARM_API ACrop : public APivotPaper
 {
 	GENERATED_BODY()
-	
-public:	
+
+public:
 	// Sets default values for this actor's properties
-	UCrop();
+	ACrop();
 
 protected:
+	virtual void BeginPlay() override;
 
-public:	
+public:
+	//Crop System Properties and Functions
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "CropSystem")
+		bool Harvestable = false;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CropSystem", meta = (ToolTip = "A map of growth stages for playing AnimSequences over time.\nKey: Hours since creation\nValue: AnimSequence to play at the specified hour."))
+		TMap<float, TSoftObjectPtr<UPaperZDAnimSequence>> GrowthStages;
 
+	//Time System Properties and Functions
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "TimeSystem")
+		FTimespan CropCreationTime;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "TimeSystem")
+		FTimespan CropTimespan;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "TimeSystem")
+		TSoftObjectPtr<UPaperZDAnimSequence> CurrAnimSeq;
+	UFUNCTION()
+		void UpdateTime(FTimespan GameTimeSpan);
+
+	UFUNCTION(BlueprintCallable, Category = "TimeSystem")
+		void UpdateCurrentAnimSeq();
+
+	virtual void Tick(float DeltaTime) override;
 };

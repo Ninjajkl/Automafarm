@@ -8,8 +8,8 @@
 
 
 bool tempBool = 0;
-UBaseBlock* PrimaryBlock;
-UBaseBlock* SecondaryBlock;
+ABaseBlock* PrimaryBlock;
+ABaseBlock* SecondaryBlock;
 // Sets default values
 ATerrainGenerator::ATerrainGenerator()
 {
@@ -25,23 +25,23 @@ void ATerrainGenerator::OnConstruction(const FTransform& Transform)
 	if (!IsValid(PrimaryBlockType) || !IsValid(SecondaryBlockType)) {
 		return;
 	}
-	PrimaryBlock = Cast<UBaseBlock>(AddComponentByClass(PrimaryBlockType, 0, FTransform(FVector(0, 0, 0)), 1));
-	SecondaryBlock = Cast<UBaseBlock>(AddComponentByClass(SecondaryBlockType, 0, FTransform(FVector(0, 0, 0)), 1));
+	//PrimaryBlock = Cast<ABaseBlock>(AddComponentByClass(PrimaryBlockType, 0, FTransform(FVector(0, 0, 0)), 1));
+	//SecondaryBlock = Cast<ABaseBlock>(AddComponentByClass(SecondaryBlockType, 0, FTransform(FVector(0, 0, 0)), 1));
 	//TestBlock = NewObject<UBaseBlock>(BlockType);
 	//TestBlock->SetupAttachment(GetRootComponent());
-	PrimaryBlock->ClearBlocks();
-	SecondaryBlock->ClearBlocks();
+	//PrimaryBlock->ClearBlocks();
+	//SecondaryBlock->ClearBlocks();
 	for (int X = 0; X < XSize; ++X)
 	{
 		for (int Y = 0; Y < YSize; ++Y)
 		{
 			if ((X + Y) % 2 == 0) 
 			{
-				PrimaryBlock->AddBlock(FVector(X * TileLength + 50, Y * TileLength + 50, -50));
+				//PrimaryBlock->AddBlock(FVector(X * TileLength + 50, Y * TileLength + 50, -50));
 			}
 			else
 			{
-				SecondaryBlock->AddBlock(FVector(X * TileLength + 50, Y * TileLength + 50, -50));
+				//SecondaryBlock->AddBlock(FVector(X * TileLength + 50, Y * TileLength + 50, -50));
 			}
 		}
 	}

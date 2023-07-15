@@ -3,9 +3,8 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "../BaseBlock.h"
-#include "../PivotPaper.h"
-#include "AutomafarmEnums.h"
+#include "Engine/DataTable.h"
+#include "Item.h"
 #include "Structs.generated.h"
 
 /**
@@ -13,15 +12,30 @@
  */
 
 USTRUCT(BlueprintType)
-struct FTileHolder
+struct FSlotStruct
 {
-    GENERATED_BODY()
+	GENERATED_BODY()
 
-        //Defaults to PivotPaper
-        UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-        ETileType TileType = ETileType::DEFAULT;
-    UPROPERTY()
-        UBaseBlock* CoreBlock = nullptr;
-    UPROPERTY()
-        UPivotPaper* CorePivotPaper = nullptr;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		FDataTableRowHandle ItemID;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		int Quantity;
+};
+
+USTRUCT(BlueprintType)
+struct FItemStruct : public FTableRowBase
+{
+	GENERATED_USTRUCT_BODY()
+
+public:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Item)
+		FName Name;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Item)
+		FString Description;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Item)
+		TSoftObjectPtr<UTexture2D> Thumbnail;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Item)
+		TSubclassOf<AItem> Item;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Item)
+		int MaxStackSize;
 };

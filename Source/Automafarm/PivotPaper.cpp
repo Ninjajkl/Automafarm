@@ -12,45 +12,53 @@
 #include "Structs.h"
 #include "Kismet/GameplayStatics.h"
 
+#include "PaperZDCharacter.h"
+
 #define PlaceTrace ECC_GameTraceChannel1
 
 AAutomafarmCharacter* playerCharacter;
 
 // Sets default values
-UPivotPaper::UPivotPaper()
+APivotPaper::APivotPaper()
 {
-	AFarmGameStateBase* myGameState;
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryComponentTick.bCanEverTick = true;
+	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	PrimaryActorTick.bCanEverTick = true;
 
-	myGameState = GetWorld() != NULL ? GetWorld()->GetGameState<AFarmGameStateBase>() : NULL;
-
-	FlipbookComp = CreateDefaultSubobject<UPaperFlipbookComponent>("FlipbookComp");
-	//FlipbookComp->SetupAttachment(this);
-	//FlipbookComp->SetRelativeScale3D(FVector(6.25, 6.25, 6.25));
-	ZDAnimComp = CreateDefaultSubobject<UPaperZDAnimationComponent>("ZDAnimComp");
-	//ZDAnimComp->InitRenderComponent(FlipbookComp);
+	TileType = ETileType::PIVOTPAPER;
+	// Try to create the sprite component
+	Sprite = CreateDefaultSubobject<UPaperFlipbookComponent>(APaperCharacter::SpriteComponentName);
+	Sprite->SetupAttachment(GetRootComponent());
+	AnimationComp = CreateDefaultSubobject<UPaperZDAnimationComponent>("ZDAnimComp");
+	AnimationComp->InitRenderComponent(Sprite);
 }
 
 // Called when the game starts or when spawned
-void UPivotPaper::BeginPlay()
+void APivotPaper::BeginPlay()
 {
+	Super::BeginPlay();
 	playerCharacter = Cast<AAutomafarmCharacter>(UGameplayStatics::GetPlayerCharacter(GetWorld(), 0));
-	playerCharacter->OnPlayerMoved.AddDynamic(this, &UPivotPaper::PlayerMoved);
+	if (playerCharacter){
+		playerCharacter->OnPlayerMoved.AddDynamic(this, &APivotPaper::PlayerMoved);
+	}
 }
 
-FVector UPivotPaper::GetPPCWLocation() 
+FVector APivotPaper::GetPPCWLocation() 
 {
-	return FlipbookComp->GetComponentLocation();
+	return Sprite->GetComponentLocation();
 }
 
-void UPivotPaper::SetPPCWRotation(FRotator rotator)
+void APivotPaper::SetPPCWRotation(FRotator rotator)
 {
-	FlipbookComp->SetWorldRotation(rotator);
+	Sprite->SetWorldRotation(rotator);
 }
 
 //Rotates to face the Player
-void UPivotPaper::PlayerMoved(FVector PlayerLoc)
+void APivotPaper::PlayerMoved(FVector PlayerLoc)
 {
 	SetPPCWRotation(FRotator(0, UKismetMathLibrary::FindLookAtRotation(GetPPCWLocation(), PlayerLoc).Yaw - 90, 0));
+}
+void APivotPaper::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
 }

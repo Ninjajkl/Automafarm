@@ -11,18 +11,22 @@
 #include "PivotPaper.generated.h"
 
 UCLASS()
-class AUTOMAFARM_API UPivotPaper : public UPlaceableObject
+class AUTOMAFARM_API APivotPaper : public APlaceableObject
 {
 	GENERATED_BODY()
 	
 public:	
 	// Sets default values for this actor's properties
-	UPivotPaper();
+	APivotPaper();
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "PivotPaper")
-		UPaperFlipbookComponent* FlipbookComp;
+	//UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "PivotPaper")
+	//	UPaperFlipbookComponent* FlipbookComp;
+	// Name of the Sprite component
+	static FName SpriteComponentName;
+	UPROPERTY(Category = Character, VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+		TObjectPtr<UPaperFlipbookComponent> Sprite;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PivotPaper")
-		UPaperZDAnimationComponent* ZDAnimComp;
+		UPaperZDAnimationComponent* AnimationComp;
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -32,5 +36,5 @@ public:
 		void PlayerMoved(FVector PlayerLoc);
 	FVector GetPPCWLocation();
 	void SetPPCWRotation(FRotator rotator);
-
+	virtual void Tick(float DeltaTime) override;
 };

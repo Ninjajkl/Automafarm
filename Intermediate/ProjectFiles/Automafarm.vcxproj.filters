@@ -104,6 +104,9 @@
     <ClCompile Include="..\..\Source\Automafarm\Private\AutomafarmEnums.cpp">
       <Filter>Source\Automafarm\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Automafarm\Private\Inventory.cpp">
+      <Filter>Source\Automafarm\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Automafarm\Private\Item.cpp">
       <Filter>Source\Automafarm\Private</Filter>
     </ClCompile>
@@ -117,6 +120,9 @@
       <UniqueIdentifier>{584B8870-FEA6-3050-A161-80F16E029F5F}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\Automafarm\Public\AutomafarmEnums.h">
+      <Filter>Source\Automafarm\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Automafarm\Public\Inventory.h">
       <Filter>Source\Automafarm\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Automafarm\Public\Item.h">

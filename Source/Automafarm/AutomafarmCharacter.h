@@ -7,6 +7,7 @@
 #include "GameFramework/Character.h"
 #include "InputActionValue.h"
 #include "Misc/CoreDelegates.h"
+#include "Inventory.h"
 #include "AutomafarmCharacter.generated.h"
 
 class UInputComponent;
@@ -15,10 +16,10 @@ class USceneComponent;
 class UCameraComponent;
 class UAnimMontage;
 class USoundBase;
-class UCrop;
-class UPivotPaper;
-class UBaseBlock;
-class UPlaceableObject;
+class ACrop;
+class APivotPaper;
+class ABaseBlock;
+class APlaceableObject;
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FKFOnPlayerMoved,FVector,PlayerLoc);
 
@@ -29,23 +30,23 @@ class AAutomafarmCharacter : public ACharacter
 
 	/** Pawn mesh: 1st person view (arms; seen only by self) */
 	UPROPERTY(VisibleDefaultsOnly, Category=Mesh)
-	USkeletalMeshComponent* Mesh1P;
+		USkeletalMeshComponent* Mesh1P;
 
 	/** First person camera */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
-	UCameraComponent* FirstPersonCameraComponent;
+		UCameraComponent* FirstPersonCameraComponent;
 
 	/** MappingContext */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input, meta=(AllowPrivateAccess = "true"))
-	class UInputMappingContext* DefaultMappingContext;
+		class UInputMappingContext* DefaultMappingContext;
 
 	/** Jump Input Action */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input, meta=(AllowPrivateAccess = "true"))
-	class UInputAction* JumpAction;
+		class UInputAction* JumpAction;
 
 	/** Move Input Action */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input, meta=(AllowPrivateAccess = "true"))
-	class UInputAction* MoveAction;
+		class UInputAction* MoveAction;
 
 	/** Interact Input Action */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
@@ -69,40 +70,50 @@ public:
 	UPROPERTY(EditAnywhere, Meta = (ClampMin = 0.000001))
 		float TileLength = 100.0f;
 
-	UPROPERTY(EditAnywhere, Meta = (ClampMin = 0.000001))
-		float JumpHeight = 100.0f;
-
 protected:
 	/** Called for movement input */
-	void Move(const FInputActionValue& Value);
+	UFUNCTION(BlueprintCallable, Category = Input)
+		void Move(const FInputActionValue& Value);
 
 	/** Called for looking input */
-	void Look(const FInputActionValue& Value);
+	UFUNCTION(BlueprintCallable, Category = Input)
+		void Look(const FInputActionValue& Value);
 
 	/** Called for interaction input */
-	void Interact(const FInputActionValue& Value);
+	UFUNCTION(BlueprintCallable, Category = Input)
+		void Interact(const FInputActionValue& Value);
 
-protected:
 	// APawn interface
 	virtual void SetupPlayerInputComponent(UInputComponent* InputComponent) override;
 	// End of APawn interface
 
-	UPROPERTY(EditAnywhere)
-		TSubclassOf<UPlaceableObject> PlaceableClass;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		UInventory* PlayerInventory;
 public:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		int CurrHotbarSlot = 0;
+
 	/** Returns Mesh1P subobject **/
-	USkeletalMeshComponent* GetMesh1P() const { return Mesh1P; }
+	UFUNCTION(BlueprintCallable, Category = Getters)
+		USkeletalMeshComponent* GetMesh1P() const { return Mesh1P; }
+
 	/** Returns FirstPersonCameraComponent subobject **/
-	UCameraComponent* GetFirstPersonCameraComponent() const { return FirstPersonCameraComponent; }
+	UFUNCTION(BlueprintCallable, Category = Getters)
+		UCameraComponent* GetFirstPersonCameraComponent() const { return FirstPersonCameraComponent; }
 
-	FVector AbsoluteToGrid(FVector aCoords);
+	UFUNCTION(BlueprintCallable, Category = Placement)
+		FVector AbsoluteToGrid(FVector aCoords);
 
-	void PlaceHeldItem(TSubclassOf<UPlaceableObject> placeableClass, FVector TileKey);
+	UFUNCTION(BlueprintCallable, Category = Placement)
+		void PlaceHeldItem(TSubclassOf<APlaceableObject> placeableClass, FVector TileKey);
 
-	bool ValidPlacement(TSubclassOf<UPlaceableObject> placeableClass, FVector TileKey);
-
-	FVector RotateByYaw(FVector Position, FVector ForwardVector);
-	FVector RoundVector(const FVector Vector);
-	TArray<FVector> RotateByYaw(TArray<FVector> Positions, FVector ForwardVector);
+	UFUNCTION(BlueprintCallable, Category = Placement)
+		bool ValidPlacement(TSubclassOf<APlaceableObject> placeableClass, FVector TileKey);
+	
+	UFUNCTION(BlueprintCallable, Category = Placement)
+		FVector RoundVector(const FVector Vector);
+	
+	UFUNCTION(BlueprintCallable, Category = Placement)
+		TArray<FVector> RotateByYaw(TArray<FVector> Positions, FVector ForwardVector);
 };
 

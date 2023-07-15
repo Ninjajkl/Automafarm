@@ -8,13 +8,13 @@
 
 
 UCLASS( ClassGroup=(Item), meta=(BlueprintSpawnableComponent) )
-class AUTOMAFARM_API UItem : public UPrimitiveComponent
+class AUTOMAFARM_API AItem : public AActor
 {
 	GENERATED_BODY()
 
 public:	
 	// Sets default values for this component's properties
-	UItem();
+	AItem();
 
 protected:
 	// Called when the game starts
@@ -22,7 +22,8 @@ protected:
 
 public:	
 	// Called every frame
-	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+	virtual void Tick(float DeltaTime) override;
 
-		
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Item")
+		bool Placeable = false;
 };

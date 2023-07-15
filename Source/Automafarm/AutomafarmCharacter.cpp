@@ -7,6 +7,7 @@
 #include "Components/CapsuleComponent.h"
 #include "Components/InstancedStaticMeshComponent.h"
 #include "PivotPaper.h"
+#include "BaseBlock.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "FarmGameStateBase.h"
@@ -47,6 +48,10 @@ AAutomafarmCharacter::AAutomafarmCharacter()
 	//Mesh1P->SetRelativeRotation(FRotator(0.9f, -19.19f, 5.2f));
 	Mesh1P->SetRelativeLocation(FVector(-30.f, 0.f, -150.f));
 
+	// Create an Inventory Component
+	PlayerInventory = CreateDefaultSubobject<UInventory>("PlayerInventory");
+
+	//Get the Game State and store its reference
 	myGameState = GetWorld() != NULL ? GetWorld()->GetGameState<AFarmGameStateBase>() : NULL;
 }
 
@@ -63,7 +68,6 @@ void AAutomafarmCharacter::BeginPlay()
 			Subsystem->AddMappingContext(DefaultMappingContext, 0);
 		}
 	}
-	GetCharacterMovement()->JumpZVelocity = JumpHeight;
 }
 
 //////////////////////////////////////////////////////////////////////////// Input
@@ -138,13 +142,26 @@ void AAutomafarmCharacter::Interact(const FInputActionValue& Value)
 		}
 		*/
 		FVector SelectedTile = AbsoluteToGrid(HitResult.ImpactPoint+HitResult.ImpactNormal);
-		
-		if(ValidPlacement(PlaceableClass, SelectedTile))
-		{
-			PlaceHeldItem(PlaceableClass, SelectedTile);
+
+		//Check if item in current held slot
+		if (PlayerInventory->Content.Contains(CurrHotbarSlot)) {
+			FSlotStruct& Slot = PlayerInventory->Content[CurrHotbarSlot];
+			// Retrieve the FItemStruct from the ItemDataTable using the ItemID
+			FItemStruct* ItemStruct = PlayerInventory->ItemDataTable->FindRow<FItemStruct>(Slot.ItemID.RowName, TEXT(""));
+			//Check if held item is Placeable
+			if (ItemStruct->Item.GetDefaultObject()->Placeable) {
+				//If so, safe to cast as TSubclassOf<APlaceableObject>
+				TSubclassOf<APlaceableObject> PlaceableItemClass = ItemStruct->Item;
+				if (ValidPlacement(PlaceableItemClass, SelectedTile))
+				{
+					PlaceHeldItem(PlaceableItemClass, SelectedTile);
+				}
+			}
 		}
 	}
 }
+
+//////////////////////////////////////////////////////////////////////////// Placement
 
 TArray<FVector> AAutomafarmCharacter::RotateByYaw(TArray<FVector> Positions, FVector ForwardVector)
 {
@@ -180,9 +197,9 @@ FVector AAutomafarmCharacter::RoundVector(const FVector Vector)
 	return FVector(FMath::RoundToInt(Vector.X), FMath::RoundToInt(Vector.Y), FMath::RoundToInt(Vector.Z));
 }
 
-bool AAutomafarmCharacter::ValidPlacement(TSubclassOf<UPlaceableObject> placeableClass, FVector TileKey)
+bool AAutomafarmCharacter::ValidPlacement(TSubclassOf<APlaceableObject> placeableClass, FVector TileKey)
 {
-	TArray<FVector> TilesToCheck = RotateByYaw(Cast<UPlaceableObject>(placeableClass->GetDefaultObject())->TilesToFill, GetFirstPersonCameraComponent()->GetForwardVector());
+	TArray<FVector> TilesToCheck = RotateByYaw(Cast<APlaceableObject>(placeableClass->GetDefaultObject())->TilesToFill, GetFirstPersonCameraComponent()->GetForwardVector());
 	for (int i = 0; i < TilesToCheck.Num(); i++)
 	{
 		if (myGameState->LevelMap.Contains(TileKey + TilesToCheck[i]) ||
@@ -194,26 +211,31 @@ bool AAutomafarmCharacter::ValidPlacement(TSubclassOf<UPlaceableObject> placeabl
 	return true;
 }
 
-void AAutomafarmCharacter::PlaceHeldItem(TSubclassOf<UPlaceableObject> placeableClass, FVector TileKey)
+void AAutomafarmCharacter::PlaceHeldItem(TSubclassOf<APlaceableObject> placeableClass, FVector TileKey)
 {
-	UPlaceableObject* placeableObject = Cast<UPlaceableObject>(placeableClass->GetDefaultObject());
-	FTileHolder newCoreTile;
-	newCoreTile.TileType = placeableObject->TileType;
-	TArray<FVector> TilesToFill = RotateByYaw(placeableObject->TilesToFill, GetFirstPersonCameraComponent()->GetForwardVector());
-	if (newCoreTile.TileType == ETileType::PIVOTPAPER) {
-		myGameState->AddPivotPaperComponent(placeableClass, TileKey * TileLength + FVector(50, 50, 150), GetFirstPersonCameraComponent()->GetComponentLocation());
+	//Place the item in the World
+	APlaceableObject* defaultPlaceableObject = Cast<APlaceableObject>(placeableClass->GetDefaultObject());
+	ETileType TileType = defaultPlaceableObject->TileType;
+	TArray<FVector> TilesToFill = RotateByYaw(defaultPlaceableObject->TilesToFill, GetFirstPersonCameraComponent()->GetForwardVector());
+	APlaceableObject* newPO;
+	if (TileType == ETileType::PIVOTPAPER) {
+		newPO = myGameState->AddPivotPaper(placeableClass, TileKey * TileLength, GetFirstPersonCameraComponent()->GetComponentLocation());
 	}
-	else if (newCoreTile.TileType == ETileType::BLOCK)
+	else if (TileType == ETileType::BLOCK)
 	{
 		myGameState->InitializeInstanceableObject(placeableClass);
+		newPO = myGameState->InstancedObjectMap[placeableClass];
 	}
 	while (!TilesToFill.IsEmpty())
 	{
 		FVector newTileKey = TileKey + TilesToFill.Pop();
-		if (newCoreTile.TileType == ETileType::BLOCK) {
-			Cast<UBaseBlock>(myGameState->InstancedObjectMap[placeableClass])->AddBlock(newTileKey * TileLength + FVector(50, 50, 50));
+		if (TileType == ETileType::BLOCK) {
+			Cast<ABaseBlock>(myGameState->InstancedObjectMap[placeableClass])->AddBlock(newTileKey * TileLength + FVector(50, 50, 50));
 		}
-		placeableObject->FilledTiles.Add(newTileKey);
-		myGameState->LevelMap.Add(newTileKey, newCoreTile);
+		//placeableObject->FilledTiles.Add(newTileKey);
+		myGameState->LevelMap.Add(newTileKey, newPO);
 	}
+
+	//Modify the Player's inventory to reflect the change
+	PlayerInventory->ReduceSlotByAmount(CurrHotbarSlot, 1);
 }

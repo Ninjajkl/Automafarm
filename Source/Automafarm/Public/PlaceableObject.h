@@ -11,13 +11,13 @@
  * 
  */
 UCLASS(ClassGroup = (Item), meta = (BlueprintSpawnableComponent))
-class AUTOMAFARM_API UPlaceableObject : public UItem
+class AUTOMAFARM_API APlaceableObject : public AItem
 {
 	GENERATED_BODY()
 
 public:
 	// Sets default values for this component's properties
-	UPlaceableObject();
+	APlaceableObject();
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PlaceableObject")
 		TArray<FVector> TilesToFill;
@@ -31,5 +31,5 @@ protected:
 
 public:
 	// Called every frame
-	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+	virtual void Tick(float DeltaTime) override;
 };
