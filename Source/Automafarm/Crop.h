@@ -25,21 +25,19 @@ public:
 	//Crop System Properties and Functions
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "CropSystem")
 		bool Harvestable = false;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CropSystem", meta = (ToolTip = "A map of growth stages for playing AnimSequences over time.\nKey: Hours since creation\nValue: AnimSequence to play at the specified hour."))
-		TMap<float, TSoftObjectPtr<UPaperZDAnimSequence>> GrowthStages;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CropSystem", meta = (ToolTip = "A map of growth stages for playing Flipbooks over time.\nKey: Hours since creation\nValue: Flipbook to play at the specified hour."))
+		TMap<float, TSoftObjectPtr<UPaperFlipbook>> GrowthStages;
 
 	//Time System Properties and Functions
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "TimeSystem")
 		FTimespan CropCreationTime;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "TimeSystem")
 		FTimespan CropTimespan;
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "TimeSystem")
-		TSoftObjectPtr<UPaperZDAnimSequence> CurrAnimSeq;
 	UFUNCTION()
 		void UpdateTime(FTimespan GameTimeSpan);
 
 	UFUNCTION(BlueprintCallable, Category = "TimeSystem")
-		void UpdateCurrentAnimSeq();
+		void UpdateCurrentFlipBook();
 
 	virtual void Tick(float DeltaTime) override;
 };

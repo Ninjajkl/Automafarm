@@ -22,13 +22,13 @@ void ACrop::BeginPlay()
 		CropCreationTime = FTimespan() + FarmGameState->GameTimeSpan;
 	}
 	CropTimespan = FTimespan();
-	UpdateCurrentAnimSeq();
+	UpdateCurrentFlipBook();
 }
 
 void ACrop::UpdateTime(FTimespan GameTimeSpan)
 {
 	CropTimespan = GameTimeSpan - CropCreationTime;
-	UpdateCurrentAnimSeq();
+	UpdateCurrentFlipBook();
 }
 
 void ACrop::Tick(float DeltaTime)
@@ -37,18 +37,18 @@ void ACrop::Tick(float DeltaTime)
 
 }
 
-void ACrop::UpdateCurrentAnimSeq()
+void ACrop::UpdateCurrentFlipBook()
 {
 	float floorKey = -100.0f;
-	TSoftObjectPtr<UPaperZDAnimSequence> FoundSequence = nullptr;
+	TSoftObjectPtr<UPaperFlipbook> FoundBook = nullptr;
 
 	for (const auto& AnimStart : GrowthStages)
 	{
 		if (AnimStart.Key <= CropTimespan.GetTotalHours() && AnimStart.Key >= floorKey)
 		{
 			floorKey = AnimStart.Key;
-			FoundSequence = AnimStart.Value;
+			FoundBook = AnimStart.Value;
 		}
 	}
-	CurrAnimSeq = FoundSequence;
+	Sprite->SetFlipbook(FoundBook.LoadSynchronous());
 }

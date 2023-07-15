@@ -13,14 +13,14 @@ void EmptyLinkFunctionForGeneratedCodeCrop() {}
 	AUTOMAFARM_API UClass* Z_Construct_UClass_ACrop_NoRegister();
 	AUTOMAFARM_API UClass* Z_Construct_UClass_APivotPaper();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FTimespan();
-	PAPERZD_API UClass* Z_Construct_UClass_UPaperZDAnimSequence_NoRegister();
+	PAPER2D_API UClass* Z_Construct_UClass_UPaperFlipbook_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_Automafarm();
 // End Cross Module References
-	DEFINE_FUNCTION(ACrop::execUpdateCurrentAnimSeq)
+	DEFINE_FUNCTION(ACrop::execUpdateCurrentFlipBook)
 	{
 		P_FINISH;
 		P_NATIVE_BEGIN;
-		P_THIS->UpdateCurrentAnimSeq();
+		P_THIS->UpdateCurrentFlipBook();
 		P_NATIVE_END;
 	}
 	DEFINE_FUNCTION(ACrop::execUpdateTime)
@@ -35,12 +35,12 @@ void EmptyLinkFunctionForGeneratedCodeCrop() {}
 	{
 		UClass* Class = ACrop::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
-			{ "UpdateCurrentAnimSeq", &ACrop::execUpdateCurrentAnimSeq },
+			{ "UpdateCurrentFlipBook", &ACrop::execUpdateCurrentFlipBook },
 			{ "UpdateTime", &ACrop::execUpdateTime },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 	}
-	struct Z_Construct_UFunction_ACrop_UpdateCurrentAnimSeq_Statics
+	struct Z_Construct_UFunction_ACrop_UpdateCurrentFlipBook_Statics
 	{
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
@@ -48,18 +48,18 @@ void EmptyLinkFunctionForGeneratedCodeCrop() {}
 		static const UECodeGen_Private::FFunctionParams FuncParams;
 	};
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ACrop_UpdateCurrentAnimSeq_Statics::Function_MetaDataParams[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ACrop_UpdateCurrentFlipBook_Statics::Function_MetaDataParams[] = {
 		{ "Category", "TimeSystem" },
 		{ "ModuleRelativePath", "Crop.h" },
 	};
 #endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ACrop_UpdateCurrentAnimSeq_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ACrop, nullptr, "UpdateCurrentAnimSeq", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ACrop_UpdateCurrentAnimSeq_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ACrop_UpdateCurrentAnimSeq_Statics::Function_MetaDataParams)) };
-	UFunction* Z_Construct_UFunction_ACrop_UpdateCurrentAnimSeq()
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ACrop_UpdateCurrentFlipBook_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ACrop, nullptr, "UpdateCurrentFlipBook", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ACrop_UpdateCurrentFlipBook_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ACrop_UpdateCurrentFlipBook_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ACrop_UpdateCurrentFlipBook()
 	{
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ACrop_UpdateCurrentAnimSeq_Statics::FuncParams);
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ACrop_UpdateCurrentFlipBook_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -126,10 +126,6 @@ void EmptyLinkFunctionForGeneratedCodeCrop() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_CropTimespan_MetaData[];
 #endif
 		static const UECodeGen_Private::FStructPropertyParams NewProp_CropTimespan;
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_CurrAnimSeq_MetaData[];
-#endif
-		static const UECodeGen_Private::FSoftObjectPropertyParams NewProp_CurrAnimSeq;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -139,7 +135,7 @@ void EmptyLinkFunctionForGeneratedCodeCrop() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_Automafarm,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_ACrop_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_ACrop_UpdateCurrentAnimSeq, "UpdateCurrentAnimSeq" }, // 857386226
+		{ &Z_Construct_UFunction_ACrop_UpdateCurrentFlipBook, "UpdateCurrentFlipBook" }, // 25994182
 		{ &Z_Construct_UFunction_ACrop_UpdateTime, "UpdateTime" }, // 1097356602
 	};
 #if WITH_METADATA
@@ -161,13 +157,13 @@ void EmptyLinkFunctionForGeneratedCodeCrop() {}
 		((ACrop*)Obj)->Harvestable = 1;
 	}
 	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ACrop_Statics::NewProp_Harvestable = { "Harvestable", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, sizeof(bool), sizeof(ACrop), &Z_Construct_UClass_ACrop_Statics::NewProp_Harvestable_SetBit, METADATA_PARAMS(Z_Construct_UClass_ACrop_Statics::NewProp_Harvestable_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACrop_Statics::NewProp_Harvestable_MetaData)) };
-	const UECodeGen_Private::FSoftObjectPropertyParams Z_Construct_UClass_ACrop_Statics::NewProp_GrowthStages_ValueProp = { "GrowthStages", nullptr, (EPropertyFlags)0x0004000000000001, UECodeGen_Private::EPropertyGenFlags::SoftObject, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 1, Z_Construct_UClass_UPaperZDAnimSequence_NoRegister, METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FSoftObjectPropertyParams Z_Construct_UClass_ACrop_Statics::NewProp_GrowthStages_ValueProp = { "GrowthStages", nullptr, (EPropertyFlags)0x0004000000000001, UECodeGen_Private::EPropertyGenFlags::SoftObject, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 1, Z_Construct_UClass_UPaperFlipbook_NoRegister, METADATA_PARAMS(nullptr, 0) };
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ACrop_Statics::NewProp_GrowthStages_Key_KeyProp = { "GrowthStages_Key", nullptr, (EPropertyFlags)0x0000000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACrop_Statics::NewProp_GrowthStages_MetaData[] = {
 		{ "Category", "CropSystem" },
 		{ "ModuleRelativePath", "Crop.h" },
-		{ "ToolTip", "A map of growth stages for playing AnimSequences over time.\nKey: Hours since creation\nValue: AnimSequence to play at the specified hour." },
+		{ "ToolTip", "A map of growth stages for playing Flipbooks over time.\nKey: Hours since creation\nValue: Flipbook to play at the specified hour." },
 	};
 #endif
 	const UECodeGen_Private::FMapPropertyParams Z_Construct_UClass_ACrop_Statics::NewProp_GrowthStages = { "GrowthStages", nullptr, (EPropertyFlags)0x0014000000000005, UECodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ACrop, GrowthStages), EMapPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_ACrop_Statics::NewProp_GrowthStages_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACrop_Statics::NewProp_GrowthStages_MetaData)) };
@@ -187,13 +183,6 @@ void EmptyLinkFunctionForGeneratedCodeCrop() {}
 	};
 #endif
 	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_ACrop_Statics::NewProp_CropTimespan = { "CropTimespan", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ACrop, CropTimespan), Z_Construct_UScriptStruct_FTimespan, METADATA_PARAMS(Z_Construct_UClass_ACrop_Statics::NewProp_CropTimespan_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACrop_Statics::NewProp_CropTimespan_MetaData)) };
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACrop_Statics::NewProp_CurrAnimSeq_MetaData[] = {
-		{ "Category", "TimeSystem" },
-		{ "ModuleRelativePath", "Crop.h" },
-	};
-#endif
-	const UECodeGen_Private::FSoftObjectPropertyParams Z_Construct_UClass_ACrop_Statics::NewProp_CurrAnimSeq = { "CurrAnimSeq", nullptr, (EPropertyFlags)0x0014000000020015, UECodeGen_Private::EPropertyGenFlags::SoftObject, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ACrop, CurrAnimSeq), Z_Construct_UClass_UPaperZDAnimSequence_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACrop_Statics::NewProp_CurrAnimSeq_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACrop_Statics::NewProp_CurrAnimSeq_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ACrop_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACrop_Statics::NewProp_Harvestable,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACrop_Statics::NewProp_GrowthStages_ValueProp,
@@ -201,7 +190,6 @@ void EmptyLinkFunctionForGeneratedCodeCrop() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACrop_Statics::NewProp_GrowthStages,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACrop_Statics::NewProp_CropCreationTime,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACrop_Statics::NewProp_CropTimespan,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACrop_Statics::NewProp_CurrAnimSeq,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ACrop_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ACrop>::IsAbstract,
@@ -240,9 +228,9 @@ void EmptyLinkFunctionForGeneratedCodeCrop() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Crop_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ACrop, ACrop::StaticClass, TEXT("ACrop"), &Z_Registration_Info_UClass_ACrop, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ACrop), 3663478834U) },
+		{ Z_Construct_UClass_ACrop, ACrop::StaticClass, TEXT("ACrop"), &Z_Registration_Info_UClass_ACrop, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ACrop), 792801804U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Crop_h_2467816660(TEXT("/Script/Automafarm"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Crop_h_905741865(TEXT("/Script/Automafarm"),
 		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Crop_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Crop_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

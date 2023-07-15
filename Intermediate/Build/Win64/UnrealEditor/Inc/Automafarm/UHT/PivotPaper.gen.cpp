@@ -14,7 +14,6 @@ void EmptyLinkFunctionForGeneratedCodePivotPaper() {}
 	AUTOMAFARM_API UClass* Z_Construct_UClass_APlaceableObject();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	PAPER2D_API UClass* Z_Construct_UClass_UPaperFlipbookComponent_NoRegister();
-	PAPERZD_API UClass* Z_Construct_UClass_UPaperZDAnimationComponent_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_Automafarm();
 // End Cross Module References
 	DEFINE_FUNCTION(APivotPaper::execPlayerMoved)
@@ -81,10 +80,6 @@ void EmptyLinkFunctionForGeneratedCodePivotPaper() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_Sprite_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPtrPropertyParams NewProp_Sprite;
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_AnimationComp_MetaData[];
-#endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_AnimationComp;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -111,17 +106,8 @@ void EmptyLinkFunctionForGeneratedCodePivotPaper() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPtrPropertyParams Z_Construct_UClass_APivotPaper_Statics::NewProp_Sprite = { "Sprite", nullptr, (EPropertyFlags)0x00140000000a001d, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(APivotPaper, Sprite), Z_Construct_UClass_UPaperFlipbookComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_APivotPaper_Statics::NewProp_Sprite_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APivotPaper_Statics::NewProp_Sprite_MetaData)) };
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APivotPaper_Statics::NewProp_AnimationComp_MetaData[] = {
-		{ "Category", "PivotPaper" },
-		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "PivotPaper.h" },
-	};
-#endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APivotPaper_Statics::NewProp_AnimationComp = { "AnimationComp", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(APivotPaper, AnimationComp), Z_Construct_UClass_UPaperZDAnimationComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_APivotPaper_Statics::NewProp_AnimationComp_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APivotPaper_Statics::NewProp_AnimationComp_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_APivotPaper_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APivotPaper_Statics::NewProp_Sprite,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APivotPaper_Statics::NewProp_AnimationComp,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_APivotPaper_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<APivotPaper>::IsAbstract,
@@ -160,9 +146,9 @@ void EmptyLinkFunctionForGeneratedCodePivotPaper() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_PivotPaper_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_APivotPaper, APivotPaper::StaticClass, TEXT("APivotPaper"), &Z_Registration_Info_UClass_APivotPaper, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APivotPaper), 3635856947U) },
+		{ Z_Construct_UClass_APivotPaper, APivotPaper::StaticClass, TEXT("APivotPaper"), &Z_Registration_Info_UClass_APivotPaper, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APivotPaper), 2771228407U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_PivotPaper_h_978236318(TEXT("/Script/Automafarm"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_PivotPaper_h_406993989(TEXT("/Script/Automafarm"),
 		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_PivotPaper_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_PivotPaper_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

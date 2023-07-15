@@ -28,8 +28,8 @@ APivotPaper::APivotPaper()
 	// Try to create the sprite component
 	Sprite = CreateDefaultSubobject<UPaperFlipbookComponent>(APaperCharacter::SpriteComponentName);
 	Sprite->SetupAttachment(GetRootComponent());
-	AnimationComp = CreateDefaultSubobject<UPaperZDAnimationComponent>("ZDAnimComp");
-	AnimationComp->InitRenderComponent(Sprite);
+	//AnimationComp = CreateDefaultSubobject<UPaperZDAnimationComponent>("ZDAnimComp");
+	//AnimationComp->InitRenderComponent(Sprite);
 }
 
 // Called when the game starts or when spawned
