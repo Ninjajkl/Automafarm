@@ -18,13 +18,13 @@ struct FTimespan;
 #define FID_Projects_Automafarm_5_2_Source_Automafarm_Crop_h_15_SPARSE_DATA
 #define FID_Projects_Automafarm_5_2_Source_Automafarm_Crop_h_15_RPC_WRAPPERS \
  \
-	DECLARE_FUNCTION(execUpdateCurrentAnimSeq); \
+	DECLARE_FUNCTION(execUpdateCurrentFlipBook); \
 	DECLARE_FUNCTION(execUpdateTime);
 
 
 #define FID_Projects_Automafarm_5_2_Source_Automafarm_Crop_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
  \
-	DECLARE_FUNCTION(execUpdateCurrentAnimSeq); \
+	DECLARE_FUNCTION(execUpdateCurrentFlipBook); \
 	DECLARE_FUNCTION(execUpdateTime);
 
 

@@ -47,11 +47,18 @@ bool AFarmGameStateBase::InitializeInstanceableObject(TSubclassOf<APlaceableObje
 	InstancedObjectMap.Add(instanceableClass, GetWorld()->SpawnActor<APlaceableObject>(instanceableClass));
 	return true;
 }
+
 APivotPaper* AFarmGameStateBase::AddPivotPaper(TSubclassOf<APlaceableObject> PivotClass, FVector TileLoc, FVector PlayerLocation)
 {
 	APivotPaper* newPivotPaper = GetWorld()->SpawnActor<APivotPaper>(PivotClass, FTransform(TileLoc));
 	newPivotPaper->PlayerMoved(PlayerLocation);
 	return newPivotPaper;
+}
+
+AInteractableBlock* AFarmGameStateBase::AddInteractableBlock(TSubclassOf<APlaceableObject> BlockClass, FVector TileLoc)
+{
+	AInteractableBlock* newIB = GetWorld()->SpawnActor<AInteractableBlock>(BlockClass, FTransform(TileLoc));
+	return newIB;
 }
 
 void AFarmGameStateBase::InitializeTerrain()

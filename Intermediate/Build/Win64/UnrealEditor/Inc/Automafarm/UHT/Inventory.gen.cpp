@@ -12,11 +12,49 @@ void EmptyLinkFunctionForGeneratedCodeInventory() {}
 // Cross Module References
 	AUTOMAFARM_API UClass* Z_Construct_UClass_UInventory();
 	AUTOMAFARM_API UClass* Z_Construct_UClass_UInventory_NoRegister();
+	AUTOMAFARM_API UFunction* Z_Construct_UDelegateFunction_Automafarm_KFOnInventoryUpdated__DelegateSignature();
 	AUTOMAFARM_API UScriptStruct* Z_Construct_UScriptStruct_FSlotStruct();
 	ENGINE_API UClass* Z_Construct_UClass_UActorComponent();
 	ENGINE_API UClass* Z_Construct_UClass_UDataTable_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_Automafarm();
 // End Cross Module References
+	struct Z_Construct_UDelegateFunction_Automafarm_KFOnInventoryUpdated__DelegateSignature_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_Automafarm_KFOnInventoryUpdated__DelegateSignature_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Inventory.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_Automafarm_KFOnInventoryUpdated__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UPackage__Script_Automafarm, nullptr, "KFOnInventoryUpdated__DelegateSignature", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(Z_Construct_UDelegateFunction_Automafarm_KFOnInventoryUpdated__DelegateSignature_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_Automafarm_KFOnInventoryUpdated__DelegateSignature_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UDelegateFunction_Automafarm_KFOnInventoryUpdated__DelegateSignature()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UDelegateFunction_Automafarm_KFOnInventoryUpdated__DelegateSignature_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+void FKFOnInventoryUpdated_DelegateWrapper(const FMulticastScriptDelegate& KFOnInventoryUpdated)
+{
+	KFOnInventoryUpdated.ProcessMulticastDelegate<UObject>(NULL);
+}
+	DEFINE_FUNCTION(UInventory::execTransferSlots)
+	{
+		P_GET_PROPERTY(FIntProperty,Z_Param_slotFrom);
+		P_GET_OBJECT(UInventory,Z_Param_fromInv);
+		P_GET_PROPERTY(FIntProperty,Z_Param_slotTo);
+		P_GET_OBJECT(UInventory,Z_Param_toInv);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(bool*)Z_Param__Result=UInventory::TransferSlots(Z_Param_slotFrom,Z_Param_fromInv,Z_Param_slotTo,Z_Param_toInv);
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(UInventory::execTryIncreaseSlotByAmount)
 	{
 		P_GET_PROPERTY(FIntProperty,Z_Param_slotNum);
@@ -49,6 +87,7 @@ void EmptyLinkFunctionForGeneratedCodeInventory() {}
 		static const FNameNativePtrPair Funcs[] = {
 			{ "EmptySlot", &UInventory::execEmptySlot },
 			{ "ReduceSlotByAmount", &UInventory::execReduceSlotByAmount },
+			{ "TransferSlots", &UInventory::execTransferSlots },
 			{ "TryIncreaseSlotByAmount", &UInventory::execTryIncreaseSlotByAmount },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
@@ -123,6 +162,76 @@ void EmptyLinkFunctionForGeneratedCodeInventory() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_UInventory_TransferSlots_Statics
+	{
+		struct Inventory_eventTransferSlots_Parms
+		{
+			int32 slotFrom;
+			UInventory* fromInv;
+			int32 slotTo;
+			UInventory* toInv;
+			bool ReturnValue;
+		};
+		static const UECodeGen_Private::FUnsizedIntPropertyParams NewProp_slotFrom;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_fromInv_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_fromInv;
+		static const UECodeGen_Private::FUnsizedIntPropertyParams NewProp_slotTo;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_toInv_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_toInv;
+		static void NewProp_ReturnValue_SetBit(void* Obj);
+		static const UECodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UFunction_UInventory_TransferSlots_Statics::NewProp_slotFrom = { "slotFrom", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(Inventory_eventTransferSlots_Parms, slotFrom), METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UInventory_TransferSlots_Statics::NewProp_fromInv_MetaData[] = {
+		{ "EditInline", "true" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UInventory_TransferSlots_Statics::NewProp_fromInv = { "fromInv", nullptr, (EPropertyFlags)0x0010000000080080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(Inventory_eventTransferSlots_Parms, fromInv), Z_Construct_UClass_UInventory_NoRegister, METADATA_PARAMS(Z_Construct_UFunction_UInventory_TransferSlots_Statics::NewProp_fromInv_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_UInventory_TransferSlots_Statics::NewProp_fromInv_MetaData)) };
+	const UECodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UFunction_UInventory_TransferSlots_Statics::NewProp_slotTo = { "slotTo", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(Inventory_eventTransferSlots_Parms, slotTo), METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UInventory_TransferSlots_Statics::NewProp_toInv_MetaData[] = {
+		{ "EditInline", "true" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UInventory_TransferSlots_Statics::NewProp_toInv = { "toInv", nullptr, (EPropertyFlags)0x0010000000080080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(Inventory_eventTransferSlots_Parms, toInv), Z_Construct_UClass_UInventory_NoRegister, METADATA_PARAMS(Z_Construct_UFunction_UInventory_TransferSlots_Statics::NewProp_toInv_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_UInventory_TransferSlots_Statics::NewProp_toInv_MetaData)) };
+	void Z_Construct_UFunction_UInventory_TransferSlots_Statics::NewProp_ReturnValue_SetBit(void* Obj)
+	{
+		((Inventory_eventTransferSlots_Parms*)Obj)->ReturnValue = 1;
+	}
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UInventory_TransferSlots_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, sizeof(bool), sizeof(Inventory_eventTransferSlots_Parms), &Z_Construct_UFunction_UInventory_TransferSlots_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UInventory_TransferSlots_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UInventory_TransferSlots_Statics::NewProp_slotFrom,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UInventory_TransferSlots_Statics::NewProp_fromInv,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UInventory_TransferSlots_Statics::NewProp_slotTo,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UInventory_TransferSlots_Statics::NewProp_toInv,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UInventory_TransferSlots_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UInventory_TransferSlots_Statics::Function_MetaDataParams[] = {
+		{ "Category", "Inventory" },
+		{ "ModuleRelativePath", "Public/Inventory.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UInventory_TransferSlots_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UInventory, nullptr, "TransferSlots", nullptr, nullptr, sizeof(Z_Construct_UFunction_UInventory_TransferSlots_Statics::Inventory_eventTransferSlots_Parms), Z_Construct_UFunction_UInventory_TransferSlots_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UInventory_TransferSlots_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04022401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UInventory_TransferSlots_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UInventory_TransferSlots_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UInventory_TransferSlots()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UInventory_TransferSlots_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	struct Z_Construct_UFunction_UInventory_TryIncreaseSlotByAmount_Statics
 	{
 		struct Inventory_eventTryIncreaseSlotByAmount_Parms
@@ -182,6 +291,10 @@ void EmptyLinkFunctionForGeneratedCodeInventory() {}
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_OnInventoryUpdated_MetaData[];
+#endif
+		static const UECodeGen_Private::FMulticastDelegatePropertyParams NewProp_OnInventoryUpdated;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_NumRows_MetaData[];
 #endif
 		static const UECodeGen_Private::FUnsizedIntPropertyParams NewProp_NumRows;
@@ -210,6 +323,7 @@ void EmptyLinkFunctionForGeneratedCodeInventory() {}
 	const FClassFunctionLinkInfo Z_Construct_UClass_UInventory_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_UInventory_EmptySlot, "EmptySlot" }, // 1948509666
 		{ &Z_Construct_UFunction_UInventory_ReduceSlotByAmount, "ReduceSlotByAmount" }, // 859737246
+		{ &Z_Construct_UFunction_UInventory_TransferSlots, "TransferSlots" }, // 1688421929
 		{ &Z_Construct_UFunction_UInventory_TryIncreaseSlotByAmount, "TryIncreaseSlotByAmount" }, // 2442468758
 	};
 #if WITH_METADATA
@@ -220,6 +334,12 @@ void EmptyLinkFunctionForGeneratedCodeInventory() {}
 		{ "ModuleRelativePath", "Public/Inventory.h" },
 	};
 #endif
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UInventory_Statics::NewProp_OnInventoryUpdated_MetaData[] = {
+		{ "ModuleRelativePath", "Public/Inventory.h" },
+	};
+#endif
+	const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UInventory_Statics::NewProp_OnInventoryUpdated = { "OnInventoryUpdated", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UInventory, OnInventoryUpdated), Z_Construct_UDelegateFunction_Automafarm_KFOnInventoryUpdated__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_UInventory_Statics::NewProp_OnInventoryUpdated_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UInventory_Statics::NewProp_OnInventoryUpdated_MetaData)) }; // 850913570
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UInventory_Statics::NewProp_NumRows_MetaData[] = {
 		{ "Category", "Inventory" },
@@ -253,6 +373,7 @@ void EmptyLinkFunctionForGeneratedCodeInventory() {}
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UInventory_Statics::NewProp_ItemDataTable = { "ItemDataTable", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UInventory, ItemDataTable), Z_Construct_UClass_UDataTable_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UInventory_Statics::NewProp_ItemDataTable_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UInventory_Statics::NewProp_ItemDataTable_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UInventory_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UInventory_Statics::NewProp_OnInventoryUpdated,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UInventory_Statics::NewProp_NumRows,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UInventory_Statics::NewProp_NumCols,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UInventory_Statics::NewProp_Content_ValueProp,
@@ -297,9 +418,9 @@ void EmptyLinkFunctionForGeneratedCodeInventory() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Inventory_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UInventory, UInventory::StaticClass, TEXT("UInventory"), &Z_Registration_Info_UClass_UInventory, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UInventory), 3912454410U) },
+		{ Z_Construct_UClass_UInventory, UInventory::StaticClass, TEXT("UInventory"), &Z_Registration_Info_UClass_UInventory, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UInventory), 429994021U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Inventory_h_3808803154(TEXT("/Script/Automafarm"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Inventory_h_1315113407(TEXT("/Script/Automafarm"),
 		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Inventory_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Inventory_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

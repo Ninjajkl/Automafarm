@@ -146,9 +146,9 @@ void EmptyLinkFunctionForGeneratedCodePivotPaper() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_PivotPaper_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_APivotPaper, APivotPaper::StaticClass, TEXT("APivotPaper"), &Z_Registration_Info_UClass_APivotPaper, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APivotPaper), 2771228407U) },
+		{ Z_Construct_UClass_APivotPaper, APivotPaper::StaticClass, TEXT("APivotPaper"), &Z_Registration_Info_UClass_APivotPaper, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APivotPaper), 3549049739U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_PivotPaper_h_406993989(TEXT("/Script/Automafarm"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_PivotPaper_h_1371501168(TEXT("/Script/Automafarm"),
 		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_PivotPaper_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_PivotPaper_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

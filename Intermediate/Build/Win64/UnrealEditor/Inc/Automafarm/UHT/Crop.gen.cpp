@@ -228,9 +228,9 @@ void EmptyLinkFunctionForGeneratedCodeCrop() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Crop_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ACrop, ACrop::StaticClass, TEXT("ACrop"), &Z_Registration_Info_UClass_ACrop, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ACrop), 792801804U) },
+		{ Z_Construct_UClass_ACrop, ACrop::StaticClass, TEXT("ACrop"), &Z_Registration_Info_UClass_ACrop, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ACrop), 1371462378U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Crop_h_905741865(TEXT("/Script/Automafarm"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Crop_h_2745934918(TEXT("/Script/Automafarm"),
 		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Crop_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Crop_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

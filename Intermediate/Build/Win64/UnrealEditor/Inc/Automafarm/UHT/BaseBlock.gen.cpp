@@ -110,9 +110,9 @@ void EmptyLinkFunctionForGeneratedCodeBaseBlock() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_BaseBlock_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ABaseBlock, ABaseBlock::StaticClass, TEXT("ABaseBlock"), &Z_Registration_Info_UClass_ABaseBlock, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABaseBlock), 3477913674U) },
+		{ Z_Construct_UClass_ABaseBlock, ABaseBlock::StaticClass, TEXT("ABaseBlock"), &Z_Registration_Info_UClass_ABaseBlock, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABaseBlock), 4022108917U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_BaseBlock_h_3134698120(TEXT("/Script/Automafarm"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_BaseBlock_h_2800617574(TEXT("/Script/Automafarm"),
 		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_BaseBlock_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_BaseBlock_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

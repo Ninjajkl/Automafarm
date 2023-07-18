@@ -7,7 +7,8 @@
 
 UENUM(BlueprintType)
 enum class ETileType : uint8 {
-	BLOCK UMETA(DisplayName = "Block"),
+	BASEBLOCK UMETA(DisplayName = "BaseBlock"),
+	INTERACTABLEBLOCK UMETA(DisplayName = "InteractableBlock"),
 	PIVOTPAPER UMETA(DisplayName = "PivotPaper"),
 	DEFAULT UMETA(DisplayName = "Default")
 };

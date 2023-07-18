@@ -8,6 +8,7 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeAutomafarm_init() {}
 	AUTOMAFARM_API UFunction* Z_Construct_UDelegateFunction_Automafarm_KFOnHourPassed__DelegateSignature();
+	AUTOMAFARM_API UFunction* Z_Construct_UDelegateFunction_Automafarm_KFOnInventoryUpdated__DelegateSignature();
 	AUTOMAFARM_API UFunction* Z_Construct_UDelegateFunction_Automafarm_KFOnPlayerMoved__DelegateSignature();
 	static FPackageRegistrationInfo Z_Registration_Info_UPackage__Script_Automafarm;
 	FORCENOINLINE UPackage* Z_Construct_UPackage__Script_Automafarm()
@@ -16,6 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeAutomafarm_init() {}
 		{
 			static UObject* (*const SingletonFuncArray[])() = {
 				(UObject* (*)())Z_Construct_UDelegateFunction_Automafarm_KFOnHourPassed__DelegateSignature,
+				(UObject* (*)())Z_Construct_UDelegateFunction_Automafarm_KFOnInventoryUpdated__DelegateSignature,
 				(UObject* (*)())Z_Construct_UDelegateFunction_Automafarm_KFOnPlayerMoved__DelegateSignature,
 			};
 			static const UECodeGen_Private::FPackageParams PackageParams = {
@@ -23,13 +25,13 @@ void EmptyLinkFunctionForGeneratedCodeAutomafarm_init() {}
 				SingletonFuncArray,
 				UE_ARRAY_COUNT(SingletonFuncArray),
 				PKG_CompiledIn | 0x00000000,
-				0xC7547775,
-				0x4F12FE9B,
+				0x492C859E,
+				0xFD8C20E4,
 				METADATA_PARAMS(nullptr, 0)
 			};
 			UECodeGen_Private::ConstructUPackage(Z_Registration_Info_UPackage__Script_Automafarm.OuterSingleton, PackageParams);
 		}
 		return Z_Registration_Info_UPackage__Script_Automafarm.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_Automafarm(Z_Construct_UPackage__Script_Automafarm, TEXT("/Script/Automafarm"), Z_Registration_Info_UPackage__Script_Automafarm, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xC7547775, 0x4F12FE9B));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_Automafarm(Z_Construct_UPackage__Script_Automafarm, TEXT("/Script/Automafarm"), Z_Registration_Info_UPackage__Script_Automafarm, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x492C859E, 0xFD8C20E4));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

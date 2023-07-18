@@ -131,9 +131,9 @@ void EmptyLinkFunctionForGeneratedCodePlaceableObject() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_PlaceableObject_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_APlaceableObject, APlaceableObject::StaticClass, TEXT("APlaceableObject"), &Z_Registration_Info_UClass_APlaceableObject, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APlaceableObject), 726291369U) },
+		{ Z_Construct_UClass_APlaceableObject, APlaceableObject::StaticClass, TEXT("APlaceableObject"), &Z_Registration_Info_UClass_APlaceableObject, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APlaceableObject), 2541068639U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_PlaceableObject_h_218486519(TEXT("/Script/Automafarm"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_PlaceableObject_h_1170955560(TEXT("/Script/Automafarm"),
 		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_PlaceableObject_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_PlaceableObject_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

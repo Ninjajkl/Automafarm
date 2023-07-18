@@ -8,6 +8,7 @@
 #include "Misc/CoreDelegates.h"
 #include "Public/PlaceableObject.h"
 #include "PivotPaper.h"
+#include "InteractableBlock.h"
 #include "FarmGameStateBase.generated.h"
 
 /**
@@ -41,6 +42,7 @@ public:
 
 	bool InitializeInstanceableObject(TSubclassOf<APlaceableObject> BlockClass);
 	APivotPaper* AddPivotPaper(TSubclassOf<APlaceableObject> PivotClass, FVector TileLoc, FVector PlayerLocation);
+	AInteractableBlock* AddInteractableBlock(TSubclassOf<APlaceableObject> BlockClass, FVector TileLoc);
 	void InitializeTerrain();
 
 	//Time System Properties and Functions

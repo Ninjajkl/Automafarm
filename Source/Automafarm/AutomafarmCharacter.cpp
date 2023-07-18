@@ -143,8 +143,14 @@ void AAutomafarmCharacter::Interact(const FInputActionValue& Value)
 		*/
 		FVector SelectedTile = AbsoluteToGrid(HitResult.ImpactPoint+HitResult.ImpactNormal);
 
-		//Check if item in current held slot
-		if (PlayerInventory->Content.Contains(CurrHotbarSlot)) {
+		//First, check if we are clicking on something interactable
+		
+		if(HitResult.GetActor()->Implements<UInteractable>())
+		{
+			IInteractable::Execute_Interact(HitResult.GetActor());
+		}
+		//Otherwise, Check if item in current held slot
+		else if (PlayerInventory->Content.Contains(CurrHotbarSlot)) {
 			FSlotStruct& Slot = PlayerInventory->Content[CurrHotbarSlot];
 			// Retrieve the FItemStruct from the ItemDataTable using the ItemID
 			FItemStruct* ItemStruct = PlayerInventory->ItemDataTable->FindRow<FItemStruct>(Slot.ItemID.RowName, TEXT(""));
@@ -218,18 +224,26 @@ void AAutomafarmCharacter::PlaceHeldItem(TSubclassOf<APlaceableObject> placeable
 	ETileType TileType = defaultPlaceableObject->TileType;
 	TArray<FVector> TilesToFill = RotateByYaw(defaultPlaceableObject->TilesToFill, GetFirstPersonCameraComponent()->GetForwardVector());
 	APlaceableObject* newPO;
-	if (TileType == ETileType::PIVOTPAPER) {
-		newPO = myGameState->AddPivotPaper(placeableClass, TileKey * TileLength, GetFirstPersonCameraComponent()->GetComponentLocation());
-	}
-	else if (TileType == ETileType::BLOCK)
+	switch (TileType)
 	{
-		myGameState->InitializeInstanceableObject(placeableClass);
-		newPO = myGameState->InstancedObjectMap[placeableClass];
+		case ETileType::BASEBLOCK:
+			myGameState->InitializeInstanceableObject(placeableClass);
+			newPO = myGameState->InstancedObjectMap[placeableClass];
+			break;
+		case ETileType::INTERACTABLEBLOCK:
+			newPO = myGameState->AddInteractableBlock(placeableClass, TileKey * TileLength);
+			break;
+		case ETileType::PIVOTPAPER:
+			newPO = myGameState->AddPivotPaper(placeableClass, TileKey * TileLength, GetFirstPersonCameraComponent()->GetComponentLocation());
+			break;
+		case ETileType::DEFAULT:
+			UE_LOG(LogTemp, Error, TEXT("Item to be placed is missing a TitleType"));
+			break;
 	}
 	while (!TilesToFill.IsEmpty())
 	{
 		FVector newTileKey = TileKey + TilesToFill.Pop();
-		if (TileType == ETileType::BLOCK) {
+		if (TileType == ETileType::BASEBLOCK) {
 			Cast<ABaseBlock>(myGameState->InstancedObjectMap[placeableClass])->AddBlock(newTileKey * TileLength + FVector(50, 50, 50));
 		}
 		//placeableObject->FilledTiles.Add(newTileKey);

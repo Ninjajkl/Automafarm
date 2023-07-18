@@ -9,6 +9,10 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class APlaceableObject;
+class UCameraComponent;
+class USkeletalMeshComponent;
+struct FInputActionValue;
 #ifdef AUTOMAFARM_AutomafarmCharacter_generated_h
 #error "AutomafarmCharacter.generated.h already included, missing '#pragma once' in AutomafarmCharacter.h"
 #endif
@@ -19,8 +23,34 @@ AUTOMAFARM_API void FKFOnPlayerMoved_DelegateWrapper(const FMulticastScriptDeleg
 
 
 #define FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_29_SPARSE_DATA
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_29_RPC_WRAPPERS
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_29_RPC_WRAPPERS_NO_PURE_DECLS
+#define FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_29_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execRotateByYaw); \
+	DECLARE_FUNCTION(execRoundVector); \
+	DECLARE_FUNCTION(execValidPlacement); \
+	DECLARE_FUNCTION(execPlaceHeldItem); \
+	DECLARE_FUNCTION(execAbsoluteToGrid); \
+	DECLARE_FUNCTION(execGetFirstPersonCameraComponent); \
+	DECLARE_FUNCTION(execGetMesh1P); \
+	DECLARE_FUNCTION(execInteract); \
+	DECLARE_FUNCTION(execLook); \
+	DECLARE_FUNCTION(execMove);
+
+
+#define FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_29_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execRotateByYaw); \
+	DECLARE_FUNCTION(execRoundVector); \
+	DECLARE_FUNCTION(execValidPlacement); \
+	DECLARE_FUNCTION(execPlaceHeldItem); \
+	DECLARE_FUNCTION(execAbsoluteToGrid); \
+	DECLARE_FUNCTION(execGetFirstPersonCameraComponent); \
+	DECLARE_FUNCTION(execGetMesh1P); \
+	DECLARE_FUNCTION(execInteract); \
+	DECLARE_FUNCTION(execLook); \
+	DECLARE_FUNCTION(execMove);
+
+
 #define FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_29_ACCESSORS
 #define FID_Projects_Automafarm_5_2_Source_Automafarm_AutomafarmCharacter_h_29_INCLASS_NO_PURE_DECLS \
 private: \

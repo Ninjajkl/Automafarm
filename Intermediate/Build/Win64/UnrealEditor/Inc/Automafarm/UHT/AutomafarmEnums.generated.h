@@ -19,7 +19,8 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 
 #define FOREACH_ENUM_ETILETYPE(op) \
-	op(ETileType::BLOCK) \
+	op(ETileType::BASEBLOCK) \
+	op(ETileType::INTERACTABLEBLOCK) \
 	op(ETileType::PIVOTPAPER) \
 	op(ETileType::DEFAULT) 
 

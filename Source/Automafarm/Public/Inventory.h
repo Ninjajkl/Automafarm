@@ -9,6 +9,8 @@
 #include "Engine/DataTable.h"
 #include "Inventory.generated.h"
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FKFOnInventoryUpdated);
+
 UCLASS( ClassGroup=(Inventory), meta=(BlueprintSpawnableComponent) )
 class AUTOMAFARM_API UInventory : public UActorComponent
 {
@@ -17,6 +19,9 @@ class AUTOMAFARM_API UInventory : public UActorComponent
 public:	
 	// Sets default values for this component's properties
 	UInventory();
+
+	UPROPERTY(BlueprintAssignable)
+		FKFOnInventoryUpdated OnInventoryUpdated;
 
 protected:
 	// Called when the game starts
@@ -43,4 +48,6 @@ public:
 		void ReduceSlotByAmount(int slotNum, int amount);
 	UFUNCTION(BlueprintCallable, Category = "Inventory")
 		bool TryIncreaseSlotByAmount(int slotNum, int amount);
+	UFUNCTION(BlueprintCallable, Category = "Inventory")
+		static bool TransferSlots(int slotFrom, UInventory* fromInv, int slotTo, UInventory* toInv);
 };

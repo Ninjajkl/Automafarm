@@ -1,7 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "Engine/DataTable.h"
 #include "Inventory.h"
+
+#include "Engine/DataTable.h"
 
 // Sets default values for this component's properties
 UInventory::UInventory()
@@ -39,6 +40,7 @@ void UInventory::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompo
 void UInventory::EmptySlot(int slotNum) 
 {
 	Content.Remove(slotNum);
+	OnInventoryUpdated.Broadcast();
 }
 
 void UInventory::ReduceSlotByAmount(int slotNum, int amount)
@@ -48,6 +50,7 @@ void UInventory::ReduceSlotByAmount(int slotNum, int amount)
 	{
 		EmptySlot(slotNum);
 	}
+	OnInventoryUpdated.Broadcast();
 }
 
 bool UInventory::TryIncreaseSlotByAmount(int slotNum, int amount)
@@ -58,5 +61,42 @@ bool UInventory::TryIncreaseSlotByAmount(int slotNum, int amount)
 		return false;
 	}
 	Content[slotNum].Quantity += amount;
+	OnInventoryUpdated.Broadcast();
 	return true;
+}
+
+bool UInventory::TransferSlots(int slotFrom, UInventory* fromInv, int slotTo, UInventory* toInv)
+{
+	if(!IsValid(fromInv) || !IsValid(toInv))
+	{
+		return false;
+	}
+	if((slotFrom >= 0 && slotFrom < fromInv->NumRows * fromInv->NumCols) && (slotTo >= 0 && slotTo < toInv->NumRows * toInv->NumCols))
+	{
+		if(fromInv->Content.Contains(slotFrom))
+		{
+			if(toInv->Content.Contains(slotTo))
+			{
+				FSlotStruct tempSlot = fromInv->Content[slotFrom];
+				fromInv->Content[slotFrom] = toInv->Content[slotTo];
+				toInv->Content[slotTo] = tempSlot;
+			}
+			else
+			{
+				toInv->Content.Add(slotTo, fromInv->Content[slotFrom]);
+				fromInv->Content.Remove(slotFrom);
+			}
+			toInv->OnInventoryUpdated.Broadcast();
+			fromInv->OnInventoryUpdated.Broadcast();
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	else
+	{
+		return false;
+	}
 }

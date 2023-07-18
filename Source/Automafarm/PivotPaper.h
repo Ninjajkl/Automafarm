@@ -19,14 +19,10 @@ public:
 	// Sets default values for this actor's properties
 	APivotPaper();
 
-	//UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "PivotPaper")
-	//	UPaperFlipbookComponent* FlipbookComp;
 	// Name of the Sprite component
 	static FName SpriteComponentName;
 	UPROPERTY(Category = Character, VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 		TObjectPtr<UPaperFlipbookComponent> Sprite;
-	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PivotPaper")
-	//	UPaperZDAnimationComponent* AnimationComp;
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

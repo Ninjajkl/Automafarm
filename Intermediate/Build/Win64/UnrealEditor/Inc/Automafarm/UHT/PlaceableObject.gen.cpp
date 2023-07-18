@@ -85,7 +85,7 @@ void EmptyLinkFunctionForGeneratedCodePlaceableObject() {}
 		{ "ModuleRelativePath", "Public/PlaceableObject.h" },
 	};
 #endif
-	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_APlaceableObject_Statics::NewProp_TileType = { "TileType", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(APlaceableObject, TileType), Z_Construct_UEnum_Automafarm_ETileType, METADATA_PARAMS(Z_Construct_UClass_APlaceableObject_Statics::NewProp_TileType_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APlaceableObject_Statics::NewProp_TileType_MetaData)) }; // 3146826733
+	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_APlaceableObject_Statics::NewProp_TileType = { "TileType", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(APlaceableObject, TileType), Z_Construct_UEnum_Automafarm_ETileType, METADATA_PARAMS(Z_Construct_UClass_APlaceableObject_Statics::NewProp_TileType_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APlaceableObject_Statics::NewProp_TileType_MetaData)) }; // 1722969977
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_APlaceableObject_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlaceableObject_Statics::NewProp_TilesToFill_Inner,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlaceableObject_Statics::NewProp_TilesToFill,
@@ -131,9 +131,9 @@ void EmptyLinkFunctionForGeneratedCodePlaceableObject() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_PlaceableObject_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_APlaceableObject, APlaceableObject::StaticClass, TEXT("APlaceableObject"), &Z_Registration_Info_UClass_APlaceableObject, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APlaceableObject), 2541068639U) },
+		{ Z_Construct_UClass_APlaceableObject, APlaceableObject::StaticClass, TEXT("APlaceableObject"), &Z_Registration_Info_UClass_APlaceableObject, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APlaceableObject), 2675848230U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_PlaceableObject_h_1170955560(TEXT("/Script/Automafarm"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_PlaceableObject_h_1719536379(TEXT("/Script/Automafarm"),
 		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_PlaceableObject_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_PlaceableObject_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
