@@ -56,95 +56,191 @@
     <ClInclude Include="..\..\Source\Automafarm\Automafarm.h">
       <Filter>Source\Automafarm</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\Automafarm\AutomafarmCharacter.cpp">
-      <Filter>Source\Automafarm</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Automafarm\AutomafarmCharacter.h">
-      <Filter>Source\Automafarm</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Automafarm\AutomafarmProjectile.cpp">
-      <Filter>Source\Automafarm</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Automafarm\AutomafarmProjectile.h">
-      <Filter>Source\Automafarm</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Automafarm\BaseBlock.cpp">
-      <Filter>Source\Automafarm</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Automafarm\BaseBlock.h">
-      <Filter>Source\Automafarm</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Automafarm\Crop.cpp">
-      <Filter>Source\Automafarm</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Automafarm\Crop.h">
-      <Filter>Source\Automafarm</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Automafarm\FarmGameStateBase.cpp">
-      <Filter>Source\Automafarm</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Automafarm\FarmGameStateBase.h">
-      <Filter>Source\Automafarm</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Automafarm\PivotPaper.cpp">
-      <Filter>Source\Automafarm</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Automafarm\PivotPaper.h">
-      <Filter>Source\Automafarm</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Automafarm\TerrainGenerator.cpp">
-      <Filter>Source\Automafarm</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Automafarm\TerrainGenerator.h">
-      <Filter>Source\Automafarm</Filter>
-    </ClInclude>
     <Filter Include="Source\Automafarm\Private">
       <UniqueIdentifier>{C1A170FA-4E50-32C6-AA34-9F99082A600E}</UniqueIdentifier>
     </Filter>
-    <ClCompile Include="..\..\Source\Automafarm\Private\AutomafarmEnums.cpp">
-      <Filter>Source\Automafarm\Private</Filter>
+    <Filter Include="Source\Automafarm\Private\Characters">
+      <UniqueIdentifier>{14227BA5-CD22-3DC2-844F-FDF144A77AB9}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Automafarm\Private\Characters\AutomafarmCharacter.cpp">
+      <Filter>Source\Automafarm\Private\Characters</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\Automafarm\Private\Interactable.cpp">
-      <Filter>Source\Automafarm\Private</Filter>
+    <ClCompile Include="..\..\Source\Automafarm\Private\Characters\AutomafarmPlayerController.cpp">
+      <Filter>Source\Automafarm\Private\Characters</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\Automafarm\Private\InteractableBlock.cpp">
-      <Filter>Source\Automafarm\Private</Filter>
+    <Filter Include="Source\Automafarm\Private\Game">
+      <UniqueIdentifier>{88674781-070D-354F-A3CD-B6B661BF3D7B}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Automafarm\Private\Game\FarmGameStateBase.cpp">
+      <Filter>Source\Automafarm\Private\Game</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\Automafarm\Private\Inventory.cpp">
-      <Filter>Source\Automafarm\Private</Filter>
+    <Filter Include="Source\Automafarm\Private\Items">
+      <UniqueIdentifier>{436F0ADF-CE61-3563-893D-2CDECA8194CD}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Automafarm\Private\Items\BaseBlock.cpp">
+      <Filter>Source\Automafarm\Private\Items</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\Automafarm\Private\Item.cpp">
-      <Filter>Source\Automafarm\Private</Filter>
+    <ClCompile Include="..\..\Source\Automafarm\Private\Items\Crop.cpp">
+      <Filter>Source\Automafarm\Private\Items</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\Automafarm\Private\PlaceableObject.cpp">
-      <Filter>Source\Automafarm\Private</Filter>
+    <ClCompile Include="..\..\Source\Automafarm\Private\Items\InteractableBlock.cpp">
+      <Filter>Source\Automafarm\Private\Items</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\Automafarm\Private\Structs.cpp">
-      <Filter>Source\Automafarm\Private</Filter>
+    <ClCompile Include="..\..\Source\Automafarm\Private\Items\Item.cpp">
+      <Filter>Source\Automafarm\Private\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Automafarm\Private\Items\PivotPaper.cpp">
+      <Filter>Source\Automafarm\Private\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Automafarm\Private\Items\PlaceableObject.cpp">
+      <Filter>Source\Automafarm\Private\Items</Filter>
+    </ClCompile>
+    <Filter Include="Source\Automafarm\Private\Library">
+      <UniqueIdentifier>{406982F0-F6D5-3E7E-B178-A473209F942E}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Automafarm\Private\Library\AutomafarmEnums.cpp">
+      <Filter>Source\Automafarm\Private\Library</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Automafarm\Private\Library\GameConstants.cpp">
+      <Filter>Source\Automafarm\Private\Library</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Automafarm\Private\Library\Structs.cpp">
+      <Filter>Source\Automafarm\Private\Library</Filter>
+    </ClCompile>
+    <Filter Include="Source\Automafarm\Private\Systems">
+      <UniqueIdentifier>{3CB5EF15-888B-3BC8-B884-BF738D9089F9}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Automafarm\Private\Systems\Interactable.cpp">
+      <Filter>Source\Automafarm\Private\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Automafarm\Private\Systems\Inventory.cpp">
+      <Filter>Source\Automafarm\Private\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Automafarm\Private\Systems\TerrainGenerator.cpp">
+      <Filter>Source\Automafarm\Private\Systems</Filter>
+    </ClCompile>
+    <Filter Include="Source\Automafarm\Private\UI">
+      <UniqueIdentifier>{34F33119-BC41-34BD-A49C-7F49152ED384}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Automafarm\Private\UI\ContainerInventory.cpp">
+      <Filter>Source\Automafarm\Private\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Automafarm\Private\UI\DragDropInventorySlot.cpp">
+      <Filter>Source\Automafarm\Private\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Automafarm\Private\UI\DragPreview.cpp">
+      <Filter>Source\Automafarm\Private\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Automafarm\Private\UI\Hotbar.cpp">
+      <Filter>Source\Automafarm\Private\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Automafarm\Private\UI\InventoryGrid.cpp">
+      <Filter>Source\Automafarm\Private\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Automafarm\Private\UI\InventorySlot.cpp">
+      <Filter>Source\Automafarm\Private\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Automafarm\Private\UI\PlayerHud.cpp">
+      <Filter>Source\Automafarm\Private\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Automafarm\Private\UI\PlayerInventory.cpp">
+      <Filter>Source\Automafarm\Private\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Automafarm\Private\UI\SlotPreview.cpp">
+      <Filter>Source\Automafarm\Private\UI</Filter>
     </ClCompile>
     <Filter Include="Source\Automafarm\Public">
       <UniqueIdentifier>{584B8870-FEA6-3050-A161-80F16E029F5F}</UniqueIdentifier>
     </Filter>
-    <ClInclude Include="..\..\Source\Automafarm\Public\AutomafarmEnums.h">
-      <Filter>Source\Automafarm\Public</Filter>
+    <Filter Include="Source\Automafarm\Public\Characters">
+      <UniqueIdentifier>{11659C2D-5BCA-396D-BB07-3E31A0AA5DFD}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Automafarm\Public\Characters\AutomafarmCharacter.h">
+      <Filter>Source\Automafarm\Public\Characters</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\Automafarm\Public\Interactable.h">
-      <Filter>Source\Automafarm\Public</Filter>
+    <ClInclude Include="..\..\Source\Automafarm\Public\Characters\AutomafarmPlayerController.h">
+      <Filter>Source\Automafarm\Public\Characters</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\Automafarm\Public\InteractableBlock.h">
-      <Filter>Source\Automafarm\Public</Filter>
+    <Filter Include="Source\Automafarm\Public\Game">
+      <UniqueIdentifier>{0B884B06-5305-36B6-9CCE-461A65C68B9A}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Automafarm\Public\Game\FarmGameStateBase.h">
+      <Filter>Source\Automafarm\Public\Game</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\Automafarm\Public\Inventory.h">
-      <Filter>Source\Automafarm\Public</Filter>
+    <Filter Include="Source\Automafarm\Public\Items">
+      <UniqueIdentifier>{3618F31B-AEF1-3CE0-B970-3D9E4DE03E93}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Automafarm\Public\Items\BaseBlock.h">
+      <Filter>Source\Automafarm\Public\Items</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\Automafarm\Public\Item.h">
-      <Filter>Source\Automafarm\Public</Filter>
+    <ClInclude Include="..\..\Source\Automafarm\Public\Items\Crop.h">
+      <Filter>Source\Automafarm\Public\Items</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\Automafarm\Public\PlaceableObject.h">
-      <Filter>Source\Automafarm\Public</Filter>
+    <ClInclude Include="..\..\Source\Automafarm\Public\Items\InteractableBlock.h">
+      <Filter>Source\Automafarm\Public\Items</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\Automafarm\Public\Structs.h">
-      <Filter>Source\Automafarm\Public</Filter>
+    <ClInclude Include="..\..\Source\Automafarm\Public\Items\Item.h">
+      <Filter>Source\Automafarm\Public\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Automafarm\Public\Items\PivotPaper.h">
+      <Filter>Source\Automafarm\Public\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Automafarm\Public\Items\PlaceableObject.h">
+      <Filter>Source\Automafarm\Public\Items</Filter>
+    </ClInclude>
+    <Filter Include="Source\Automafarm\Public\Library">
+      <UniqueIdentifier>{0CEE3620-01E9-30FB-957F-4E2530DAEFD5}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Automafarm\Public\Library\AutomafarmEnums.h">
+      <Filter>Source\Automafarm\Public\Library</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Automafarm\Public\Library\GameConstants.h">
+      <Filter>Source\Automafarm\Public\Library</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Automafarm\Public\Library\Structs.h">
+      <Filter>Source\Automafarm\Public\Library</Filter>
+    </ClInclude>
+    <Filter Include="Source\Automafarm\Public\Systems">
+      <UniqueIdentifier>{17C8BA9C-13CE-32F9-BE7D-B8C397D13E1F}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Automafarm\Public\Systems\Interactable.h">
+      <Filter>Source\Automafarm\Public\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Automafarm\Public\Systems\Inventory.h">
+      <Filter>Source\Automafarm\Public\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Automafarm\Public\Systems\TerrainGenerator.h">
+      <Filter>Source\Automafarm\Public\Systems</Filter>
+    </ClInclude>
+    <Filter Include="Source\Automafarm\Public\UI">
+      <UniqueIdentifier>{40208F13-BDA4-344E-BE8B-38B95F47EE46}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Automafarm\Public\UI\ContainerInventory.h">
+      <Filter>Source\Automafarm\Public\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Automafarm\Public\UI\DragDropInventorySlot.h">
+      <Filter>Source\Automafarm\Public\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Automafarm\Public\UI\DragPreview.h">
+      <Filter>Source\Automafarm\Public\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Automafarm\Public\UI\Hotbar.h">
+      <Filter>Source\Automafarm\Public\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Automafarm\Public\UI\InventoryGrid.h">
+      <Filter>Source\Automafarm\Public\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Automafarm\Public\UI\InventorySlot.h">
+      <Filter>Source\Automafarm\Public\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Automafarm\Public\UI\PlayerHud.h">
+      <Filter>Source\Automafarm\Public\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Automafarm\Public\UI\PlayerInventory.h">
+      <Filter>Source\Automafarm\Public\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Automafarm\Public\UI\SlotPreview.h">
+      <Filter>Source\Automafarm\Public\UI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

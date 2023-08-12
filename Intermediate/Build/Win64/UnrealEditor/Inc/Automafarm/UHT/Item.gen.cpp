@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Automafarm/Public/Item.h"
+#include "Automafarm/Public/Items/Item.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeItem() {}
 // Cross Module References
@@ -45,14 +45,14 @@ void EmptyLinkFunctionForGeneratedCodeItem() {}
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AItem_Statics::Class_MetaDataParams[] = {
 		{ "BlueprintSpawnableComponent", "" },
 		{ "ClassGroupNames", "Item" },
-		{ "IncludePath", "Item.h" },
-		{ "ModuleRelativePath", "Public/Item.h" },
+		{ "IncludePath", "Items/Item.h" },
+		{ "ModuleRelativePath", "Public/Items/Item.h" },
 	};
 #endif
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AItem_Statics::NewProp_Placeable_MetaData[] = {
 		{ "Category", "Item" },
-		{ "ModuleRelativePath", "Public/Item.h" },
+		{ "ModuleRelativePath", "Public/Items/Item.h" },
 	};
 #endif
 	void Z_Construct_UClass_AItem_Statics::NewProp_Placeable_SetBit(void* Obj)
@@ -95,15 +95,15 @@ void EmptyLinkFunctionForGeneratedCodeItem() {}
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AItem);
 	AItem::~AItem() {}
-	struct Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Item_h_Statics
+	struct Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Items_Item_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Item_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AItem, AItem::StaticClass, TEXT("AItem"), &Z_Registration_Info_UClass_AItem, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AItem), 3050343091U) },
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Items_Item_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_AItem, AItem::StaticClass, TEXT("AItem"), &Z_Registration_Info_UClass_AItem, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AItem), 1309186616U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Item_h_3781356302(TEXT("/Script/Automafarm"),
-		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Item_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Item_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Items_Item_h_2360509401(TEXT("/Script/Automafarm"),
+		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Items_Item_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Items_Item_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

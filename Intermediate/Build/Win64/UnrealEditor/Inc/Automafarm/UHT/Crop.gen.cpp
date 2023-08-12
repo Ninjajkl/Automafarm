@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Automafarm/Crop.h"
+#include "Automafarm/Public/Items/Crop.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeCrop() {}
 // Cross Module References
@@ -50,7 +50,7 @@ void EmptyLinkFunctionForGeneratedCodeCrop() {}
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ACrop_UpdateCurrentFlipBook_Statics::Function_MetaDataParams[] = {
 		{ "Category", "TimeSystem" },
-		{ "ModuleRelativePath", "Crop.h" },
+		{ "ModuleRelativePath", "Public/Items/Crop.h" },
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ACrop_UpdateCurrentFlipBook_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ACrop, nullptr, "UpdateCurrentFlipBook", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ACrop_UpdateCurrentFlipBook_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ACrop_UpdateCurrentFlipBook_Statics::Function_MetaDataParams)) };
@@ -82,7 +82,7 @@ void EmptyLinkFunctionForGeneratedCodeCrop() {}
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ACrop_UpdateTime_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Crop.h" },
+		{ "ModuleRelativePath", "Public/Items/Crop.h" },
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ACrop_UpdateTime_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ACrop, nullptr, "UpdateTime", nullptr, nullptr, sizeof(Z_Construct_UFunction_ACrop_UpdateTime_Statics::Crop_eventUpdateTime_Parms), Z_Construct_UFunction_ACrop_UpdateTime_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ACrop_UpdateTime_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00820401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ACrop_UpdateTime_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ACrop_UpdateTime_Statics::Function_MetaDataParams)) };
@@ -135,20 +135,20 @@ void EmptyLinkFunctionForGeneratedCodeCrop() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_Automafarm,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_ACrop_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_ACrop_UpdateCurrentFlipBook, "UpdateCurrentFlipBook" }, // 25994182
-		{ &Z_Construct_UFunction_ACrop_UpdateTime, "UpdateTime" }, // 1097356602
+		{ &Z_Construct_UFunction_ACrop_UpdateCurrentFlipBook, "UpdateCurrentFlipBook" }, // 4147095598
+		{ &Z_Construct_UFunction_ACrop_UpdateTime, "UpdateTime" }, // 733211684
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACrop_Statics::Class_MetaDataParams[] = {
-		{ "IncludePath", "Crop.h" },
-		{ "ModuleRelativePath", "Crop.h" },
+		{ "IncludePath", "Items/Crop.h" },
+		{ "ModuleRelativePath", "Public/Items/Crop.h" },
 	};
 #endif
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACrop_Statics::NewProp_Harvestable_MetaData[] = {
 		{ "Category", "CropSystem" },
 		{ "Comment", "//Crop System Properties and Functions\n" },
-		{ "ModuleRelativePath", "Crop.h" },
+		{ "ModuleRelativePath", "Public/Items/Crop.h" },
 		{ "ToolTip", "Crop System Properties and Functions" },
 	};
 #endif
@@ -162,7 +162,7 @@ void EmptyLinkFunctionForGeneratedCodeCrop() {}
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACrop_Statics::NewProp_GrowthStages_MetaData[] = {
 		{ "Category", "CropSystem" },
-		{ "ModuleRelativePath", "Crop.h" },
+		{ "ModuleRelativePath", "Public/Items/Crop.h" },
 		{ "ToolTip", "A map of growth stages for playing Flipbooks over time.\nKey: Hours since creation\nValue: Flipbook to play at the specified hour." },
 	};
 #endif
@@ -171,7 +171,7 @@ void EmptyLinkFunctionForGeneratedCodeCrop() {}
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACrop_Statics::NewProp_CropCreationTime_MetaData[] = {
 		{ "Category", "TimeSystem" },
 		{ "Comment", "//Time System Properties and Functions\n" },
-		{ "ModuleRelativePath", "Crop.h" },
+		{ "ModuleRelativePath", "Public/Items/Crop.h" },
 		{ "ToolTip", "Time System Properties and Functions" },
 	};
 #endif
@@ -179,7 +179,7 @@ void EmptyLinkFunctionForGeneratedCodeCrop() {}
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACrop_Statics::NewProp_CropTimespan_MetaData[] = {
 		{ "Category", "TimeSystem" },
-		{ "ModuleRelativePath", "Crop.h" },
+		{ "ModuleRelativePath", "Public/Items/Crop.h" },
 	};
 #endif
 	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_ACrop_Statics::NewProp_CropTimespan = { "CropTimespan", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ACrop, CropTimespan), Z_Construct_UScriptStruct_FTimespan, METADATA_PARAMS(Z_Construct_UClass_ACrop_Statics::NewProp_CropTimespan_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACrop_Statics::NewProp_CropTimespan_MetaData)) };
@@ -223,15 +223,15 @@ void EmptyLinkFunctionForGeneratedCodeCrop() {}
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ACrop);
 	ACrop::~ACrop() {}
-	struct Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Crop_h_Statics
+	struct Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Items_Crop_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Crop_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ACrop, ACrop::StaticClass, TEXT("ACrop"), &Z_Registration_Info_UClass_ACrop, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ACrop), 1371462378U) },
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Items_Crop_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_ACrop, ACrop::StaticClass, TEXT("ACrop"), &Z_Registration_Info_UClass_ACrop, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ACrop), 1743163090U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Crop_h_2745934918(TEXT("/Script/Automafarm"),
-		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Crop_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Crop_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Items_Crop_h_2694176816(TEXT("/Script/Automafarm"),
+		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Items_Crop_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Items_Crop_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

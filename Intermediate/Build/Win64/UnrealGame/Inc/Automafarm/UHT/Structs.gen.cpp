@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Automafarm/Public/Structs.h"
+#include "Automafarm/Public/Library/Structs.h"
 #include "../../Source/Runtime/Engine/Classes/Engine/DataTable.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeStructs() {}
@@ -52,8 +52,7 @@ template<> AUTOMAFARM_API UScriptStruct* StaticStruct<FSlotStruct>()
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FSlotStruct_Statics::Struct_MetaDataParams[] = {
 		{ "BlueprintType", "true" },
-		{ "Comment", "/**\n *\n */" },
-		{ "ModuleRelativePath", "Public/Structs.h" },
+		{ "ModuleRelativePath", "Public/Library/Structs.h" },
 	};
 #endif
 	void* Z_Construct_UScriptStruct_FSlotStruct_Statics::NewStructOps()
@@ -63,14 +62,14 @@ template<> AUTOMAFARM_API UScriptStruct* StaticStruct<FSlotStruct>()
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FSlotStruct_Statics::NewProp_ItemID_MetaData[] = {
 		{ "Category", "SlotStruct" },
-		{ "ModuleRelativePath", "Public/Structs.h" },
+		{ "ModuleRelativePath", "Public/Library/Structs.h" },
 	};
 #endif
 	const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FSlotStruct_Statics::NewProp_ItemID = { "ItemID", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FSlotStruct, ItemID), Z_Construct_UScriptStruct_FDataTableRowHandle, METADATA_PARAMS(Z_Construct_UScriptStruct_FSlotStruct_Statics::NewProp_ItemID_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSlotStruct_Statics::NewProp_ItemID_MetaData)) }; // 2710926200
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FSlotStruct_Statics::NewProp_Quantity_MetaData[] = {
 		{ "Category", "SlotStruct" },
-		{ "ModuleRelativePath", "Public/Structs.h" },
+		{ "ModuleRelativePath", "Public/Library/Structs.h" },
 	};
 #endif
 	const UECodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UScriptStruct_FSlotStruct_Statics::NewProp_Quantity = { "Quantity", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FSlotStruct, Quantity), METADATA_PARAMS(Z_Construct_UScriptStruct_FSlotStruct_Statics::NewProp_Quantity_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSlotStruct_Statics::NewProp_Quantity_MetaData)) };
@@ -147,7 +146,7 @@ template<> AUTOMAFARM_API UScriptStruct* StaticStruct<FItemStruct>()
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FItemStruct_Statics::Struct_MetaDataParams[] = {
 		{ "BlueprintType", "true" },
-		{ "ModuleRelativePath", "Public/Structs.h" },
+		{ "ModuleRelativePath", "Public/Library/Structs.h" },
 	};
 #endif
 	void* Z_Construct_UScriptStruct_FItemStruct_Statics::NewStructOps()
@@ -157,35 +156,35 @@ template<> AUTOMAFARM_API UScriptStruct* StaticStruct<FItemStruct>()
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FItemStruct_Statics::NewProp_Name_MetaData[] = {
 		{ "Category", "Item" },
-		{ "ModuleRelativePath", "Public/Structs.h" },
+		{ "ModuleRelativePath", "Public/Library/Structs.h" },
 	};
 #endif
 	const UECodeGen_Private::FNamePropertyParams Z_Construct_UScriptStruct_FItemStruct_Statics::NewProp_Name = { "Name", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FItemStruct, Name), METADATA_PARAMS(Z_Construct_UScriptStruct_FItemStruct_Statics::NewProp_Name_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FItemStruct_Statics::NewProp_Name_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FItemStruct_Statics::NewProp_Description_MetaData[] = {
 		{ "Category", "Item" },
-		{ "ModuleRelativePath", "Public/Structs.h" },
+		{ "ModuleRelativePath", "Public/Library/Structs.h" },
 	};
 #endif
 	const UECodeGen_Private::FStrPropertyParams Z_Construct_UScriptStruct_FItemStruct_Statics::NewProp_Description = { "Description", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FItemStruct, Description), METADATA_PARAMS(Z_Construct_UScriptStruct_FItemStruct_Statics::NewProp_Description_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FItemStruct_Statics::NewProp_Description_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FItemStruct_Statics::NewProp_Thumbnail_MetaData[] = {
 		{ "Category", "Item" },
-		{ "ModuleRelativePath", "Public/Structs.h" },
+		{ "ModuleRelativePath", "Public/Library/Structs.h" },
 	};
 #endif
 	const UECodeGen_Private::FSoftObjectPropertyParams Z_Construct_UScriptStruct_FItemStruct_Statics::NewProp_Thumbnail = { "Thumbnail", nullptr, (EPropertyFlags)0x0014000000000005, UECodeGen_Private::EPropertyGenFlags::SoftObject, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FItemStruct, Thumbnail), Z_Construct_UClass_UTexture2D_NoRegister, METADATA_PARAMS(Z_Construct_UScriptStruct_FItemStruct_Statics::NewProp_Thumbnail_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FItemStruct_Statics::NewProp_Thumbnail_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FItemStruct_Statics::NewProp_Item_MetaData[] = {
 		{ "Category", "Item" },
-		{ "ModuleRelativePath", "Public/Structs.h" },
+		{ "ModuleRelativePath", "Public/Library/Structs.h" },
 	};
 #endif
 	const UECodeGen_Private::FClassPropertyParams Z_Construct_UScriptStruct_FItemStruct_Statics::NewProp_Item = { "Item", nullptr, (EPropertyFlags)0x0014000000000005, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FItemStruct, Item), Z_Construct_UClass_UClass, Z_Construct_UClass_AItem_NoRegister, METADATA_PARAMS(Z_Construct_UScriptStruct_FItemStruct_Statics::NewProp_Item_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FItemStruct_Statics::NewProp_Item_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FItemStruct_Statics::NewProp_MaxStackSize_MetaData[] = {
 		{ "Category", "Item" },
-		{ "ModuleRelativePath", "Public/Structs.h" },
+		{ "ModuleRelativePath", "Public/Library/Structs.h" },
 	};
 #endif
 	const UECodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UScriptStruct_FItemStruct_Statics::NewProp_MaxStackSize = { "MaxStackSize", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FItemStruct, MaxStackSize), METADATA_PARAMS(Z_Construct_UScriptStruct_FItemStruct_Statics::NewProp_MaxStackSize_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FItemStruct_Statics::NewProp_MaxStackSize_MetaData)) };
@@ -217,16 +216,16 @@ template<> AUTOMAFARM_API UScriptStruct* StaticStruct<FItemStruct>()
 		}
 		return Z_Registration_Info_UScriptStruct_ItemStruct.InnerSingleton;
 	}
-	struct Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Structs_h_Statics
+	struct Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Library_Structs_h_Statics
 	{
 		static const FStructRegisterCompiledInInfo ScriptStructInfo[];
 	};
-	const FStructRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Structs_h_Statics::ScriptStructInfo[] = {
-		{ FSlotStruct::StaticStruct, Z_Construct_UScriptStruct_FSlotStruct_Statics::NewStructOps, TEXT("SlotStruct"), &Z_Registration_Info_UScriptStruct_SlotStruct, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FSlotStruct), 896531683U) },
-		{ FItemStruct::StaticStruct, Z_Construct_UScriptStruct_FItemStruct_Statics::NewStructOps, TEXT("ItemStruct"), &Z_Registration_Info_UScriptStruct_ItemStruct, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FItemStruct), 1483789648U) },
+	const FStructRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Library_Structs_h_Statics::ScriptStructInfo[] = {
+		{ FSlotStruct::StaticStruct, Z_Construct_UScriptStruct_FSlotStruct_Statics::NewStructOps, TEXT("SlotStruct"), &Z_Registration_Info_UScriptStruct_SlotStruct, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FSlotStruct), 2383706676U) },
+		{ FItemStruct::StaticStruct, Z_Construct_UScriptStruct_FItemStruct_Statics::NewStructOps, TEXT("ItemStruct"), &Z_Registration_Info_UScriptStruct_ItemStruct, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FItemStruct), 1562979068U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Structs_h_388120487(TEXT("/Script/Automafarm"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Library_Structs_h_1499072571(TEXT("/Script/Automafarm"),
 		nullptr, 0,
-		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Structs_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Structs_h_Statics::ScriptStructInfo),
+		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Library_Structs_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Library_Structs_h_Statics::ScriptStructInfo),
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

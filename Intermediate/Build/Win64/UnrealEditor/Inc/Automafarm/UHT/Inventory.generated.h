@@ -4,7 +4,7 @@
 	DO NOT modify this manually! Edit the corresponding .h files instead!
 ===========================================================================*/
 
-// IWYU pragma: private, include "Inventory.h"
+// IWYU pragma: private, include "Systems/Inventory.h"
 #include "UObject/ObjectMacros.h"
 #include "UObject/ScriptMacros.h"
 
@@ -15,29 +15,29 @@ class UInventory;
 #endif
 #define AUTOMAFARM_Inventory_generated_h
 
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Inventory_h_12_DELEGATE \
-AUTOMAFARM_API void FKFOnInventoryUpdated_DelegateWrapper(const FMulticastScriptDelegate& KFOnInventoryUpdated);
+#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Inventory_h_15_DELEGATE \
+AUTOMAFARM_API void FKFOnInventoryUpdated_DelegateWrapper(const FMulticastScriptDelegate& KFOnInventoryUpdated, UInventory* Inventory);
 
 
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Inventory_h_17_SPARSE_DATA
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Inventory_h_17_RPC_WRAPPERS \
+#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Inventory_h_20_SPARSE_DATA
+#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Inventory_h_20_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execTransferSlots); \
-	DECLARE_FUNCTION(execTryIncreaseSlotByAmount); \
+	DECLARE_FUNCTION(execIncreaseSlotByAmount); \
 	DECLARE_FUNCTION(execReduceSlotByAmount); \
 	DECLARE_FUNCTION(execEmptySlot);
 
 
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Inventory_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Inventory_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execTransferSlots); \
-	DECLARE_FUNCTION(execTryIncreaseSlotByAmount); \
+	DECLARE_FUNCTION(execIncreaseSlotByAmount); \
 	DECLARE_FUNCTION(execReduceSlotByAmount); \
 	DECLARE_FUNCTION(execEmptySlot);
 
 
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Inventory_h_17_ACCESSORS
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Inventory_h_17_INCLASS_NO_PURE_DECLS \
+#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Inventory_h_20_ACCESSORS
+#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Inventory_h_20_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUInventory(); \
 	friend struct Z_Construct_UClass_UInventory_Statics; \
@@ -46,7 +46,7 @@ public: \
 	DECLARE_SERIALIZER(UInventory)
 
 
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Inventory_h_17_INCLASS \
+#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Inventory_h_20_INCLASS \
 private: \
 	static void StaticRegisterNativesUInventory(); \
 	friend struct Z_Construct_UClass_UInventory_Statics; \
@@ -55,7 +55,7 @@ public: \
 	DECLARE_SERIALIZER(UInventory)
 
 
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Inventory_h_17_STANDARD_CONSTRUCTORS \
+#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Inventory_h_20_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UInventory(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UInventory) \
@@ -69,7 +69,7 @@ public: \
 	NO_API virtual ~UInventory();
 
 
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Inventory_h_17_ENHANCED_CONSTRUCTORS \
+#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Inventory_h_20_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API UInventory(UInventory&&); \
@@ -81,27 +81,27 @@ public: \
 	NO_API virtual ~UInventory();
 
 
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Inventory_h_14_PROLOG
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Inventory_h_17_GENERATED_BODY_LEGACY \
+#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Inventory_h_17_PROLOG
+#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Inventory_h_20_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Inventory_h_17_SPARSE_DATA \
-	FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Inventory_h_17_RPC_WRAPPERS \
-	FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Inventory_h_17_ACCESSORS \
-	FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Inventory_h_17_INCLASS \
-	FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Inventory_h_17_STANDARD_CONSTRUCTORS \
+	FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Inventory_h_20_SPARSE_DATA \
+	FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Inventory_h_20_RPC_WRAPPERS \
+	FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Inventory_h_20_ACCESSORS \
+	FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Inventory_h_20_INCLASS \
+	FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Inventory_h_20_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Inventory_h_17_GENERATED_BODY \
+#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Inventory_h_20_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Inventory_h_17_SPARSE_DATA \
-	FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Inventory_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Inventory_h_17_ACCESSORS \
-	FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Inventory_h_17_INCLASS_NO_PURE_DECLS \
-	FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Inventory_h_17_ENHANCED_CONSTRUCTORS \
+	FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Inventory_h_20_SPARSE_DATA \
+	FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Inventory_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Inventory_h_20_ACCESSORS \
+	FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Inventory_h_20_INCLASS_NO_PURE_DECLS \
+	FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Inventory_h_20_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -109,7 +109,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> AUTOMAFARM_API UClass* StaticClass<class UInventory>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Inventory_h
+#define CURRENT_FILE_ID FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Inventory_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

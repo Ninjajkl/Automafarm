@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Automafarm/FarmGameStateBase.h"
+#include "Automafarm/Public/Game/FarmGameStateBase.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeFarmGameStateBase() {}
 // Cross Module References
@@ -39,8 +39,7 @@ void EmptyLinkFunctionForGeneratedCodeFarmGameStateBase() {}
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_Automafarm_KFOnHourPassed__DelegateSignature_Statics::Function_MetaDataParams[] = {
-		{ "Comment", "/**\n * \n */" },
-		{ "ModuleRelativePath", "FarmGameStateBase.h" },
+		{ "ModuleRelativePath", "Public/Game/FarmGameStateBase.h" },
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_Automafarm_KFOnHourPassed__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UPackage__Script_Automafarm, nullptr, "KFOnHourPassed__DelegateSignature", nullptr, nullptr, sizeof(Z_Construct_UDelegateFunction_Automafarm_KFOnHourPassed__DelegateSignature_Statics::_Script_Automafarm_eventKFOnHourPassed_Parms), Z_Construct_UDelegateFunction_Automafarm_KFOnHourPassed__DelegateSignature_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_Automafarm_KFOnHourPassed__DelegateSignature_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(Z_Construct_UDelegateFunction_Automafarm_KFOnHourPassed__DelegateSignature_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_Automafarm_KFOnHourPassed__DelegateSignature_Statics::Function_MetaDataParams)) };
@@ -125,24 +124,24 @@ void FKFOnHourPassed_DelegateWrapper(const FMulticastScriptDelegate& KFOnHourPas
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFarmGameStateBase_Statics::Class_MetaDataParams[] = {
 		{ "HideCategories", "Input Movement Collision Rendering HLOD WorldPartition DataLayers Transformation" },
-		{ "IncludePath", "FarmGameStateBase.h" },
-		{ "ModuleRelativePath", "FarmGameStateBase.h" },
+		{ "IncludePath", "Game/FarmGameStateBase.h" },
+		{ "ModuleRelativePath", "Public/Game/FarmGameStateBase.h" },
 		{ "ShowCategories", "Input|MouseInput Input|TouchInput" },
 	};
 #endif
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_OnHourPassed_MetaData[] = {
-		{ "ModuleRelativePath", "FarmGameStateBase.h" },
+		{ "ModuleRelativePath", "Public/Game/FarmGameStateBase.h" },
 	};
 #endif
-	const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_OnHourPassed = { "OnHourPassed", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AFarmGameStateBase, OnHourPassed), Z_Construct_UDelegateFunction_Automafarm_KFOnHourPassed__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_OnHourPassed_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_OnHourPassed_MetaData)) }; // 3949880152
+	const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_OnHourPassed = { "OnHourPassed", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AFarmGameStateBase, OnHourPassed), Z_Construct_UDelegateFunction_Automafarm_KFOnHourPassed__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_OnHourPassed_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_OnHourPassed_MetaData)) }; // 3578227962
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_LevelMap_ValueProp = { "LevelMap", nullptr, (EPropertyFlags)0x0000000000020001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 1, Z_Construct_UClass_APlaceableObject_NoRegister, METADATA_PARAMS(nullptr, 0) };
 	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_LevelMap_Key_KeyProp = { "LevelMap_Key", nullptr, (EPropertyFlags)0x0000000000020001, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_LevelMap_MetaData[] = {
 		{ "Category", "Terrain" },
 		{ "Comment", "//Terrain Properties and Functions\n" },
-		{ "ModuleRelativePath", "FarmGameStateBase.h" },
+		{ "ModuleRelativePath", "Public/Game/FarmGameStateBase.h" },
 		{ "ToolTip", "Terrain Properties and Functions" },
 	};
 #endif
@@ -151,7 +150,7 @@ void FKFOnHourPassed_DelegateWrapper(const FMulticastScriptDelegate& KFOnHourPas
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_InstancedObjects_MetaData[] = {
 		{ "Category", "Terrain" },
-		{ "ModuleRelativePath", "FarmGameStateBase.h" },
+		{ "ModuleRelativePath", "Public/Game/FarmGameStateBase.h" },
 	};
 #endif
 	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_InstancedObjects = { "InstancedObjects", nullptr, (EPropertyFlags)0x0014000000020015, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AFarmGameStateBase, InstancedObjects), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_InstancedObjects_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_InstancedObjects_MetaData)) };
@@ -160,14 +159,14 @@ void FKFOnHourPassed_DelegateWrapper(const FMulticastScriptDelegate& KFOnHourPas
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_InstancedObjectMap_MetaData[] = {
 		{ "Category", "Terrain" },
-		{ "ModuleRelativePath", "FarmGameStateBase.h" },
+		{ "ModuleRelativePath", "Public/Game/FarmGameStateBase.h" },
 	};
 #endif
 	const UECodeGen_Private::FMapPropertyParams Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_InstancedObjectMap = { "InstancedObjectMap", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AFarmGameStateBase, InstancedObjectMap), EMapPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_InstancedObjectMap_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_InstancedObjectMap_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_TerrainHolder_MetaData[] = {
 		{ "Category", "Terrain" },
-		{ "ModuleRelativePath", "FarmGameStateBase.h" },
+		{ "ModuleRelativePath", "Public/Game/FarmGameStateBase.h" },
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_TerrainHolder = { "TerrainHolder", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AFarmGameStateBase, TerrainHolder), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_TerrainHolder_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_TerrainHolder_MetaData)) };
@@ -175,7 +174,7 @@ void FKFOnHourPassed_DelegateWrapper(const FMulticastScriptDelegate& KFOnHourPas
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_GameTimeSpan_MetaData[] = {
 		{ "Category", "TimeSystem" },
 		{ "Comment", "//Time System Properties and Functions\n" },
-		{ "ModuleRelativePath", "FarmGameStateBase.h" },
+		{ "ModuleRelativePath", "Public/Game/FarmGameStateBase.h" },
 		{ "ToolTip", "Time System Properties and Functions" },
 	};
 #endif
@@ -183,14 +182,14 @@ void FKFOnHourPassed_DelegateWrapper(const FMulticastScriptDelegate& KFOnHourPas
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_TimeMultiplier_MetaData[] = {
 		{ "Category", "TimeSystem" },
-		{ "ModuleRelativePath", "FarmGameStateBase.h" },
+		{ "ModuleRelativePath", "Public/Game/FarmGameStateBase.h" },
 	};
 #endif
 	const UECodeGen_Private::FDoublePropertyParams Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_TimeMultiplier = { "TimeMultiplier", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Double, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AFarmGameStateBase, TimeMultiplier), METADATA_PARAMS(Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_TimeMultiplier_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_TimeMultiplier_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_StartingHour_MetaData[] = {
 		{ "Category", "TimeSystem" },
-		{ "ModuleRelativePath", "FarmGameStateBase.h" },
+		{ "ModuleRelativePath", "Public/Game/FarmGameStateBase.h" },
 	};
 #endif
 	const UECodeGen_Private::FDoublePropertyParams Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_StartingHour = { "StartingHour", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Double, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AFarmGameStateBase, StartingHour), METADATA_PARAMS(Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_StartingHour_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_StartingHour_MetaData)) };
@@ -241,15 +240,15 @@ void FKFOnHourPassed_DelegateWrapper(const FMulticastScriptDelegate& KFOnHourPas
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AFarmGameStateBase);
 	AFarmGameStateBase::~AFarmGameStateBase() {}
-	struct Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_FarmGameStateBase_h_Statics
+	struct Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Game_FarmGameStateBase_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_FarmGameStateBase_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AFarmGameStateBase, AFarmGameStateBase::StaticClass, TEXT("AFarmGameStateBase"), &Z_Registration_Info_UClass_AFarmGameStateBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AFarmGameStateBase), 3015144826U) },
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Game_FarmGameStateBase_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_AFarmGameStateBase, AFarmGameStateBase::StaticClass, TEXT("AFarmGameStateBase"), &Z_Registration_Info_UClass_AFarmGameStateBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AFarmGameStateBase), 1183745130U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_FarmGameStateBase_h_3398366509(TEXT("/Script/Automafarm"),
-		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_FarmGameStateBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_FarmGameStateBase_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Game_FarmGameStateBase_h_2560124320(TEXT("/Script/Automafarm"),
+		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Game_FarmGameStateBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Game_FarmGameStateBase_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

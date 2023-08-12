@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Automafarm/Public/PlaceableObject.h"
+#include "Automafarm/Public/Items/PlaceableObject.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodePlaceableObject() {}
 // Cross Module References
@@ -57,16 +57,15 @@ void EmptyLinkFunctionForGeneratedCodePlaceableObject() {}
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APlaceableObject_Statics::Class_MetaDataParams[] = {
 		{ "BlueprintSpawnableComponent", "" },
 		{ "ClassGroupNames", "Item" },
-		{ "Comment", "/**\n * \n */" },
-		{ "IncludePath", "PlaceableObject.h" },
-		{ "ModuleRelativePath", "Public/PlaceableObject.h" },
+		{ "IncludePath", "Items/PlaceableObject.h" },
+		{ "ModuleRelativePath", "Public/Items/PlaceableObject.h" },
 	};
 #endif
 	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_APlaceableObject_Statics::NewProp_TilesToFill_Inner = { "TilesToFill", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APlaceableObject_Statics::NewProp_TilesToFill_MetaData[] = {
 		{ "Category", "PlaceableObject" },
-		{ "ModuleRelativePath", "Public/PlaceableObject.h" },
+		{ "ModuleRelativePath", "Public/Items/PlaceableObject.h" },
 	};
 #endif
 	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_APlaceableObject_Statics::NewProp_TilesToFill = { "TilesToFill", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(APlaceableObject, TilesToFill), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_APlaceableObject_Statics::NewProp_TilesToFill_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APlaceableObject_Statics::NewProp_TilesToFill_MetaData)) };
@@ -74,7 +73,7 @@ void EmptyLinkFunctionForGeneratedCodePlaceableObject() {}
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APlaceableObject_Statics::NewProp_FilledTiles_MetaData[] = {
 		{ "Category", "PlaceableObject" },
-		{ "ModuleRelativePath", "Public/PlaceableObject.h" },
+		{ "ModuleRelativePath", "Public/Items/PlaceableObject.h" },
 	};
 #endif
 	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_APlaceableObject_Statics::NewProp_FilledTiles = { "FilledTiles", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(APlaceableObject, FilledTiles), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_APlaceableObject_Statics::NewProp_FilledTiles_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APlaceableObject_Statics::NewProp_FilledTiles_MetaData)) };
@@ -82,10 +81,10 @@ void EmptyLinkFunctionForGeneratedCodePlaceableObject() {}
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APlaceableObject_Statics::NewProp_TileType_MetaData[] = {
 		{ "Category", "PlaceableObject" },
-		{ "ModuleRelativePath", "Public/PlaceableObject.h" },
+		{ "ModuleRelativePath", "Public/Items/PlaceableObject.h" },
 	};
 #endif
-	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_APlaceableObject_Statics::NewProp_TileType = { "TileType", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(APlaceableObject, TileType), Z_Construct_UEnum_Automafarm_ETileType, METADATA_PARAMS(Z_Construct_UClass_APlaceableObject_Statics::NewProp_TileType_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APlaceableObject_Statics::NewProp_TileType_MetaData)) }; // 1722969977
+	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_APlaceableObject_Statics::NewProp_TileType = { "TileType", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(APlaceableObject, TileType), Z_Construct_UEnum_Automafarm_ETileType, METADATA_PARAMS(Z_Construct_UClass_APlaceableObject_Statics::NewProp_TileType_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APlaceableObject_Statics::NewProp_TileType_MetaData)) }; // 3617005862
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_APlaceableObject_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlaceableObject_Statics::NewProp_TilesToFill_Inner,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlaceableObject_Statics::NewProp_TilesToFill,
@@ -126,15 +125,15 @@ void EmptyLinkFunctionForGeneratedCodePlaceableObject() {}
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(APlaceableObject);
 	APlaceableObject::~APlaceableObject() {}
-	struct Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_PlaceableObject_h_Statics
+	struct Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Items_PlaceableObject_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_PlaceableObject_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_APlaceableObject, APlaceableObject::StaticClass, TEXT("APlaceableObject"), &Z_Registration_Info_UClass_APlaceableObject, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APlaceableObject), 2675848230U) },
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Items_PlaceableObject_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_APlaceableObject, APlaceableObject::StaticClass, TEXT("APlaceableObject"), &Z_Registration_Info_UClass_APlaceableObject, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APlaceableObject), 1939517331U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_PlaceableObject_h_1719536379(TEXT("/Script/Automafarm"),
-		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_PlaceableObject_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_PlaceableObject_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Items_PlaceableObject_h_4251651293(TEXT("/Script/Automafarm"),
+		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Items_PlaceableObject_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Items_PlaceableObject_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Automafarm/Public/AutomafarmEnums.h"
+#include "Automafarm/Public/Library/AutomafarmEnums.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeAutomafarmEnums() {}
 // Cross Module References
@@ -34,18 +34,21 @@ void EmptyLinkFunctionForGeneratedCodeAutomafarmEnums() {}
 		static const UECodeGen_Private::FEnumParams EnumParams;
 	};
 	const UECodeGen_Private::FEnumeratorParam Z_Construct_UEnum_Automafarm_ETileType_Statics::Enumerators[] = {
-		{ "ETileType::BLOCK", (int64)ETileType::BLOCK },
+		{ "ETileType::BASEBLOCK", (int64)ETileType::BASEBLOCK },
+		{ "ETileType::INTERACTABLEBLOCK", (int64)ETileType::INTERACTABLEBLOCK },
 		{ "ETileType::PIVOTPAPER", (int64)ETileType::PIVOTPAPER },
 		{ "ETileType::DEFAULT", (int64)ETileType::DEFAULT },
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UEnum_Automafarm_ETileType_Statics::Enum_MetaDataParams[] = {
-		{ "BLOCK.DisplayName", "Block" },
-		{ "BLOCK.Name", "ETileType::BLOCK" },
+		{ "BASEBLOCK.DisplayName", "BaseBlock" },
+		{ "BASEBLOCK.Name", "ETileType::BASEBLOCK" },
 		{ "BlueprintType", "true" },
 		{ "DEFAULT.DisplayName", "Default" },
 		{ "DEFAULT.Name", "ETileType::DEFAULT" },
-		{ "ModuleRelativePath", "Public/AutomafarmEnums.h" },
+		{ "INTERACTABLEBLOCK.DisplayName", "InteractableBlock" },
+		{ "INTERACTABLEBLOCK.Name", "ETileType::INTERACTABLEBLOCK" },
+		{ "ModuleRelativePath", "Public/Library/AutomafarmEnums.h" },
 		{ "PIVOTPAPER.DisplayName", "PivotPaper" },
 		{ "PIVOTPAPER.Name", "ETileType::PIVOTPAPER" },
 	};
@@ -70,15 +73,15 @@ void EmptyLinkFunctionForGeneratedCodeAutomafarmEnums() {}
 		}
 		return Z_Registration_Info_UEnum_ETileType.InnerSingleton;
 	}
-	struct Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_AutomafarmEnums_h_Statics
+	struct Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Library_AutomafarmEnums_h_Statics
 	{
 		static const FEnumRegisterCompiledInInfo EnumInfo[];
 	};
-	const FEnumRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_AutomafarmEnums_h_Statics::EnumInfo[] = {
-		{ ETileType_StaticEnum, TEXT("ETileType"), &Z_Registration_Info_UEnum_ETileType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3146826733U) },
+	const FEnumRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Library_AutomafarmEnums_h_Statics::EnumInfo[] = {
+		{ ETileType_StaticEnum, TEXT("ETileType"), &Z_Registration_Info_UEnum_ETileType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3617005862U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_AutomafarmEnums_h_171081893(TEXT("/Script/Automafarm"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Library_AutomafarmEnums_h_2405732820(TEXT("/Script/Automafarm"),
 		nullptr, 0,
 		nullptr, 0,
-		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_AutomafarmEnums_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_AutomafarmEnums_h_Statics::EnumInfo));
+		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Library_AutomafarmEnums_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Library_AutomafarmEnums_h_Statics::EnumInfo));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

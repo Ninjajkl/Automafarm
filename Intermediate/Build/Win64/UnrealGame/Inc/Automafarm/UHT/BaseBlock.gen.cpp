@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Automafarm/BaseBlock.h"
+#include "Automafarm/Public/Items/BaseBlock.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeBaseBlock() {}
 // Cross Module References
@@ -30,10 +30,6 @@ void EmptyLinkFunctionForGeneratedCodeBaseBlock() {}
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_TileLength_MetaData[];
-#endif
-		static const UECodeGen_Private::FFloatPropertyParams NewProp_TileLength;
-#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_BlockMesh_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_BlockMesh;
@@ -48,29 +44,20 @@ void EmptyLinkFunctionForGeneratedCodeBaseBlock() {}
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABaseBlock_Statics::Class_MetaDataParams[] = {
 		{ "BlueprintType", "true" },
-		{ "IncludePath", "BaseBlock.h" },
+		{ "IncludePath", "Items/BaseBlock.h" },
 		{ "IsBlueprintBase", "true" },
-		{ "ModuleRelativePath", "BaseBlock.h" },
+		{ "ModuleRelativePath", "Public/Items/BaseBlock.h" },
 	};
 #endif
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABaseBlock_Statics::NewProp_TileLength_MetaData[] = {
-		{ "Category", "BaseBlock" },
-		{ "ClampMin", "0.000001" },
-		{ "ModuleRelativePath", "BaseBlock.h" },
-	};
-#endif
-	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ABaseBlock_Statics::NewProp_TileLength = { "TileLength", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ABaseBlock, TileLength), METADATA_PARAMS(Z_Construct_UClass_ABaseBlock_Statics::NewProp_TileLength_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABaseBlock_Statics::NewProp_TileLength_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABaseBlock_Statics::NewProp_BlockMesh_MetaData[] = {
 		{ "Category", "BaseBlock" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "BaseBlock.h" },
+		{ "ModuleRelativePath", "Public/Items/BaseBlock.h" },
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABaseBlock_Statics::NewProp_BlockMesh = { "BlockMesh", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ABaseBlock, BlockMesh), Z_Construct_UClass_UInstancedStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ABaseBlock_Statics::NewProp_BlockMesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABaseBlock_Statics::NewProp_BlockMesh_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ABaseBlock_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABaseBlock_Statics::NewProp_TileLength,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABaseBlock_Statics::NewProp_BlockMesh,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ABaseBlock_Statics::StaticCppClassTypeInfo = {
@@ -105,15 +92,15 @@ void EmptyLinkFunctionForGeneratedCodeBaseBlock() {}
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ABaseBlock);
 	ABaseBlock::~ABaseBlock() {}
-	struct Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_BaseBlock_h_Statics
+	struct Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Items_BaseBlock_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_BaseBlock_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ABaseBlock, ABaseBlock::StaticClass, TEXT("ABaseBlock"), &Z_Registration_Info_UClass_ABaseBlock, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABaseBlock), 3477913674U) },
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Items_BaseBlock_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_ABaseBlock, ABaseBlock::StaticClass, TEXT("ABaseBlock"), &Z_Registration_Info_UClass_ABaseBlock, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABaseBlock), 2482240569U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_BaseBlock_h_3134698120(TEXT("/Script/Automafarm"),
-		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_BaseBlock_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_BaseBlock_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Items_BaseBlock_h_53119432(TEXT("/Script/Automafarm"),
+		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Items_BaseBlock_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Items_BaseBlock_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

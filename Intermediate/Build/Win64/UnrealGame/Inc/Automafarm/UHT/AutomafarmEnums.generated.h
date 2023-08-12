@@ -4,7 +4,7 @@
 	DO NOT modify this manually! Edit the corresponding .h files instead!
 ===========================================================================*/
 
-// IWYU pragma: private, include "AutomafarmEnums.h"
+// IWYU pragma: private, include "Library/AutomafarmEnums.h"
 #include "UObject/ObjectMacros.h"
 #include "UObject/ScriptMacros.h"
 
@@ -15,11 +15,12 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define AUTOMAFARM_AutomafarmEnums_generated_h
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Projects_Automafarm_5_2_Source_Automafarm_Public_AutomafarmEnums_h
+#define CURRENT_FILE_ID FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Library_AutomafarmEnums_h
 
 
 #define FOREACH_ENUM_ETILETYPE(op) \
-	op(ETileType::BLOCK) \
+	op(ETileType::BASEBLOCK) \
+	op(ETileType::INTERACTABLEBLOCK) \
 	op(ETileType::PIVOTPAPER) \
 	op(ETileType::DEFAULT) 
 
