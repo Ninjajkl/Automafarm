@@ -158,7 +158,7 @@ bool AAutomafarmCharacter::ValidPlacement(TSubclassOf<APlaceableObject> placeabl
 	for (int i = 0; i < TilesToCheck.Num(); i++)
 	{
 		if (myGameState->LevelMap.Contains(TileKey + TilesToCheck[i]) ||
-			GetWorld()->OverlapAnyTestByChannel((TileKey + TilesToCheck[i]) * UGC::TileLength + UGC::TileOffset, FQuat(), PlaceTrace, FCollisionShape::MakeBox(FVector(UGC::TileLength/2-0.001))))
+			GetWorld()->OverlapAnyTestByChannel((TileKey + TilesToCheck[i]) * UGC::TileLength + UGC::TileOffset, FQuat(), PlaceTrace, FCollisionShape::MakeBox(FVector(UGC::TileLength/2-6))))
 		{
 			return false;
 		}

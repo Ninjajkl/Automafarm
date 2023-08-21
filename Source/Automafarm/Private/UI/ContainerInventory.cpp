@@ -18,9 +18,9 @@ void UContainerInventory::Init(UInventory* InInventory, AInteractableBlock* InCo
 {
 	Inventory = InInventory;
 	Container = InContainer;
-	AAutomafarmCharacter* playerCharacter = Cast<AAutomafarmCharacter>(UGameplayStatics::GetPlayerCharacter(GetWorld(), 0));
-	if (playerCharacter && Container && Inventory) {
-		PlayerInventoryGrid->RefreshInventory(playerCharacter->PlayerInventory);
+	AAutomafarmCharacter* pChar = Cast<AAutomafarmCharacter>(UGameplayStatics::GetPlayerCharacter(GetWorld(), 0));
+	if (pChar && Container && Inventory) {
+		PlayerInventoryGrid->RefreshInventory(pChar->PlayerInventory);
 		ContainerInventoryGrid->RefreshInventory(Inventory);
 		ContainerNameTextBox->OnTextChanged.AddDynamic(this, &UContainerInventory::OnCNameTextChanged);
 		ContainerNameTextBox->OnTextCommitted.AddDynamic(this, &UContainerInventory::OnCNameTextCommitted);

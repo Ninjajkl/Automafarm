@@ -16,9 +16,9 @@ UPlayerInventory::UPlayerInventory(const FObjectInitializer& ObjectInitializer)
 
 void UPlayerInventory::NativePreConstruct()
 {
-	AAutomafarmCharacter* playerCharacter = Cast<AAutomafarmCharacter>(UGameplayStatics::GetPlayerCharacter(GetWorld(), 0));
-	if (playerCharacter) {
-		InventoryGrid->RefreshInventory(playerCharacter->PlayerInventory);
+	AAutomafarmCharacter* pChar = Cast<AAutomafarmCharacter>(UGameplayStatics::GetPlayerCharacter(GetWorld(), 0));
+	if (pChar) {
+		InventoryGrid->RefreshInventory(pChar->PlayerInventory);
 	}
 }
 

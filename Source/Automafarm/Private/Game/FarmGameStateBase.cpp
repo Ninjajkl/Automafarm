@@ -67,7 +67,7 @@ void AFarmGameStateBase::InitializeTerrain()
 	{
 		TerrainHolder = GetWorld()->SpawnActor<AActor>();
 		TerrainHolder->SetActorLabel(TEXT("TerrainHolder"));
-		TerrainHolder->AddComponentByClass(UPrimitiveComponent::StaticClass(), 0, FTransform(FVector(0, 0, 0)), 0);
+		//TerrainHolder->AddComponentByClass(UStaticMeshComponent::StaticClass(), 0, FTransform(FVector(0, 0, 0)), 0);
 		//UPrimitiveComponent* newPrim = Cast<UPrimitiveComponent>(TerrainHolder->AddComponentByClass(UPrimitiveComponent::StaticClass(), 0, FTransform(FVector(0, 0, 0)), 0));
 		//newPrim->SetupAttachment(TerrainHolder->GetRootComponent());
 	}

@@ -26,7 +26,7 @@ void USlotPreview::RefreshSlot(const FSlotStruct& InSlotStruct)
 		if (TableRow)
 		{
 			FItemStruct* ItemData = StaticCast<FItemStruct*>(TableRow);
-			IMGIcon->SetBrushFromTexture(ItemData->Thumbnail.Get(), true);
+			IMGIcon->SetBrushFromTexture(ItemData->Thumbnail, true);
 		}
 	}
 	TXTQuantity->SetVisibility(SlotStruct.Quantity != 1 ? ESlateVisibility::SelfHitTestInvisible : ESlateVisibility::Hidden);

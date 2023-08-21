@@ -32,7 +32,7 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Item)
 		FString Description;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Item)
-		TSoftObjectPtr<UTexture2D> Thumbnail;
+		UTexture2D* Thumbnail;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Item)
 		TSubclassOf<AItem> Item;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Item)
