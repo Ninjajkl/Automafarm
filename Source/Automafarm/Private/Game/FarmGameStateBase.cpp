@@ -20,6 +20,37 @@ void AFarmGameStateBase::BeginPlay()
 {
 	if (USaveFarmLevel* LoadedFarmSave = Cast<USaveFarmLevel>(UGameplayStatics::LoadGameFromSlot("TerrainSaveSlot", 0)))
 	{
+		TArray<FSerializedBaseBlock> SerializedBaseBlocks = LoadedFarmSave->SerializedBaseBlocks;
+		TArray<FSerializedPivotPaper> SerializedPivotPapers = LoadedFarmSave->SerializedPivotPapers;
+		TArray<FSerializedInteractableBlock> SerializedInteractableBlocks = LoadedFarmSave->SerializedInteractableBlocks;
+
+		for (const FSerializedBaseBlock& SerializedBlock : SerializedBaseBlocks)
+		{
+			LoadInstanceableBlock(SerializedBlock.BlockClass, SerializedBlock.PerInstanceSMData);
+			//InitializeInstanceableObject(SerializedBlock.BlockClass);
+			//ABaseBlock* Block = GetWorld()->SpawnActor<ABaseBlock>(SerializedBlock.BlockClass, SerializedBlock.Transform);
+			//Block->BlockMesh->PerInstanceSMData = SerializedBlock.PerInstanceSMData;
+			//Block->SetInstancedMeshComponent(SerializedBlock.InstancedMeshComponent);
+			// Set other properties specific to ABlock
+			LevelMap.Add(SerializedBlock.Transform.GetLocation(), *InstancedObjectMap.Find(SerializedBlock.BlockClass));
+		}
+
+		for (const FSerializedPivotPaper& SerializedPivotPaper : SerializedPivotPapers)
+		{
+			APivotPaper* PivotPaper = GetWorld()->SpawnActor<APivotPaper>(APivotPaper::StaticClass(), SerializedPivotPaper.Transform);
+			// Set other properties specific to APivotPaper
+			LevelMap.Add(SerializedPivotPaper.Transform.GetLocation(), PivotPaper);
+		}
+
+		for (const FSerializedInteractableBlock& SerializedInteractableBlock : SerializedInteractableBlocks)
+		{
+			AInteractableBlock* InteractableBlock = GetWorld()->SpawnActor<AInteractableBlock>(AInteractableBlock::StaticClass(), SerializedInteractableBlock.Transform);
+			InteractableBlock->Name = SerializedInteractableBlock.Name;
+			//InteractableBlock->Inventory = SerializedInteractableBlock.Inventory;
+			// Set other properties specific to AInteractableBlock
+			LevelMap.Add(SerializedInteractableBlock.Transform.GetLocation(), InteractableBlock);
+		}
+
 		// The operation was successful, so LoadedGame now contains the data we saved earlier.
 		UE_LOG(LogTemp, Warning, TEXT("LOADED: %s"), *LoadedFarmSave->SaveSlotName);
 	}
@@ -50,6 +81,16 @@ bool AFarmGameStateBase::InitializeInstanceableObject(TSubclassOf<APlaceableObje
 	if (InstancedObjectMap.Contains(instanceableClass)) { return true; }
 	InstancedObjectMap.Add(instanceableClass, GetWorld()->SpawnActor<APlaceableObject>(instanceableClass));
 	return true;
+}
+
+void AFarmGameStateBase::LoadInstanceableBlock(TSubclassOf<APlaceableObject> instanceableClass, TArray<FInstancedStaticMeshInstanceData> InPerInstanceSMData)
+{
+	if (InstancedObjectMap.Contains(instanceableClass)) { return; }
+	APlaceableObject* InstancedObject = GetWorld()->SpawnActor<APlaceableObject>(instanceableClass);
+	InstancedObjectMap.Add(instanceableClass, InstancedObject);
+	ABaseBlock* InstancedBlock = Cast<ABaseBlock>(InstancedObject);
+	InstancedBlock->BlockMesh->PerInstanceSMData = InPerInstanceSMData;
+	return;
 }
 
 APivotPaper* AFarmGameStateBase::AddPivotPaper(TSubclassOf<APlaceableObject> PivotClass, FVector TileLoc, FVector PlayerLocation)

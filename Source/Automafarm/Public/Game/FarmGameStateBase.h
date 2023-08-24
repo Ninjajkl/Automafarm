@@ -8,6 +8,7 @@
 #include "../Items/PlaceableObject.h"
 //Other Classes
 #include "CoreMinimal.h"
+#include "Components/InstancedStaticMeshComponent.h"
 #include "GameFramework/GameStateBase.h"
 //Generated File
 #include "FarmGameStateBase.generated.h"
@@ -35,6 +36,7 @@ public:
 		TMap<TSubclassOf<APlaceableObject>, APlaceableObject*> InstancedObjectMap;
 
 	bool InitializeInstanceableObject(TSubclassOf<APlaceableObject> BlockClass);
+	void LoadInstanceableBlock(TSubclassOf<APlaceableObject> BlockClass, TArray<FInstancedStaticMeshInstanceData> InPerInstanceSMData);
 	APivotPaper* AddPivotPaper(TSubclassOf<APlaceableObject> PivotClass, FVector TileLoc, FVector PlayerLocation);
 	AInteractableBlock* AddInteractableBlock(TSubclassOf<APlaceableObject> BlockClass, FVector TileLoc);
 

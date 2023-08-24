@@ -46,7 +46,7 @@ struct FSerializedInteractableBlock
     UPROPERTY()
         TSubclassOf<AInteractableBlock> PivotPaperClass;
     UPROPERTY()
-        FString Name;
+        FText Name;
     //UPROPERTY()
     //    UInventory Inventory;
     UPROPERTY()

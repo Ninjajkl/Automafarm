@@ -200,7 +200,7 @@ void AAutomafarmPlayerController::SaveLevel(const FInputActionValue& Value)
 			else if (AInteractableBlock* InteractableBlock = Cast<AInteractableBlock>(Entry.Value))
 			{
 				FSerializedInteractableBlock SerializedInteractableBlock;
-				SerializedInteractableBlock.Name = InteractableBlock->GetName();
+				SerializedInteractableBlock.Name = InteractableBlock->Name;
 				//SerializedInteractableBlock.Inventory = InteractableBlock->GetInventory();
 				SerializedInteractableBlock.Transform = InteractableBlock->GetTransform();
 				// Populate other properties specific to AInteractableBlock
