@@ -49,6 +49,9 @@ protected:
 	/** Scroll Input Action */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 		class UInputAction* ScrollAction;
+	/** Save Level Input Action */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+		class UInputAction* SaveAction;
 	/** Hotbar Numbers Input Actions */
 	////////So ugly
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
@@ -86,6 +89,8 @@ protected:
 		void Inventory(const FInputActionValue& Value);
 	UFUNCTION()
 		void Scroll(const FInputActionValue& Value);
+	UFUNCTION()
+		void SaveLevel(const FInputActionValue& Value);
 
 	//Disgusting
 	UFUNCTION()

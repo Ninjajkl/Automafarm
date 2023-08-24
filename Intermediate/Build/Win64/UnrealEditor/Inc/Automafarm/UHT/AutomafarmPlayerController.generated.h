@@ -33,6 +33,7 @@ AUTOMAFARM_API void FKFOnHotbarSlotChanged_DelegateWrapper(const FMulticastScrip
 	DECLARE_FUNCTION(execHotbar2); \
 	DECLARE_FUNCTION(execHotbar1); \
 	DECLARE_FUNCTION(execHotbar0); \
+	DECLARE_FUNCTION(execSaveLevel); \
 	DECLARE_FUNCTION(execScroll); \
 	DECLARE_FUNCTION(execInventory); \
 	DECLARE_FUNCTION(execInteract); \
@@ -55,6 +56,7 @@ AUTOMAFARM_API void FKFOnHotbarSlotChanged_DelegateWrapper(const FMulticastScrip
 	DECLARE_FUNCTION(execHotbar2); \
 	DECLARE_FUNCTION(execHotbar1); \
 	DECLARE_FUNCTION(execHotbar0); \
+	DECLARE_FUNCTION(execSaveLevel); \
 	DECLARE_FUNCTION(execScroll); \
 	DECLARE_FUNCTION(execInventory); \
 	DECLARE_FUNCTION(execInteract); \

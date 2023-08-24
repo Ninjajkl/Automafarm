@@ -12,10 +12,8 @@
 // Sets default values
 ABaseBlock::ABaseBlock()
 {
-	AFarmGameStateBase* myGameState;
 	BlockMesh = CreateDefaultSubobject<UInstancedStaticMeshComponent>("BlockMesh");
 	BlockMesh->ComponentTags = { FName(TEXT("BlockMesh")) };
-	myGameState = GetWorld() != NULL ? GetWorld()->GetGameState<AFarmGameStateBase>() : NULL;
 }
 
 //Creates an instance of the block

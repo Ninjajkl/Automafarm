@@ -3,9 +3,13 @@
 #include "Characters/AutomafarmPlayerController.h"
 //Custom Classes
 #include "Characters/AutomafarmCharacter.h"
+#include "Game/FarmGameStateBase.h"
+#include "Library/SerializableStructs.h"
+#include "Systems/SaveFarmLevel.h"
 //Other Classes
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
+#include "Kismet/GameplayStatics.h"
 
 AAutomafarmPlayerController::AAutomafarmPlayerController()
 {
@@ -59,6 +63,9 @@ void AAutomafarmPlayerController::SetupInputComponent()
 
 		//Scroll
 		EnhancedInputComponent->BindAction(ScrollAction, ETriggerEvent::Triggered, this, &AAutomafarmPlayerController::Scroll);
+
+		//Save
+		EnhancedInputComponent->BindAction(SaveAction, ETriggerEvent::Triggered, this, &AAutomafarmPlayerController::SaveLevel);
 
 		//Numbers
 		EnhancedInputComponent->BindAction(Hotbar0Action, ETriggerEvent::Triggered, this, &AAutomafarmPlayerController::Hotbar0);
@@ -158,6 +165,62 @@ void AAutomafarmPlayerController::SetHotbar(int InHotbarPosition)
 					 InHotbarPosition;
 	//Send HotbarChanged Event
 	OnHotbarSlotChanged.Broadcast(CurrHotbarSlot);
+}
+
+void AAutomafarmPlayerController::SaveLevel(const FInputActionValue& Value)
+{
+	AFarmGameStateBase* FarmGameState = Cast<AFarmGameStateBase>(GetWorld()->GetGameState());
+	USaveFarmLevel* SaveFarmLevel = Cast<USaveFarmLevel>(UGameplayStatics::CreateSaveGameObject(USaveFarmLevel::StaticClass()));
+	if(FarmGameState && SaveFarmLevel)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Save Started"));
+
+		TArray<FSerializedBaseBlock> SerializedBaseBlocks;
+		TArray<FSerializedPivotPaper> SerializedPivotPapers;
+		TArray<FSerializedInteractableBlock> SerializedInteractableBlocks;
+
+		for (const auto& Entry : FarmGameState->LevelMap)
+		{
+			if (ABaseBlock* Block = Cast<ABaseBlock>(Entry.Value))
+			{
+				FSerializedBaseBlock SerializedBlock;
+				SerializedBlock.BlockClass = Block->GetClass();
+				SerializedBlock.Transform = Block->GetTransform();
+				SerializedBlock.PerInstanceSMData = Block->BlockMesh->PerInstanceSMData;
+				// Populate other properties specific to ABlock
+				SerializedBaseBlocks.Add(SerializedBlock);
+			}
+			else if (APivotPaper* PivotPaper = Cast<APivotPaper>(Entry.Value))
+			{
+				FSerializedPivotPaper SerializedPivotPaper;
+				SerializedPivotPaper.Transform = PivotPaper->GetTransform();
+				// Populate other properties specific to APivotPaper
+				SerializedPivotPapers.Add(SerializedPivotPaper);
+			}
+			else if (AInteractableBlock* InteractableBlock = Cast<AInteractableBlock>(Entry.Value))
+			{
+				FSerializedInteractableBlock SerializedInteractableBlock;
+				SerializedInteractableBlock.Name = InteractableBlock->GetName();
+				//SerializedInteractableBlock.Inventory = InteractableBlock->GetInventory();
+				SerializedInteractableBlock.Transform = InteractableBlock->GetTransform();
+				// Populate other properties specific to AInteractableBlock
+				SerializedInteractableBlocks.Add(SerializedInteractableBlock);
+			}
+			else
+			{
+				UE_LOG(LogTemp, Warning, TEXT("Cast Failed"));
+			}
+			// Repeat for other subclasses if needed
+		}
+
+		// Set data on the savegame object.
+		SaveFarmLevel->SerializedBaseBlocks = SerializedBaseBlocks;
+		SaveFarmLevel->SerializedPivotPapers = SerializedPivotPapers;
+		SaveFarmLevel->SerializedInteractableBlocks = SerializedInteractableBlocks;
+
+		// Start async save process.
+		UGameplayStatics::AsyncSaveGameToSlot(SaveFarmLevel, SaveFarmLevel->SaveSlotName, SaveFarmLevel->UserIndex);
+	}
 }
 
 /// AAAAAAA

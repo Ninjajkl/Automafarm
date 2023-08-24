@@ -31,17 +31,12 @@ public:
 	//Terrain Properties and Functions
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Terrain")
 		TMap<FVector, APlaceableObject*> LevelMap;
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Terrain")
-		TArray<TSubclassOf<APlaceableObject>> InstancedObjects;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Terrain")
 		TMap<TSubclassOf<APlaceableObject>, APlaceableObject*> InstancedObjectMap;
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Terrain")
-		AActor* TerrainHolder;
 
 	bool InitializeInstanceableObject(TSubclassOf<APlaceableObject> BlockClass);
 	APivotPaper* AddPivotPaper(TSubclassOf<APlaceableObject> PivotClass, FVector TileLoc, FVector PlayerLocation);
 	AInteractableBlock* AddInteractableBlock(TSubclassOf<APlaceableObject> BlockClass, FVector TileLoc);
-	void InitializeTerrain();
 
 	//Time System Properties and Functions
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "TimeSystem")

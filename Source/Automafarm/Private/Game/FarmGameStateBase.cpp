@@ -5,7 +5,9 @@
 //Custom Classes
 #include "Characters/AutomafarmCharacter.h"
 #include "Items/BaseBlock.h"
+#include "Systems/SaveFarmLevel.h"
 //Other Classes
+#include "Kismet/GameplayStatics.h"
 
 double gameSecondsPassed;
 
@@ -16,6 +18,11 @@ AFarmGameStateBase::AFarmGameStateBase()
 
 void AFarmGameStateBase::BeginPlay()
 {
+	if (USaveFarmLevel* LoadedFarmSave = Cast<USaveFarmLevel>(UGameplayStatics::LoadGameFromSlot("TerrainSaveSlot", 0)))
+	{
+		// The operation was successful, so LoadedGame now contains the data we saved earlier.
+		UE_LOG(LogTemp, Warning, TEXT("LOADED: %s"), *LoadedFarmSave->SaveSlotName);
+	}
 	gameSecondsPassed = 0;
 	GameTimeSpan = FTimespan::FromHours(StartingHour);
 	OnHourPassed.Broadcast(GameTimeSpan);
@@ -36,14 +43,11 @@ void AFarmGameStateBase::Tick(float DeltaSeconds)
 	}
 }
 
-
 //Terrain Functions
 
 bool AFarmGameStateBase::InitializeInstanceableObject(TSubclassOf<APlaceableObject> instanceableClass)
 {
 	if (InstancedObjectMap.Contains(instanceableClass)) { return true; }
-	InitializeTerrain();
-	InstancedObjects.AddUnique(instanceableClass);
 	InstancedObjectMap.Add(instanceableClass, GetWorld()->SpawnActor<APlaceableObject>(instanceableClass));
 	return true;
 }
@@ -59,16 +63,4 @@ AInteractableBlock* AFarmGameStateBase::AddInteractableBlock(TSubclassOf<APlacea
 {
 	AInteractableBlock* newIB = GetWorld()->SpawnActor<AInteractableBlock>(BlockClass, FTransform(TileLoc));
 	return newIB;
-}
-
-void AFarmGameStateBase::InitializeTerrain()
-{
-	if(!TerrainHolder->IsValidLowLevelFast())
-	{
-		TerrainHolder = GetWorld()->SpawnActor<AActor>();
-		TerrainHolder->SetActorLabel(TEXT("TerrainHolder"));
-		//TerrainHolder->AddComponentByClass(UStaticMeshComponent::StaticClass(), 0, FTransform(FVector(0, 0, 0)), 0);
-		//UPrimitiveComponent* newPrim = Cast<UPrimitiveComponent>(TerrainHolder->AddComponentByClass(UPrimitiveComponent::StaticClass(), 0, FTransform(FVector(0, 0, 0)), 0));
-		//newPrim->SetupAttachment(TerrainHolder->GetRootComponent());
-	}
 }

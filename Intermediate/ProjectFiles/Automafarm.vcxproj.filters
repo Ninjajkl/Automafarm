@@ -104,6 +104,9 @@
     <ClCompile Include="..\..\Source\Automafarm\Private\Library\GameConstants.cpp">
       <Filter>Source\Automafarm\Private\Library</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Automafarm\Private\Library\SerializableStructs.cpp">
+      <Filter>Source\Automafarm\Private\Library</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Automafarm\Private\Library\Structs.cpp">
       <Filter>Source\Automafarm\Private\Library</Filter>
     </ClCompile>
@@ -114,6 +117,9 @@
       <Filter>Source\Automafarm\Private\Systems</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\Automafarm\Private\Systems\Inventory.cpp">
+      <Filter>Source\Automafarm\Private\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Automafarm\Private\Systems\SaveFarmLevel.cpp">
       <Filter>Source\Automafarm\Private\Systems</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\Automafarm\Private\Systems\TerrainGenerator.cpp">
@@ -197,6 +203,9 @@
     <ClInclude Include="..\..\Source\Automafarm\Public\Library\GameConstants.h">
       <Filter>Source\Automafarm\Public\Library</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\Automafarm\Public\Library\SerializableStructs.h">
+      <Filter>Source\Automafarm\Public\Library</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\Automafarm\Public\Library\Structs.h">
       <Filter>Source\Automafarm\Public\Library</Filter>
     </ClInclude>
@@ -207,6 +216,9 @@
       <Filter>Source\Automafarm\Public\Systems</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Automafarm\Public\Systems\Inventory.h">
+      <Filter>Source\Automafarm\Public\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Automafarm\Public\Systems\SaveFarmLevel.h">
       <Filter>Source\Automafarm\Public\Systems</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Automafarm\Public\Systems\TerrainGenerator.h">
