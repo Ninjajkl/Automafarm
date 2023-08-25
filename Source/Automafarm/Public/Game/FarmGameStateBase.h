@@ -6,6 +6,7 @@
 #include "../Items/InteractableBlock.h"
 #include "../Items/PivotPaper.h"
 #include "../Items/PlaceableObject.h"
+#include "../Library/SerializableStructs.h"
 //Other Classes
 #include "CoreMinimal.h"
 #include "Components/InstancedStaticMeshComponent.h"
@@ -36,7 +37,7 @@ public:
 		TMap<TSubclassOf<APlaceableObject>, APlaceableObject*> InstancedObjectMap;
 
 	bool InitializeInstanceableObject(TSubclassOf<APlaceableObject> BlockClass);
-	void LoadInstanceableBlock(TSubclassOf<APlaceableObject> BlockClass, TArray<FInstancedStaticMeshInstanceData> InPerInstanceSMData);
+	void LoadInstanceableBlock(FSerializedBaseBlock SerializedBlock);
 	APivotPaper* AddPivotPaper(TSubclassOf<APlaceableObject> PivotClass, FVector TileLoc, FVector PlayerLocation);
 	AInteractableBlock* AddInteractableBlock(TSubclassOf<APlaceableObject> BlockClass, FVector TileLoc);
 

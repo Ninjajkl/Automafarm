@@ -26,13 +26,18 @@ void AFarmGameStateBase::BeginPlay()
 
 		for (const FSerializedBaseBlock& SerializedBlock : SerializedBaseBlocks)
 		{
-			LoadInstanceableBlock(SerializedBlock.BlockClass, SerializedBlock.PerInstanceSMData);
-			//InitializeInstanceableObject(SerializedBlock.BlockClass);
-			//ABaseBlock* Block = GetWorld()->SpawnActor<ABaseBlock>(SerializedBlock.BlockClass, SerializedBlock.Transform);
-			//Block->BlockMesh->PerInstanceSMData = SerializedBlock.PerInstanceSMData;
-			//Block->SetInstancedMeshComponent(SerializedBlock.InstancedMeshComponent);
-			// Set other properties specific to ABlock
-			LevelMap.Add(SerializedBlock.Transform.GetLocation(), *InstancedObjectMap.Find(SerializedBlock.BlockClass));
+			LoadInstanceableBlock(SerializedBlock);
+			for(const FInstancedStaticMeshInstanceData& InstanceData : SerializedBlock.PerInstanceSMData)
+			{
+				FMatrix instanceMatrix = InstanceData.Transform;
+				FVector Location;
+				Location.X = instanceMatrix.M[3][0];
+				Location.Y = instanceMatrix.M[3][1];
+				Location.Z = instanceMatrix.M[3][2];
+
+				LevelMap.Add(Location, *InstancedObjectMap.Find(SerializedBlock.BlockClass));
+			}
+			//LevelMap.Add(SerializedBlock.PerInstanceSMData., *InstancedObjectMap.Find(SerializedBlock.BlockClass));
 		}
 
 		for (const FSerializedPivotPaper& SerializedPivotPaper : SerializedPivotPapers)
@@ -83,13 +88,13 @@ bool AFarmGameStateBase::InitializeInstanceableObject(TSubclassOf<APlaceableObje
 	return true;
 }
 
-void AFarmGameStateBase::LoadInstanceableBlock(TSubclassOf<APlaceableObject> instanceableClass, TArray<FInstancedStaticMeshInstanceData> InPerInstanceSMData)
+void AFarmGameStateBase::LoadInstanceableBlock(FSerializedBaseBlock SerializedBlock)
 {
-	if (InstancedObjectMap.Contains(instanceableClass)) { return; }
-	APlaceableObject* InstancedObject = GetWorld()->SpawnActor<APlaceableObject>(instanceableClass);
-	InstancedObjectMap.Add(instanceableClass, InstancedObject);
+	if (InstancedObjectMap.Contains(SerializedBlock.BlockClass)) { return; }
+	APlaceableObject* InstancedObject = GetWorld()->SpawnActor<APlaceableObject>(SerializedBlock.BlockClass);
+	InstancedObjectMap.Add(SerializedBlock.BlockClass, InstancedObject);
 	ABaseBlock* InstancedBlock = Cast<ABaseBlock>(InstancedObject);
-	InstancedBlock->BlockMesh->PerInstanceSMData = InPerInstanceSMData;
+	InstancedBlock->BlockMesh->PerInstanceSMData = SerializedBlock.PerInstanceSMData;
 	return;
 }
 

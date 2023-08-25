@@ -185,7 +185,6 @@ void AAutomafarmPlayerController::SaveLevel(const FInputActionValue& Value)
 			{
 				FSerializedBaseBlock SerializedBlock;
 				SerializedBlock.BlockClass = Block->GetClass();
-				SerializedBlock.Transform = Block->GetTransform();
 				SerializedBlock.PerInstanceSMData = Block->BlockMesh->PerInstanceSMData;
 				// Populate other properties specific to ABlock
 				SerializedBaseBlocks.Add(SerializedBlock);

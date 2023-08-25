@@ -20,7 +20,7 @@ struct FSerializedBaseBlock
     UPROPERTY()
         TSubclassOf<ABaseBlock> BlockClass;
     UPROPERTY()
-        FTransform Transform;
+        FVector GridLocation;
     UPROPERTY()
         TArray<FInstancedStaticMeshInstanceData> PerInstanceSMData;
 
