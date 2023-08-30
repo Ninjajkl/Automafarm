@@ -27,17 +27,6 @@ void AFarmGameStateBase::BeginPlay()
 		for (const FSerializedBaseBlock& SerializedBlock : SerializedBaseBlocks)
 		{
 			LoadInstanceableBlock(SerializedBlock);
-			for(const FInstancedStaticMeshInstanceData& InstanceData : SerializedBlock.PerInstanceSMData)
-			{
-				FMatrix instanceMatrix = InstanceData.Transform;
-				FVector Location;
-				Location.X = instanceMatrix.M[3][0];
-				Location.Y = instanceMatrix.M[3][1];
-				Location.Z = instanceMatrix.M[3][2];
-
-				LevelMap.Add(Location, *InstancedObjectMap.Find(SerializedBlock.BlockClass));
-			}
-			//LevelMap.Add(SerializedBlock.PerInstanceSMData., *InstancedObjectMap.Find(SerializedBlock.BlockClass));
 		}
 
 		for (const FSerializedPivotPaper& SerializedPivotPaper : SerializedPivotPapers)
@@ -90,12 +79,26 @@ bool AFarmGameStateBase::InitializeInstanceableObject(TSubclassOf<APlaceableObje
 
 void AFarmGameStateBase::LoadInstanceableBlock(FSerializedBaseBlock SerializedBlock)
 {
+	//If already loaded, return
 	if (InstancedObjectMap.Contains(SerializedBlock.BlockClass)) { return; }
+	//Add the Block to the world
 	APlaceableObject* InstancedObject = GetWorld()->SpawnActor<APlaceableObject>(SerializedBlock.BlockClass);
+	//Add this blockclass to the InstancedObjectMap
 	InstancedObjectMap.Add(SerializedBlock.BlockClass, InstancedObject);
 	ABaseBlock* InstancedBlock = Cast<ABaseBlock>(InstancedObject);
-	InstancedBlock->BlockMesh->PerInstanceSMData = SerializedBlock.PerInstanceSMData;
-	return;
+
+	//Create an array of the Individual Instances Transforms
+	TArray<FTransform> Transforms;
+	for (const FInstancedStaticMeshInstanceData& InstanceData : SerializedBlock.PerInstanceSMData)
+	{
+		FTransform InstanceTransform = FTransform(InstanceData.Transform);
+		Transforms.Add(InstanceTransform);
+		//As each Transform is made, add it to the level map
+		LevelMap.Add(InstanceTransform.GetTranslation(), InstancedObject);
+	}
+	//Add all of the Transforms to the InstancedBlock
+	InstancedBlock->BlockMesh->AddInstances(Transforms, false);
+
 }
 
 APivotPaper* AFarmGameStateBase::AddPivotPaper(TSubclassOf<APlaceableObject> PivotClass, FVector TileLoc, FVector PlayerLocation)

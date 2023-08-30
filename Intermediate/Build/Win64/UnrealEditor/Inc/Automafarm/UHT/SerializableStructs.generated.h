@@ -14,21 +14,21 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define AUTOMAFARM_SerializableStructs_generated_h
 
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Library_SerializableStructs_h_18_GENERATED_BODY \
+#define FID_Users_Ninja_OneDrive_Documents_Programming_Unreal_Projects_Automafarm_Source_Automafarm_Public_Library_SerializableStructs_h_18_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FSerializedBaseBlock_Statics; \
 	AUTOMAFARM_API static class UScriptStruct* StaticStruct();
 
 
 template<> AUTOMAFARM_API UScriptStruct* StaticStruct<struct FSerializedBaseBlock>();
 
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Library_SerializableStructs_h_32_GENERATED_BODY \
+#define FID_Users_Ninja_OneDrive_Documents_Programming_Unreal_Projects_Automafarm_Source_Automafarm_Public_Library_SerializableStructs_h_32_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FSerializedPivotPaper_Statics; \
 	AUTOMAFARM_API static class UScriptStruct* StaticStruct();
 
 
 template<> AUTOMAFARM_API UScriptStruct* StaticStruct<struct FSerializedPivotPaper>();
 
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Library_SerializableStructs_h_44_GENERATED_BODY \
+#define FID_Users_Ninja_OneDrive_Documents_Programming_Unreal_Projects_Automafarm_Source_Automafarm_Public_Library_SerializableStructs_h_44_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FSerializedInteractableBlock_Statics; \
 	AUTOMAFARM_API static class UScriptStruct* StaticStruct();
 
@@ -36,7 +36,7 @@ template<> AUTOMAFARM_API UScriptStruct* StaticStruct<struct FSerializedPivotPap
 template<> AUTOMAFARM_API UScriptStruct* StaticStruct<struct FSerializedInteractableBlock>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Library_SerializableStructs_h
+#define CURRENT_FILE_ID FID_Users_Ninja_OneDrive_Documents_Programming_Unreal_Projects_Automafarm_Source_Automafarm_Public_Library_SerializableStructs_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

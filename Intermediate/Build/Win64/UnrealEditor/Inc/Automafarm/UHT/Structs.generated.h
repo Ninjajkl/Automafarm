@@ -14,14 +14,14 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define AUTOMAFARM_Structs_generated_h
 
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Library_Structs_h_16_GENERATED_BODY \
+#define FID_Users_Ninja_OneDrive_Documents_Programming_Unreal_Projects_Automafarm_Source_Automafarm_Public_Library_Structs_h_16_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FSlotStruct_Statics; \
 	AUTOMAFARM_API static class UScriptStruct* StaticStruct();
 
 
 template<> AUTOMAFARM_API UScriptStruct* StaticStruct<struct FSlotStruct>();
 
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Library_Structs_h_27_GENERATED_BODY \
+#define FID_Users_Ninja_OneDrive_Documents_Programming_Unreal_Projects_Automafarm_Source_Automafarm_Public_Library_Structs_h_27_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FItemStruct_Statics; \
 	AUTOMAFARM_API static class UScriptStruct* StaticStruct(); \
 	typedef FTableRowBase Super;
@@ -30,7 +30,7 @@ template<> AUTOMAFARM_API UScriptStruct* StaticStruct<struct FSlotStruct>();
 template<> AUTOMAFARM_API UScriptStruct* StaticStruct<struct FItemStruct>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Library_Structs_h
+#define CURRENT_FILE_ID FID_Users_Ninja_OneDrive_Documents_Programming_Unreal_Projects_Automafarm_Source_Automafarm_Public_Library_Structs_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

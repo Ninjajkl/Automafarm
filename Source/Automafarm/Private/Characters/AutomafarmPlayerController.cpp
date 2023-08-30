@@ -186,7 +186,6 @@ void AAutomafarmPlayerController::SaveLevel(const FInputActionValue& Value)
 				FSerializedBaseBlock SerializedBlock;
 				SerializedBlock.BlockClass = Block->GetClass();
 				SerializedBlock.PerInstanceSMData = Block->BlockMesh->PerInstanceSMData;
-				// Populate other properties specific to ABlock
 				SerializedBaseBlocks.Add(SerializedBlock);
 			}
 			else if (APivotPaper* PivotPaper = Cast<APivotPaper>(Entry.Value))
