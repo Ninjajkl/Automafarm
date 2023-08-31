@@ -112,7 +112,7 @@ void EmptyLinkFunctionForGeneratedCodeCrop() {}
 #endif
 		static void NewProp_Harvestable_SetBit(void* Obj);
 		static const UECodeGen_Private::FBoolPropertyParams NewProp_Harvestable;
-		static const UECodeGen_Private::FSoftObjectPropertyParams NewProp_GrowthStages_ValueProp;
+		static const UECodeGen_Private::FObjectPtrPropertyParams NewProp_GrowthStages_ValueProp;
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_GrowthStages_Key_KeyProp;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_GrowthStages_MetaData[];
@@ -157,7 +157,7 @@ void EmptyLinkFunctionForGeneratedCodeCrop() {}
 		((ACrop*)Obj)->Harvestable = 1;
 	}
 	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ACrop_Statics::NewProp_Harvestable = { "Harvestable", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, sizeof(bool), sizeof(ACrop), &Z_Construct_UClass_ACrop_Statics::NewProp_Harvestable_SetBit, METADATA_PARAMS(Z_Construct_UClass_ACrop_Statics::NewProp_Harvestable_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACrop_Statics::NewProp_Harvestable_MetaData)) };
-	const UECodeGen_Private::FSoftObjectPropertyParams Z_Construct_UClass_ACrop_Statics::NewProp_GrowthStages_ValueProp = { "GrowthStages", nullptr, (EPropertyFlags)0x0004000000000001, UECodeGen_Private::EPropertyGenFlags::SoftObject, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 1, Z_Construct_UClass_UPaperFlipbook_NoRegister, METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FObjectPtrPropertyParams Z_Construct_UClass_ACrop_Statics::NewProp_GrowthStages_ValueProp = { "GrowthStages", nullptr, (EPropertyFlags)0x0004000000000001, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 1, Z_Construct_UClass_UPaperFlipbook_NoRegister, METADATA_PARAMS(nullptr, 0) };
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ACrop_Statics::NewProp_GrowthStages_Key_KeyProp = { "GrowthStages_Key", nullptr, (EPropertyFlags)0x0000000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACrop_Statics::NewProp_GrowthStages_MetaData[] = {
@@ -223,15 +223,15 @@ void EmptyLinkFunctionForGeneratedCodeCrop() {}
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ACrop);
 	ACrop::~ACrop() {}
-	struct Z_CompiledInDeferFile_FID_Users_Ninja_OneDrive_Documents_Programming_Unreal_Projects_Automafarm_Source_Automafarm_Public_Items_Crop_h_Statics
+	struct Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Items_Crop_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Ninja_OneDrive_Documents_Programming_Unreal_Projects_Automafarm_Source_Automafarm_Public_Items_Crop_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ACrop, ACrop::StaticClass, TEXT("ACrop"), &Z_Registration_Info_UClass_ACrop, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ACrop), 1743163090U) },
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Items_Crop_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_ACrop, ACrop::StaticClass, TEXT("ACrop"), &Z_Registration_Info_UClass_ACrop, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ACrop), 283645250U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Ninja_OneDrive_Documents_Programming_Unreal_Projects_Automafarm_Source_Automafarm_Public_Items_Crop_h_2694176816(TEXT("/Script/Automafarm"),
-		Z_CompiledInDeferFile_FID_Users_Ninja_OneDrive_Documents_Programming_Unreal_Projects_Automafarm_Source_Automafarm_Public_Items_Crop_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Ninja_OneDrive_Documents_Programming_Unreal_Projects_Automafarm_Source_Automafarm_Public_Items_Crop_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Items_Crop_h_2740955603(TEXT("/Script/Automafarm"),
+		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Items_Crop_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Items_Crop_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

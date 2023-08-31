@@ -4,6 +4,7 @@
 #include "Items/BaseBlock.h"
 //Custom Classes
 #include "Game/FarmGameStateBase.h"
+#include "Library/GameConstants.h"
 //Other Classes
 #include "Components/InstancedStaticMeshComponent.h"
 
@@ -23,9 +24,9 @@ void ABaseBlock::AddBlock(FTransform BlockTransform)
 }
 
 //Creates an instance of the block
-void ABaseBlock::AddBlock(FVector BlockLocation)
+void ABaseBlock::AddBlock(FVector GridLocation)
 {
-	AddBlock(FTransform(BlockLocation));
+	AddBlock(FTransform(GridLocation * UGC::TileLength + UGC::TileOffset));
 }
 
 //Clears all blocks of this instance

@@ -32,16 +32,10 @@ void ACrop::UpdateTime(FTimespan GameTimeSpan)
 	UpdateCurrentFlipBook();
 }
 
-void ACrop::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-
-}
-
 void ACrop::UpdateCurrentFlipBook()
 {
 	float floorKey = -100.0f;
-	TSoftObjectPtr<UPaperFlipbook> FoundBook = nullptr;
+	TObjectPtr<UPaperFlipbook> FoundBook = nullptr;
 
 	for (const auto& AnimStart : GrowthStages)
 	{
@@ -51,5 +45,16 @@ void ACrop::UpdateCurrentFlipBook()
 			FoundBook = AnimStart.Value;
 		}
 	}
-	Sprite->SetFlipbook(FoundBook.LoadSynchronous());
+	Sprite->SetFlipbook(FoundBook);
+}
+
+void ACrop::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+}
+
+void ACrop::Load() 
+{
+	UpdateCurrentFlipBook();
 }

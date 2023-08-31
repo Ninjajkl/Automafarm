@@ -13,5 +13,6 @@ enum class ETileType : uint8 {
 	BASEBLOCK UMETA(DisplayName = "BaseBlock"),
 	INTERACTABLEBLOCK UMETA(DisplayName = "InteractableBlock"),
 	PIVOTPAPER UMETA(DisplayName = "PivotPaper"),
+	REFERENCER UMETA(DisplayName = "Referencer"),
 	DEFAULT UMETA(DisplayName = "Default")
 };

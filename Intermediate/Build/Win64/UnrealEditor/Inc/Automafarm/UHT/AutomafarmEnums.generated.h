@@ -15,13 +15,14 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define AUTOMAFARM_AutomafarmEnums_generated_h
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Users_Ninja_OneDrive_Documents_Programming_Unreal_Projects_Automafarm_Source_Automafarm_Public_Library_AutomafarmEnums_h
+#define CURRENT_FILE_ID FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Library_AutomafarmEnums_h
 
 
 #define FOREACH_ENUM_ETILETYPE(op) \
 	op(ETileType::BASEBLOCK) \
 	op(ETileType::INTERACTABLEBLOCK) \
 	op(ETileType::PIVOTPAPER) \
+	op(ETileType::REFERENCER) \
 	op(ETileType::DEFAULT) 
 
 enum class ETileType : uint8;

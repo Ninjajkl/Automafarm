@@ -18,9 +18,7 @@ struct FSerializedBaseBlock
     GENERATED_BODY()
 
     UPROPERTY()
-        TSubclassOf<ABaseBlock> BlockClass;
-    UPROPERTY()
-        FVector GridLocation;
+        TSubclassOf<ABaseBlock> Class;
     UPROPERTY()
         TArray<FInstancedStaticMeshInstanceData> PerInstanceSMData;
 
@@ -32,10 +30,43 @@ struct FSerializedPivotPaper
     GENERATED_BODY()
 
     UPROPERTY()
-        TSubclassOf<APivotPaper> PivotPaperClass;
+        TSubclassOf<APivotPaper> Class;
     UPROPERTY()
-        FTransform Transform;
+        FVector GridLocation;
 
+    FSerializedPivotPaper()
+        :Class(nullptr), GridLocation(FVector::ZeroVector){}
+    FSerializedPivotPaper(const FSerializedPivotPaper& PivotPaperData)
+        :Class(PivotPaperData.Class), GridLocation(PivotPaperData.GridLocation) {}
+};
+
+USTRUCT(BlueprintType)
+struct FSerializedCrop : public FSerializedPivotPaper
+{
+    GENERATED_BODY()
+
+    UPROPERTY()
+        FTimespan CropCreationTime;
+    UPROPERTY()
+        FTimespan CropTimespan;
+
+    FSerializedCrop()
+        : CropCreationTime(FTimespan::Zero()), CropTimespan(FTimespan::Zero()){}
+    FSerializedCrop(const FSerializedPivotPaper& PivotPaperData)
+        : FSerializedPivotPaper(PivotPaperData) {}
+};
+
+USTRUCT(BlueprintType)
+struct FSerializedInventory
+{
+    GENERATED_BODY()
+
+    UPROPERTY()
+        int NumRows;
+    UPROPERTY()
+        int NumCols;
+    UPROPERTY()
+        TMap<int, FSlotStruct> Content;
 };
 
 USTRUCT(BlueprintType)
@@ -44,11 +75,22 @@ struct FSerializedInteractableBlock
     GENERATED_BODY()
 
     UPROPERTY()
-        TSubclassOf<AInteractableBlock> PivotPaperClass;
+        TSubclassOf<AInteractableBlock> Class;
     UPROPERTY()
         FText Name;
-    //UPROPERTY()
-    //    UInventory Inventory;
+    UPROPERTY()
+        FSerializedInventory SerializedInventory;
+    UPROPERTY()
+        FVector GridLocation;
+};
+
+USTRUCT(BlueprintType)
+struct FSerializedPlayerCharacter
+{
+    GENERATED_BODY()
+
+    UPROPERTY()
+        FSerializedInventory SerializedInventory;
     UPROPERTY()
         FTransform Transform;
 };

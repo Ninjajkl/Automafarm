@@ -32,14 +32,21 @@ public:
 
 	//Terrain Properties and Functions
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Terrain")
-		TMap<FVector, APlaceableObject*> LevelMap;
+		TMap<FVector, FTileStruct> LevelMap;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Terrain")
 		TMap<TSubclassOf<APlaceableObject>, APlaceableObject*> InstancedObjectMap;
 
-	bool InitializeInstanceableObject(TSubclassOf<APlaceableObject> BlockClass);
+	void InitializeInstanceableObject(TSubclassOf<APlaceableObject> BlockClass);
+	void AddBlockInstance(TSubclassOf<APlaceableObject> BlockClass, FVector GridLocation);
+	APivotPaper* AddPivotPaper(TSubclassOf<APlaceableObject> PivotClass, FVector GridLocation, FVector PlayerLocation);
+	AInteractableBlock* AddInteractableBlock(TSubclassOf<APlaceableObject> BlockClass, FVector GridLocation);
+	void AddToLevelMap(APlaceableObject* TileReference, TArray<FVector> TilesToFill, FVector TileKey, ETileType TileType);
+
+	void LoadLevelSave();
 	void LoadInstanceableBlock(FSerializedBaseBlock SerializedBlock);
-	APivotPaper* AddPivotPaper(TSubclassOf<APlaceableObject> PivotClass, FVector TileLoc, FVector PlayerLocation);
-	AInteractableBlock* AddInteractableBlock(TSubclassOf<APlaceableObject> BlockClass, FVector TileLoc);
+	void LoadPivotPaper(FSerializedPivotPaper SerializedPivotPaper);
+	void LoadCrop(FSerializedCrop SerializedCrop);
+	void LoadInteractableBlock(FSerializedInteractableBlock SerializedInteractableBlock);
 
 	//Time System Properties and Functions
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "TimeSystem")
@@ -48,6 +55,8 @@ public:
 		double TimeMultiplier;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TimeSystem")
 		double StartingHour;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TimeSystem")
+		double GameSecondsPassed;
 
 	virtual void BeginPlay() override;
 };

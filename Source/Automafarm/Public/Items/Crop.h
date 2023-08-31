@@ -27,7 +27,7 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "CropSystem")
 		bool Harvestable = false;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CropSystem", meta = (ToolTip = "A map of growth stages for playing Flipbooks over time.\nKey: Hours since creation\nValue: Flipbook to play at the specified hour."))
-		TMap<float, TSoftObjectPtr<UPaperFlipbook>> GrowthStages;
+		TMap<float, TObjectPtr<UPaperFlipbook>> GrowthStages;
 
 	//Time System Properties and Functions
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "TimeSystem")
@@ -41,4 +41,5 @@ public:
 		void UpdateCurrentFlipBook();
 
 	virtual void Tick(float DeltaTime) override;
+	virtual void Load() override;
 };

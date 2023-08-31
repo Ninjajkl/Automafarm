@@ -22,9 +22,8 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PlaceableObject")
 		TArray<FVector> TilesToFill;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PlaceableObject")
-		TArray<FVector> FilledTiles;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PlaceableObject")
 		ETileType TileType = ETileType::DEFAULT;
+
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;

@@ -22,6 +22,6 @@ public:
 protected:
 public:	
 	void AddBlock(FTransform BlockTransform);
-	void AddBlock(FVector BlockLocation);
+	void AddBlock(FVector GridLocation);
 	void ClearBlocks();
 };

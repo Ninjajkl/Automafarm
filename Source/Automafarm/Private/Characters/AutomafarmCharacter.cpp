@@ -172,32 +172,25 @@ void AAutomafarmCharacter::PlaceHeldItem(TSubclassOf<APlaceableObject> placeable
 	APlaceableObject* defaultPlaceableObject = Cast<APlaceableObject>(placeableClass->GetDefaultObject());
 	ETileType TileType = defaultPlaceableObject->TileType;
 	TArray<FVector> TilesToFill = RotateByYaw(defaultPlaceableObject->TilesToFill, GetFirstPersonCameraComponent()->GetForwardVector());
-	APlaceableObject* newPO;
+	APlaceableObject* newPO = nullptr;
 	switch (TileType)
 	{
 		case ETileType::BASEBLOCK:
 			myGameState->InitializeInstanceableObject(placeableClass);
+			myGameState->AddBlockInstance(placeableClass, TileKey);
 			newPO = myGameState->InstancedObjectMap[placeableClass];
 			break;
 		case ETileType::INTERACTABLEBLOCK:
-			newPO = myGameState->AddInteractableBlock(placeableClass, TileKey * UGC::TileLength);
+			newPO = myGameState->AddInteractableBlock(placeableClass, TileKey);
 			break;
 		case ETileType::PIVOTPAPER:
-			newPO = myGameState->AddPivotPaper(placeableClass, TileKey * UGC::TileLength, GetFirstPersonCameraComponent()->GetComponentLocation());
+			newPO = myGameState->AddPivotPaper(placeableClass, TileKey, GetFirstPersonCameraComponent()->GetComponentLocation());
 			break;
 		case ETileType::DEFAULT:
-			UE_LOG(LogTemp, Error, TEXT("Item to be placed is missing a TitleType"));
-			break;
+			UE_LOG(LogTemp, Error, TEXT("Item to be placed is missing a TileType"));
+			return;
 	}
-	while (!TilesToFill.IsEmpty())
-	{
-		FVector newTileKey = TileKey + TilesToFill.Pop();
-		if (TileType == ETileType::BASEBLOCK) {
-			Cast<ABaseBlock>(myGameState->InstancedObjectMap[placeableClass])->AddBlock(newTileKey * UGC::TileLength + UGC::TileOffset);
-		}
-		//placeableObject->FilledTiles.Add(newTileKey);
-		myGameState->LevelMap.Add(newTileKey, newPO);
-	}
+	myGameState->AddToLevelMap(newPO, TilesToFill, TileKey, TileType);
 
 	//Modify the Player's inventory to reflect the change
 	PlayerInventory->ReduceSlotByAmount(CurrHotbarSlot, 1);

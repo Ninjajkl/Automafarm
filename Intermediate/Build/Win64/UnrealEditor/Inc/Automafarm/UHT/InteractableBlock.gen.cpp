@@ -14,6 +14,7 @@ void EmptyLinkFunctionForGeneratedCodeInteractableBlock() {}
 	AUTOMAFARM_API UClass* Z_Construct_UClass_APlaceableObject();
 	AUTOMAFARM_API UClass* Z_Construct_UClass_UInteractable_NoRegister();
 	AUTOMAFARM_API UClass* Z_Construct_UClass_UInventory_NoRegister();
+	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_Automafarm();
 // End Cross Module References
@@ -43,6 +44,10 @@ void EmptyLinkFunctionForGeneratedCodeInteractableBlock() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_Name_MetaData[];
 #endif
 		static const UECodeGen_Private::FTextPropertyParams NewProp_Name;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_GridLocation_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_GridLocation;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const UECodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
@@ -81,10 +86,17 @@ void EmptyLinkFunctionForGeneratedCodeInteractableBlock() {}
 	};
 #endif
 	const UECodeGen_Private::FTextPropertyParams Z_Construct_UClass_AInteractableBlock_Statics::NewProp_Name = { "Name", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Text, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AInteractableBlock, Name), METADATA_PARAMS(Z_Construct_UClass_AInteractableBlock_Statics::NewProp_Name_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AInteractableBlock_Statics::NewProp_Name_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AInteractableBlock_Statics::NewProp_GridLocation_MetaData[] = {
+		{ "ModuleRelativePath", "Public/Items/InteractableBlock.h" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AInteractableBlock_Statics::NewProp_GridLocation = { "GridLocation", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AInteractableBlock, GridLocation), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(Z_Construct_UClass_AInteractableBlock_Statics::NewProp_GridLocation_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AInteractableBlock_Statics::NewProp_GridLocation_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AInteractableBlock_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AInteractableBlock_Statics::NewProp_Inventory,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AInteractableBlock_Statics::NewProp_StaticMesh,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AInteractableBlock_Statics::NewProp_Name,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AInteractableBlock_Statics::NewProp_GridLocation,
 	};
 		const UECodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_AInteractableBlock_Statics::InterfaceParams[] = {
 			{ Z_Construct_UClass_UInteractable_NoRegister, (int32)VTABLE_OFFSET(AInteractableBlock, IInteractable), false },  // 1536099168
@@ -121,15 +133,15 @@ void EmptyLinkFunctionForGeneratedCodeInteractableBlock() {}
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AInteractableBlock);
 	AInteractableBlock::~AInteractableBlock() {}
-	struct Z_CompiledInDeferFile_FID_Users_Ninja_OneDrive_Documents_Programming_Unreal_Projects_Automafarm_Source_Automafarm_Public_Items_InteractableBlock_h_Statics
+	struct Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Items_InteractableBlock_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Ninja_OneDrive_Documents_Programming_Unreal_Projects_Automafarm_Source_Automafarm_Public_Items_InteractableBlock_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AInteractableBlock, AInteractableBlock::StaticClass, TEXT("AInteractableBlock"), &Z_Registration_Info_UClass_AInteractableBlock, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AInteractableBlock), 1570324324U) },
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Items_InteractableBlock_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_AInteractableBlock, AInteractableBlock::StaticClass, TEXT("AInteractableBlock"), &Z_Registration_Info_UClass_AInteractableBlock, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AInteractableBlock), 3043294933U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Ninja_OneDrive_Documents_Programming_Unreal_Projects_Automafarm_Source_Automafarm_Public_Items_InteractableBlock_h_2199407737(TEXT("/Script/Automafarm"),
-		Z_CompiledInDeferFile_FID_Users_Ninja_OneDrive_Documents_Programming_Unreal_Projects_Automafarm_Source_Automafarm_Public_Items_InteractableBlock_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Ninja_OneDrive_Documents_Programming_Unreal_Projects_Automafarm_Source_Automafarm_Public_Items_InteractableBlock_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Items_InteractableBlock_h_2871723083(TEXT("/Script/Automafarm"),
+		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Items_InteractableBlock_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Items_InteractableBlock_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

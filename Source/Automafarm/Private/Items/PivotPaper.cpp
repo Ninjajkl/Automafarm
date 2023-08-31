@@ -57,3 +57,7 @@ void APivotPaper::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 }
+void APivotPaper::Load() 
+{
+
+}

@@ -21,8 +21,10 @@ public:
 
 	// Name of the Sprite component
 	static FName SpriteComponentName;
-	UPROPERTY(Category = Character, VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"), Category = "PivotPaper")
 		TObjectPtr<UPaperFlipbookComponent> Sprite;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"), Category = "PivotPaper")
+		FVector GridLocation;
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -33,4 +35,5 @@ public:
 	FVector GetPPCWLocation();
 	void SetPPCWRotation(FRotator rotator);
 	virtual void Tick(float DeltaTime) override;
+	virtual void Load();
 };

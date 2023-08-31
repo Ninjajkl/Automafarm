@@ -37,6 +37,7 @@ void EmptyLinkFunctionForGeneratedCodeAutomafarmEnums() {}
 		{ "ETileType::BASEBLOCK", (int64)ETileType::BASEBLOCK },
 		{ "ETileType::INTERACTABLEBLOCK", (int64)ETileType::INTERACTABLEBLOCK },
 		{ "ETileType::PIVOTPAPER", (int64)ETileType::PIVOTPAPER },
+		{ "ETileType::REFERENCER", (int64)ETileType::REFERENCER },
 		{ "ETileType::DEFAULT", (int64)ETileType::DEFAULT },
 	};
 #if WITH_METADATA
@@ -51,6 +52,8 @@ void EmptyLinkFunctionForGeneratedCodeAutomafarmEnums() {}
 		{ "ModuleRelativePath", "Public/Library/AutomafarmEnums.h" },
 		{ "PIVOTPAPER.DisplayName", "PivotPaper" },
 		{ "PIVOTPAPER.Name", "ETileType::PIVOTPAPER" },
+		{ "REFERENCER.DisplayName", "Referencer" },
+		{ "REFERENCER.Name", "ETileType::REFERENCER" },
 	};
 #endif
 	const UECodeGen_Private::FEnumParams Z_Construct_UEnum_Automafarm_ETileType_Statics::EnumParams = {
@@ -73,15 +76,15 @@ void EmptyLinkFunctionForGeneratedCodeAutomafarmEnums() {}
 		}
 		return Z_Registration_Info_UEnum_ETileType.InnerSingleton;
 	}
-	struct Z_CompiledInDeferFile_FID_Users_Ninja_OneDrive_Documents_Programming_Unreal_Projects_Automafarm_Source_Automafarm_Public_Library_AutomafarmEnums_h_Statics
+	struct Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Library_AutomafarmEnums_h_Statics
 	{
 		static const FEnumRegisterCompiledInInfo EnumInfo[];
 	};
-	const FEnumRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Ninja_OneDrive_Documents_Programming_Unreal_Projects_Automafarm_Source_Automafarm_Public_Library_AutomafarmEnums_h_Statics::EnumInfo[] = {
-		{ ETileType_StaticEnum, TEXT("ETileType"), &Z_Registration_Info_UEnum_ETileType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3617005862U) },
+	const FEnumRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Library_AutomafarmEnums_h_Statics::EnumInfo[] = {
+		{ ETileType_StaticEnum, TEXT("ETileType"), &Z_Registration_Info_UEnum_ETileType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 248095021U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Ninja_OneDrive_Documents_Programming_Unreal_Projects_Automafarm_Source_Automafarm_Public_Library_AutomafarmEnums_h_2405732820(TEXT("/Script/Automafarm"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Library_AutomafarmEnums_h_4131335985(TEXT("/Script/Automafarm"),
 		nullptr, 0,
 		nullptr, 0,
-		Z_CompiledInDeferFile_FID_Users_Ninja_OneDrive_Documents_Programming_Unreal_Projects_Automafarm_Source_Automafarm_Public_Library_AutomafarmEnums_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Ninja_OneDrive_Documents_Programming_Unreal_Projects_Automafarm_Source_Automafarm_Public_Library_AutomafarmEnums_h_Statics::EnumInfo));
+		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Library_AutomafarmEnums_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Library_AutomafarmEnums_h_Statics::EnumInfo));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

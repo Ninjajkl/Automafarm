@@ -31,6 +31,8 @@ public:
 		UStaticMeshComponent* StaticMesh;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "InteractableBlock")
 		FText Name;
+	UPROPERTY()
+		FVector GridLocation;
 
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
