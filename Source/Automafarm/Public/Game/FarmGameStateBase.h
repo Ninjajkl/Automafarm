@@ -3,6 +3,8 @@
 #pragma once
 
 //Custom Classes
+#include "../Characters/AutomafarmCharacter.h"
+#include "../Characters/AutomafarmPlayerController.h"
 #include "../Items/InteractableBlock.h"
 #include "../Items/PivotPaper.h"
 #include "../Items/PlaceableObject.h"
@@ -42,11 +44,28 @@ public:
 	AInteractableBlock* AddInteractableBlock(TSubclassOf<APlaceableObject> BlockClass, FVector GridLocation);
 	void AddToLevelMap(APlaceableObject* TileReference, TArray<FVector> TilesToFill, FVector TileKey, ETileType TileType);
 
+	//Saving System Prperties and Functions
+
+	void SaveLevel();
+
+	FSerializedBaseBlock SerializeBaseBlock(APlaceableObject* InstancedBlock);
+	FSerializedPivotPaper SerializePivotPaper(APivotPaper* PivotPaper);
+	FSerializedCrop SerializeCrop(ACrop* Crop);
+	FSerializedInteractableBlock SerializeInteractableBlock(AInteractableBlock* InteractableBlock);
+	FSerializedTimeSystem SerializeTimeSystem(AFarmGameStateBase* FarmGameState);
+	FSerializedPlayerController SerializePlayerController(AAutomafarmPlayerController* PlayerController);
+	FSerializedPlayerCharacter SerializePlayerCharacter(AAutomafarmCharacter* PlayerCharacter);
+	FSerializedInventory SerializeInventory(UInventory* Inventory);
+
+	//Loading System Properties and Functions
 	void LoadLevelSave();
-	void LoadInstanceableBlock(FSerializedBaseBlock SerializedBlock);
-	void LoadPivotPaper(FSerializedPivotPaper SerializedPivotPaper);
-	void LoadCrop(FSerializedCrop SerializedCrop);
-	void LoadInteractableBlock(FSerializedInteractableBlock SerializedInteractableBlock);
+	void LoadInstanceableBlocks(TArray<FSerializedBaseBlock> SerializedBlocks);
+	void LoadPivotPapers(TArray<FSerializedPivotPaper> SerializedPivotPapers);
+	void LoadCrops(TArray<FSerializedCrop> SerializedCrops);
+	void LoadInteractableBlocks(TArray<FSerializedInteractableBlock> SerializedInteractableBlocks);
+	void LoadTimeSystem(FSerializedTimeSystem SerializedTimeSystem);
+	void LoadPlayerController(FSerializedPlayerController SerializedPlayerController, AAutomafarmPlayerController* PlayerController);
+	void LoadPlayerCharacter(FSerializedPlayerCharacter SerializedPlayerCharacter, AAutomafarmCharacter* PlayerCharacter);
 
 	//Time System Properties and Functions
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "TimeSystem")

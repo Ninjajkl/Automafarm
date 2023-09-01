@@ -33,11 +33,11 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Terrain")
 		TArray<FSerializedInteractableBlock> SerializedInteractableBlocks;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Time")
-		FTimespan GameTimeSpan;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Time")
-		double GameSecondsPassed;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "TimeSystem")
+		FSerializedTimeSystem SerializedTimeSystem;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "PlayerCharacter")
 		FSerializedPlayerCharacter SerializedPlayerCharacter;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "PlayerCharacter")
+		FSerializedPlayerController SerializedPlayerController;
 };

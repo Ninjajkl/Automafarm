@@ -20,8 +20,11 @@ void EmptyLinkFunctionForGeneratedCodeSerializableStructs() {}
 	AUTOMAFARM_API UScriptStruct* Z_Construct_UScriptStruct_FSerializedInventory();
 	AUTOMAFARM_API UScriptStruct* Z_Construct_UScriptStruct_FSerializedPivotPaper();
 	AUTOMAFARM_API UScriptStruct* Z_Construct_UScriptStruct_FSerializedPlayerCharacter();
+	AUTOMAFARM_API UScriptStruct* Z_Construct_UScriptStruct_FSerializedPlayerController();
+	AUTOMAFARM_API UScriptStruct* Z_Construct_UScriptStruct_FSerializedTimeSystem();
 	AUTOMAFARM_API UScriptStruct* Z_Construct_UScriptStruct_FSlotStruct();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
+	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FRotator();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FTimespan();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FTransform();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
@@ -458,6 +461,83 @@ template<> AUTOMAFARM_API UScriptStruct* StaticStruct<FSerializedInteractableBlo
 		}
 		return Z_Registration_Info_UScriptStruct_SerializedInteractableBlock.InnerSingleton;
 	}
+	static FStructRegistrationInfo Z_Registration_Info_UScriptStruct_SerializedTimeSystem;
+class UScriptStruct* FSerializedTimeSystem::StaticStruct()
+{
+	if (!Z_Registration_Info_UScriptStruct_SerializedTimeSystem.OuterSingleton)
+	{
+		Z_Registration_Info_UScriptStruct_SerializedTimeSystem.OuterSingleton = GetStaticStruct(Z_Construct_UScriptStruct_FSerializedTimeSystem, (UObject*)Z_Construct_UPackage__Script_Automafarm(), TEXT("SerializedTimeSystem"));
+	}
+	return Z_Registration_Info_UScriptStruct_SerializedTimeSystem.OuterSingleton;
+}
+template<> AUTOMAFARM_API UScriptStruct* StaticStruct<FSerializedTimeSystem>()
+{
+	return FSerializedTimeSystem::StaticStruct();
+}
+	struct Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Struct_MetaDataParams[];
+#endif
+		static void* NewStructOps();
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_GameTimeSpan_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_GameTimeSpan;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_GameSecondsPassed_MetaData[];
+#endif
+		static const UECodeGen_Private::FDoublePropertyParams NewProp_GameSecondsPassed;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+		static const UECodeGen_Private::FStructParams ReturnStructParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::Struct_MetaDataParams[] = {
+		{ "BlueprintType", "true" },
+		{ "ModuleRelativePath", "Public/Library/SerializableStructs.h" },
+	};
+#endif
+	void* Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::NewStructOps()
+	{
+		return (UScriptStruct::ICppStructOps*)new UScriptStruct::TCppStructOps<FSerializedTimeSystem>();
+	}
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::NewProp_GameTimeSpan_MetaData[] = {
+		{ "ModuleRelativePath", "Public/Library/SerializableStructs.h" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::NewProp_GameTimeSpan = { "GameTimeSpan", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FSerializedTimeSystem, GameTimeSpan), Z_Construct_UScriptStruct_FTimespan, METADATA_PARAMS(Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::NewProp_GameTimeSpan_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::NewProp_GameTimeSpan_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::NewProp_GameSecondsPassed_MetaData[] = {
+		{ "ModuleRelativePath", "Public/Library/SerializableStructs.h" },
+	};
+#endif
+	const UECodeGen_Private::FDoublePropertyParams Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::NewProp_GameSecondsPassed = { "GameSecondsPassed", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Double, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FSerializedTimeSystem, GameSecondsPassed), METADATA_PARAMS(Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::NewProp_GameSecondsPassed_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::NewProp_GameSecondsPassed_MetaData)) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::NewProp_GameTimeSpan,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::NewProp_GameSecondsPassed,
+	};
+	const UECodeGen_Private::FStructParams Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::ReturnStructParams = {
+		(UObject* (*)())Z_Construct_UPackage__Script_Automafarm,
+		nullptr,
+		&NewStructOps,
+		"SerializedTimeSystem",
+		sizeof(FSerializedTimeSystem),
+		alignof(FSerializedTimeSystem),
+		Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::PropPointers,
+		UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::PropPointers),
+		RF_Public|RF_Transient|RF_MarkAsNative,
+		EStructFlags(0x00000001),
+		METADATA_PARAMS(Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::Struct_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::Struct_MetaDataParams))
+	};
+	UScriptStruct* Z_Construct_UScriptStruct_FSerializedTimeSystem()
+	{
+		if (!Z_Registration_Info_UScriptStruct_SerializedTimeSystem.InnerSingleton)
+		{
+			UECodeGen_Private::ConstructUScriptStruct(Z_Registration_Info_UScriptStruct_SerializedTimeSystem.InnerSingleton, Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::ReturnStructParams);
+		}
+		return Z_Registration_Info_UScriptStruct_SerializedTimeSystem.InnerSingleton;
+	}
 	static FStructRegistrationInfo Z_Registration_Info_UScriptStruct_SerializedPlayerCharacter;
 class UScriptStruct* FSerializedPlayerCharacter::StaticStruct()
 {
@@ -535,6 +615,72 @@ template<> AUTOMAFARM_API UScriptStruct* StaticStruct<FSerializedPlayerCharacter
 		}
 		return Z_Registration_Info_UScriptStruct_SerializedPlayerCharacter.InnerSingleton;
 	}
+	static FStructRegistrationInfo Z_Registration_Info_UScriptStruct_SerializedPlayerController;
+class UScriptStruct* FSerializedPlayerController::StaticStruct()
+{
+	if (!Z_Registration_Info_UScriptStruct_SerializedPlayerController.OuterSingleton)
+	{
+		Z_Registration_Info_UScriptStruct_SerializedPlayerController.OuterSingleton = GetStaticStruct(Z_Construct_UScriptStruct_FSerializedPlayerController, (UObject*)Z_Construct_UPackage__Script_Automafarm(), TEXT("SerializedPlayerController"));
+	}
+	return Z_Registration_Info_UScriptStruct_SerializedPlayerController.OuterSingleton;
+}
+template<> AUTOMAFARM_API UScriptStruct* StaticStruct<FSerializedPlayerController>()
+{
+	return FSerializedPlayerController::StaticStruct();
+}
+	struct Z_Construct_UScriptStruct_FSerializedPlayerController_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Struct_MetaDataParams[];
+#endif
+		static void* NewStructOps();
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Rotation_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_Rotation;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+		static const UECodeGen_Private::FStructParams ReturnStructParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FSerializedPlayerController_Statics::Struct_MetaDataParams[] = {
+		{ "BlueprintType", "true" },
+		{ "ModuleRelativePath", "Public/Library/SerializableStructs.h" },
+	};
+#endif
+	void* Z_Construct_UScriptStruct_FSerializedPlayerController_Statics::NewStructOps()
+	{
+		return (UScriptStruct::ICppStructOps*)new UScriptStruct::TCppStructOps<FSerializedPlayerController>();
+	}
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FSerializedPlayerController_Statics::NewProp_Rotation_MetaData[] = {
+		{ "ModuleRelativePath", "Public/Library/SerializableStructs.h" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FSerializedPlayerController_Statics::NewProp_Rotation = { "Rotation", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FSerializedPlayerController, Rotation), Z_Construct_UScriptStruct_FRotator, METADATA_PARAMS(Z_Construct_UScriptStruct_FSerializedPlayerController_Statics::NewProp_Rotation_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedPlayerController_Statics::NewProp_Rotation_MetaData)) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FSerializedPlayerController_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FSerializedPlayerController_Statics::NewProp_Rotation,
+	};
+	const UECodeGen_Private::FStructParams Z_Construct_UScriptStruct_FSerializedPlayerController_Statics::ReturnStructParams = {
+		(UObject* (*)())Z_Construct_UPackage__Script_Automafarm,
+		nullptr,
+		&NewStructOps,
+		"SerializedPlayerController",
+		sizeof(FSerializedPlayerController),
+		alignof(FSerializedPlayerController),
+		Z_Construct_UScriptStruct_FSerializedPlayerController_Statics::PropPointers,
+		UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedPlayerController_Statics::PropPointers),
+		RF_Public|RF_Transient|RF_MarkAsNative,
+		EStructFlags(0x00000001),
+		METADATA_PARAMS(Z_Construct_UScriptStruct_FSerializedPlayerController_Statics::Struct_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedPlayerController_Statics::Struct_MetaDataParams))
+	};
+	UScriptStruct* Z_Construct_UScriptStruct_FSerializedPlayerController()
+	{
+		if (!Z_Registration_Info_UScriptStruct_SerializedPlayerController.InnerSingleton)
+		{
+			UECodeGen_Private::ConstructUScriptStruct(Z_Registration_Info_UScriptStruct_SerializedPlayerController.InnerSingleton, Z_Construct_UScriptStruct_FSerializedPlayerController_Statics::ReturnStructParams);
+		}
+		return Z_Registration_Info_UScriptStruct_SerializedPlayerController.InnerSingleton;
+	}
 	struct Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Library_SerializableStructs_h_Statics
 	{
 		static const FStructRegisterCompiledInInfo ScriptStructInfo[];
@@ -545,9 +691,11 @@ template<> AUTOMAFARM_API UScriptStruct* StaticStruct<FSerializedPlayerCharacter
 		{ FSerializedCrop::StaticStruct, Z_Construct_UScriptStruct_FSerializedCrop_Statics::NewStructOps, TEXT("SerializedCrop"), &Z_Registration_Info_UScriptStruct_SerializedCrop, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FSerializedCrop), 1107703144U) },
 		{ FSerializedInventory::StaticStruct, Z_Construct_UScriptStruct_FSerializedInventory_Statics::NewStructOps, TEXT("SerializedInventory"), &Z_Registration_Info_UScriptStruct_SerializedInventory, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FSerializedInventory), 1261889015U) },
 		{ FSerializedInteractableBlock::StaticStruct, Z_Construct_UScriptStruct_FSerializedInteractableBlock_Statics::NewStructOps, TEXT("SerializedInteractableBlock"), &Z_Registration_Info_UScriptStruct_SerializedInteractableBlock, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FSerializedInteractableBlock), 617781861U) },
+		{ FSerializedTimeSystem::StaticStruct, Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::NewStructOps, TEXT("SerializedTimeSystem"), &Z_Registration_Info_UScriptStruct_SerializedTimeSystem, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FSerializedTimeSystem), 3807453212U) },
 		{ FSerializedPlayerCharacter::StaticStruct, Z_Construct_UScriptStruct_FSerializedPlayerCharacter_Statics::NewStructOps, TEXT("SerializedPlayerCharacter"), &Z_Registration_Info_UScriptStruct_SerializedPlayerCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FSerializedPlayerCharacter), 1158279048U) },
+		{ FSerializedPlayerController::StaticStruct, Z_Construct_UScriptStruct_FSerializedPlayerController_Statics::NewStructOps, TEXT("SerializedPlayerController"), &Z_Registration_Info_UScriptStruct_SerializedPlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FSerializedPlayerController), 3967563916U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Library_SerializableStructs_h_373611929(TEXT("/Script/Automafarm"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Library_SerializableStructs_h_3948026892(TEXT("/Script/Automafarm"),
 		nullptr, 0,
 		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Library_SerializableStructs_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Library_SerializableStructs_h_Statics::ScriptStructInfo),
 		nullptr, 0);

@@ -85,6 +85,17 @@ struct FSerializedInteractableBlock
 };
 
 USTRUCT(BlueprintType)
+struct FSerializedTimeSystem
+{
+    GENERATED_BODY()
+
+    UPROPERTY()
+        FTimespan GameTimeSpan;
+    UPROPERTY()
+        double GameSecondsPassed;
+};
+
+USTRUCT(BlueprintType)
 struct FSerializedPlayerCharacter
 {
     GENERATED_BODY()
@@ -93,4 +104,13 @@ struct FSerializedPlayerCharacter
         FSerializedInventory SerializedInventory;
     UPROPERTY()
         FTransform Transform;
+};
+
+USTRUCT(BlueprintType)
+struct FSerializedPlayerController
+{
+    GENERATED_BODY()
+
+    UPROPERTY()
+        FRotator Rotation;
 };

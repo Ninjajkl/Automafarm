@@ -17,7 +17,8 @@ void EmptyLinkFunctionForGeneratedCodeSaveFarmLevel() {}
 	AUTOMAFARM_API UScriptStruct* Z_Construct_UScriptStruct_FSerializedInteractableBlock();
 	AUTOMAFARM_API UScriptStruct* Z_Construct_UScriptStruct_FSerializedPivotPaper();
 	AUTOMAFARM_API UScriptStruct* Z_Construct_UScriptStruct_FSerializedPlayerCharacter();
-	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FTimespan();
+	AUTOMAFARM_API UScriptStruct* Z_Construct_UScriptStruct_FSerializedPlayerController();
+	AUTOMAFARM_API UScriptStruct* Z_Construct_UScriptStruct_FSerializedTimeSystem();
 	ENGINE_API UClass* Z_Construct_UClass_USaveGame();
 	UPackage* Z_Construct_UPackage__Script_Automafarm();
 // End Cross Module References
@@ -64,17 +65,17 @@ void EmptyLinkFunctionForGeneratedCodeSaveFarmLevel() {}
 #endif
 		static const UECodeGen_Private::FArrayPropertyParams NewProp_SerializedInteractableBlocks;
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_GameTimeSpan_MetaData[];
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_SerializedTimeSystem_MetaData[];
 #endif
-		static const UECodeGen_Private::FStructPropertyParams NewProp_GameTimeSpan;
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_GameSecondsPassed_MetaData[];
-#endif
-		static const UECodeGen_Private::FDoublePropertyParams NewProp_GameSecondsPassed;
+		static const UECodeGen_Private::FStructPropertyParams NewProp_SerializedTimeSystem;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_SerializedPlayerCharacter_MetaData[];
 #endif
 		static const UECodeGen_Private::FStructPropertyParams NewProp_SerializedPlayerCharacter;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_SerializedPlayerController_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_SerializedPlayerController;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -136,19 +137,12 @@ void EmptyLinkFunctionForGeneratedCodeSaveFarmLevel() {}
 #endif
 	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedInteractableBlocks = { "SerializedInteractableBlocks", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(USaveFarmLevel, SerializedInteractableBlocks), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedInteractableBlocks_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedInteractableBlocks_MetaData)) }; // 617781861
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_GameTimeSpan_MetaData[] = {
-		{ "Category", "Time" },
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedTimeSystem_MetaData[] = {
+		{ "Category", "TimeSystem" },
 		{ "ModuleRelativePath", "Public/Systems/SaveFarmLevel.h" },
 	};
 #endif
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_GameTimeSpan = { "GameTimeSpan", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(USaveFarmLevel, GameTimeSpan), Z_Construct_UScriptStruct_FTimespan, METADATA_PARAMS(Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_GameTimeSpan_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_GameTimeSpan_MetaData)) };
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_GameSecondsPassed_MetaData[] = {
-		{ "Category", "Time" },
-		{ "ModuleRelativePath", "Public/Systems/SaveFarmLevel.h" },
-	};
-#endif
-	const UECodeGen_Private::FDoublePropertyParams Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_GameSecondsPassed = { "GameSecondsPassed", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Double, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(USaveFarmLevel, GameSecondsPassed), METADATA_PARAMS(Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_GameSecondsPassed_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_GameSecondsPassed_MetaData)) };
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedTimeSystem = { "SerializedTimeSystem", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(USaveFarmLevel, SerializedTimeSystem), Z_Construct_UScriptStruct_FSerializedTimeSystem, METADATA_PARAMS(Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedTimeSystem_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedTimeSystem_MetaData)) }; // 3807453212
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedPlayerCharacter_MetaData[] = {
 		{ "Category", "PlayerCharacter" },
@@ -156,6 +150,13 @@ void EmptyLinkFunctionForGeneratedCodeSaveFarmLevel() {}
 	};
 #endif
 	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedPlayerCharacter = { "SerializedPlayerCharacter", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(USaveFarmLevel, SerializedPlayerCharacter), Z_Construct_UScriptStruct_FSerializedPlayerCharacter, METADATA_PARAMS(Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedPlayerCharacter_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedPlayerCharacter_MetaData)) }; // 1158279048
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedPlayerController_MetaData[] = {
+		{ "Category", "PlayerCharacter" },
+		{ "ModuleRelativePath", "Public/Systems/SaveFarmLevel.h" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedPlayerController = { "SerializedPlayerController", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(USaveFarmLevel, SerializedPlayerController), Z_Construct_UScriptStruct_FSerializedPlayerController, METADATA_PARAMS(Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedPlayerController_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedPlayerController_MetaData)) }; // 3967563916
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_USaveFarmLevel_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SaveSlotName,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_UserIndex,
@@ -167,9 +168,9 @@ void EmptyLinkFunctionForGeneratedCodeSaveFarmLevel() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedCrops,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedInteractableBlocks_Inner,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedInteractableBlocks,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_GameTimeSpan,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_GameSecondsPassed,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedTimeSystem,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedPlayerCharacter,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedPlayerController,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_USaveFarmLevel_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<USaveFarmLevel>::IsAbstract,
@@ -208,9 +209,9 @@ void EmptyLinkFunctionForGeneratedCodeSaveFarmLevel() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_SaveFarmLevel_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_USaveFarmLevel, USaveFarmLevel::StaticClass, TEXT("USaveFarmLevel"), &Z_Registration_Info_UClass_USaveFarmLevel, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(USaveFarmLevel), 852241389U) },
+		{ Z_Construct_UClass_USaveFarmLevel, USaveFarmLevel::StaticClass, TEXT("USaveFarmLevel"), &Z_Registration_Info_UClass_USaveFarmLevel, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(USaveFarmLevel), 3297753647U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_SaveFarmLevel_h_3494042030(TEXT("/Script/Automafarm"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_SaveFarmLevel_h_3033443233(TEXT("/Script/Automafarm"),
 		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_SaveFarmLevel_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_SaveFarmLevel_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

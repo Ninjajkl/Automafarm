@@ -4,6 +4,7 @@
 #include "Game/FarmGameStateBase.h"
 //Custom Classes
 #include "Characters/AutomafarmCharacter.h"
+#include "Characters/AutomafarmPlayerController.h"
 #include "Items/BaseBlock.h"
 #include "Items/Crop.h"
 #include "Systems/SaveFarmLevel.h"
@@ -87,94 +88,245 @@ void AFarmGameStateBase::AddToLevelMap(APlaceableObject* TileReference, TArray<F
 	}
 }
 
+//Saving Functions
+
+void AFarmGameStateBase::SaveLevel() 
+{
+	AFarmGameStateBase* FarmGameState = Cast<AFarmGameStateBase>(GetWorld()->GetGameState());
+	USaveFarmLevel* SaveFarmLevel = Cast<USaveFarmLevel>(UGameplayStatics::CreateSaveGameObject(USaveFarmLevel::StaticClass()));
+	if (FarmGameState && SaveFarmLevel)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Save Started"));
+
+		TArray<FSerializedBaseBlock> SerializedBaseBlocks;
+		TArray<FSerializedPivotPaper> SerializedPivotPapers;
+		TArray<FSerializedCrop> SerializedCrops;
+		TArray<FSerializedInteractableBlock> SerializedInteractableBlocks;
+
+		for (const auto& InstancedBlock : FarmGameState->InstancedObjectMap)
+		{
+			SerializedBaseBlocks.Add(SerializeBaseBlock(InstancedBlock.Value));
+		}
+
+		for (const auto& Entry : FarmGameState->LevelMap)
+		{
+			if (Entry.Value.TileType == ETileType::PIVOTPAPER)
+			{
+				APivotPaper* PivotPaper = Cast<APivotPaper>(Entry.Value.PlaceableObjectReference);
+				if (ACrop* Crop = Cast<ACrop>(PivotPaper))
+				{
+					SerializedCrops.Add(SerializeCrop(Crop));
+				}
+				else
+				{
+					SerializedPivotPapers.Add(SerializePivotPaper(PivotPaper));
+				}
+			}
+			else if (Entry.Value.TileType == ETileType::INTERACTABLEBLOCK)
+			{
+				AInteractableBlock* InteractableBlock = Cast<AInteractableBlock>(Entry.Value.PlaceableObjectReference);
+				FSerializedInteractableBlock SerializedInteractableBlock;
+				SerializedInteractableBlock.Class = InteractableBlock->GetClass();
+				SerializedInteractableBlock.Name = InteractableBlock->Name;
+				FSerializedInventory SerializedInventory = SerializeInventory(InteractableBlock->Inventory);
+				SerializedInteractableBlock.SerializedInventory = SerializedInventory;
+
+				SerializedInteractableBlock.GridLocation = InteractableBlock->GridLocation;
+				SerializedInteractableBlocks.Add(SerializedInteractableBlock);
+			}
+			else if (Entry.Value.TileType == ETileType::REFERENCER)
+			{
+				//Do nothing, we don't need to save this
+			}
+			else
+			{
+				UE_LOG(LogTemp, Warning, TEXT("Cast Failed"));
+			}
+			// Repeat for other subclasses if needed
+		}
+		AAutomafarmPlayerController* PlayerController = Cast<AAutomafarmPlayerController>(GetWorld()->GetFirstPlayerController());
+		AAutomafarmCharacter* PlayerCharacter = Cast<AAutomafarmCharacter>(PlayerController->GetPawn());
+
+		// Set data on the savegame object.
+		SaveFarmLevel->SerializedBaseBlocks = SerializedBaseBlocks;
+		SaveFarmLevel->SerializedPivotPapers = SerializedPivotPapers;
+		SaveFarmLevel->SerializedCrops = SerializedCrops;
+		SaveFarmLevel->SerializedInteractableBlocks = SerializedInteractableBlocks;
+		SaveFarmLevel->SerializedTimeSystem = SerializeTimeSystem(FarmGameState);
+		SaveFarmLevel->SerializedPlayerController = SerializePlayerController(PlayerController);
+		SaveFarmLevel->SerializedPlayerCharacter = SerializePlayerCharacter(PlayerCharacter);
+
+		// Start async save process.
+		UGameplayStatics::AsyncSaveGameToSlot(SaveFarmLevel, SaveFarmLevel->SaveSlotName, SaveFarmLevel->UserIndex);
+	}
+}
+
+FSerializedBaseBlock AFarmGameStateBase::SerializeBaseBlock(APlaceableObject* InstancedBlock)
+{
+	ABaseBlock* Block = Cast<ABaseBlock>(InstancedBlock);
+	FSerializedBaseBlock SerializedBlock;
+	SerializedBlock.Class = Block->GetClass();
+	SerializedBlock.PerInstanceSMData = Block->BlockMesh->PerInstanceSMData;
+	return SerializedBlock;
+}
+
+FSerializedPivotPaper AFarmGameStateBase::SerializePivotPaper(APivotPaper* PivotPaper)
+{
+	FSerializedPivotPaper SerializedPivotPaper;
+	SerializedPivotPaper.Class = PivotPaper->GetClass();
+	SerializedPivotPaper.GridLocation = PivotPaper->GridLocation;
+	return SerializedPivotPaper;
+}
+
+FSerializedCrop AFarmGameStateBase::SerializeCrop(ACrop* Crop)
+{
+	FSerializedCrop SerializedCrop(SerializePivotPaper(Crop));
+	SerializedCrop.CropCreationTime = Crop->CropCreationTime;
+	SerializedCrop.CropTimespan = Crop->CropTimespan;
+	return SerializedCrop;
+}
+
+FSerializedInteractableBlock AFarmGameStateBase::SerializeInteractableBlocks(AInteractableBlock* InteractableBlock)
+{
+	FSerializedInteractableBlock SerializedInteractableBlock;
+	SerializedInteractableBlock.Class = InteractableBlock->GetClass();
+	SerializedInteractableBlock.Name = InteractableBlock->Name;
+	FSerializedInventory SerializedInventory = SerializeInventory(InteractableBlock->Inventory);
+	SerializedInteractableBlock.SerializedInventory = SerializedInventory;
+	SerializedInteractableBlock.GridLocation = InteractableBlock->GridLocation;
+
+	return SerializedInteractableBlock;
+}
+
+FSerializedTimeSystem AFarmGameStateBase::SerializeTimeSystem(AFarmGameStateBase* FarmGameState)
+{
+	FSerializedTimeSystem SerializedTimeSystem;
+	SerializedTimeSystem.GameTimeSpan = FarmGameState->GameTimeSpan;
+	SerializedTimeSystem.GameSecondsPassed = FarmGameState->GameSecondsPassed;
+	return SerializedTimeSystem;
+}
+
+FSerializedPlayerController AFarmGameStateBase::SerializePlayerController(AAutomafarmPlayerController* PlayerController)
+{
+	FSerializedPlayerController SerializedPlayerController;
+	SerializedPlayerController.Rotation = PlayerController->GetControlRotation();
+	return SerializedPlayerController;
+}
+
+FSerializedPlayerCharacter AFarmGameStateBase::SerializePlayerCharacter(AAutomafarmCharacter* PlayerCharacter)
+{
+	FSerializedPlayerCharacter SerializedPlayerCharacter;
+	SerializedPlayerCharacter.Transform = PlayerCharacter->GetActorTransform();
+	SerializedPlayerCharacter.SerializedInventory = SerializeInventory(PlayerCharacter->PlayerInventory);
+	return SerializedPlayerCharacter;
+}
+
+FSerializedInventory AFarmGameStateBase::SerializeInventory(UInventory* Inventory)
+{
+	FSerializedInventory SerializedInventory;
+	SerializedInventory.NumRows = Inventory->NumRows;
+	SerializedInventory.NumCols = Inventory->NumCols;
+	SerializedInventory.Content = Inventory->Content;
+	return SerializedInventory;
+}
+
+//Loading Functions
+
 void AFarmGameStateBase::LoadLevelSave()
 {
 	if (USaveFarmLevel* LoadedFarmSave = Cast<USaveFarmLevel>(UGameplayStatics::LoadGameFromSlot("TerrainSaveSlot", 0)))
 	{
-		TArray<FSerializedBaseBlock> SerializedBaseBlocks = LoadedFarmSave->SerializedBaseBlocks;
-		TArray<FSerializedPivotPaper> SerializedPivotPapers = LoadedFarmSave->SerializedPivotPapers;
-		TArray<FSerializedCrop> SerializedCrops = LoadedFarmSave->SerializedCrops;
-		TArray<FSerializedInteractableBlock> SerializedInteractableBlocks = LoadedFarmSave->SerializedInteractableBlocks;
+		LoadInstanceableBlocks(LoadedFarmSave->SerializedBaseBlocks);
+		LoadPivotPapers(LoadedFarmSave->SerializedPivotPapers);
+		LoadCrops(LoadedFarmSave->SerializedCrops);
+		LoadInteractableBlocks(LoadedFarmSave->SerializedInteractableBlocks);
+		LoadTimeSystem(LoadedFarmSave->SerializedTimeSystem);
 
-		for (const FSerializedBaseBlock& SerializedBlock : SerializedBaseBlocks)
-		{
-			LoadInstanceableBlock(SerializedBlock);
-		}
-		for (const FSerializedPivotPaper& SerializedPivotPaper : SerializedPivotPapers)
-		{
-			LoadPivotPaper(SerializedPivotPaper);
-		}
-		for (const FSerializedCrop& SerializedCrop : SerializedCrops)
-		{
-			LoadCrop(SerializedCrop);
-		}
-		for (const FSerializedInteractableBlock& SerializedInteractableBlock : SerializedInteractableBlocks)
-		{
-			LoadInteractableBlock(SerializedInteractableBlock);
-		}
-		GameTimeSpan = LoadedFarmSave->GameTimeSpan;
-		GameSecondsPassed = LoadedFarmSave->GameSecondsPassed;
+		AAutomafarmPlayerController* PlayerController = Cast<AAutomafarmPlayerController>(GetWorld()->GetFirstPlayerController());
+		LoadPlayerController(LoadedFarmSave->SerializedPlayerController, PlayerController);
+
 		AAutomafarmCharacter* PlayerCharacter = Cast<AAutomafarmCharacter>(GetWorld()->GetFirstPlayerController()->GetPawn());
-		PlayerCharacter->SetActorTransform(LoadedFarmSave->SerializedPlayerCharacter.Transform);
-		PlayerCharacter->SetActorRotation(LoadedFarmSave->SerializedPlayerCharacter.Transform.GetRotation().Rotator());
-		FVector Location = LoadedFarmSave->SerializedPlayerCharacter.Transform.GetLocation();
-		FRotator Rotation = LoadedFarmSave->SerializedPlayerCharacter.Transform.GetRotation().Rotator();
-		FVector Scale = LoadedFarmSave->SerializedPlayerCharacter.Transform.GetScale3D();
+		LoadPlayerCharacter(LoadedFarmSave->SerializedPlayerCharacter, PlayerCharacter);
 
-		UE_LOG(LogTemp, Warning, TEXT("Transform - Location: %s, Rotation: %s, Scale: %s"), *Location.ToString(), *Rotation.ToString(), *Scale.ToString());
-		PlayerCharacter->PlayerInventory->NumRows = LoadedFarmSave->SerializedPlayerCharacter.SerializedInventory.NumRows;
-		PlayerCharacter->PlayerInventory->NumCols = LoadedFarmSave->SerializedPlayerCharacter.SerializedInventory.NumCols;
-		PlayerCharacter->PlayerInventory->Content = LoadedFarmSave->SerializedPlayerCharacter.SerializedInventory.Content;
-		// The operation was successful, so LoadedGame now contains the data we saved earlier.
+		//Log that the Save succeeded
 		UE_LOG(LogTemp, Warning, TEXT("LOADED: %s"), *LoadedFarmSave->SaveSlotName);
 	}
 }
 
-void AFarmGameStateBase::LoadInstanceableBlock(FSerializedBaseBlock SerializedBlock)
+void AFarmGameStateBase::LoadInstanceableBlocks(TArray<FSerializedBaseBlock> SerializedBlocks)
 {
-	//Add the Block to the world
-	APlaceableObject* InstancedObject = GetWorld()->SpawnActor<APlaceableObject>(SerializedBlock.Class);
-	//Add this blockclass to the InstancedObjectMap
-	InstancedObjectMap.Add(SerializedBlock.Class, InstancedObject);
-	ABaseBlock* InstancedBlock = Cast<ABaseBlock>(InstancedObject);
-
-	//Create an array of the Individual Instances Transforms
-	TArray<FTransform> Transforms;
-	for (const FInstancedStaticMeshInstanceData& InstanceData : SerializedBlock.PerInstanceSMData)
+	for (const FSerializedBaseBlock& SerializedBlock : SerializedBlocks)
 	{
-		FTransform InstanceTransform = FTransform(InstanceData.Transform);
-		Transforms.Add(InstanceTransform);
-		//As each Transform is made, add it to the level map
-		LevelMap.Add(InstanceTransform.GetTranslation(), FTileStruct(InstancedBlock, ETileType::REFERENCER));
+		//Add the Block to the world
+		APlaceableObject* InstancedObject = GetWorld()->SpawnActor<APlaceableObject>(SerializedBlock.Class);
+		//Add this blockclass to the InstancedObjectMap
+		InstancedObjectMap.Add(SerializedBlock.Class, InstancedObject);
+		ABaseBlock* InstancedBlock = Cast<ABaseBlock>(InstancedObject);
+
+		//Create an array of the Individual Instances Transforms
+		TArray<FTransform> Transforms;
+		for (const FInstancedStaticMeshInstanceData& InstanceData : SerializedBlock.PerInstanceSMData)
+		{
+			FTransform InstanceTransform = FTransform(InstanceData.Transform);
+			Transforms.Add(InstanceTransform);
+			//As each Transform is made, add it to the level map
+			LevelMap.Add(InstanceTransform.GetTranslation(), FTileStruct(InstancedBlock, ETileType::REFERENCER));
+		}
+		//Add all of the Transforms to the InstancedBlock
+		InstancedBlock->BlockMesh->AddInstances(Transforms, false);;
 	}
-	//Add all of the Transforms to the InstancedBlock
-	InstancedBlock->BlockMesh->AddInstances(Transforms, false);
 
 }
 
-void AFarmGameStateBase::LoadPivotPaper(FSerializedPivotPaper SerializedPivotPaper) 
+void AFarmGameStateBase::LoadPivotPapers(TArray<FSerializedPivotPaper> SerializedPivotPapers)
 {
-	APivotPaper* PivotPaper = GetWorld()->SpawnActor<APivotPaper>(SerializedPivotPaper.Class, FTransform(SerializedPivotPaper.GridLocation * UGC::TileLength));
-	PivotPaper->GridLocation = SerializedPivotPaper.GridLocation;
-	AddToLevelMap(PivotPaper, PivotPaper->TilesToFill, PivotPaper->GridLocation, ETileType::PIVOTPAPER);
+	for (const FSerializedPivotPaper& SerializedPivotPaper : SerializedPivotPapers)
+	{
+		APivotPaper* PivotPaper = GetWorld()->SpawnActor<APivotPaper>(SerializedPivotPaper.Class, FTransform(SerializedPivotPaper.GridLocation * UGC::TileLength));
+		PivotPaper->GridLocation = SerializedPivotPaper.GridLocation;
+		AddToLevelMap(PivotPaper, PivotPaper->TilesToFill, PivotPaper->GridLocation, ETileType::PIVOTPAPER);
+	}
 }
 
-void AFarmGameStateBase::LoadCrop(FSerializedCrop SerializedCrop)
+void AFarmGameStateBase::LoadCrops(TArray<FSerializedCrop> SerializedCrops)
 {
-	ACrop* Crop = GetWorld()->SpawnActor<ACrop>(SerializedCrop.Class, FTransform(SerializedCrop.GridLocation * UGC::TileLength));
-	Crop->GridLocation = SerializedCrop.GridLocation;
-	Crop->CropCreationTime = SerializedCrop.CropCreationTime;
-	Crop->CropTimespan = SerializedCrop.CropTimespan;
-	AddToLevelMap(Crop, Crop->TilesToFill, Crop->GridLocation, ETileType::PIVOTPAPER);
+	for (const FSerializedCrop& SerializedCrop : SerializedCrops) {
+		ACrop* Crop = GetWorld()->SpawnActor<ACrop>(SerializedCrop.Class, FTransform(SerializedCrop.GridLocation * UGC::TileLength));
+		Crop->GridLocation = SerializedCrop.GridLocation;
+		Crop->CropCreationTime = SerializedCrop.CropCreationTime;
+		Crop->CropTimespan = SerializedCrop.CropTimespan;
+		AddToLevelMap(Crop, Crop->TilesToFill, Crop->GridLocation, ETileType::PIVOTPAPER);
+	}
 }
 
-void AFarmGameStateBase::LoadInteractableBlock(FSerializedInteractableBlock SerializedInteractableBlock)
+void AFarmGameStateBase::LoadInteractableBlocks(TArray<FSerializedInteractableBlock> SerializedInteractableBlocks)
 {
-	AInteractableBlock* InteractableBlock = GetWorld()->SpawnActor<AInteractableBlock>(SerializedInteractableBlock.Class, FTransform(SerializedInteractableBlock.GridLocation * UGC::TileLength));
-	InteractableBlock->Name = SerializedInteractableBlock.Name;
-	InteractableBlock->GridLocation = SerializedInteractableBlock.GridLocation;
-	InteractableBlock->Inventory->NumRows = SerializedInteractableBlock.SerializedInventory.NumRows;
-	InteractableBlock->Inventory->NumCols = SerializedInteractableBlock.SerializedInventory.NumCols;
-	InteractableBlock->Inventory->Content = SerializedInteractableBlock.SerializedInventory.Content;
-	AddToLevelMap(InteractableBlock, InteractableBlock->TilesToFill, InteractableBlock->GridLocation, ETileType::INTERACTABLEBLOCK);
+	for (const FSerializedInteractableBlock& SerializedInteractableBlock : SerializedInteractableBlocks) {
+		AInteractableBlock* InteractableBlock = GetWorld()->SpawnActor<AInteractableBlock>(SerializedInteractableBlock.Class, FTransform(SerializedInteractableBlock.GridLocation * UGC::TileLength));
+		InteractableBlock->Name = SerializedInteractableBlock.Name;
+		InteractableBlock->GridLocation = SerializedInteractableBlock.GridLocation;
+		InteractableBlock->Inventory->NumRows = SerializedInteractableBlock.SerializedInventory.NumRows;
+		InteractableBlock->Inventory->NumCols = SerializedInteractableBlock.SerializedInventory.NumCols;
+		InteractableBlock->Inventory->Content = SerializedInteractableBlock.SerializedInventory.Content;
+		AddToLevelMap(InteractableBlock, InteractableBlock->TilesToFill, InteractableBlock->GridLocation, ETileType::INTERACTABLEBLOCK);
+	}
+}
+
+void AFarmGameStateBase::LoadTimeSystem(FSerializedTimeSystem SerializedTimeSystem)
+{
+	GameTimeSpan = SerializedTimeSystem.GameTimeSpan;
+	GameSecondsPassed = SerializedTimeSystem.GameSecondsPassed;
+}
+
+void AFarmGameStateBase::LoadPlayerController(FSerializedPlayerController SerializedPlayerController, AAutomafarmPlayerController* PlayerController)
+{
+	PlayerController->SetControlRotation(SerializedPlayerController.Rotation);
+}
+
+void AFarmGameStateBase::LoadPlayerCharacter(FSerializedPlayerCharacter SerializedPlayerCharacter, AAutomafarmCharacter* PlayerCharacter)
+{
+	PlayerCharacter->SetActorTransform(SerializedPlayerCharacter.Transform);
+	PlayerCharacter->PlayerInventory->NumRows = SerializedPlayerCharacter.SerializedInventory.NumRows;
+	PlayerCharacter->PlayerInventory->NumCols = SerializedPlayerCharacter.SerializedInventory.NumCols;
+	PlayerCharacter->PlayerInventory->Content = SerializedPlayerCharacter.SerializedInventory.Content;
 }
