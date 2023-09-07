@@ -93,6 +93,8 @@ void AFarmGameStateBase::AddToLevelMap(APlaceableObject* TileReference, TArray<F
 void AFarmGameStateBase::SaveLevel() 
 {
 	AFarmGameStateBase* FarmGameState = Cast<AFarmGameStateBase>(GetWorld()->GetGameState());
+	AAutomafarmPlayerController* PlayerController = Cast<AAutomafarmPlayerController>(GetWorld()->GetFirstPlayerController());
+	AAutomafarmCharacter* PlayerCharacter = Cast<AAutomafarmCharacter>(PlayerController->GetPawn());
 	USaveFarmLevel* SaveFarmLevel = Cast<USaveFarmLevel>(UGameplayStatics::CreateSaveGameObject(USaveFarmLevel::StaticClass()));
 	if (FarmGameState && SaveFarmLevel)
 	{
@@ -124,15 +126,7 @@ void AFarmGameStateBase::SaveLevel()
 			}
 			else if (Entry.Value.TileType == ETileType::INTERACTABLEBLOCK)
 			{
-				AInteractableBlock* InteractableBlock = Cast<AInteractableBlock>(Entry.Value.PlaceableObjectReference);
-				FSerializedInteractableBlock SerializedInteractableBlock;
-				SerializedInteractableBlock.Class = InteractableBlock->GetClass();
-				SerializedInteractableBlock.Name = InteractableBlock->Name;
-				FSerializedInventory SerializedInventory = SerializeInventory(InteractableBlock->Inventory);
-				SerializedInteractableBlock.SerializedInventory = SerializedInventory;
-
-				SerializedInteractableBlock.GridLocation = InteractableBlock->GridLocation;
-				SerializedInteractableBlocks.Add(SerializedInteractableBlock);
+				SerializedInteractableBlocks.Add(SerializeInteractableBlock(Cast<AInteractableBlock>(Entry.Value.PlaceableObjectReference)));
 			}
 			else if (Entry.Value.TileType == ETileType::REFERENCER)
 			{
@@ -144,8 +138,6 @@ void AFarmGameStateBase::SaveLevel()
 			}
 			// Repeat for other subclasses if needed
 		}
-		AAutomafarmPlayerController* PlayerController = Cast<AAutomafarmPlayerController>(GetWorld()->GetFirstPlayerController());
-		AAutomafarmCharacter* PlayerCharacter = Cast<AAutomafarmCharacter>(PlayerController->GetPawn());
 
 		// Set data on the savegame object.
 		SaveFarmLevel->SerializedBaseBlocks = SerializedBaseBlocks;
@@ -186,13 +178,12 @@ FSerializedCrop AFarmGameStateBase::SerializeCrop(ACrop* Crop)
 	return SerializedCrop;
 }
 
-FSerializedInteractableBlock AFarmGameStateBase::SerializeInteractableBlocks(AInteractableBlock* InteractableBlock)
+FSerializedInteractableBlock AFarmGameStateBase::SerializeInteractableBlock(AInteractableBlock* InteractableBlock)
 {
 	FSerializedInteractableBlock SerializedInteractableBlock;
 	SerializedInteractableBlock.Class = InteractableBlock->GetClass();
 	SerializedInteractableBlock.Name = InteractableBlock->Name;
-	FSerializedInventory SerializedInventory = SerializeInventory(InteractableBlock->Inventory);
-	SerializedInteractableBlock.SerializedInventory = SerializedInventory;
+	SerializedInteractableBlock.SerializedInventory = SerializeInventory(InteractableBlock->Inventory);
 	SerializedInteractableBlock.GridLocation = InteractableBlock->GridLocation;
 
 	return SerializedInteractableBlock;

@@ -48,6 +48,7 @@ public:
 
 	void SaveLevel();
 
+private:
 	FSerializedBaseBlock SerializeBaseBlock(APlaceableObject* InstancedBlock);
 	FSerializedPivotPaper SerializePivotPaper(APivotPaper* PivotPaper);
 	FSerializedCrop SerializeCrop(ACrop* Crop);
@@ -58,6 +59,7 @@ public:
 	FSerializedInventory SerializeInventory(UInventory* Inventory);
 
 	//Loading System Properties and Functions
+private:
 	void LoadLevelSave();
 	void LoadInstanceableBlocks(TArray<FSerializedBaseBlock> SerializedBlocks);
 	void LoadPivotPapers(TArray<FSerializedPivotPaper> SerializedPivotPapers);
