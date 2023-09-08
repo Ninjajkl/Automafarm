@@ -58,3 +58,10 @@ void ACrop::Load()
 {
 	UpdateCurrentFlipBook();
 }
+
+void ACrop::Dismantle()
+{
+	AAutomafarmCharacter* playerCharacter = Cast<AAutomafarmCharacter>(GetWorld()->GetFirstPlayerController()->GetPawn());
+	playerCharacter->PlayerInventory->IncreaseSlotByAmount(1, playerCharacter->PlayerInventory, 69);
+	Destroy();
+}

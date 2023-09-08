@@ -16,8 +16,10 @@
 //Other Classes
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
+#include "Engine/StaticMeshActor.h"
 
 #define PlaceTrace ECC_GameTraceChannel1
+#define BreakTrace ECC_GameTraceChannel2
 
 
 //////////////////////////////////////////////////////////////////////////
@@ -117,7 +119,7 @@ void AAutomafarmCharacter::Interact(const FInputActionValue& Value)
 		}
 		*/
 		FVector SelectedTile = AbsoluteToGrid(HitResult.ImpactPoint+HitResult.ImpactNormal);
-
+		UE_LOG(LogTemp, Warning, TEXT("First SelectedTile: %s"), *SelectedTile.ToString());
 		//First, check if we are clicking on something interactable
 		if(HitResult.GetActor()->Implements<UInteractable>())
 		{
@@ -141,6 +143,49 @@ void AAutomafarmCharacter::Interact(const FInputActionValue& Value)
 	}
 }
 
+void AAutomafarmCharacter::Dismantle(const FInputActionValue& Value)
+{
+	UCameraComponent* Camera = GetFirstPersonCameraComponent();
+	FVector WLocation = Camera->GetComponentLocation();
+	FVector ForwardVector = Camera->GetForwardVector();
+	FCollisionQueryParams Params;
+	Params.AddIgnoredActor(this);
+	TArray<FHitResult> OutHits;
+	bool blockingHit = GetWorld()->LineTraceMultiByChannel(OutHits, WLocation, ForwardVector * 1000 + WLocation, ECollisionChannel::BreakTrace, Params);
+
+	bool firstHit = true;
+
+	for (const FHitResult& OverlappingHit : OutHits)
+	{
+		AActor* OverlappingActor = OverlappingHit.GetActor();
+		// If the overlapping hit is of a PivotPaper, call its Dismantle function
+		if (APivotPaper* PivotPaperActor = Cast<APivotPaper>(OverlappingActor))
+		{
+			PivotPaperActor->Dismantle();
+			firstHit = false;
+			continue;
+		}
+		// If the overlapping hit is of an InteractableBlock, BaseBlock, or Unknown:
+		// If it is the first overlap, destruct it (If not Unknown)
+		// Otherwise, Ignore it and stop checking
+		else if (firstHit == false)
+		{
+			return;
+		}
+		else if (ABaseBlock* BaseBlockActor = Cast<ABaseBlock>(OverlappingActor))
+		{
+			FVector SelectedTile = AbsoluteToGrid(OverlappingHit.ImpactPoint - OverlappingHit.ImpactNormal);
+			UE_LOG(LogTemp, Warning, TEXT("Second SelectedTile: %s"), *SelectedTile.ToString());
+			BaseBlockActor->RemoveBlockAt(SelectedTile);
+		}
+		else if (AInteractableBlock* InteractableBlockActor = Cast<AInteractableBlock>(OverlappingActor))
+		{
+
+		}
+		return;
+	}
+}
+
 //////////////////////////////////////////////////////////////////////////// Placement
 
 FVector AAutomafarmCharacter::AbsoluteToGrid(FVector aCoords) 
@@ -158,7 +203,7 @@ bool AAutomafarmCharacter::ValidPlacement(TSubclassOf<APlaceableObject> placeabl
 	for (int i = 0; i < TilesToCheck.Num(); i++)
 	{
 		if (myGameState->LevelMap.Contains(TileKey + TilesToCheck[i]) ||
-			GetWorld()->OverlapAnyTestByChannel((TileKey + TilesToCheck[i]) * UGC::TileLength + UGC::TileOffset, FQuat(), PlaceTrace, FCollisionShape::MakeBox(FVector(UGC::TileLength/2-6))))
+			GetWorld()->OverlapAnyTestByChannel((TileKey + TilesToCheck[i]) * UGC::TileLength + UGC::TileOffset, FQuat::MakeFromEuler(FVector::ZeroVector), PlaceTrace, FCollisionShape::MakeBox(FVector(UGC::TileLength/2-6))))
 		{
 			return false;
 		}

@@ -43,6 +43,9 @@ protected:
 	/** Interact Input Action */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 		class UInputAction* InteractAction;
+	/** Dismantle Input Action */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+		class UInputAction* DismantleAction;
 	/** Interact Input Action */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 		class UInputAction* InventoryAction;
@@ -85,6 +88,8 @@ protected:
 		void Look(const FInputActionValue& Value);
 	UFUNCTION()
 		void Interact(const FInputActionValue& Value);
+	UFUNCTION()
+		void Dismantle(const FInputActionValue& Value);
 	UFUNCTION()
 		void Inventory(const FInputActionValue& Value);
 	UFUNCTION()

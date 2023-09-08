@@ -42,4 +42,5 @@ public:
 
 	virtual void Tick(float DeltaTime) override;
 	virtual void Load() override;
+	virtual void Dismantle() override;
 };

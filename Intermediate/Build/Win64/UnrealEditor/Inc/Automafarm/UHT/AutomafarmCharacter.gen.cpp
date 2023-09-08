@@ -130,6 +130,14 @@ void FKFOnPlayerMoved_DelegateWrapper(const FMulticastScriptDelegate& KFOnPlayer
 		*(USkeletalMeshComponent**)Z_Param__Result=P_THIS->GetMesh1P();
 		P_NATIVE_END;
 	}
+	DEFINE_FUNCTION(AAutomafarmCharacter::execDismantle)
+	{
+		P_GET_STRUCT_REF(FInputActionValue,Z_Param_Out_Value);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->Dismantle(Z_Param_Out_Value);
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(AAutomafarmCharacter::execInteract)
 	{
 		P_GET_STRUCT_REF(FInputActionValue,Z_Param_Out_Value);
@@ -159,6 +167,7 @@ void FKFOnPlayerMoved_DelegateWrapper(const FMulticastScriptDelegate& KFOnPlayer
 		UClass* Class = AAutomafarmCharacter::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
 			{ "AbsoluteToGrid", &AAutomafarmCharacter::execAbsoluteToGrid },
+			{ "Dismantle", &AAutomafarmCharacter::execDismantle },
 			{ "GetFirstPersonCameraComponent", &AAutomafarmCharacter::execGetFirstPersonCameraComponent },
 			{ "GetMesh1P", &AAutomafarmCharacter::execGetMesh1P },
 			{ "Interact", &AAutomafarmCharacter::execInteract },
@@ -208,6 +217,49 @@ void FKFOnPlayerMoved_DelegateWrapper(const FMulticastScriptDelegate& KFOnPlayer
 		if (!ReturnFunction)
 		{
 			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AAutomafarmCharacter_AbsoluteToGrid_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AAutomafarmCharacter_Dismantle_Statics
+	{
+		struct AutomafarmCharacter_eventDismantle_Parms
+		{
+			FInputActionValue Value;
+		};
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Value_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_Value;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AAutomafarmCharacter_Dismantle_Statics::NewProp_Value_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AAutomafarmCharacter_Dismantle_Statics::NewProp_Value = { "Value", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AutomafarmCharacter_eventDismantle_Parms, Value), Z_Construct_UScriptStruct_FInputActionValue, METADATA_PARAMS(Z_Construct_UFunction_AAutomafarmCharacter_Dismantle_Statics::NewProp_Value_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_AAutomafarmCharacter_Dismantle_Statics::NewProp_Value_MetaData)) }; // 2388133963
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AAutomafarmCharacter_Dismantle_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AAutomafarmCharacter_Dismantle_Statics::NewProp_Value,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AAutomafarmCharacter_Dismantle_Statics::Function_MetaDataParams[] = {
+		{ "Category", "Input" },
+		{ "Comment", "/** Called for dismantling input */" },
+		{ "ModuleRelativePath", "Public/Characters/AutomafarmCharacter.h" },
+		{ "ToolTip", "Called for dismantling input" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AAutomafarmCharacter_Dismantle_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AAutomafarmCharacter, nullptr, "Dismantle", nullptr, nullptr, sizeof(Z_Construct_UFunction_AAutomafarmCharacter_Dismantle_Statics::AutomafarmCharacter_eventDismantle_Parms), Z_Construct_UFunction_AAutomafarmCharacter_Dismantle_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AAutomafarmCharacter_Dismantle_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04420401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AAutomafarmCharacter_Dismantle_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AAutomafarmCharacter_Dismantle_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AAutomafarmCharacter_Dismantle()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AAutomafarmCharacter_Dismantle_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -676,6 +728,7 @@ void FKFOnPlayerMoved_DelegateWrapper(const FMulticastScriptDelegate& KFOnPlayer
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_AAutomafarmCharacter_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_AAutomafarmCharacter_AbsoluteToGrid, "AbsoluteToGrid" }, // 2809873176
+		{ &Z_Construct_UFunction_AAutomafarmCharacter_Dismantle, "Dismantle" }, // 369411343
 		{ &Z_Construct_UFunction_AAutomafarmCharacter_GetFirstPersonCameraComponent, "GetFirstPersonCameraComponent" }, // 3244696622
 		{ &Z_Construct_UFunction_AAutomafarmCharacter_GetMesh1P, "GetMesh1P" }, // 2279534546
 		{ &Z_Construct_UFunction_AAutomafarmCharacter_Interact, "Interact" }, // 4220683982
@@ -784,9 +837,9 @@ void FKFOnPlayerMoved_DelegateWrapper(const FMulticastScriptDelegate& KFOnPlayer
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Characters_AutomafarmCharacter_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AAutomafarmCharacter, AAutomafarmCharacter::StaticClass, TEXT("AAutomafarmCharacter"), &Z_Registration_Info_UClass_AAutomafarmCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAutomafarmCharacter), 3171716424U) },
+		{ Z_Construct_UClass_AAutomafarmCharacter, AAutomafarmCharacter::StaticClass, TEXT("AAutomafarmCharacter"), &Z_Registration_Info_UClass_AAutomafarmCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAutomafarmCharacter), 736644242U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Characters_AutomafarmCharacter_h_2397769083(TEXT("/Script/Automafarm"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Characters_AutomafarmCharacter_h_27432169(TEXT("/Script/Automafarm"),
 		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Characters_AutomafarmCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Characters_AutomafarmCharacter_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

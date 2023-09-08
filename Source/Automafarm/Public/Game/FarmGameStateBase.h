@@ -5,6 +5,7 @@
 //Custom Classes
 #include "../Characters/AutomafarmCharacter.h"
 #include "../Characters/AutomafarmPlayerController.h"
+#include "../Items/Crop.h"
 #include "../Items/InteractableBlock.h"
 #include "../Items/PivotPaper.h"
 #include "../Items/PlaceableObject.h"
@@ -69,6 +70,7 @@ private:
 	void LoadPlayerController(FSerializedPlayerController SerializedPlayerController, AAutomafarmPlayerController* PlayerController);
 	void LoadPlayerCharacter(FSerializedPlayerCharacter SerializedPlayerCharacter, AAutomafarmCharacter* PlayerCharacter);
 
+public:
 	//Time System Properties and Functions
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "TimeSystem")
 		FTimespan GameTimeSpan;

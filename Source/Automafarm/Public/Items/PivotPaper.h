@@ -32,6 +32,7 @@ protected:
 public:
 	UFUNCTION()
 		void PlayerMoved(FVector PlayerLoc);
+	virtual void Dismantle();
 	FVector GetPPCWLocation();
 	void SetPPCWRotation(FRotator rotator);
 	virtual void Tick(float DeltaTime) override;

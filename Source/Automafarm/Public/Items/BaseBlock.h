@@ -19,9 +19,12 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "BaseBlock")
 		UInstancedStaticMeshComponent* BlockMesh;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "BaseBlock")
+		TMap<FVector, int32> GridLocationInstanceMap;
+
 protected:
 public:	
-	void AddBlock(FTransform BlockTransform);
 	void AddBlock(FVector GridLocation);
 	void ClearBlocks();
+	void RemoveBlockAt(FVector GridLocation);
 };

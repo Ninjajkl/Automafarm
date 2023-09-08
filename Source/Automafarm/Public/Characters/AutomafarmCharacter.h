@@ -55,6 +55,10 @@ public:
 	UFUNCTION(BlueprintCallable, Category = Input)
 		void Interact(const FInputActionValue& Value);
 
+	/** Called for dismantling input */
+	UFUNCTION(BlueprintCallable, Category = Input)
+		void Dismantle(const FInputActionValue& Value);
+
 	/** Returns Mesh1P subobject **/
 	UFUNCTION(BlueprintCallable, Category = Getters)
 		USkeletalMeshComponent* GetMesh1P() const { return Mesh1P; }

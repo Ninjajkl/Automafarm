@@ -175,6 +175,14 @@ void FKFOnHotbarSlotChanged_DelegateWrapper(const FMulticastScriptDelegate& KFOn
 		P_THIS->Inventory(Z_Param_Out_Value);
 		P_NATIVE_END;
 	}
+	DEFINE_FUNCTION(AAutomafarmPlayerController::execDismantle)
+	{
+		P_GET_STRUCT_REF(FInputActionValue,Z_Param_Out_Value);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->Dismantle(Z_Param_Out_Value);
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(AAutomafarmPlayerController::execInteract)
 	{
 		P_GET_STRUCT_REF(FInputActionValue,Z_Param_Out_Value);
@@ -219,6 +227,7 @@ void FKFOnHotbarSlotChanged_DelegateWrapper(const FMulticastScriptDelegate& KFOn
 	{
 		UClass* Class = AAutomafarmPlayerController::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "Dismantle", &AAutomafarmPlayerController::execDismantle },
 			{ "Hotbar0", &AAutomafarmPlayerController::execHotbar0 },
 			{ "Hotbar1", &AAutomafarmPlayerController::execHotbar1 },
 			{ "Hotbar2", &AAutomafarmPlayerController::execHotbar2 },
@@ -240,6 +249,46 @@ void FKFOnHotbarSlotChanged_DelegateWrapper(const FMulticastScriptDelegate& KFOn
 			{ "StopJumping", &AAutomafarmPlayerController::execStopJumping },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_AAutomafarmPlayerController_Dismantle_Statics
+	{
+		struct AutomafarmPlayerController_eventDismantle_Parms
+		{
+			FInputActionValue Value;
+		};
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Value_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_Value;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AAutomafarmPlayerController_Dismantle_Statics::NewProp_Value_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AAutomafarmPlayerController_Dismantle_Statics::NewProp_Value = { "Value", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AutomafarmPlayerController_eventDismantle_Parms, Value), Z_Construct_UScriptStruct_FInputActionValue, METADATA_PARAMS(Z_Construct_UFunction_AAutomafarmPlayerController_Dismantle_Statics::NewProp_Value_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_AAutomafarmPlayerController_Dismantle_Statics::NewProp_Value_MetaData)) }; // 2388133963
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AAutomafarmPlayerController_Dismantle_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AAutomafarmPlayerController_Dismantle_Statics::NewProp_Value,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AAutomafarmPlayerController_Dismantle_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Characters/AutomafarmPlayerController.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AAutomafarmPlayerController_Dismantle_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AAutomafarmPlayerController, nullptr, "Dismantle", nullptr, nullptr, sizeof(Z_Construct_UFunction_AAutomafarmPlayerController_Dismantle_Statics::AutomafarmPlayerController_eventDismantle_Parms), Z_Construct_UFunction_AAutomafarmPlayerController_Dismantle_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AAutomafarmPlayerController_Dismantle_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00480401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AAutomafarmPlayerController_Dismantle_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AAutomafarmPlayerController_Dismantle_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AAutomafarmPlayerController_Dismantle()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AAutomafarmPlayerController_Dismantle_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_AAutomafarmPlayerController_Hotbar0_Statics
 	{
@@ -1032,6 +1081,10 @@ void FKFOnHotbarSlotChanged_DelegateWrapper(const FMulticastScriptDelegate& KFOn
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_InteractAction;
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_DismantleAction_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_DismantleAction;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_InventoryAction_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_InventoryAction;
@@ -1109,6 +1162,7 @@ void FKFOnHotbarSlotChanged_DelegateWrapper(const FMulticastScriptDelegate& KFOn
 		(UObject* (*)())Z_Construct_UPackage__Script_Automafarm,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_AAutomafarmPlayerController_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_AAutomafarmPlayerController_Dismantle, "Dismantle" }, // 2073143912
 		{ &Z_Construct_UFunction_AAutomafarmPlayerController_Hotbar0, "Hotbar0" }, // 1745426150
 		{ &Z_Construct_UFunction_AAutomafarmPlayerController_Hotbar1, "Hotbar1" }, // 1436296836
 		{ &Z_Construct_UFunction_AAutomafarmPlayerController_Hotbar2, "Hotbar2" }, // 244851245
@@ -1192,6 +1246,16 @@ void FKFOnHotbarSlotChanged_DelegateWrapper(const FMulticastScriptDelegate& KFOn
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AAutomafarmPlayerController_Statics::NewProp_InteractAction = { "InteractAction", nullptr, (EPropertyFlags)0x0020080000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AAutomafarmPlayerController, InteractAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AAutomafarmPlayerController_Statics::NewProp_InteractAction_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AAutomafarmPlayerController_Statics::NewProp_InteractAction_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAutomafarmPlayerController_Statics::NewProp_DismantleAction_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Input" },
+		{ "Comment", "/** Dismantle Input Action */" },
+		{ "ModuleRelativePath", "Public/Characters/AutomafarmPlayerController.h" },
+		{ "ToolTip", "Dismantle Input Action" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AAutomafarmPlayerController_Statics::NewProp_DismantleAction = { "DismantleAction", nullptr, (EPropertyFlags)0x0020080000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AAutomafarmPlayerController, DismantleAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AAutomafarmPlayerController_Statics::NewProp_DismantleAction_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AAutomafarmPlayerController_Statics::NewProp_DismantleAction_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAutomafarmPlayerController_Statics::NewProp_InventoryAction_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
@@ -1344,6 +1408,7 @@ void FKFOnHotbarSlotChanged_DelegateWrapper(const FMulticastScriptDelegate& KFOn
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAutomafarmPlayerController_Statics::NewProp_MoveAction,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAutomafarmPlayerController_Statics::NewProp_LookAction,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAutomafarmPlayerController_Statics::NewProp_InteractAction,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAutomafarmPlayerController_Statics::NewProp_DismantleAction,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAutomafarmPlayerController_Statics::NewProp_InventoryAction,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAutomafarmPlayerController_Statics::NewProp_ScrollAction,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAutomafarmPlayerController_Statics::NewProp_SaveAction,
@@ -1399,9 +1464,9 @@ void FKFOnHotbarSlotChanged_DelegateWrapper(const FMulticastScriptDelegate& KFOn
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Characters_AutomafarmPlayerController_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AAutomafarmPlayerController, AAutomafarmPlayerController::StaticClass, TEXT("AAutomafarmPlayerController"), &Z_Registration_Info_UClass_AAutomafarmPlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAutomafarmPlayerController), 3516280717U) },
+		{ Z_Construct_UClass_AAutomafarmPlayerController, AAutomafarmPlayerController::StaticClass, TEXT("AAutomafarmPlayerController"), &Z_Registration_Info_UClass_AAutomafarmPlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAutomafarmPlayerController), 3594202131U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Characters_AutomafarmPlayerController_h_1962297596(TEXT("/Script/Automafarm"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Characters_AutomafarmPlayerController_h_1606543460(TEXT("/Script/Automafarm"),
 		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Characters_AutomafarmPlayerController_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Characters_AutomafarmPlayerController_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

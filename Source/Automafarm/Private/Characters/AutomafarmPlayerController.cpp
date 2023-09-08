@@ -60,6 +60,9 @@ void AAutomafarmPlayerController::SetupInputComponent()
 		//Interacting
 		EnhancedInputComponent->BindAction(InteractAction, ETriggerEvent::Triggered, this, &AAutomafarmPlayerController::Interact);
 
+		//Destructing
+		EnhancedInputComponent->BindAction(DismantleAction, ETriggerEvent::Triggered, this, &AAutomafarmPlayerController::Dismantle);
+
 		//Inventory
 		EnhancedInputComponent->BindAction(InventoryAction, ETriggerEvent::Triggered, this, &AAutomafarmPlayerController::Inventory);
 
@@ -137,6 +140,18 @@ void AAutomafarmPlayerController::Interact(const FInputActionValue& Value)
 
 	MyCharacter->Interact(Value);
 }
+
+void AAutomafarmPlayerController::Dismantle(const FInputActionValue& Value)
+{
+	AAutomafarmCharacter* MyCharacter = Cast<AAutomafarmCharacter>(GetPawn());
+	if (!MyCharacter)
+	{
+		return;
+	}
+
+	MyCharacter->Dismantle(Value);
+}
+
 
 void AAutomafarmPlayerController::Inventory(const FInputActionValue& Value)
 {
