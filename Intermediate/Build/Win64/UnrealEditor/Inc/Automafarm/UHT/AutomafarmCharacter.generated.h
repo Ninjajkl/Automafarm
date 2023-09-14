@@ -27,10 +27,8 @@ AUTOMAFARM_API void FKFOnPlayerMoved_DelegateWrapper(const FMulticastScriptDeleg
  \
 	DECLARE_FUNCTION(execSetCurrHotbarSlot); \
 	DECLARE_FUNCTION(execRotateByYaw); \
-	DECLARE_FUNCTION(execRoundVector); \
 	DECLARE_FUNCTION(execPlaceHeldItem); \
 	DECLARE_FUNCTION(execValidPlacement); \
-	DECLARE_FUNCTION(execAbsoluteToGrid); \
 	DECLARE_FUNCTION(execGetFirstPersonCameraComponent); \
 	DECLARE_FUNCTION(execGetMesh1P); \
 	DECLARE_FUNCTION(execDismantle); \
@@ -43,10 +41,8 @@ AUTOMAFARM_API void FKFOnPlayerMoved_DelegateWrapper(const FMulticastScriptDeleg
  \
 	DECLARE_FUNCTION(execSetCurrHotbarSlot); \
 	DECLARE_FUNCTION(execRotateByYaw); \
-	DECLARE_FUNCTION(execRoundVector); \
 	DECLARE_FUNCTION(execPlaceHeldItem); \
 	DECLARE_FUNCTION(execValidPlacement); \
-	DECLARE_FUNCTION(execAbsoluteToGrid); \
 	DECLARE_FUNCTION(execGetFirstPersonCameraComponent); \
 	DECLARE_FUNCTION(execGetMesh1P); \
 	DECLARE_FUNCTION(execDismantle); \

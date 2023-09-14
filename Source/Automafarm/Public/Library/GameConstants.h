@@ -16,4 +16,7 @@ public:
 	static const FVector TileOffset;
 
 	//Static Functions
+	static FVector RoundVector(const FVector Vector);
+	static FVector WorldToGridPosition(const FVector wCoords);
+	static FVector GridToWorldPosition(const FVector gCoords);
 };

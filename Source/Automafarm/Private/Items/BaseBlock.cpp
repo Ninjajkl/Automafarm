@@ -25,8 +25,7 @@ ABaseBlock::ABaseBlock()
 //Creates an instance of the block
 void ABaseBlock::AddBlock(FVector GridLocation)
 {
-	UE_LOG(LogTemp, Warning, TEXT("add gridlocation: %s"), *GridLocation.ToString());
-	int32 InstanceIndex = BlockMesh->AddInstance(FTransform(GridLocation * UGC::TileLength + UGC::TileOffset));
+	int32 InstanceIndex = BlockMesh->AddInstance(FTransform(UGC::GridToWorldPosition(GridLocation)));
 	GridLocationInstanceMap.Add(GridLocation, InstanceIndex);
 }
 
@@ -38,22 +37,18 @@ void ABaseBlock::ClearBlocks()
 
 void ABaseBlock::RemoveBlockAt(FVector GridLocation)
 {
-	/*BlockMesh->RemoveInstance(*GridLocationInstanceMap.Find(GridLocation));
-	GridLocationInstanceMap.Remove(GridLocation);
-	blockGameState->LevelMap.Remove(GridLocation);
-	*/
-	UE_LOG(LogTemp, Warning, TEXT("RemoveBlockAt- %s"), *GridLocation.ToString());
 	int32* InstanceIndexPtr = GridLocationInstanceMap.Find(GridLocation);
 	if (InstanceIndexPtr)
 	{
 		BlockMesh->RemoveInstance(*InstanceIndexPtr);
-		UE_LOG(LogTemp, Error, TEXT("%d keys removed."), GridLocationInstanceMap.Remove(GridLocation));
 		blockGameState->LevelMap.Remove(GridLocation);
-	}
-	else
-	{
-		// Handle the case where GridLocation was not found in the map.
-		// Log a debug message indicating the failure.
-		UE_LOG(LogTemp, Warning, TEXT("remove gridlocation- %s"), *GridLocation.ToString());
+		GridLocationInstanceMap.Remove(GridLocation);
+		for (auto& Pair : GridLocationInstanceMap)
+		{
+			if(Pair.Value > *InstanceIndexPtr)
+			{
+				Pair.Value -= 1;
+			}
+		}
 	}
 }

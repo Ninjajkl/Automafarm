@@ -67,18 +67,11 @@ public:
 	UFUNCTION(BlueprintCallable, Category = Getters)
 		UCameraComponent* GetFirstPersonCameraComponent() const { return FirstPersonCameraComponent; }
 
-	/** Returns Mesh1P subobject **/
-	UFUNCTION(BlueprintCallable, Category = Placement)
-		FVector AbsoluteToGrid(FVector aCoords);
-
 	UFUNCTION(BlueprintCallable, Category = Placement)
 		bool ValidPlacement(TSubclassOf<APlaceableObject> placeableClass, FVector TileKey);
 
 	UFUNCTION(BlueprintCallable, Category = Placement)
 		void PlaceHeldItem(TSubclassOf<APlaceableObject> placeableClass, FVector TileKey);
-
-	UFUNCTION(BlueprintCallable, Category = Placement)
-		FVector RoundVector(const FVector Vector);
 
 	UFUNCTION(BlueprintCallable, Category = Placement)
 		TArray<FVector> RotateByYaw(TArray<FVector> Positions, FVector ForwardVector);

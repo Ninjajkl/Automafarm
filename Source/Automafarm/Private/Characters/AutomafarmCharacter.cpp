@@ -118,8 +118,7 @@ void AAutomafarmCharacter::Interact(const FInputActionValue& Value)
 			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, Cast<UInstancedStaticMeshComponent>(HitResult.Component)->GetMaterial(0)->GetName());
 		}
 		*/
-		FVector SelectedTile = AbsoluteToGrid(HitResult.ImpactPoint+HitResult.ImpactNormal);
-		UE_LOG(LogTemp, Warning, TEXT("First SelectedTile: %s"), *SelectedTile.ToString());
+		FVector SelectedTile = UGC::WorldToGridPosition(HitResult.ImpactPoint+HitResult.ImpactNormal);
 		//First, check if we are clicking on something interactable
 		if(HitResult.GetActor()->Implements<UInteractable>())
 		{
@@ -174,8 +173,7 @@ void AAutomafarmCharacter::Dismantle(const FInputActionValue& Value)
 		}
 		else if (ABaseBlock* BaseBlockActor = Cast<ABaseBlock>(OverlappingActor))
 		{
-			FVector SelectedTile = AbsoluteToGrid(OverlappingHit.ImpactPoint - OverlappingHit.ImpactNormal);
-			UE_LOG(LogTemp, Warning, TEXT("Second SelectedTile: %s"), *SelectedTile.ToString());
+			FVector SelectedTile = UGC::WorldToGridPosition(OverlappingHit.ImpactPoint - OverlappingHit.ImpactNormal);
 			BaseBlockActor->RemoveBlockAt(SelectedTile);
 		}
 		else if (AInteractableBlock* InteractableBlockActor = Cast<AInteractableBlock>(OverlappingActor))
@@ -188,22 +186,13 @@ void AAutomafarmCharacter::Dismantle(const FInputActionValue& Value)
 
 //////////////////////////////////////////////////////////////////////////// Placement
 
-FVector AAutomafarmCharacter::AbsoluteToGrid(FVector aCoords) 
-{
-	return FVector(
-		floor(aCoords[0]/ UGC::TileLength), 
-		floor(aCoords[1] / UGC::TileLength), 
-		floor(aCoords[2] / UGC::TileLength)
-	);
-}
-
 bool AAutomafarmCharacter::ValidPlacement(TSubclassOf<APlaceableObject> placeableClass, FVector TileKey)
 {
 	TArray<FVector> TilesToCheck = RotateByYaw(Cast<APlaceableObject>(placeableClass->GetDefaultObject())->TilesToFill, GetFirstPersonCameraComponent()->GetForwardVector());
 	for (int i = 0; i < TilesToCheck.Num(); i++)
 	{
 		if (myGameState->LevelMap.Contains(TileKey + TilesToCheck[i]) ||
-			GetWorld()->OverlapAnyTestByChannel((TileKey + TilesToCheck[i]) * UGC::TileLength + UGC::TileOffset, FQuat::MakeFromEuler(FVector::ZeroVector), PlaceTrace, FCollisionShape::MakeBox(FVector(UGC::TileLength/2-6))))
+			GetWorld()->OverlapAnyTestByChannel(UGC::GridToWorldPosition(TileKey + TilesToCheck[i]), FQuat::MakeFromEuler(FVector::ZeroVector), PlaceTrace, FCollisionShape::MakeBox(FVector(UGC::TileLength/2-6))))
 		{
 			return false;
 		}
@@ -241,15 +230,6 @@ void AAutomafarmCharacter::PlaceHeldItem(TSubclassOf<APlaceableObject> placeable
 	PlayerInventory->ReduceSlotByAmount(CurrHotbarSlot, 1);
 }
 
-FVector AAutomafarmCharacter::RoundVector(const FVector Vector)
-{
-	return FVector(
-		FMath::RoundToInt(Vector.X), 
-		FMath::RoundToInt(Vector.Y), 
-		FMath::RoundToInt(Vector.Z)
-	);
-}
-
 TArray<FVector> AAutomafarmCharacter::RotateByYaw(TArray<FVector> Positions, FVector ForwardVector)
 {
 	// Get the absolute values of X and Y components
@@ -268,7 +248,7 @@ TArray<FVector> AAutomafarmCharacter::RotateByYaw(TArray<FVector> Positions, FVe
 
 	for (FVector position : Positions)
 	{
-		rotatedPositions.Add(RoundVector(RotationQuat.RotateVector(position)));
+		rotatedPositions.Add(UGC::RoundVector(RotationQuat.RotateVector(position)));
 	}
 
 	return rotatedPositions;

@@ -82,14 +82,6 @@ void FKFOnPlayerMoved_DelegateWrapper(const FMulticastScriptDelegate& KFOnPlayer
 		*(TArray<FVector>*)Z_Param__Result=P_THIS->RotateByYaw(Z_Param_Positions,Z_Param_ForwardVector);
 		P_NATIVE_END;
 	}
-	DEFINE_FUNCTION(AAutomafarmCharacter::execRoundVector)
-	{
-		P_GET_STRUCT(FVector,Z_Param_Vector);
-		P_FINISH;
-		P_NATIVE_BEGIN;
-		*(FVector*)Z_Param__Result=P_THIS->RoundVector(Z_Param_Vector);
-		P_NATIVE_END;
-	}
 	DEFINE_FUNCTION(AAutomafarmCharacter::execPlaceHeldItem)
 	{
 		P_GET_OBJECT(UClass,Z_Param_placeableClass);
@@ -106,14 +98,6 @@ void FKFOnPlayerMoved_DelegateWrapper(const FMulticastScriptDelegate& KFOnPlayer
 		P_FINISH;
 		P_NATIVE_BEGIN;
 		*(bool*)Z_Param__Result=P_THIS->ValidPlacement(Z_Param_placeableClass,Z_Param_TileKey);
-		P_NATIVE_END;
-	}
-	DEFINE_FUNCTION(AAutomafarmCharacter::execAbsoluteToGrid)
-	{
-		P_GET_STRUCT(FVector,Z_Param_aCoords);
-		P_FINISH;
-		P_NATIVE_BEGIN;
-		*(FVector*)Z_Param__Result=P_THIS->AbsoluteToGrid(Z_Param_aCoords);
 		P_NATIVE_END;
 	}
 	DEFINE_FUNCTION(AAutomafarmCharacter::execGetFirstPersonCameraComponent)
@@ -166,7 +150,6 @@ void FKFOnPlayerMoved_DelegateWrapper(const FMulticastScriptDelegate& KFOnPlayer
 	{
 		UClass* Class = AAutomafarmCharacter::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
-			{ "AbsoluteToGrid", &AAutomafarmCharacter::execAbsoluteToGrid },
 			{ "Dismantle", &AAutomafarmCharacter::execDismantle },
 			{ "GetFirstPersonCameraComponent", &AAutomafarmCharacter::execGetFirstPersonCameraComponent },
 			{ "GetMesh1P", &AAutomafarmCharacter::execGetMesh1P },
@@ -175,50 +158,10 @@ void FKFOnPlayerMoved_DelegateWrapper(const FMulticastScriptDelegate& KFOnPlayer
 			{ "Move", &AAutomafarmCharacter::execMove },
 			{ "PlaceHeldItem", &AAutomafarmCharacter::execPlaceHeldItem },
 			{ "RotateByYaw", &AAutomafarmCharacter::execRotateByYaw },
-			{ "RoundVector", &AAutomafarmCharacter::execRoundVector },
 			{ "SetCurrHotbarSlot", &AAutomafarmCharacter::execSetCurrHotbarSlot },
 			{ "ValidPlacement", &AAutomafarmCharacter::execValidPlacement },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
-	}
-	struct Z_Construct_UFunction_AAutomafarmCharacter_AbsoluteToGrid_Statics
-	{
-		struct AutomafarmCharacter_eventAbsoluteToGrid_Parms
-		{
-			FVector aCoords;
-			FVector ReturnValue;
-		};
-		static const UECodeGen_Private::FStructPropertyParams NewProp_aCoords;
-		static const UECodeGen_Private::FStructPropertyParams NewProp_ReturnValue;
-		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
-#endif
-		static const UECodeGen_Private::FFunctionParams FuncParams;
-	};
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AAutomafarmCharacter_AbsoluteToGrid_Statics::NewProp_aCoords = { "aCoords", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AutomafarmCharacter_eventAbsoluteToGrid_Parms, aCoords), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AAutomafarmCharacter_AbsoluteToGrid_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AutomafarmCharacter_eventAbsoluteToGrid_Parms, ReturnValue), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
-	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AAutomafarmCharacter_AbsoluteToGrid_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AAutomafarmCharacter_AbsoluteToGrid_Statics::NewProp_aCoords,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AAutomafarmCharacter_AbsoluteToGrid_Statics::NewProp_ReturnValue,
-	};
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AAutomafarmCharacter_AbsoluteToGrid_Statics::Function_MetaDataParams[] = {
-		{ "Category", "Placement" },
-		{ "Comment", "/** Returns Mesh1P subobject **/" },
-		{ "ModuleRelativePath", "Public/Characters/AutomafarmCharacter.h" },
-		{ "ToolTip", "Returns Mesh1P subobject *" },
-	};
-#endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AAutomafarmCharacter_AbsoluteToGrid_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AAutomafarmCharacter, nullptr, "AbsoluteToGrid", nullptr, nullptr, sizeof(Z_Construct_UFunction_AAutomafarmCharacter_AbsoluteToGrid_Statics::AutomafarmCharacter_eventAbsoluteToGrid_Parms), Z_Construct_UFunction_AAutomafarmCharacter_AbsoluteToGrid_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AAutomafarmCharacter_AbsoluteToGrid_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04820401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AAutomafarmCharacter_AbsoluteToGrid_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AAutomafarmCharacter_AbsoluteToGrid_Statics::Function_MetaDataParams)) };
-	UFunction* Z_Construct_UFunction_AAutomafarmCharacter_AbsoluteToGrid()
-	{
-		static UFunction* ReturnFunction = nullptr;
-		if (!ReturnFunction)
-		{
-			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AAutomafarmCharacter_AbsoluteToGrid_Statics::FuncParams);
-		}
-		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_AAutomafarmCharacter_Dismantle_Statics
 	{
@@ -562,51 +505,6 @@ void FKFOnPlayerMoved_DelegateWrapper(const FMulticastScriptDelegate& KFOnPlayer
 		}
 		return ReturnFunction;
 	}
-	struct Z_Construct_UFunction_AAutomafarmCharacter_RoundVector_Statics
-	{
-		struct AutomafarmCharacter_eventRoundVector_Parms
-		{
-			FVector Vector;
-			FVector ReturnValue;
-		};
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_Vector_MetaData[];
-#endif
-		static const UECodeGen_Private::FStructPropertyParams NewProp_Vector;
-		static const UECodeGen_Private::FStructPropertyParams NewProp_ReturnValue;
-		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
-#endif
-		static const UECodeGen_Private::FFunctionParams FuncParams;
-	};
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AAutomafarmCharacter_RoundVector_Statics::NewProp_Vector_MetaData[] = {
-		{ "NativeConst", "" },
-	};
-#endif
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AAutomafarmCharacter_RoundVector_Statics::NewProp_Vector = { "Vector", nullptr, (EPropertyFlags)0x0010000000000082, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AutomafarmCharacter_eventRoundVector_Parms, Vector), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(Z_Construct_UFunction_AAutomafarmCharacter_RoundVector_Statics::NewProp_Vector_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_AAutomafarmCharacter_RoundVector_Statics::NewProp_Vector_MetaData)) };
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AAutomafarmCharacter_RoundVector_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AutomafarmCharacter_eventRoundVector_Parms, ReturnValue), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
-	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AAutomafarmCharacter_RoundVector_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AAutomafarmCharacter_RoundVector_Statics::NewProp_Vector,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AAutomafarmCharacter_RoundVector_Statics::NewProp_ReturnValue,
-	};
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AAutomafarmCharacter_RoundVector_Statics::Function_MetaDataParams[] = {
-		{ "Category", "Placement" },
-		{ "ModuleRelativePath", "Public/Characters/AutomafarmCharacter.h" },
-	};
-#endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AAutomafarmCharacter_RoundVector_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AAutomafarmCharacter, nullptr, "RoundVector", nullptr, nullptr, sizeof(Z_Construct_UFunction_AAutomafarmCharacter_RoundVector_Statics::AutomafarmCharacter_eventRoundVector_Parms), Z_Construct_UFunction_AAutomafarmCharacter_RoundVector_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AAutomafarmCharacter_RoundVector_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04820401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AAutomafarmCharacter_RoundVector_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AAutomafarmCharacter_RoundVector_Statics::Function_MetaDataParams)) };
-	UFunction* Z_Construct_UFunction_AAutomafarmCharacter_RoundVector()
-	{
-		static UFunction* ReturnFunction = nullptr;
-		if (!ReturnFunction)
-		{
-			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AAutomafarmCharacter_RoundVector_Statics::FuncParams);
-		}
-		return ReturnFunction;
-	}
 	struct Z_Construct_UFunction_AAutomafarmCharacter_SetCurrHotbarSlot_Statics
 	{
 		struct AutomafarmCharacter_eventSetCurrHotbarSlot_Parms
@@ -727,7 +625,6 @@ void FKFOnPlayerMoved_DelegateWrapper(const FMulticastScriptDelegate& KFOnPlayer
 		(UObject* (*)())Z_Construct_UPackage__Script_Automafarm,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_AAutomafarmCharacter_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_AAutomafarmCharacter_AbsoluteToGrid, "AbsoluteToGrid" }, // 2809873176
 		{ &Z_Construct_UFunction_AAutomafarmCharacter_Dismantle, "Dismantle" }, // 369411343
 		{ &Z_Construct_UFunction_AAutomafarmCharacter_GetFirstPersonCameraComponent, "GetFirstPersonCameraComponent" }, // 3244696622
 		{ &Z_Construct_UFunction_AAutomafarmCharacter_GetMesh1P, "GetMesh1P" }, // 2279534546
@@ -736,7 +633,6 @@ void FKFOnPlayerMoved_DelegateWrapper(const FMulticastScriptDelegate& KFOnPlayer
 		{ &Z_Construct_UFunction_AAutomafarmCharacter_Move, "Move" }, // 4151255879
 		{ &Z_Construct_UFunction_AAutomafarmCharacter_PlaceHeldItem, "PlaceHeldItem" }, // 310599944
 		{ &Z_Construct_UFunction_AAutomafarmCharacter_RotateByYaw, "RotateByYaw" }, // 3359886720
-		{ &Z_Construct_UFunction_AAutomafarmCharacter_RoundVector, "RoundVector" }, // 2172485514
 		{ &Z_Construct_UFunction_AAutomafarmCharacter_SetCurrHotbarSlot, "SetCurrHotbarSlot" }, // 3348180103
 		{ &Z_Construct_UFunction_AAutomafarmCharacter_ValidPlacement, "ValidPlacement" }, // 1003084084
 	};
@@ -837,9 +733,9 @@ void FKFOnPlayerMoved_DelegateWrapper(const FMulticastScriptDelegate& KFOnPlayer
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Characters_AutomafarmCharacter_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AAutomafarmCharacter, AAutomafarmCharacter::StaticClass, TEXT("AAutomafarmCharacter"), &Z_Registration_Info_UClass_AAutomafarmCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAutomafarmCharacter), 736644242U) },
+		{ Z_Construct_UClass_AAutomafarmCharacter, AAutomafarmCharacter::StaticClass, TEXT("AAutomafarmCharacter"), &Z_Registration_Info_UClass_AAutomafarmCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAutomafarmCharacter), 3127056240U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Characters_AutomafarmCharacter_h_27432169(TEXT("/Script/Automafarm"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Characters_AutomafarmCharacter_h_3622729768(TEXT("/Script/Automafarm"),
 		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Characters_AutomafarmCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Characters_AutomafarmCharacter_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

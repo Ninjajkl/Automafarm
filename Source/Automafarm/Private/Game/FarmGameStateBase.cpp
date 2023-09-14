@@ -256,14 +256,18 @@ void AFarmGameStateBase::LoadInstanceableBlocks(TArray<FSerializedBaseBlock> Ser
 
 		//Create an array of the Individual Instances Transforms
 		TArray<FTransform> Transforms;
+		TMap<FVector, int32> GridLocationInstanceMap;
+		int instancePosition = 0;
 		for (const FInstancedStaticMeshInstanceData& InstanceData : SerializedBlock.PerInstanceSMData)
 		{
 			FTransform InstanceTransform = FTransform(InstanceData.Transform);
 			Transforms.Add(InstanceTransform);
+			GridLocationInstanceMap.Add(UGC::WorldToGridPosition(InstanceTransform.GetTranslation()), instancePosition++);
 			//As each Transform is made, add it to the level map
 			LevelMap.Add(InstanceTransform.GetTranslation(), FTileStruct(InstancedBlock, ETileType::REFERENCER));
 		}
 		//Add all of the Transforms to the InstancedBlock
+		InstancedBlock->GridLocationInstanceMap = GridLocationInstanceMap;
 		InstancedBlock->BlockMesh->AddInstances(Transforms, false);;
 	}
 
