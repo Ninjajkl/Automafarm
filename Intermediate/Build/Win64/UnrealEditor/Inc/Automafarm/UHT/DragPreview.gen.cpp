@@ -54,7 +54,7 @@ void EmptyLinkFunctionForGeneratedCodeDragPreview() {}
 		{ "NativeConst", "" },
 	};
 #endif
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UDragPreview_Init_Statics::NewProp_InSlotStruct = { "InSlotStruct", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(DragPreview_eventInit_Parms, InSlotStruct), Z_Construct_UScriptStruct_FSlotStruct, METADATA_PARAMS(Z_Construct_UFunction_UDragPreview_Init_Statics::NewProp_InSlotStruct_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_UDragPreview_Init_Statics::NewProp_InSlotStruct_MetaData)) }; // 2383706676
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UDragPreview_Init_Statics::NewProp_InSlotStruct = { "InSlotStruct", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(DragPreview_eventInit_Parms, InSlotStruct), Z_Construct_UScriptStruct_FSlotStruct, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UDragPreview_Init_Statics::NewProp_InSlotStruct_MetaData), Z_Construct_UFunction_UDragPreview_Init_Statics::NewProp_InSlotStruct_MetaData) }; // 3392258304
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UDragPreview_Init_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UDragPreview_Init_Statics::NewProp_InSlotStruct,
 	};
@@ -64,7 +64,9 @@ void EmptyLinkFunctionForGeneratedCodeDragPreview() {}
 		{ "ModuleRelativePath", "Public/UI/DragPreview.h" },
 	};
 #endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UDragPreview_Init_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UDragPreview, nullptr, "Init", nullptr, nullptr, sizeof(Z_Construct_UFunction_UDragPreview_Init_Statics::DragPreview_eventInit_Parms), Z_Construct_UFunction_UDragPreview_Init_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UDragPreview_Init_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04420401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UDragPreview_Init_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UDragPreview_Init_Statics::Function_MetaDataParams)) };
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UDragPreview_Init_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UDragPreview, nullptr, "Init", nullptr, nullptr, Z_Construct_UFunction_UDragPreview_Init_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UDragPreview_Init_Statics::PropPointers), sizeof(Z_Construct_UFunction_UDragPreview_Init_Statics::DragPreview_eventInit_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04420401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UDragPreview_Init_Statics::Function_MetaDataParams), Z_Construct_UFunction_UDragPreview_Init_Statics::Function_MetaDataParams) };
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UDragPreview_Init_Statics::PropPointers) < 2048);
+	static_assert(sizeof(Z_Construct_UFunction_UDragPreview_Init_Statics::DragPreview_eventInit_Parms) < MAX_uint16);
 	UFunction* Z_Construct_UFunction_UDragPreview_Init()
 	{
 		static UFunction* ReturnFunction = nullptr;
@@ -98,9 +100,11 @@ void EmptyLinkFunctionForGeneratedCodeDragPreview() {}
 		(UObject* (*)())Z_Construct_UClass_UUserWidget,
 		(UObject* (*)())Z_Construct_UPackage__Script_Automafarm,
 	};
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UDragPreview_Statics::DependentSingletons) < 16);
 	const FClassFunctionLinkInfo Z_Construct_UClass_UDragPreview_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_UDragPreview_Init, "Init" }, // 3861426438
+		{ &Z_Construct_UFunction_UDragPreview_Init, "Init" }, // 2301683246
 	};
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UDragPreview_Statics::FuncInfo) < 2048);
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UDragPreview_Statics::Class_MetaDataParams[] = {
 		{ "IncludePath", "UI/DragPreview.h" },
@@ -116,7 +120,7 @@ void EmptyLinkFunctionForGeneratedCodeDragPreview() {}
 		{ "ModuleRelativePath", "Public/UI/DragPreview.h" },
 	};
 #endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UDragPreview_Statics::NewProp_SlotPreview = { "SlotPreview", nullptr, (EPropertyFlags)0x001000000008001c, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UDragPreview, SlotPreview), Z_Construct_UClass_USlotPreview_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UDragPreview_Statics::NewProp_SlotPreview_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UDragPreview_Statics::NewProp_SlotPreview_MetaData)) };
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UDragPreview_Statics::NewProp_SlotPreview = { "SlotPreview", nullptr, (EPropertyFlags)0x001000000008001c, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UDragPreview, SlotPreview), Z_Construct_UClass_USlotPreview_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UDragPreview_Statics::NewProp_SlotPreview_MetaData), Z_Construct_UClass_UDragPreview_Statics::NewProp_SlotPreview_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UDragPreview_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UDragPreview_Statics::NewProp_SlotPreview,
 	};
@@ -136,8 +140,9 @@ void EmptyLinkFunctionForGeneratedCodeDragPreview() {}
 		UE_ARRAY_COUNT(Z_Construct_UClass_UDragPreview_Statics::PropPointers),
 		0,
 		0x00B010A0u,
-		METADATA_PARAMS(Z_Construct_UClass_UDragPreview_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_UDragPreview_Statics::Class_MetaDataParams))
+		METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UDragPreview_Statics::Class_MetaDataParams), Z_Construct_UClass_UDragPreview_Statics::Class_MetaDataParams)
 	};
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UDragPreview_Statics::PropPointers) < 2048);
 	UClass* Z_Construct_UClass_UDragPreview()
 	{
 		if (!Z_Registration_Info_UClass_UDragPreview.OuterSingleton)
@@ -152,15 +157,15 @@ void EmptyLinkFunctionForGeneratedCodeDragPreview() {}
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UDragPreview);
 	UDragPreview::~UDragPreview() {}
-	struct Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_UI_DragPreview_h_Statics
+	struct Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_UI_DragPreview_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_UI_DragPreview_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UDragPreview, UDragPreview::StaticClass, TEXT("UDragPreview"), &Z_Registration_Info_UClass_UDragPreview, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UDragPreview), 39589058U) },
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_UI_DragPreview_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_UDragPreview, UDragPreview::StaticClass, TEXT("UDragPreview"), &Z_Registration_Info_UClass_UDragPreview, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UDragPreview), 4019336281U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_UI_DragPreview_h_2766444734(TEXT("/Script/Automafarm"),
-		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_UI_DragPreview_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_UI_DragPreview_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_UI_DragPreview_h_4030609692(TEXT("/Script/Automafarm"),
+		Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_UI_DragPreview_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_UI_DragPreview_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

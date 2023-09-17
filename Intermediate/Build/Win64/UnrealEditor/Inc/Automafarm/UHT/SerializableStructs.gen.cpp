@@ -77,14 +77,14 @@ template<> AUTOMAFARM_API UScriptStruct* StaticStruct<FSerializedBaseBlock>()
 		{ "ModuleRelativePath", "Public/Library/SerializableStructs.h" },
 	};
 #endif
-	const UECodeGen_Private::FClassPropertyParams Z_Construct_UScriptStruct_FSerializedBaseBlock_Statics::NewProp_Class = { "Class", nullptr, (EPropertyFlags)0x0014000000000000, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FSerializedBaseBlock, Class), Z_Construct_UClass_UClass, Z_Construct_UClass_ABaseBlock_NoRegister, METADATA_PARAMS(Z_Construct_UScriptStruct_FSerializedBaseBlock_Statics::NewProp_Class_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedBaseBlock_Statics::NewProp_Class_MetaData)) };
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FSerializedBaseBlock_Statics::NewProp_PerInstanceSMData_Inner = { "PerInstanceSMData", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, Z_Construct_UScriptStruct_FInstancedStaticMeshInstanceData, METADATA_PARAMS(nullptr, 0) }; // 1322225863
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UScriptStruct_FSerializedBaseBlock_Statics::NewProp_Class = { "Class", nullptr, (EPropertyFlags)0x0014000000000000, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FSerializedBaseBlock, Class), Z_Construct_UClass_UClass, Z_Construct_UClass_ABaseBlock_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedBaseBlock_Statics::NewProp_Class_MetaData), Z_Construct_UScriptStruct_FSerializedBaseBlock_Statics::NewProp_Class_MetaData) };
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FSerializedBaseBlock_Statics::NewProp_PerInstanceSMData_Inner = { "PerInstanceSMData", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FInstancedStaticMeshInstanceData, METADATA_PARAMS(0, nullptr) }; // 1394180703
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FSerializedBaseBlock_Statics::NewProp_PerInstanceSMData_MetaData[] = {
 		{ "ModuleRelativePath", "Public/Library/SerializableStructs.h" },
 	};
 #endif
-	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UScriptStruct_FSerializedBaseBlock_Statics::NewProp_PerInstanceSMData = { "PerInstanceSMData", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FSerializedBaseBlock, PerInstanceSMData), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UScriptStruct_FSerializedBaseBlock_Statics::NewProp_PerInstanceSMData_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedBaseBlock_Statics::NewProp_PerInstanceSMData_MetaData)) }; // 1322225863
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UScriptStruct_FSerializedBaseBlock_Statics::NewProp_PerInstanceSMData = { "PerInstanceSMData", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FSerializedBaseBlock, PerInstanceSMData), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedBaseBlock_Statics::NewProp_PerInstanceSMData_MetaData), Z_Construct_UScriptStruct_FSerializedBaseBlock_Statics::NewProp_PerInstanceSMData_MetaData) }; // 1394180703
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FSerializedBaseBlock_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FSerializedBaseBlock_Statics::NewProp_Class,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FSerializedBaseBlock_Statics::NewProp_PerInstanceSMData_Inner,
@@ -95,14 +95,15 @@ template<> AUTOMAFARM_API UScriptStruct* StaticStruct<FSerializedBaseBlock>()
 		nullptr,
 		&NewStructOps,
 		"SerializedBaseBlock",
-		sizeof(FSerializedBaseBlock),
-		alignof(FSerializedBaseBlock),
 		Z_Construct_UScriptStruct_FSerializedBaseBlock_Statics::PropPointers,
 		UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedBaseBlock_Statics::PropPointers),
+		sizeof(FSerializedBaseBlock),
+		alignof(FSerializedBaseBlock),
 		RF_Public|RF_Transient|RF_MarkAsNative,
 		EStructFlags(0x00000001),
-		METADATA_PARAMS(Z_Construct_UScriptStruct_FSerializedBaseBlock_Statics::Struct_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedBaseBlock_Statics::Struct_MetaDataParams))
+		METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedBaseBlock_Statics::Struct_MetaDataParams), Z_Construct_UScriptStruct_FSerializedBaseBlock_Statics::Struct_MetaDataParams)
 	};
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedBaseBlock_Statics::PropPointers) < 2048);
 	UScriptStruct* Z_Construct_UScriptStruct_FSerializedBaseBlock()
 	{
 		if (!Z_Registration_Info_UScriptStruct_SerializedBaseBlock.InnerSingleton)
@@ -156,13 +157,13 @@ template<> AUTOMAFARM_API UScriptStruct* StaticStruct<FSerializedPivotPaper>()
 		{ "ModuleRelativePath", "Public/Library/SerializableStructs.h" },
 	};
 #endif
-	const UECodeGen_Private::FClassPropertyParams Z_Construct_UScriptStruct_FSerializedPivotPaper_Statics::NewProp_Class = { "Class", nullptr, (EPropertyFlags)0x0014000000000000, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FSerializedPivotPaper, Class), Z_Construct_UClass_UClass, Z_Construct_UClass_APivotPaper_NoRegister, METADATA_PARAMS(Z_Construct_UScriptStruct_FSerializedPivotPaper_Statics::NewProp_Class_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedPivotPaper_Statics::NewProp_Class_MetaData)) };
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UScriptStruct_FSerializedPivotPaper_Statics::NewProp_Class = { "Class", nullptr, (EPropertyFlags)0x0014000000000000, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FSerializedPivotPaper, Class), Z_Construct_UClass_UClass, Z_Construct_UClass_APivotPaper_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedPivotPaper_Statics::NewProp_Class_MetaData), Z_Construct_UScriptStruct_FSerializedPivotPaper_Statics::NewProp_Class_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FSerializedPivotPaper_Statics::NewProp_GridLocation_MetaData[] = {
 		{ "ModuleRelativePath", "Public/Library/SerializableStructs.h" },
 	};
 #endif
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FSerializedPivotPaper_Statics::NewProp_GridLocation = { "GridLocation", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FSerializedPivotPaper, GridLocation), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(Z_Construct_UScriptStruct_FSerializedPivotPaper_Statics::NewProp_GridLocation_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedPivotPaper_Statics::NewProp_GridLocation_MetaData)) };
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FSerializedPivotPaper_Statics::NewProp_GridLocation = { "GridLocation", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FSerializedPivotPaper, GridLocation), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedPivotPaper_Statics::NewProp_GridLocation_MetaData), Z_Construct_UScriptStruct_FSerializedPivotPaper_Statics::NewProp_GridLocation_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FSerializedPivotPaper_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FSerializedPivotPaper_Statics::NewProp_Class,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FSerializedPivotPaper_Statics::NewProp_GridLocation,
@@ -172,14 +173,15 @@ template<> AUTOMAFARM_API UScriptStruct* StaticStruct<FSerializedPivotPaper>()
 		nullptr,
 		&NewStructOps,
 		"SerializedPivotPaper",
-		sizeof(FSerializedPivotPaper),
-		alignof(FSerializedPivotPaper),
 		Z_Construct_UScriptStruct_FSerializedPivotPaper_Statics::PropPointers,
 		UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedPivotPaper_Statics::PropPointers),
+		sizeof(FSerializedPivotPaper),
+		alignof(FSerializedPivotPaper),
 		RF_Public|RF_Transient|RF_MarkAsNative,
 		EStructFlags(0x00000001),
-		METADATA_PARAMS(Z_Construct_UScriptStruct_FSerializedPivotPaper_Statics::Struct_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedPivotPaper_Statics::Struct_MetaDataParams))
+		METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedPivotPaper_Statics::Struct_MetaDataParams), Z_Construct_UScriptStruct_FSerializedPivotPaper_Statics::Struct_MetaDataParams)
 	};
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedPivotPaper_Statics::PropPointers) < 2048);
 	UScriptStruct* Z_Construct_UScriptStruct_FSerializedPivotPaper()
 	{
 		if (!Z_Registration_Info_UScriptStruct_SerializedPivotPaper.InnerSingleton)
@@ -236,13 +238,13 @@ template<> AUTOMAFARM_API UScriptStruct* StaticStruct<FSerializedCrop>()
 		{ "ModuleRelativePath", "Public/Library/SerializableStructs.h" },
 	};
 #endif
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FSerializedCrop_Statics::NewProp_CropCreationTime = { "CropCreationTime", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FSerializedCrop, CropCreationTime), Z_Construct_UScriptStruct_FTimespan, METADATA_PARAMS(Z_Construct_UScriptStruct_FSerializedCrop_Statics::NewProp_CropCreationTime_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedCrop_Statics::NewProp_CropCreationTime_MetaData)) };
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FSerializedCrop_Statics::NewProp_CropCreationTime = { "CropCreationTime", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FSerializedCrop, CropCreationTime), Z_Construct_UScriptStruct_FTimespan, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedCrop_Statics::NewProp_CropCreationTime_MetaData), Z_Construct_UScriptStruct_FSerializedCrop_Statics::NewProp_CropCreationTime_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FSerializedCrop_Statics::NewProp_CropTimespan_MetaData[] = {
 		{ "ModuleRelativePath", "Public/Library/SerializableStructs.h" },
 	};
 #endif
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FSerializedCrop_Statics::NewProp_CropTimespan = { "CropTimespan", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FSerializedCrop, CropTimespan), Z_Construct_UScriptStruct_FTimespan, METADATA_PARAMS(Z_Construct_UScriptStruct_FSerializedCrop_Statics::NewProp_CropTimespan_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedCrop_Statics::NewProp_CropTimespan_MetaData)) };
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FSerializedCrop_Statics::NewProp_CropTimespan = { "CropTimespan", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FSerializedCrop, CropTimespan), Z_Construct_UScriptStruct_FTimespan, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedCrop_Statics::NewProp_CropTimespan_MetaData), Z_Construct_UScriptStruct_FSerializedCrop_Statics::NewProp_CropTimespan_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FSerializedCrop_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FSerializedCrop_Statics::NewProp_CropCreationTime,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FSerializedCrop_Statics::NewProp_CropTimespan,
@@ -252,14 +254,15 @@ template<> AUTOMAFARM_API UScriptStruct* StaticStruct<FSerializedCrop>()
 		Z_Construct_UScriptStruct_FSerializedPivotPaper,
 		&NewStructOps,
 		"SerializedCrop",
-		sizeof(FSerializedCrop),
-		alignof(FSerializedCrop),
 		Z_Construct_UScriptStruct_FSerializedCrop_Statics::PropPointers,
 		UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedCrop_Statics::PropPointers),
+		sizeof(FSerializedCrop),
+		alignof(FSerializedCrop),
 		RF_Public|RF_Transient|RF_MarkAsNative,
 		EStructFlags(0x00000001),
-		METADATA_PARAMS(Z_Construct_UScriptStruct_FSerializedCrop_Statics::Struct_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedCrop_Statics::Struct_MetaDataParams))
+		METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedCrop_Statics::Struct_MetaDataParams), Z_Construct_UScriptStruct_FSerializedCrop_Statics::Struct_MetaDataParams)
 	};
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedCrop_Statics::PropPointers) < 2048);
 	UScriptStruct* Z_Construct_UScriptStruct_FSerializedCrop()
 	{
 		if (!Z_Registration_Info_UScriptStruct_SerializedCrop.InnerSingleton)
@@ -290,13 +293,13 @@ template<> AUTOMAFARM_API UScriptStruct* StaticStruct<FSerializedInventory>()
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_NumRows_MetaData[];
 #endif
-		static const UECodeGen_Private::FUnsizedIntPropertyParams NewProp_NumRows;
+		static const UECodeGen_Private::FIntPropertyParams NewProp_NumRows;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_NumCols_MetaData[];
 #endif
-		static const UECodeGen_Private::FUnsizedIntPropertyParams NewProp_NumCols;
+		static const UECodeGen_Private::FIntPropertyParams NewProp_NumCols;
 		static const UECodeGen_Private::FStructPropertyParams NewProp_Content_ValueProp;
-		static const UECodeGen_Private::FUnsizedIntPropertyParams NewProp_Content_Key_KeyProp;
+		static const UECodeGen_Private::FIntPropertyParams NewProp_Content_Key_KeyProp;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_Content_MetaData[];
 #endif
@@ -319,21 +322,21 @@ template<> AUTOMAFARM_API UScriptStruct* StaticStruct<FSerializedInventory>()
 		{ "ModuleRelativePath", "Public/Library/SerializableStructs.h" },
 	};
 #endif
-	const UECodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UScriptStruct_FSerializedInventory_Statics::NewProp_NumRows = { "NumRows", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FSerializedInventory, NumRows), METADATA_PARAMS(Z_Construct_UScriptStruct_FSerializedInventory_Statics::NewProp_NumRows_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedInventory_Statics::NewProp_NumRows_MetaData)) };
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FSerializedInventory_Statics::NewProp_NumRows = { "NumRows", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FSerializedInventory, NumRows), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedInventory_Statics::NewProp_NumRows_MetaData), Z_Construct_UScriptStruct_FSerializedInventory_Statics::NewProp_NumRows_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FSerializedInventory_Statics::NewProp_NumCols_MetaData[] = {
 		{ "ModuleRelativePath", "Public/Library/SerializableStructs.h" },
 	};
 #endif
-	const UECodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UScriptStruct_FSerializedInventory_Statics::NewProp_NumCols = { "NumCols", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FSerializedInventory, NumCols), METADATA_PARAMS(Z_Construct_UScriptStruct_FSerializedInventory_Statics::NewProp_NumCols_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedInventory_Statics::NewProp_NumCols_MetaData)) };
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FSerializedInventory_Statics::NewProp_Content_ValueProp = { "Content", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 1, Z_Construct_UScriptStruct_FSlotStruct, METADATA_PARAMS(nullptr, 0) }; // 2383706676
-	const UECodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UScriptStruct_FSerializedInventory_Statics::NewProp_Content_Key_KeyProp = { "Content_Key", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FSerializedInventory_Statics::NewProp_NumCols = { "NumCols", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FSerializedInventory, NumCols), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedInventory_Statics::NewProp_NumCols_MetaData), Z_Construct_UScriptStruct_FSerializedInventory_Statics::NewProp_NumCols_MetaData) };
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FSerializedInventory_Statics::NewProp_Content_ValueProp = { "Content", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 1, Z_Construct_UScriptStruct_FSlotStruct, METADATA_PARAMS(0, nullptr) }; // 3392258304
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FSerializedInventory_Statics::NewProp_Content_Key_KeyProp = { "Content_Key", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, METADATA_PARAMS(0, nullptr) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FSerializedInventory_Statics::NewProp_Content_MetaData[] = {
 		{ "ModuleRelativePath", "Public/Library/SerializableStructs.h" },
 	};
 #endif
-	const UECodeGen_Private::FMapPropertyParams Z_Construct_UScriptStruct_FSerializedInventory_Statics::NewProp_Content = { "Content", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FSerializedInventory, Content), EMapPropertyFlags::None, METADATA_PARAMS(Z_Construct_UScriptStruct_FSerializedInventory_Statics::NewProp_Content_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedInventory_Statics::NewProp_Content_MetaData)) }; // 2383706676
+	const UECodeGen_Private::FMapPropertyParams Z_Construct_UScriptStruct_FSerializedInventory_Statics::NewProp_Content = { "Content", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FSerializedInventory, Content), EMapPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedInventory_Statics::NewProp_Content_MetaData), Z_Construct_UScriptStruct_FSerializedInventory_Statics::NewProp_Content_MetaData) }; // 3392258304
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FSerializedInventory_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FSerializedInventory_Statics::NewProp_NumRows,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FSerializedInventory_Statics::NewProp_NumCols,
@@ -346,14 +349,15 @@ template<> AUTOMAFARM_API UScriptStruct* StaticStruct<FSerializedInventory>()
 		nullptr,
 		&NewStructOps,
 		"SerializedInventory",
-		sizeof(FSerializedInventory),
-		alignof(FSerializedInventory),
 		Z_Construct_UScriptStruct_FSerializedInventory_Statics::PropPointers,
 		UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedInventory_Statics::PropPointers),
+		sizeof(FSerializedInventory),
+		alignof(FSerializedInventory),
 		RF_Public|RF_Transient|RF_MarkAsNative,
 		EStructFlags(0x00000001),
-		METADATA_PARAMS(Z_Construct_UScriptStruct_FSerializedInventory_Statics::Struct_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedInventory_Statics::Struct_MetaDataParams))
+		METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedInventory_Statics::Struct_MetaDataParams), Z_Construct_UScriptStruct_FSerializedInventory_Statics::Struct_MetaDataParams)
 	};
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedInventory_Statics::PropPointers) < 2048);
 	UScriptStruct* Z_Construct_UScriptStruct_FSerializedInventory()
 	{
 		if (!Z_Registration_Info_UScriptStruct_SerializedInventory.InnerSingleton)
@@ -415,25 +419,25 @@ template<> AUTOMAFARM_API UScriptStruct* StaticStruct<FSerializedInteractableBlo
 		{ "ModuleRelativePath", "Public/Library/SerializableStructs.h" },
 	};
 #endif
-	const UECodeGen_Private::FClassPropertyParams Z_Construct_UScriptStruct_FSerializedInteractableBlock_Statics::NewProp_Class = { "Class", nullptr, (EPropertyFlags)0x0014000000000000, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FSerializedInteractableBlock, Class), Z_Construct_UClass_UClass, Z_Construct_UClass_AInteractableBlock_NoRegister, METADATA_PARAMS(Z_Construct_UScriptStruct_FSerializedInteractableBlock_Statics::NewProp_Class_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedInteractableBlock_Statics::NewProp_Class_MetaData)) };
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UScriptStruct_FSerializedInteractableBlock_Statics::NewProp_Class = { "Class", nullptr, (EPropertyFlags)0x0014000000000000, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FSerializedInteractableBlock, Class), Z_Construct_UClass_UClass, Z_Construct_UClass_AInteractableBlock_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedInteractableBlock_Statics::NewProp_Class_MetaData), Z_Construct_UScriptStruct_FSerializedInteractableBlock_Statics::NewProp_Class_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FSerializedInteractableBlock_Statics::NewProp_Name_MetaData[] = {
 		{ "ModuleRelativePath", "Public/Library/SerializableStructs.h" },
 	};
 #endif
-	const UECodeGen_Private::FTextPropertyParams Z_Construct_UScriptStruct_FSerializedInteractableBlock_Statics::NewProp_Name = { "Name", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Text, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FSerializedInteractableBlock, Name), METADATA_PARAMS(Z_Construct_UScriptStruct_FSerializedInteractableBlock_Statics::NewProp_Name_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedInteractableBlock_Statics::NewProp_Name_MetaData)) };
+	const UECodeGen_Private::FTextPropertyParams Z_Construct_UScriptStruct_FSerializedInteractableBlock_Statics::NewProp_Name = { "Name", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Text, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FSerializedInteractableBlock, Name), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedInteractableBlock_Statics::NewProp_Name_MetaData), Z_Construct_UScriptStruct_FSerializedInteractableBlock_Statics::NewProp_Name_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FSerializedInteractableBlock_Statics::NewProp_SerializedInventory_MetaData[] = {
 		{ "ModuleRelativePath", "Public/Library/SerializableStructs.h" },
 	};
 #endif
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FSerializedInteractableBlock_Statics::NewProp_SerializedInventory = { "SerializedInventory", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FSerializedInteractableBlock, SerializedInventory), Z_Construct_UScriptStruct_FSerializedInventory, METADATA_PARAMS(Z_Construct_UScriptStruct_FSerializedInteractableBlock_Statics::NewProp_SerializedInventory_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedInteractableBlock_Statics::NewProp_SerializedInventory_MetaData)) }; // 1261889015
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FSerializedInteractableBlock_Statics::NewProp_SerializedInventory = { "SerializedInventory", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FSerializedInteractableBlock, SerializedInventory), Z_Construct_UScriptStruct_FSerializedInventory, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedInteractableBlock_Statics::NewProp_SerializedInventory_MetaData), Z_Construct_UScriptStruct_FSerializedInteractableBlock_Statics::NewProp_SerializedInventory_MetaData) }; // 4145708092
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FSerializedInteractableBlock_Statics::NewProp_GridLocation_MetaData[] = {
 		{ "ModuleRelativePath", "Public/Library/SerializableStructs.h" },
 	};
 #endif
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FSerializedInteractableBlock_Statics::NewProp_GridLocation = { "GridLocation", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FSerializedInteractableBlock, GridLocation), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(Z_Construct_UScriptStruct_FSerializedInteractableBlock_Statics::NewProp_GridLocation_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedInteractableBlock_Statics::NewProp_GridLocation_MetaData)) };
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FSerializedInteractableBlock_Statics::NewProp_GridLocation = { "GridLocation", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FSerializedInteractableBlock, GridLocation), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedInteractableBlock_Statics::NewProp_GridLocation_MetaData), Z_Construct_UScriptStruct_FSerializedInteractableBlock_Statics::NewProp_GridLocation_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FSerializedInteractableBlock_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FSerializedInteractableBlock_Statics::NewProp_Class,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FSerializedInteractableBlock_Statics::NewProp_Name,
@@ -445,14 +449,15 @@ template<> AUTOMAFARM_API UScriptStruct* StaticStruct<FSerializedInteractableBlo
 		nullptr,
 		&NewStructOps,
 		"SerializedInteractableBlock",
-		sizeof(FSerializedInteractableBlock),
-		alignof(FSerializedInteractableBlock),
 		Z_Construct_UScriptStruct_FSerializedInteractableBlock_Statics::PropPointers,
 		UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedInteractableBlock_Statics::PropPointers),
+		sizeof(FSerializedInteractableBlock),
+		alignof(FSerializedInteractableBlock),
 		RF_Public|RF_Transient|RF_MarkAsNative,
 		EStructFlags(0x00000001),
-		METADATA_PARAMS(Z_Construct_UScriptStruct_FSerializedInteractableBlock_Statics::Struct_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedInteractableBlock_Statics::Struct_MetaDataParams))
+		METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedInteractableBlock_Statics::Struct_MetaDataParams), Z_Construct_UScriptStruct_FSerializedInteractableBlock_Statics::Struct_MetaDataParams)
 	};
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedInteractableBlock_Statics::PropPointers) < 2048);
 	UScriptStruct* Z_Construct_UScriptStruct_FSerializedInteractableBlock()
 	{
 		if (!Z_Registration_Info_UScriptStruct_SerializedInteractableBlock.InnerSingleton)
@@ -506,13 +511,13 @@ template<> AUTOMAFARM_API UScriptStruct* StaticStruct<FSerializedTimeSystem>()
 		{ "ModuleRelativePath", "Public/Library/SerializableStructs.h" },
 	};
 #endif
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::NewProp_GameTimeSpan = { "GameTimeSpan", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FSerializedTimeSystem, GameTimeSpan), Z_Construct_UScriptStruct_FTimespan, METADATA_PARAMS(Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::NewProp_GameTimeSpan_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::NewProp_GameTimeSpan_MetaData)) };
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::NewProp_GameTimeSpan = { "GameTimeSpan", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FSerializedTimeSystem, GameTimeSpan), Z_Construct_UScriptStruct_FTimespan, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::NewProp_GameTimeSpan_MetaData), Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::NewProp_GameTimeSpan_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::NewProp_GameSecondsPassed_MetaData[] = {
 		{ "ModuleRelativePath", "Public/Library/SerializableStructs.h" },
 	};
 #endif
-	const UECodeGen_Private::FDoublePropertyParams Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::NewProp_GameSecondsPassed = { "GameSecondsPassed", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Double, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FSerializedTimeSystem, GameSecondsPassed), METADATA_PARAMS(Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::NewProp_GameSecondsPassed_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::NewProp_GameSecondsPassed_MetaData)) };
+	const UECodeGen_Private::FDoublePropertyParams Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::NewProp_GameSecondsPassed = { "GameSecondsPassed", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Double, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FSerializedTimeSystem, GameSecondsPassed), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::NewProp_GameSecondsPassed_MetaData), Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::NewProp_GameSecondsPassed_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::NewProp_GameTimeSpan,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::NewProp_GameSecondsPassed,
@@ -522,14 +527,15 @@ template<> AUTOMAFARM_API UScriptStruct* StaticStruct<FSerializedTimeSystem>()
 		nullptr,
 		&NewStructOps,
 		"SerializedTimeSystem",
-		sizeof(FSerializedTimeSystem),
-		alignof(FSerializedTimeSystem),
 		Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::PropPointers,
 		UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::PropPointers),
+		sizeof(FSerializedTimeSystem),
+		alignof(FSerializedTimeSystem),
 		RF_Public|RF_Transient|RF_MarkAsNative,
 		EStructFlags(0x00000001),
-		METADATA_PARAMS(Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::Struct_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::Struct_MetaDataParams))
+		METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::Struct_MetaDataParams), Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::Struct_MetaDataParams)
 	};
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::PropPointers) < 2048);
 	UScriptStruct* Z_Construct_UScriptStruct_FSerializedTimeSystem()
 	{
 		if (!Z_Registration_Info_UScriptStruct_SerializedTimeSystem.InnerSingleton)
@@ -583,13 +589,13 @@ template<> AUTOMAFARM_API UScriptStruct* StaticStruct<FSerializedPlayerCharacter
 		{ "ModuleRelativePath", "Public/Library/SerializableStructs.h" },
 	};
 #endif
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FSerializedPlayerCharacter_Statics::NewProp_SerializedInventory = { "SerializedInventory", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FSerializedPlayerCharacter, SerializedInventory), Z_Construct_UScriptStruct_FSerializedInventory, METADATA_PARAMS(Z_Construct_UScriptStruct_FSerializedPlayerCharacter_Statics::NewProp_SerializedInventory_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedPlayerCharacter_Statics::NewProp_SerializedInventory_MetaData)) }; // 1261889015
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FSerializedPlayerCharacter_Statics::NewProp_SerializedInventory = { "SerializedInventory", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FSerializedPlayerCharacter, SerializedInventory), Z_Construct_UScriptStruct_FSerializedInventory, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedPlayerCharacter_Statics::NewProp_SerializedInventory_MetaData), Z_Construct_UScriptStruct_FSerializedPlayerCharacter_Statics::NewProp_SerializedInventory_MetaData) }; // 4145708092
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FSerializedPlayerCharacter_Statics::NewProp_Transform_MetaData[] = {
 		{ "ModuleRelativePath", "Public/Library/SerializableStructs.h" },
 	};
 #endif
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FSerializedPlayerCharacter_Statics::NewProp_Transform = { "Transform", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FSerializedPlayerCharacter, Transform), Z_Construct_UScriptStruct_FTransform, METADATA_PARAMS(Z_Construct_UScriptStruct_FSerializedPlayerCharacter_Statics::NewProp_Transform_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedPlayerCharacter_Statics::NewProp_Transform_MetaData)) };
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FSerializedPlayerCharacter_Statics::NewProp_Transform = { "Transform", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FSerializedPlayerCharacter, Transform), Z_Construct_UScriptStruct_FTransform, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedPlayerCharacter_Statics::NewProp_Transform_MetaData), Z_Construct_UScriptStruct_FSerializedPlayerCharacter_Statics::NewProp_Transform_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FSerializedPlayerCharacter_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FSerializedPlayerCharacter_Statics::NewProp_SerializedInventory,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FSerializedPlayerCharacter_Statics::NewProp_Transform,
@@ -599,14 +605,15 @@ template<> AUTOMAFARM_API UScriptStruct* StaticStruct<FSerializedPlayerCharacter
 		nullptr,
 		&NewStructOps,
 		"SerializedPlayerCharacter",
-		sizeof(FSerializedPlayerCharacter),
-		alignof(FSerializedPlayerCharacter),
 		Z_Construct_UScriptStruct_FSerializedPlayerCharacter_Statics::PropPointers,
 		UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedPlayerCharacter_Statics::PropPointers),
+		sizeof(FSerializedPlayerCharacter),
+		alignof(FSerializedPlayerCharacter),
 		RF_Public|RF_Transient|RF_MarkAsNative,
 		EStructFlags(0x00000001),
-		METADATA_PARAMS(Z_Construct_UScriptStruct_FSerializedPlayerCharacter_Statics::Struct_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedPlayerCharacter_Statics::Struct_MetaDataParams))
+		METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedPlayerCharacter_Statics::Struct_MetaDataParams), Z_Construct_UScriptStruct_FSerializedPlayerCharacter_Statics::Struct_MetaDataParams)
 	};
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedPlayerCharacter_Statics::PropPointers) < 2048);
 	UScriptStruct* Z_Construct_UScriptStruct_FSerializedPlayerCharacter()
 	{
 		if (!Z_Registration_Info_UScriptStruct_SerializedPlayerCharacter.InnerSingleton)
@@ -656,7 +663,7 @@ template<> AUTOMAFARM_API UScriptStruct* StaticStruct<FSerializedPlayerControlle
 		{ "ModuleRelativePath", "Public/Library/SerializableStructs.h" },
 	};
 #endif
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FSerializedPlayerController_Statics::NewProp_Rotation = { "Rotation", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FSerializedPlayerController, Rotation), Z_Construct_UScriptStruct_FRotator, METADATA_PARAMS(Z_Construct_UScriptStruct_FSerializedPlayerController_Statics::NewProp_Rotation_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedPlayerController_Statics::NewProp_Rotation_MetaData)) };
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FSerializedPlayerController_Statics::NewProp_Rotation = { "Rotation", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FSerializedPlayerController, Rotation), Z_Construct_UScriptStruct_FRotator, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedPlayerController_Statics::NewProp_Rotation_MetaData), Z_Construct_UScriptStruct_FSerializedPlayerController_Statics::NewProp_Rotation_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FSerializedPlayerController_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FSerializedPlayerController_Statics::NewProp_Rotation,
 	};
@@ -665,14 +672,15 @@ template<> AUTOMAFARM_API UScriptStruct* StaticStruct<FSerializedPlayerControlle
 		nullptr,
 		&NewStructOps,
 		"SerializedPlayerController",
-		sizeof(FSerializedPlayerController),
-		alignof(FSerializedPlayerController),
 		Z_Construct_UScriptStruct_FSerializedPlayerController_Statics::PropPointers,
 		UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedPlayerController_Statics::PropPointers),
+		sizeof(FSerializedPlayerController),
+		alignof(FSerializedPlayerController),
 		RF_Public|RF_Transient|RF_MarkAsNative,
 		EStructFlags(0x00000001),
-		METADATA_PARAMS(Z_Construct_UScriptStruct_FSerializedPlayerController_Statics::Struct_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedPlayerController_Statics::Struct_MetaDataParams))
+		METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedPlayerController_Statics::Struct_MetaDataParams), Z_Construct_UScriptStruct_FSerializedPlayerController_Statics::Struct_MetaDataParams)
 	};
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSerializedPlayerController_Statics::PropPointers) < 2048);
 	UScriptStruct* Z_Construct_UScriptStruct_FSerializedPlayerController()
 	{
 		if (!Z_Registration_Info_UScriptStruct_SerializedPlayerController.InnerSingleton)
@@ -681,22 +689,22 @@ template<> AUTOMAFARM_API UScriptStruct* StaticStruct<FSerializedPlayerControlle
 		}
 		return Z_Registration_Info_UScriptStruct_SerializedPlayerController.InnerSingleton;
 	}
-	struct Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Library_SerializableStructs_h_Statics
+	struct Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Library_SerializableStructs_h_Statics
 	{
 		static const FStructRegisterCompiledInInfo ScriptStructInfo[];
 	};
-	const FStructRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Library_SerializableStructs_h_Statics::ScriptStructInfo[] = {
-		{ FSerializedBaseBlock::StaticStruct, Z_Construct_UScriptStruct_FSerializedBaseBlock_Statics::NewStructOps, TEXT("SerializedBaseBlock"), &Z_Registration_Info_UScriptStruct_SerializedBaseBlock, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FSerializedBaseBlock), 629812681U) },
-		{ FSerializedPivotPaper::StaticStruct, Z_Construct_UScriptStruct_FSerializedPivotPaper_Statics::NewStructOps, TEXT("SerializedPivotPaper"), &Z_Registration_Info_UScriptStruct_SerializedPivotPaper, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FSerializedPivotPaper), 2142055963U) },
-		{ FSerializedCrop::StaticStruct, Z_Construct_UScriptStruct_FSerializedCrop_Statics::NewStructOps, TEXT("SerializedCrop"), &Z_Registration_Info_UScriptStruct_SerializedCrop, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FSerializedCrop), 1107703144U) },
-		{ FSerializedInventory::StaticStruct, Z_Construct_UScriptStruct_FSerializedInventory_Statics::NewStructOps, TEXT("SerializedInventory"), &Z_Registration_Info_UScriptStruct_SerializedInventory, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FSerializedInventory), 1261889015U) },
-		{ FSerializedInteractableBlock::StaticStruct, Z_Construct_UScriptStruct_FSerializedInteractableBlock_Statics::NewStructOps, TEXT("SerializedInteractableBlock"), &Z_Registration_Info_UScriptStruct_SerializedInteractableBlock, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FSerializedInteractableBlock), 617781861U) },
-		{ FSerializedTimeSystem::StaticStruct, Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::NewStructOps, TEXT("SerializedTimeSystem"), &Z_Registration_Info_UScriptStruct_SerializedTimeSystem, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FSerializedTimeSystem), 3807453212U) },
-		{ FSerializedPlayerCharacter::StaticStruct, Z_Construct_UScriptStruct_FSerializedPlayerCharacter_Statics::NewStructOps, TEXT("SerializedPlayerCharacter"), &Z_Registration_Info_UScriptStruct_SerializedPlayerCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FSerializedPlayerCharacter), 1158279048U) },
-		{ FSerializedPlayerController::StaticStruct, Z_Construct_UScriptStruct_FSerializedPlayerController_Statics::NewStructOps, TEXT("SerializedPlayerController"), &Z_Registration_Info_UScriptStruct_SerializedPlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FSerializedPlayerController), 3967563916U) },
+	const FStructRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Library_SerializableStructs_h_Statics::ScriptStructInfo[] = {
+		{ FSerializedBaseBlock::StaticStruct, Z_Construct_UScriptStruct_FSerializedBaseBlock_Statics::NewStructOps, TEXT("SerializedBaseBlock"), &Z_Registration_Info_UScriptStruct_SerializedBaseBlock, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FSerializedBaseBlock), 2568384412U) },
+		{ FSerializedPivotPaper::StaticStruct, Z_Construct_UScriptStruct_FSerializedPivotPaper_Statics::NewStructOps, TEXT("SerializedPivotPaper"), &Z_Registration_Info_UScriptStruct_SerializedPivotPaper, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FSerializedPivotPaper), 2195761074U) },
+		{ FSerializedCrop::StaticStruct, Z_Construct_UScriptStruct_FSerializedCrop_Statics::NewStructOps, TEXT("SerializedCrop"), &Z_Registration_Info_UScriptStruct_SerializedCrop, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FSerializedCrop), 3083438852U) },
+		{ FSerializedInventory::StaticStruct, Z_Construct_UScriptStruct_FSerializedInventory_Statics::NewStructOps, TEXT("SerializedInventory"), &Z_Registration_Info_UScriptStruct_SerializedInventory, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FSerializedInventory), 4145708092U) },
+		{ FSerializedInteractableBlock::StaticStruct, Z_Construct_UScriptStruct_FSerializedInteractableBlock_Statics::NewStructOps, TEXT("SerializedInteractableBlock"), &Z_Registration_Info_UScriptStruct_SerializedInteractableBlock, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FSerializedInteractableBlock), 58458769U) },
+		{ FSerializedTimeSystem::StaticStruct, Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics::NewStructOps, TEXT("SerializedTimeSystem"), &Z_Registration_Info_UScriptStruct_SerializedTimeSystem, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FSerializedTimeSystem), 900370704U) },
+		{ FSerializedPlayerCharacter::StaticStruct, Z_Construct_UScriptStruct_FSerializedPlayerCharacter_Statics::NewStructOps, TEXT("SerializedPlayerCharacter"), &Z_Registration_Info_UScriptStruct_SerializedPlayerCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FSerializedPlayerCharacter), 4133676082U) },
+		{ FSerializedPlayerController::StaticStruct, Z_Construct_UScriptStruct_FSerializedPlayerController_Statics::NewStructOps, TEXT("SerializedPlayerController"), &Z_Registration_Info_UScriptStruct_SerializedPlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FSerializedPlayerController), 1514486570U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Library_SerializableStructs_h_3948026892(TEXT("/Script/Automafarm"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Library_SerializableStructs_h_4216270667(TEXT("/Script/Automafarm"),
 		nullptr, 0,
-		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Library_SerializableStructs_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Library_SerializableStructs_h_Statics::ScriptStructInfo),
+		Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Library_SerializableStructs_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Library_SerializableStructs_h_Statics::ScriptStructInfo),
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

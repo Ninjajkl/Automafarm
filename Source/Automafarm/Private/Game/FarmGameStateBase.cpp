@@ -45,7 +45,6 @@ void AFarmGameStateBase::Tick(float DeltaSeconds)
 FItemStruct AFarmGameStateBase::GetItemStructFromClass(TSubclassOf<AItem> DataClass)
 {
 	// Iterate through the rows in the ItemDataTable
-	return FItemStruct();
 	const TArray<FName>& RowNames = ItemDataTable->GetRowNames();
 	for (const FName& RowName : RowNames)
 	{

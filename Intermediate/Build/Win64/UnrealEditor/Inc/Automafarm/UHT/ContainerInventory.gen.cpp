@@ -78,8 +78,8 @@ void EmptyLinkFunctionForGeneratedCodeContainerInventory() {}
 		{ "EditInline", "true" },
 	};
 #endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UContainerInventory_Init_Statics::NewProp_InInventory = { "InInventory", nullptr, (EPropertyFlags)0x0010000000080080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ContainerInventory_eventInit_Parms, InInventory), Z_Construct_UClass_UInventory_NoRegister, METADATA_PARAMS(Z_Construct_UFunction_UContainerInventory_Init_Statics::NewProp_InInventory_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_UContainerInventory_Init_Statics::NewProp_InInventory_MetaData)) };
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UContainerInventory_Init_Statics::NewProp_InContainer = { "InContainer", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ContainerInventory_eventInit_Parms, InContainer), Z_Construct_UClass_AInteractableBlock_NoRegister, METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UContainerInventory_Init_Statics::NewProp_InInventory = { "InInventory", nullptr, (EPropertyFlags)0x0010000000080080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ContainerInventory_eventInit_Parms, InInventory), Z_Construct_UClass_UInventory_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UContainerInventory_Init_Statics::NewProp_InInventory_MetaData), Z_Construct_UFunction_UContainerInventory_Init_Statics::NewProp_InInventory_MetaData) };
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UContainerInventory_Init_Statics::NewProp_InContainer = { "InContainer", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ContainerInventory_eventInit_Parms, InContainer), Z_Construct_UClass_AInteractableBlock_NoRegister, METADATA_PARAMS(0, nullptr) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UContainerInventory_Init_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UContainerInventory_Init_Statics::NewProp_InInventory,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UContainerInventory_Init_Statics::NewProp_InContainer,
@@ -90,7 +90,9 @@ void EmptyLinkFunctionForGeneratedCodeContainerInventory() {}
 		{ "ModuleRelativePath", "Public/UI/ContainerInventory.h" },
 	};
 #endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UContainerInventory_Init_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UContainerInventory, nullptr, "Init", nullptr, nullptr, sizeof(Z_Construct_UFunction_UContainerInventory_Init_Statics::ContainerInventory_eventInit_Parms), Z_Construct_UFunction_UContainerInventory_Init_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UContainerInventory_Init_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UContainerInventory_Init_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UContainerInventory_Init_Statics::Function_MetaDataParams)) };
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UContainerInventory_Init_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UContainerInventory, nullptr, "Init", nullptr, nullptr, Z_Construct_UFunction_UContainerInventory_Init_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UContainerInventory_Init_Statics::PropPointers), sizeof(Z_Construct_UFunction_UContainerInventory_Init_Statics::ContainerInventory_eventInit_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UContainerInventory_Init_Statics::Function_MetaDataParams), Z_Construct_UFunction_UContainerInventory_Init_Statics::Function_MetaDataParams) };
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UContainerInventory_Init_Statics::PropPointers) < 2048);
+	static_assert(sizeof(Z_Construct_UFunction_UContainerInventory_Init_Statics::ContainerInventory_eventInit_Parms) < MAX_uint16);
 	UFunction* Z_Construct_UFunction_UContainerInventory_Init()
 	{
 		static UFunction* ReturnFunction = nullptr;
@@ -121,7 +123,7 @@ void EmptyLinkFunctionForGeneratedCodeContainerInventory() {}
 		{ "NativeConst", "" },
 	};
 #endif
-	const UECodeGen_Private::FTextPropertyParams Z_Construct_UFunction_UContainerInventory_OnCNameTextChanged_Statics::NewProp_InText = { "InText", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Text, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ContainerInventory_eventOnCNameTextChanged_Parms, InText), METADATA_PARAMS(Z_Construct_UFunction_UContainerInventory_OnCNameTextChanged_Statics::NewProp_InText_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_UContainerInventory_OnCNameTextChanged_Statics::NewProp_InText_MetaData)) };
+	const UECodeGen_Private::FTextPropertyParams Z_Construct_UFunction_UContainerInventory_OnCNameTextChanged_Statics::NewProp_InText = { "InText", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Text, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ContainerInventory_eventOnCNameTextChanged_Parms, InText), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UContainerInventory_OnCNameTextChanged_Statics::NewProp_InText_MetaData), Z_Construct_UFunction_UContainerInventory_OnCNameTextChanged_Statics::NewProp_InText_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UContainerInventory_OnCNameTextChanged_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UContainerInventory_OnCNameTextChanged_Statics::NewProp_InText,
 	};
@@ -131,7 +133,9 @@ void EmptyLinkFunctionForGeneratedCodeContainerInventory() {}
 		{ "ModuleRelativePath", "Public/UI/ContainerInventory.h" },
 	};
 #endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UContainerInventory_OnCNameTextChanged_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UContainerInventory, nullptr, "OnCNameTextChanged", nullptr, nullptr, sizeof(Z_Construct_UFunction_UContainerInventory_OnCNameTextChanged_Statics::ContainerInventory_eventOnCNameTextChanged_Parms), Z_Construct_UFunction_UContainerInventory_OnCNameTextChanged_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UContainerInventory_OnCNameTextChanged_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04420401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UContainerInventory_OnCNameTextChanged_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UContainerInventory_OnCNameTextChanged_Statics::Function_MetaDataParams)) };
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UContainerInventory_OnCNameTextChanged_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UContainerInventory, nullptr, "OnCNameTextChanged", nullptr, nullptr, Z_Construct_UFunction_UContainerInventory_OnCNameTextChanged_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UContainerInventory_OnCNameTextChanged_Statics::PropPointers), sizeof(Z_Construct_UFunction_UContainerInventory_OnCNameTextChanged_Statics::ContainerInventory_eventOnCNameTextChanged_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04420401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UContainerInventory_OnCNameTextChanged_Statics::Function_MetaDataParams), Z_Construct_UFunction_UContainerInventory_OnCNameTextChanged_Statics::Function_MetaDataParams) };
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UContainerInventory_OnCNameTextChanged_Statics::PropPointers) < 2048);
+	static_assert(sizeof(Z_Construct_UFunction_UContainerInventory_OnCNameTextChanged_Statics::ContainerInventory_eventOnCNameTextChanged_Parms) < MAX_uint16);
 	UFunction* Z_Construct_UFunction_UContainerInventory_OnCNameTextChanged()
 	{
 		static UFunction* ReturnFunction = nullptr;
@@ -164,8 +168,8 @@ void EmptyLinkFunctionForGeneratedCodeContainerInventory() {}
 		{ "NativeConst", "" },
 	};
 #endif
-	const UECodeGen_Private::FTextPropertyParams Z_Construct_UFunction_UContainerInventory_OnCNameTextCommitted_Statics::NewProp_InText = { "InText", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Text, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ContainerInventory_eventOnCNameTextCommitted_Parms, InText), METADATA_PARAMS(Z_Construct_UFunction_UContainerInventory_OnCNameTextCommitted_Statics::NewProp_InText_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_UContainerInventory_OnCNameTextCommitted_Statics::NewProp_InText_MetaData)) };
-	const UECodeGen_Private::FBytePropertyParams Z_Construct_UFunction_UContainerInventory_OnCNameTextCommitted_Statics::NewProp_CommitMethod = { "CommitMethod", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ContainerInventory_eventOnCNameTextCommitted_Parms, CommitMethod), Z_Construct_UEnum_SlateCore_ETextCommit, METADATA_PARAMS(nullptr, 0) }; // 1116915171
+	const UECodeGen_Private::FTextPropertyParams Z_Construct_UFunction_UContainerInventory_OnCNameTextCommitted_Statics::NewProp_InText = { "InText", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Text, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ContainerInventory_eventOnCNameTextCommitted_Parms, InText), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UContainerInventory_OnCNameTextCommitted_Statics::NewProp_InText_MetaData), Z_Construct_UFunction_UContainerInventory_OnCNameTextCommitted_Statics::NewProp_InText_MetaData) };
+	const UECodeGen_Private::FBytePropertyParams Z_Construct_UFunction_UContainerInventory_OnCNameTextCommitted_Statics::NewProp_CommitMethod = { "CommitMethod", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ContainerInventory_eventOnCNameTextCommitted_Parms, CommitMethod), Z_Construct_UEnum_SlateCore_ETextCommit, METADATA_PARAMS(0, nullptr) }; // 3724737095
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UContainerInventory_OnCNameTextCommitted_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UContainerInventory_OnCNameTextCommitted_Statics::NewProp_InText,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UContainerInventory_OnCNameTextCommitted_Statics::NewProp_CommitMethod,
@@ -176,7 +180,9 @@ void EmptyLinkFunctionForGeneratedCodeContainerInventory() {}
 		{ "ModuleRelativePath", "Public/UI/ContainerInventory.h" },
 	};
 #endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UContainerInventory_OnCNameTextCommitted_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UContainerInventory, nullptr, "OnCNameTextCommitted", nullptr, nullptr, sizeof(Z_Construct_UFunction_UContainerInventory_OnCNameTextCommitted_Statics::ContainerInventory_eventOnCNameTextCommitted_Parms), Z_Construct_UFunction_UContainerInventory_OnCNameTextCommitted_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UContainerInventory_OnCNameTextCommitted_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04420401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UContainerInventory_OnCNameTextCommitted_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UContainerInventory_OnCNameTextCommitted_Statics::Function_MetaDataParams)) };
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UContainerInventory_OnCNameTextCommitted_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UContainerInventory, nullptr, "OnCNameTextCommitted", nullptr, nullptr, Z_Construct_UFunction_UContainerInventory_OnCNameTextCommitted_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UContainerInventory_OnCNameTextCommitted_Statics::PropPointers), sizeof(Z_Construct_UFunction_UContainerInventory_OnCNameTextCommitted_Statics::ContainerInventory_eventOnCNameTextCommitted_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04420401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UContainerInventory_OnCNameTextCommitted_Statics::Function_MetaDataParams), Z_Construct_UFunction_UContainerInventory_OnCNameTextCommitted_Statics::Function_MetaDataParams) };
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UContainerInventory_OnCNameTextCommitted_Statics::PropPointers) < 2048);
+	static_assert(sizeof(Z_Construct_UFunction_UContainerInventory_OnCNameTextCommitted_Statics::ContainerInventory_eventOnCNameTextCommitted_Parms) < MAX_uint16);
 	UFunction* Z_Construct_UFunction_UContainerInventory_OnCNameTextCommitted()
 	{
 		static UFunction* ReturnFunction = nullptr;
@@ -201,7 +207,7 @@ void EmptyLinkFunctionForGeneratedCodeContainerInventory() {}
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_MaxContainerNameLength_MetaData[];
 #endif
-		static const UECodeGen_Private::FUnsizedIntPropertyParams NewProp_MaxContainerNameLength;
+		static const UECodeGen_Private::FIntPropertyParams NewProp_MaxContainerNameLength;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_Inventory_MetaData[];
 #endif
@@ -230,11 +236,13 @@ void EmptyLinkFunctionForGeneratedCodeContainerInventory() {}
 		(UObject* (*)())Z_Construct_UClass_UUserWidget,
 		(UObject* (*)())Z_Construct_UPackage__Script_Automafarm,
 	};
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UContainerInventory_Statics::DependentSingletons) < 16);
 	const FClassFunctionLinkInfo Z_Construct_UClass_UContainerInventory_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_UContainerInventory_Init, "Init" }, // 2311095582
-		{ &Z_Construct_UFunction_UContainerInventory_OnCNameTextChanged, "OnCNameTextChanged" }, // 2424463080
-		{ &Z_Construct_UFunction_UContainerInventory_OnCNameTextCommitted, "OnCNameTextCommitted" }, // 3727957264
+		{ &Z_Construct_UFunction_UContainerInventory_Init, "Init" }, // 4247199190
+		{ &Z_Construct_UFunction_UContainerInventory_OnCNameTextChanged, "OnCNameTextChanged" }, // 3153560762
+		{ &Z_Construct_UFunction_UContainerInventory_OnCNameTextCommitted, "OnCNameTextCommitted" }, // 122069452
 	};
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UContainerInventory_Statics::FuncInfo) < 2048);
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UContainerInventory_Statics::Class_MetaDataParams[] = {
 		{ "IncludePath", "UI/ContainerInventory.h" },
@@ -248,7 +256,7 @@ void EmptyLinkFunctionForGeneratedCodeContainerInventory() {}
 		{ "ModuleRelativePath", "Public/UI/ContainerInventory.h" },
 	};
 #endif
-	const UECodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_UContainerInventory_Statics::NewProp_MaxContainerNameLength = { "MaxContainerNameLength", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UContainerInventory, MaxContainerNameLength), METADATA_PARAMS(Z_Construct_UClass_UContainerInventory_Statics::NewProp_MaxContainerNameLength_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UContainerInventory_Statics::NewProp_MaxContainerNameLength_MetaData)) };
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UContainerInventory_Statics::NewProp_MaxContainerNameLength = { "MaxContainerNameLength", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UContainerInventory, MaxContainerNameLength), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UContainerInventory_Statics::NewProp_MaxContainerNameLength_MetaData), Z_Construct_UClass_UContainerInventory_Statics::NewProp_MaxContainerNameLength_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UContainerInventory_Statics::NewProp_Inventory_MetaData[] = {
 		{ "Category", "Inventory" },
@@ -256,14 +264,14 @@ void EmptyLinkFunctionForGeneratedCodeContainerInventory() {}
 		{ "ModuleRelativePath", "Public/UI/ContainerInventory.h" },
 	};
 #endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UContainerInventory_Statics::NewProp_Inventory = { "Inventory", nullptr, (EPropertyFlags)0x001000000008001c, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UContainerInventory, Inventory), Z_Construct_UClass_UInventory_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UContainerInventory_Statics::NewProp_Inventory_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UContainerInventory_Statics::NewProp_Inventory_MetaData)) };
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UContainerInventory_Statics::NewProp_Inventory = { "Inventory", nullptr, (EPropertyFlags)0x001000000008001c, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UContainerInventory, Inventory), Z_Construct_UClass_UInventory_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UContainerInventory_Statics::NewProp_Inventory_MetaData), Z_Construct_UClass_UContainerInventory_Statics::NewProp_Inventory_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UContainerInventory_Statics::NewProp_Container_MetaData[] = {
 		{ "Category", "Inventory" },
 		{ "ModuleRelativePath", "Public/UI/ContainerInventory.h" },
 	};
 #endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UContainerInventory_Statics::NewProp_Container = { "Container", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UContainerInventory, Container), Z_Construct_UClass_AInteractableBlock_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UContainerInventory_Statics::NewProp_Container_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UContainerInventory_Statics::NewProp_Container_MetaData)) };
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UContainerInventory_Statics::NewProp_Container = { "Container", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UContainerInventory, Container), Z_Construct_UClass_AInteractableBlock_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UContainerInventory_Statics::NewProp_Container_MetaData), Z_Construct_UClass_UContainerInventory_Statics::NewProp_Container_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UContainerInventory_Statics::NewProp_PlayerInventoryGrid_MetaData[] = {
 		{ "BindWidget", "" },
@@ -272,7 +280,7 @@ void EmptyLinkFunctionForGeneratedCodeContainerInventory() {}
 		{ "ModuleRelativePath", "Public/UI/ContainerInventory.h" },
 	};
 #endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UContainerInventory_Statics::NewProp_PlayerInventoryGrid = { "PlayerInventoryGrid", nullptr, (EPropertyFlags)0x001000000008001c, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UContainerInventory, PlayerInventoryGrid), Z_Construct_UClass_UInventoryGrid_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UContainerInventory_Statics::NewProp_PlayerInventoryGrid_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UContainerInventory_Statics::NewProp_PlayerInventoryGrid_MetaData)) };
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UContainerInventory_Statics::NewProp_PlayerInventoryGrid = { "PlayerInventoryGrid", nullptr, (EPropertyFlags)0x001000000008001c, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UContainerInventory, PlayerInventoryGrid), Z_Construct_UClass_UInventoryGrid_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UContainerInventory_Statics::NewProp_PlayerInventoryGrid_MetaData), Z_Construct_UClass_UContainerInventory_Statics::NewProp_PlayerInventoryGrid_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UContainerInventory_Statics::NewProp_ContainerInventoryGrid_MetaData[] = {
 		{ "BindWidget", "" },
@@ -281,7 +289,7 @@ void EmptyLinkFunctionForGeneratedCodeContainerInventory() {}
 		{ "ModuleRelativePath", "Public/UI/ContainerInventory.h" },
 	};
 #endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UContainerInventory_Statics::NewProp_ContainerInventoryGrid = { "ContainerInventoryGrid", nullptr, (EPropertyFlags)0x001000000008001c, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UContainerInventory, ContainerInventoryGrid), Z_Construct_UClass_UInventoryGrid_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UContainerInventory_Statics::NewProp_ContainerInventoryGrid_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UContainerInventory_Statics::NewProp_ContainerInventoryGrid_MetaData)) };
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UContainerInventory_Statics::NewProp_ContainerInventoryGrid = { "ContainerInventoryGrid", nullptr, (EPropertyFlags)0x001000000008001c, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UContainerInventory, ContainerInventoryGrid), Z_Construct_UClass_UInventoryGrid_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UContainerInventory_Statics::NewProp_ContainerInventoryGrid_MetaData), Z_Construct_UClass_UContainerInventory_Statics::NewProp_ContainerInventoryGrid_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UContainerInventory_Statics::NewProp_ContainerNameTextBox_MetaData[] = {
 		{ "BindWidget", "" },
@@ -290,7 +298,7 @@ void EmptyLinkFunctionForGeneratedCodeContainerInventory() {}
 		{ "ModuleRelativePath", "Public/UI/ContainerInventory.h" },
 	};
 #endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UContainerInventory_Statics::NewProp_ContainerNameTextBox = { "ContainerNameTextBox", nullptr, (EPropertyFlags)0x001000000008001c, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UContainerInventory, ContainerNameTextBox), Z_Construct_UClass_UEditableTextBox_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UContainerInventory_Statics::NewProp_ContainerNameTextBox_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UContainerInventory_Statics::NewProp_ContainerNameTextBox_MetaData)) };
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UContainerInventory_Statics::NewProp_ContainerNameTextBox = { "ContainerNameTextBox", nullptr, (EPropertyFlags)0x001000000008001c, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UContainerInventory, ContainerNameTextBox), Z_Construct_UClass_UEditableTextBox_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UContainerInventory_Statics::NewProp_ContainerNameTextBox_MetaData), Z_Construct_UClass_UContainerInventory_Statics::NewProp_ContainerNameTextBox_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UContainerInventory_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UContainerInventory_Statics::NewProp_MaxContainerNameLength,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UContainerInventory_Statics::NewProp_Inventory,
@@ -315,8 +323,9 @@ void EmptyLinkFunctionForGeneratedCodeContainerInventory() {}
 		UE_ARRAY_COUNT(Z_Construct_UClass_UContainerInventory_Statics::PropPointers),
 		0,
 		0x00B010A0u,
-		METADATA_PARAMS(Z_Construct_UClass_UContainerInventory_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_UContainerInventory_Statics::Class_MetaDataParams))
+		METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UContainerInventory_Statics::Class_MetaDataParams), Z_Construct_UClass_UContainerInventory_Statics::Class_MetaDataParams)
 	};
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UContainerInventory_Statics::PropPointers) < 2048);
 	UClass* Z_Construct_UClass_UContainerInventory()
 	{
 		if (!Z_Registration_Info_UClass_UContainerInventory.OuterSingleton)
@@ -331,15 +340,15 @@ void EmptyLinkFunctionForGeneratedCodeContainerInventory() {}
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UContainerInventory);
 	UContainerInventory::~UContainerInventory() {}
-	struct Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_UI_ContainerInventory_h_Statics
+	struct Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_UI_ContainerInventory_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_UI_ContainerInventory_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UContainerInventory, UContainerInventory::StaticClass, TEXT("UContainerInventory"), &Z_Registration_Info_UClass_UContainerInventory, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UContainerInventory), 2930035532U) },
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_UI_ContainerInventory_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_UContainerInventory, UContainerInventory::StaticClass, TEXT("UContainerInventory"), &Z_Registration_Info_UClass_UContainerInventory, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UContainerInventory), 3618709910U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_UI_ContainerInventory_h_2949714842(TEXT("/Script/Automafarm"),
-		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_UI_ContainerInventory_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_UI_ContainerInventory_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_UI_ContainerInventory_h_912861974(TEXT("/Script/Automafarm"),
+		Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_UI_ContainerInventory_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_UI_ContainerInventory_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

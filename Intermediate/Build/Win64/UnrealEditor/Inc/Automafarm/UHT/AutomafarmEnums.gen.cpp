@@ -62,11 +62,11 @@ void EmptyLinkFunctionForGeneratedCodeAutomafarmEnums() {}
 		"ETileType",
 		"ETileType",
 		Z_Construct_UEnum_Automafarm_ETileType_Statics::Enumerators,
-		UE_ARRAY_COUNT(Z_Construct_UEnum_Automafarm_ETileType_Statics::Enumerators),
 		RF_Public|RF_Transient|RF_MarkAsNative,
+		UE_ARRAY_COUNT(Z_Construct_UEnum_Automafarm_ETileType_Statics::Enumerators),
 		EEnumFlags::None,
 		(uint8)UEnum::ECppForm::EnumClass,
-		METADATA_PARAMS(Z_Construct_UEnum_Automafarm_ETileType_Statics::Enum_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UEnum_Automafarm_ETileType_Statics::Enum_MetaDataParams))
+		METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UEnum_Automafarm_ETileType_Statics::Enum_MetaDataParams), Z_Construct_UEnum_Automafarm_ETileType_Statics::Enum_MetaDataParams)
 	};
 	UEnum* Z_Construct_UEnum_Automafarm_ETileType()
 	{
@@ -76,15 +76,15 @@ void EmptyLinkFunctionForGeneratedCodeAutomafarmEnums() {}
 		}
 		return Z_Registration_Info_UEnum_ETileType.InnerSingleton;
 	}
-	struct Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Library_AutomafarmEnums_h_Statics
+	struct Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Library_AutomafarmEnums_h_Statics
 	{
 		static const FEnumRegisterCompiledInInfo EnumInfo[];
 	};
-	const FEnumRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Library_AutomafarmEnums_h_Statics::EnumInfo[] = {
-		{ ETileType_StaticEnum, TEXT("ETileType"), &Z_Registration_Info_UEnum_ETileType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 248095021U) },
+	const FEnumRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Library_AutomafarmEnums_h_Statics::EnumInfo[] = {
+		{ ETileType_StaticEnum, TEXT("ETileType"), &Z_Registration_Info_UEnum_ETileType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 789816852U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Library_AutomafarmEnums_h_4131335985(TEXT("/Script/Automafarm"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Library_AutomafarmEnums_h_768888367(TEXT("/Script/Automafarm"),
 		nullptr, 0,
 		nullptr, 0,
-		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Library_AutomafarmEnums_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Library_AutomafarmEnums_h_Statics::EnumInfo));
+		Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Library_AutomafarmEnums_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Library_AutomafarmEnums_h_Statics::EnumInfo));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

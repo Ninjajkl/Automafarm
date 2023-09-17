@@ -84,6 +84,7 @@ void EmptyLinkFunctionForGeneratedCodeSaveFarmLevel() {}
 		(UObject* (*)())Z_Construct_UClass_USaveGame,
 		(UObject* (*)())Z_Construct_UPackage__Script_Automafarm,
 	};
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_USaveFarmLevel_Statics::DependentSingletons) < 16);
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USaveFarmLevel_Statics::Class_MetaDataParams[] = {
 		{ "IncludePath", "Systems/SaveFarmLevel.h" },
@@ -96,67 +97,67 @@ void EmptyLinkFunctionForGeneratedCodeSaveFarmLevel() {}
 		{ "ModuleRelativePath", "Public/Systems/SaveFarmLevel.h" },
 	};
 #endif
-	const UECodeGen_Private::FStrPropertyParams Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SaveSlotName = { "SaveSlotName", nullptr, (EPropertyFlags)0x0010000000020001, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(USaveFarmLevel, SaveSlotName), METADATA_PARAMS(Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SaveSlotName_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SaveSlotName_MetaData)) };
+	const UECodeGen_Private::FStrPropertyParams Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SaveSlotName = { "SaveSlotName", nullptr, (EPropertyFlags)0x0010000000020001, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(USaveFarmLevel, SaveSlotName), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SaveSlotName_MetaData), Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SaveSlotName_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_UserIndex_MetaData[] = {
 		{ "Category", "Basic" },
 		{ "ModuleRelativePath", "Public/Systems/SaveFarmLevel.h" },
 	};
 #endif
-	const UECodeGen_Private::FUInt32PropertyParams Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_UserIndex = { "UserIndex", nullptr, (EPropertyFlags)0x0010000000020001, UECodeGen_Private::EPropertyGenFlags::UInt32, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(USaveFarmLevel, UserIndex), METADATA_PARAMS(Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_UserIndex_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_UserIndex_MetaData)) };
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedBaseBlocks_Inner = { "SerializedBaseBlocks", nullptr, (EPropertyFlags)0x0000000000020000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, Z_Construct_UScriptStruct_FSerializedBaseBlock, METADATA_PARAMS(nullptr, 0) }; // 629812681
+	const UECodeGen_Private::FUInt32PropertyParams Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_UserIndex = { "UserIndex", nullptr, (EPropertyFlags)0x0010000000020001, UECodeGen_Private::EPropertyGenFlags::UInt32, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(USaveFarmLevel, UserIndex), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_UserIndex_MetaData), Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_UserIndex_MetaData) };
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedBaseBlocks_Inner = { "SerializedBaseBlocks", nullptr, (EPropertyFlags)0x0000000000020000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FSerializedBaseBlock, METADATA_PARAMS(0, nullptr) }; // 2568384412
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedBaseBlocks_MetaData[] = {
 		{ "Category", "Terrain" },
 		{ "ModuleRelativePath", "Public/Systems/SaveFarmLevel.h" },
 	};
 #endif
-	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedBaseBlocks = { "SerializedBaseBlocks", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(USaveFarmLevel, SerializedBaseBlocks), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedBaseBlocks_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedBaseBlocks_MetaData)) }; // 629812681
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedPivotPapers_Inner = { "SerializedPivotPapers", nullptr, (EPropertyFlags)0x0000000000020000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, Z_Construct_UScriptStruct_FSerializedPivotPaper, METADATA_PARAMS(nullptr, 0) }; // 2142055963
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedBaseBlocks = { "SerializedBaseBlocks", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(USaveFarmLevel, SerializedBaseBlocks), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedBaseBlocks_MetaData), Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedBaseBlocks_MetaData) }; // 2568384412
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedPivotPapers_Inner = { "SerializedPivotPapers", nullptr, (EPropertyFlags)0x0000000000020000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FSerializedPivotPaper, METADATA_PARAMS(0, nullptr) }; // 2195761074
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedPivotPapers_MetaData[] = {
 		{ "Category", "Terrain" },
 		{ "ModuleRelativePath", "Public/Systems/SaveFarmLevel.h" },
 	};
 #endif
-	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedPivotPapers = { "SerializedPivotPapers", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(USaveFarmLevel, SerializedPivotPapers), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedPivotPapers_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedPivotPapers_MetaData)) }; // 2142055963
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedCrops_Inner = { "SerializedCrops", nullptr, (EPropertyFlags)0x0000000000020000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, Z_Construct_UScriptStruct_FSerializedCrop, METADATA_PARAMS(nullptr, 0) }; // 1107703144
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedPivotPapers = { "SerializedPivotPapers", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(USaveFarmLevel, SerializedPivotPapers), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedPivotPapers_MetaData), Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedPivotPapers_MetaData) }; // 2195761074
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedCrops_Inner = { "SerializedCrops", nullptr, (EPropertyFlags)0x0000000000020000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FSerializedCrop, METADATA_PARAMS(0, nullptr) }; // 3083438852
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedCrops_MetaData[] = {
 		{ "Category", "Terrain" },
 		{ "ModuleRelativePath", "Public/Systems/SaveFarmLevel.h" },
 	};
 #endif
-	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedCrops = { "SerializedCrops", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(USaveFarmLevel, SerializedCrops), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedCrops_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedCrops_MetaData)) }; // 1107703144
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedInteractableBlocks_Inner = { "SerializedInteractableBlocks", nullptr, (EPropertyFlags)0x0000000000020000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, Z_Construct_UScriptStruct_FSerializedInteractableBlock, METADATA_PARAMS(nullptr, 0) }; // 617781861
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedCrops = { "SerializedCrops", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(USaveFarmLevel, SerializedCrops), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedCrops_MetaData), Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedCrops_MetaData) }; // 3083438852
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedInteractableBlocks_Inner = { "SerializedInteractableBlocks", nullptr, (EPropertyFlags)0x0000000000020000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FSerializedInteractableBlock, METADATA_PARAMS(0, nullptr) }; // 58458769
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedInteractableBlocks_MetaData[] = {
 		{ "Category", "Terrain" },
 		{ "ModuleRelativePath", "Public/Systems/SaveFarmLevel.h" },
 	};
 #endif
-	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedInteractableBlocks = { "SerializedInteractableBlocks", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(USaveFarmLevel, SerializedInteractableBlocks), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedInteractableBlocks_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedInteractableBlocks_MetaData)) }; // 617781861
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedInteractableBlocks = { "SerializedInteractableBlocks", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(USaveFarmLevel, SerializedInteractableBlocks), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedInteractableBlocks_MetaData), Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedInteractableBlocks_MetaData) }; // 58458769
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedTimeSystem_MetaData[] = {
 		{ "Category", "TimeSystem" },
 		{ "ModuleRelativePath", "Public/Systems/SaveFarmLevel.h" },
 	};
 #endif
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedTimeSystem = { "SerializedTimeSystem", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(USaveFarmLevel, SerializedTimeSystem), Z_Construct_UScriptStruct_FSerializedTimeSystem, METADATA_PARAMS(Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedTimeSystem_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedTimeSystem_MetaData)) }; // 3807453212
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedTimeSystem = { "SerializedTimeSystem", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(USaveFarmLevel, SerializedTimeSystem), Z_Construct_UScriptStruct_FSerializedTimeSystem, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedTimeSystem_MetaData), Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedTimeSystem_MetaData) }; // 900370704
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedPlayerCharacter_MetaData[] = {
 		{ "Category", "PlayerCharacter" },
 		{ "ModuleRelativePath", "Public/Systems/SaveFarmLevel.h" },
 	};
 #endif
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedPlayerCharacter = { "SerializedPlayerCharacter", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(USaveFarmLevel, SerializedPlayerCharacter), Z_Construct_UScriptStruct_FSerializedPlayerCharacter, METADATA_PARAMS(Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedPlayerCharacter_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedPlayerCharacter_MetaData)) }; // 1158279048
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedPlayerCharacter = { "SerializedPlayerCharacter", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(USaveFarmLevel, SerializedPlayerCharacter), Z_Construct_UScriptStruct_FSerializedPlayerCharacter, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedPlayerCharacter_MetaData), Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedPlayerCharacter_MetaData) }; // 4133676082
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedPlayerController_MetaData[] = {
 		{ "Category", "PlayerCharacter" },
 		{ "ModuleRelativePath", "Public/Systems/SaveFarmLevel.h" },
 	};
 #endif
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedPlayerController = { "SerializedPlayerController", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(USaveFarmLevel, SerializedPlayerController), Z_Construct_UScriptStruct_FSerializedPlayerController, METADATA_PARAMS(Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedPlayerController_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedPlayerController_MetaData)) }; // 3967563916
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedPlayerController = { "SerializedPlayerController", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(USaveFarmLevel, SerializedPlayerController), Z_Construct_UScriptStruct_FSerializedPlayerController, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedPlayerController_MetaData), Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SerializedPlayerController_MetaData) }; // 1514486570
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_USaveFarmLevel_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_SaveSlotName,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USaveFarmLevel_Statics::NewProp_UserIndex,
@@ -188,8 +189,9 @@ void EmptyLinkFunctionForGeneratedCodeSaveFarmLevel() {}
 		UE_ARRAY_COUNT(Z_Construct_UClass_USaveFarmLevel_Statics::PropPointers),
 		0,
 		0x001000A0u,
-		METADATA_PARAMS(Z_Construct_UClass_USaveFarmLevel_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_USaveFarmLevel_Statics::Class_MetaDataParams))
+		METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_USaveFarmLevel_Statics::Class_MetaDataParams), Z_Construct_UClass_USaveFarmLevel_Statics::Class_MetaDataParams)
 	};
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_USaveFarmLevel_Statics::PropPointers) < 2048);
 	UClass* Z_Construct_UClass_USaveFarmLevel()
 	{
 		if (!Z_Registration_Info_UClass_USaveFarmLevel.OuterSingleton)
@@ -204,15 +206,15 @@ void EmptyLinkFunctionForGeneratedCodeSaveFarmLevel() {}
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(USaveFarmLevel);
 	USaveFarmLevel::~USaveFarmLevel() {}
-	struct Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_SaveFarmLevel_h_Statics
+	struct Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Systems_SaveFarmLevel_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_SaveFarmLevel_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_USaveFarmLevel, USaveFarmLevel::StaticClass, TEXT("USaveFarmLevel"), &Z_Registration_Info_UClass_USaveFarmLevel, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(USaveFarmLevel), 3297753647U) },
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Systems_SaveFarmLevel_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_USaveFarmLevel, USaveFarmLevel::StaticClass, TEXT("USaveFarmLevel"), &Z_Registration_Info_UClass_USaveFarmLevel, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(USaveFarmLevel), 3669485513U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_SaveFarmLevel_h_3033443233(TEXT("/Script/Automafarm"),
-		Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_SaveFarmLevel_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_SaveFarmLevel_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Systems_SaveFarmLevel_h_3619196060(TEXT("/Script/Automafarm"),
+		Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Systems_SaveFarmLevel_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Systems_SaveFarmLevel_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

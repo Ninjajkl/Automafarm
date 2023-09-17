@@ -5,8 +5,9 @@
 ===========================================================================*/
 
 // IWYU pragma: private, include "Library/AutomafarmEnums.h"
+#include "Templates/IsUEnumClass.h"
 #include "UObject/ObjectMacros.h"
-#include "UObject/ScriptMacros.h"
+#include "UObject/ReflectedTypeAccessors.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #ifdef AUTOMAFARM_AutomafarmEnums_generated_h
@@ -15,7 +16,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define AUTOMAFARM_AutomafarmEnums_generated_h
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Library_AutomafarmEnums_h
+#define CURRENT_FILE_ID FID_Projects_Automafarm_Source_Automafarm_Public_Library_AutomafarmEnums_h
 
 
 #define FOREACH_ENUM_ETILETYPE(op) \

@@ -14,36 +14,18 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define AUTOMAFARM_Interactable_generated_h
 
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Interactable_h_14_SPARSE_DATA
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Interactable_h_14_RPC_WRAPPERS \
+#define FID_Projects_Automafarm_Source_Automafarm_Public_Systems_Interactable_h_14_SPARSE_DATA
+#define FID_Projects_Automafarm_Source_Automafarm_Public_Systems_Interactable_h_14_SPARSE_DATA_PROPERTY_ACCESSORS
+#define FID_Projects_Automafarm_Source_Automafarm_Public_Systems_Interactable_h_14_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS
+#define FID_Projects_Automafarm_Source_Automafarm_Public_Systems_Interactable_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
 	virtual void Interact_Implementation() {}; \
  \
 	DECLARE_FUNCTION(execInteract);
 
 
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Interactable_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
-	virtual void Interact_Implementation() {}; \
- \
-	DECLARE_FUNCTION(execInteract);
-
-
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Interactable_h_14_ACCESSORS
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Interactable_h_14_CALLBACK_WRAPPERS
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Interactable_h_14_STANDARD_CONSTRUCTORS \
-	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API UInteractable(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
-	DEFINE_ABSTRACT_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UInteractable) \
-	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UInteractable); \
-	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UInteractable); \
-private: \
-	/** Private move- and copy-constructors, should never be used */ \
-	NO_API UInteractable(UInteractable&&); \
-	NO_API UInteractable(const UInteractable&); \
-public: \
-	NO_API virtual ~UInteractable();
-
-
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Interactable_h_14_ENHANCED_CONSTRUCTORS \
+#define FID_Projects_Automafarm_Source_Automafarm_Public_Systems_Interactable_h_14_ACCESSORS
+#define FID_Projects_Automafarm_Source_Automafarm_Public_Systems_Interactable_h_14_CALLBACK_WRAPPERS
+#define FID_Projects_Automafarm_Source_Automafarm_Public_Systems_Interactable_h_14_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UInteractable(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 private: \
@@ -57,7 +39,7 @@ public: \
 	NO_API virtual ~UInteractable();
 
 
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Interactable_h_14_GENERATED_UINTERFACE_BODY() \
+#define FID_Projects_Automafarm_Source_Automafarm_Public_Systems_Interactable_h_14_GENERATED_UINTERFACE_BODY() \
 private: \
 	static void StaticRegisterNativesUInteractable(); \
 	friend struct Z_Construct_UClass_UInteractable_Statics; \
@@ -66,22 +48,15 @@ public: \
 	DECLARE_SERIALIZER(UInteractable)
 
 
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Interactable_h_14_GENERATED_BODY_LEGACY \
-		PRAGMA_DISABLE_DEPRECATION_WARNINGS \
-	FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Interactable_h_14_GENERATED_UINTERFACE_BODY() \
-	FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Interactable_h_14_STANDARD_CONSTRUCTORS \
-	PRAGMA_ENABLE_DEPRECATION_WARNINGS
-
-
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Interactable_h_14_GENERATED_BODY \
+#define FID_Projects_Automafarm_Source_Automafarm_Public_Systems_Interactable_h_14_GENERATED_BODY \
 	PRAGMA_DISABLE_DEPRECATION_WARNINGS \
-	FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Interactable_h_14_GENERATED_UINTERFACE_BODY() \
-	FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Interactable_h_14_ENHANCED_CONSTRUCTORS \
+	FID_Projects_Automafarm_Source_Automafarm_Public_Systems_Interactable_h_14_GENERATED_UINTERFACE_BODY() \
+	FID_Projects_Automafarm_Source_Automafarm_Public_Systems_Interactable_h_14_ENHANCED_CONSTRUCTORS \
 private: \
 	PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Interactable_h_14_INCLASS_IINTERFACE_NO_PURE_DECLS \
+#define FID_Projects_Automafarm_Source_Automafarm_Public_Systems_Interactable_h_14_INCLASS_IINTERFACE_NO_PURE_DECLS \
 protected: \
 	virtual ~IInteractable() {} \
 public: \
@@ -91,37 +66,17 @@ public: \
 	virtual UObject* _getUObject() const { return nullptr; }
 
 
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Interactable_h_14_INCLASS_IINTERFACE \
-protected: \
-	virtual ~IInteractable() {} \
-public: \
-	typedef UInteractable UClassType; \
-	typedef IInteractable ThisClass; \
-	static void Execute_Interact(UObject* O); \
-	virtual UObject* _getUObject() const { return nullptr; }
-
-
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Interactable_h_11_PROLOG
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Interactable_h_19_GENERATED_BODY_LEGACY \
+#define FID_Projects_Automafarm_Source_Automafarm_Public_Systems_Interactable_h_11_PROLOG
+#define FID_Projects_Automafarm_Source_Automafarm_Public_Systems_Interactable_h_19_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Interactable_h_14_SPARSE_DATA \
-	FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Interactable_h_14_RPC_WRAPPERS \
-	FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Interactable_h_14_ACCESSORS \
-	FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Interactable_h_14_CALLBACK_WRAPPERS \
-	FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Interactable_h_14_INCLASS_IINTERFACE \
-public: \
-PRAGMA_ENABLE_DEPRECATION_WARNINGS
-
-
-#define FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Interactable_h_19_GENERATED_BODY \
-PRAGMA_DISABLE_DEPRECATION_WARNINGS \
-public: \
-	FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Interactable_h_14_SPARSE_DATA \
-	FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Interactable_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Interactable_h_14_ACCESSORS \
-	FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Interactable_h_14_CALLBACK_WRAPPERS \
-	FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Interactable_h_14_INCLASS_IINTERFACE_NO_PURE_DECLS \
+	FID_Projects_Automafarm_Source_Automafarm_Public_Systems_Interactable_h_14_SPARSE_DATA \
+	FID_Projects_Automafarm_Source_Automafarm_Public_Systems_Interactable_h_14_SPARSE_DATA_PROPERTY_ACCESSORS \
+	FID_Projects_Automafarm_Source_Automafarm_Public_Systems_Interactable_h_14_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS \
+	FID_Projects_Automafarm_Source_Automafarm_Public_Systems_Interactable_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Projects_Automafarm_Source_Automafarm_Public_Systems_Interactable_h_14_ACCESSORS \
+	FID_Projects_Automafarm_Source_Automafarm_Public_Systems_Interactable_h_14_CALLBACK_WRAPPERS \
+	FID_Projects_Automafarm_Source_Automafarm_Public_Systems_Interactable_h_14_INCLASS_IINTERFACE_NO_PURE_DECLS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -129,7 +84,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> AUTOMAFARM_API UClass* StaticClass<class UInteractable>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Projects_Automafarm_5_2_Source_Automafarm_Public_Systems_Interactable_h
+#define CURRENT_FILE_ID FID_Projects_Automafarm_Source_Automafarm_Public_Systems_Interactable_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
