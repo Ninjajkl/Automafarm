@@ -25,6 +25,7 @@ AInteractableBlock::AInteractableBlock()
 void AInteractableBlock::BeginPlay()
 {
 	Super::BeginPlay();
+	ItemStruct = FarmGameState->GetItemStructFromClass(GetClass());
 }
 
 
@@ -45,7 +46,7 @@ void AInteractableBlock::Dismantle(UInventory* breakingInventory)
 	if(RemoveFromGrid())
 	{
 		breakingInventory->AddItemArrayToInventory(Inventory->ConvertInventoryToArray(Inventory));
-		breakingInventory->AddItemToInventory(1, *breakingInventory->ItemDataTable->FindRow<FItemStruct>(InteractableName, TEXT("")));
+		breakingInventory->AddItemToInventory(1, ItemStruct);
 		Destroy();
 	}
 }

@@ -33,10 +33,6 @@ void EmptyLinkFunctionForGeneratedCodeInteractableBlock() {}
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_InteractableName_MetaData[];
-#endif
-		static const UECodeGen_Private::FNamePropertyParams NewProp_InteractableName;
-#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_Inventory_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_Inventory;
@@ -69,13 +65,6 @@ void EmptyLinkFunctionForGeneratedCodeInteractableBlock() {}
 	};
 #endif
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AInteractableBlock_Statics::NewProp_InteractableName_MetaData[] = {
-		{ "Category", "InteractableBlock" },
-		{ "ModuleRelativePath", "Public/Items/InteractableBlock.h" },
-	};
-#endif
-	const UECodeGen_Private::FNamePropertyParams Z_Construct_UClass_AInteractableBlock_Statics::NewProp_InteractableName = { "InteractableName", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AInteractableBlock, InteractableName), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AInteractableBlock_Statics::NewProp_InteractableName_MetaData), Z_Construct_UClass_AInteractableBlock_Statics::NewProp_InteractableName_MetaData) };
-#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AInteractableBlock_Statics::NewProp_Inventory_MetaData[] = {
 		{ "Category", "InteractableBlock" },
 		{ "EditInline", "true" },
@@ -105,7 +94,6 @@ void EmptyLinkFunctionForGeneratedCodeInteractableBlock() {}
 #endif
 	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AInteractableBlock_Statics::NewProp_GridLocation = { "GridLocation", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AInteractableBlock, GridLocation), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AInteractableBlock_Statics::NewProp_GridLocation_MetaData), Z_Construct_UClass_AInteractableBlock_Statics::NewProp_GridLocation_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AInteractableBlock_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AInteractableBlock_Statics::NewProp_InteractableName,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AInteractableBlock_Statics::NewProp_Inventory,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AInteractableBlock_Statics::NewProp_StaticMesh,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AInteractableBlock_Statics::NewProp_Name,
@@ -153,9 +141,9 @@ void EmptyLinkFunctionForGeneratedCodeInteractableBlock() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Items_InteractableBlock_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AInteractableBlock, AInteractableBlock::StaticClass, TEXT("AInteractableBlock"), &Z_Registration_Info_UClass_AInteractableBlock, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AInteractableBlock), 2923562284U) },
+		{ Z_Construct_UClass_AInteractableBlock, AInteractableBlock::StaticClass, TEXT("AInteractableBlock"), &Z_Registration_Info_UClass_AInteractableBlock, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AInteractableBlock), 2516983104U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Items_InteractableBlock_h_1056145896(TEXT("/Script/Automafarm"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Items_InteractableBlock_h_3926497453(TEXT("/Script/Automafarm"),
 		Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Items_InteractableBlock_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Items_InteractableBlock_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

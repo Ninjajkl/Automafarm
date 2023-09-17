@@ -31,10 +31,6 @@ void EmptyLinkFunctionForGeneratedCodeBaseBlock() {}
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_BlockName_MetaData[];
-#endif
-		static const UECodeGen_Private::FNamePropertyParams NewProp_BlockName;
-#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_BlockMesh_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_BlockMesh;
@@ -62,13 +58,6 @@ void EmptyLinkFunctionForGeneratedCodeBaseBlock() {}
 	};
 #endif
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABaseBlock_Statics::NewProp_BlockName_MetaData[] = {
-		{ "Category", "BaseBlock" },
-		{ "ModuleRelativePath", "Public/Items/BaseBlock.h" },
-	};
-#endif
-	const UECodeGen_Private::FNamePropertyParams Z_Construct_UClass_ABaseBlock_Statics::NewProp_BlockName = { "BlockName", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABaseBlock, BlockName), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ABaseBlock_Statics::NewProp_BlockName_MetaData), Z_Construct_UClass_ABaseBlock_Statics::NewProp_BlockName_MetaData) };
-#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABaseBlock_Statics::NewProp_BlockMesh_MetaData[] = {
 		{ "Category", "BaseBlock" },
 		{ "EditInline", "true" },
@@ -86,7 +75,6 @@ void EmptyLinkFunctionForGeneratedCodeBaseBlock() {}
 #endif
 	const UECodeGen_Private::FMapPropertyParams Z_Construct_UClass_ABaseBlock_Statics::NewProp_GridLocationInstanceMap = { "GridLocationInstanceMap", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABaseBlock, GridLocationInstanceMap), EMapPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ABaseBlock_Statics::NewProp_GridLocationInstanceMap_MetaData), Z_Construct_UClass_ABaseBlock_Statics::NewProp_GridLocationInstanceMap_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ABaseBlock_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABaseBlock_Statics::NewProp_BlockName,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABaseBlock_Statics::NewProp_BlockMesh,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABaseBlock_Statics::NewProp_GridLocationInstanceMap_ValueProp,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABaseBlock_Statics::NewProp_GridLocationInstanceMap_Key_KeyProp,
@@ -130,9 +118,9 @@ void EmptyLinkFunctionForGeneratedCodeBaseBlock() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Items_BaseBlock_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ABaseBlock, ABaseBlock::StaticClass, TEXT("ABaseBlock"), &Z_Registration_Info_UClass_ABaseBlock, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABaseBlock), 2005736982U) },
+		{ Z_Construct_UClass_ABaseBlock, ABaseBlock::StaticClass, TEXT("ABaseBlock"), &Z_Registration_Info_UClass_ABaseBlock, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABaseBlock), 3159778479U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Items_BaseBlock_h_3279250000(TEXT("/Script/Automafarm"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Items_BaseBlock_h_2279132495(TEXT("/Script/Automafarm"),
 		Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Items_BaseBlock_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Items_BaseBlock_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

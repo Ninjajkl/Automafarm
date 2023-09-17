@@ -4,6 +4,7 @@
 
 //Custom Classes
 #include "PivotPaper.h"
+#include "../Library/Structs.h"
 //Other Classes
 #include "CoreMinimal.h"
 #include "PaperFlipbook.h"
@@ -11,6 +12,8 @@
 #include "Crop.generated.h"
 
 class AItem;
+class AFarmGameStateBase;
+class UInventory;
 
 UCLASS()
 class AUTOMAFARM_API ACrop : public APivotPaper
@@ -23,6 +26,9 @@ public:
 
 protected:
 	virtual void BeginPlay() override;
+	AFarmGameStateBase* FarmGameState;
+	FItemStruct SeedsStruct;
+	FItemStruct HarvestStruct;
 
 public:
 	//Crop System Properties and Functions

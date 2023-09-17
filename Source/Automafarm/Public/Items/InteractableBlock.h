@@ -5,6 +5,7 @@
 //Custom Classes
 #include "../Systems/Interactable.h"
 #include "PlaceableObject.h"
+#include "../Library/Structs.h"
 //Other Classes
 #include "CoreMinimal.h"
 //Generated File
@@ -23,14 +24,13 @@ public:
 
 protected:
 	AFarmGameStateBase* FarmGameState;
+	FItemStruct ItemStruct;
 
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
 public:
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "InteractableBlock")
-		FName InteractableName;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		UInventory* Inventory;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "InteractableBlock")

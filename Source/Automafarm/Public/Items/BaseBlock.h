@@ -22,8 +22,6 @@ public:
 	ABaseBlock();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "BaseBlock")
-		FName BlockName;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "BaseBlock")
 		UInstancedStaticMeshComponent* BlockMesh;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "BaseBlock")
 		TMap<FVector, int32> GridLocationInstanceMap;
@@ -33,7 +31,7 @@ protected:
 	FItemStruct ItemStruct;
 
 public:	
-	virtual void BeginPlay();
+	virtual void BeginPlay() override;
 	void AddBlock(FVector GridLocation);
 	void ClearBlocks();
 	void Dismantle(FVector GridLocation, UInventory* breakingInventory);

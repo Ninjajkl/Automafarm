@@ -20,6 +20,7 @@ ABaseBlock::ABaseBlock()
 
 void ABaseBlock::BeginPlay()
 {
+	Super::BeginPlay();
 	ItemStruct = FarmGameState->GetItemStructFromClass(GetClass());
 }
 
@@ -40,7 +41,7 @@ void ABaseBlock::Dismantle(FVector GridLocation, UInventory* breakingInventory)
 {
 	if(RemoveBlockInstance(GridLocation))
 	{
-		breakingInventory->AddItemToInventory(1, FarmGameState->GetItemStructFromClass(GetClass()));
+		breakingInventory->AddItemToInventory(1, ItemStruct);
 	}
 }
 

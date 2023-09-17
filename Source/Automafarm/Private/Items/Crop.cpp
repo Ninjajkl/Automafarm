@@ -9,7 +9,7 @@
 // Sets default values
 ACrop::ACrop()
 {
-
+	FarmGameState = GetWorld() != NULL ? GetWorld()->GetGameState<AFarmGameStateBase>() : NULL;
 }
 
 void ACrop::BeginPlay()
@@ -21,6 +21,9 @@ void ACrop::BeginPlay()
 	}
 	CropTimespan = FTimespan();
 	UpdateCurrentFlipBook();
+
+	SeedsStruct = FarmGameState->GetItemStructFromClass(SeedsItem);
+	HarvestStruct = FarmGameState->GetItemStructFromClass(HarvestItem);
 }
 
 void ACrop::UpdateTime(FTimespan GameTimeSpan)
@@ -34,6 +37,7 @@ void ACrop::UpdateCurrentFlipBook()
 	float floorKey = -100.0f;
 	TObjectPtr<UPaperFlipbook> FoundBook = nullptr;
 
+	float biggestKey = -FLT_MAX;
 	for (const auto& AnimStart : GrowthStages)
 	{
 		if (AnimStart.Key <= CropTimespan.GetTotalHours() && AnimStart.Key >= floorKey)
@@ -41,8 +45,16 @@ void ACrop::UpdateCurrentFlipBook()
 			floorKey = AnimStart.Key;
 			FoundBook = AnimStart.Value;
 		}
+		if (AnimStart.Key > biggestKey)
+		{
+			biggestKey = AnimStart.Key;
+		}
 	}
 	Sprite->SetFlipbook(FoundBook);
+	if (floorKey == biggestKey)
+	{
+		Harvestable = true;
+	}
 }
 
 void ACrop::Tick(float DeltaTime)
@@ -61,7 +73,8 @@ void ACrop::Dismantle(UInventory* breakingInventory)
 	{
 		if(Harvestable)
 		{
-			//breakingInventory->AddItemToInventory(1, *breakingInventory->ItemDataTable->FindRow<FItemStruct>(BlockName, TEXT("")));
+			breakingInventory->AddItemToInventory(2, SeedsStruct);
+			breakingInventory->AddItemToInventory(4, HarvestStruct);
 		}
 		Destroy();
 	}
