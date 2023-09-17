@@ -4,6 +4,7 @@
 #include "Items/InteractableBlock.h"
 //Custom Classes
 #include "Characters/AutomafarmPlayerController.h"
+#include "Game/FarmGameStateBase.h"
 //Other Classes
 #include "Kismet/GameplayStatics.h"
 
@@ -15,6 +16,9 @@ AInteractableBlock::AInteractableBlock()
 
 	// Create an Inventory Component
 	Inventory = CreateDefaultSubobject<UInventory>("Inventory");
+
+	//Get the Game State and store its reference
+	FarmGameState = GetWorld() != NULL ? GetWorld()->GetGameState<AFarmGameStateBase>() : NULL;
 }
 
 // Called when the game starts
@@ -34,4 +38,23 @@ void AInteractableBlock::Interact_Implementation()
 {
 	AAutomafarmPlayerController* PlayerController = Cast<AAutomafarmPlayerController>(UGameplayStatics::GetPlayerController(this, 0));
 	PlayerController->PlayerHud->ShowContainer(this);
+}
+
+void AInteractableBlock::Dismantle(UInventory* breakingInventory)
+{
+	if(RemoveFromGrid())
+	{
+		breakingInventory->AddItemArrayToInventory(Inventory->ConvertInventoryToArray(Inventory));
+		breakingInventory->AddItemToInventory(1, *breakingInventory->ItemDataTable->FindRow<FItemStruct>(InteractableName, TEXT("")));
+		Destroy();
+	}
+}
+
+bool AInteractableBlock::RemoveFromGrid()
+{
+	if (FarmGameState->LevelMap.Remove(GridLocation) > 0)
+	{
+		return true;
+	}
+	return false;
 }

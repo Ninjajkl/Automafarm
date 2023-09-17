@@ -10,6 +10,8 @@
 //Generated File
 #include "Crop.generated.h"
 
+class AItem;
+
 UCLASS()
 class AUTOMAFARM_API ACrop : public APivotPaper
 {
@@ -26,6 +28,10 @@ public:
 	//Crop System Properties and Functions
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "CropSystem")
 		bool Harvestable = false;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CropSystem")
+		TSubclassOf<ACrop> SeedsItem;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CropSystem")
+		TSubclassOf<AItem> HarvestItem;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CropSystem", meta = (ToolTip = "A map of growth stages for playing Flipbooks over time.\nKey: Hours since creation\nValue: Flipbook to play at the specified hour."))
 		TMap<float, TObjectPtr<UPaperFlipbook>> GrowthStages;
 
@@ -42,5 +48,5 @@ public:
 
 	virtual void Tick(float DeltaTime) override;
 	virtual void Load() override;
-	virtual void Dismantle() override;
+	virtual void Dismantle(UInventory* breakingInventory) override;
 };

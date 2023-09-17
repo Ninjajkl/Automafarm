@@ -25,8 +25,6 @@
 //////////////////////////////////////////////////////////////////////////
 // AAutomafarmCharacter
 
-AFarmGameStateBase* myGameState;
-
 AAutomafarmCharacter::AAutomafarmCharacter()
 {
 	// Set size for collision capsule
@@ -109,15 +107,6 @@ void AAutomafarmCharacter::Interact(const FInputActionValue& Value)
 	bool gotHit = GetWorld()->LineTraceSingleByChannel(HitResult, WLocation, ForwardVector * 1000 + WLocation, ECollisionChannel::PlaceTrace,Params);
 	if (gotHit) 
 	{	
-		//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, HitResult.ImpactPoint.ToString());
-		//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, HitResult.Component->ComponentHasTag("BlockMesh") ? "Yes" : "No");
-		//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, HitResult.Component->GetClass()->GetName());
-		/*
-		if (HitResult.Component->ComponentHasTag("BlockMesh")) 
-		{
-			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, Cast<UInstancedStaticMeshComponent>(HitResult.Component)->GetMaterial(0)->GetName());
-		}
-		*/
 		FVector SelectedTile = UGC::WorldToGridPosition(HitResult.ImpactPoint+HitResult.ImpactNormal);
 		//First, check if we are clicking on something interactable
 		if(HitResult.GetActor()->Implements<UInteractable>())
@@ -157,10 +146,11 @@ void AAutomafarmCharacter::Dismantle(const FInputActionValue& Value)
 	for (const FHitResult& OverlappingHit : OutHits)
 	{
 		AActor* OverlappingActor = OverlappingHit.GetActor();
+		FVector SelectedTile = UGC::WorldToGridPosition(OverlappingHit.ImpactPoint - OverlappingHit.ImpactNormal);
 		// If the overlapping hit is of a PivotPaper, call its Dismantle function
 		if (APivotPaper* PivotPaperActor = Cast<APivotPaper>(OverlappingActor))
 		{
-			PivotPaperActor->Dismantle();
+			PivotPaperActor->Dismantle(PlayerInventory);
 			firstHit = false;
 			continue;
 		}
@@ -173,12 +163,11 @@ void AAutomafarmCharacter::Dismantle(const FInputActionValue& Value)
 		}
 		else if (ABaseBlock* BaseBlockActor = Cast<ABaseBlock>(OverlappingActor))
 		{
-			FVector SelectedTile = UGC::WorldToGridPosition(OverlappingHit.ImpactPoint - OverlappingHit.ImpactNormal);
-			BaseBlockActor->RemoveBlockAt(SelectedTile);
+			BaseBlockActor->Dismantle(SelectedTile, PlayerInventory);
 		}
 		else if (AInteractableBlock* InteractableBlockActor = Cast<AInteractableBlock>(OverlappingActor))
 		{
-
+			InteractableBlockActor->Dismantle(PlayerInventory);
 		}
 		return;
 	}

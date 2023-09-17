@@ -38,6 +38,13 @@ public:
 		TMap<FVector, FTileStruct> LevelMap;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Terrain")
 		TMap<TSubclassOf<APlaceableObject>, APlaceableObject*> InstancedObjectMap;
+	UDataTable* ItemDataTable = nullptr;
+
+	//Datatable Reference Functions
+	
+	FItemStruct GetItemStructFromClass(TSubclassOf<AItem> DataClass);
+
+	//Adding Items to the World and Grid Functions
 
 	void InitializeInstanceableObject(TSubclassOf<APlaceableObject> BlockClass);
 	void AddBlockInstance(TSubclassOf<APlaceableObject> BlockClass, FVector GridLocation);

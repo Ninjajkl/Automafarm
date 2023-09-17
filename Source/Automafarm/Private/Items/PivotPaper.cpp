@@ -25,6 +25,8 @@ APivotPaper::APivotPaper()
 	// Try to create the sprite component
 	Sprite = CreateDefaultSubobject<UPaperFlipbookComponent>(APaperCharacter::SpriteComponentName);
 	SetRootComponent(Sprite);
+
+	FarmGameState = GetWorld() != NULL ? GetWorld()->GetGameState<AFarmGameStateBase>() : NULL;
 }
 
 // Called when the game starts or when spawned
@@ -63,7 +65,22 @@ void APivotPaper::Load()
 
 }
 
-void APivotPaper::Dismantle()
+void APivotPaper::Dismantle(UInventory* breakingInventory)
 {
-	Destroy();
+	if(RemoveFromGrid())
+	{
+		Destroy();
+	}
+}
+
+bool APivotPaper::RemoveFromGrid()
+{
+	for (const FVector& TileOffset : TilesToFill) 
+	{
+		if(FarmGameState->LevelMap.Remove(GridLocation+TileOffset) <= 0)
+		{
+			return false;
+		}
+	}
+	return true;
 }

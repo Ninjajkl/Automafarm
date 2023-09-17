@@ -6,13 +6,10 @@
 #include "Game/FarmGameStateBase.h"
 //Other Classes
 
-AFarmGameStateBase* FarmGameState;
-
 // Sets default values
 ACrop::ACrop()
 {
-	PrimaryActorTick.bCanEverTick = true;
-	FarmGameState = GetWorld() != NULL ? GetWorld()->GetGameState<AFarmGameStateBase>() : NULL;
+
 }
 
 void ACrop::BeginPlay()
@@ -51,7 +48,6 @@ void ACrop::UpdateCurrentFlipBook()
 void ACrop::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
 }
 
 void ACrop::Load() 
@@ -59,9 +55,14 @@ void ACrop::Load()
 	UpdateCurrentFlipBook();
 }
 
-void ACrop::Dismantle()
+void ACrop::Dismantle(UInventory* breakingInventory)
 {
-	AAutomafarmCharacter* playerCharacter = Cast<AAutomafarmCharacter>(GetWorld()->GetFirstPlayerController()->GetPawn());
-	playerCharacter->PlayerInventory->IncreaseSlotByAmount(1, playerCharacter->PlayerInventory, 69);
-	Destroy();
+	if (RemoveFromGrid())
+	{
+		if(Harvestable)
+		{
+			//breakingInventory->AddItemToInventory(1, *breakingInventory->ItemDataTable->FindRow<FItemStruct>(BlockName, TEXT("")));
+		}
+		Destroy();
+	}
 }

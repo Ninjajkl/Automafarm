@@ -29,7 +29,6 @@ void UInventory::BeginPlay()
 	
 }
 
-
 // Called every frame
 void UInventory::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
@@ -54,7 +53,69 @@ void UInventory::ReduceSlotByAmount(int slotNum, int amount)
 	OnInventoryUpdated.Broadcast(this);
 }
 
-//Returns excess amount
+void UInventory::AddItemToInventory(int amount, FItemStruct itemType)
+{
+	for (TPair<int, FSlotStruct>& SlotPair : Content)
+	{
+		if (SlotPair.Value.ItemID.RowName == itemType.Name)
+		{
+			int SpaceRemaining = itemType.MaxStackSize - SlotPair.Value.Quantity;
+
+			if (SpaceRemaining >= amount)
+			{
+				SlotPair.Value.Quantity += amount;
+				OnInventoryUpdated.Broadcast(this);
+				return;
+			}
+			else if (SpaceRemaining > 0)
+			{
+				SlotPair.Value.Quantity += SpaceRemaining;
+				amount -= SpaceRemaining;
+			}
+		}
+	}
+	//If reached this point, the remaining amount needs to be added to a new slot(s)
+	for(int i = 0; i < (NumRows*NumCols-Content.Num()); i++)
+	{
+		FSlotStruct NewSlot;
+		FDataTableRowHandle newRowHandle;
+		newRowHandle.DataTable = ItemDataTable;
+		newRowHandle.RowName = itemType.Name;
+		NewSlot.ItemID = newRowHandle;
+
+		NewSlot.Quantity = FMath::Min(amount, itemType.MaxStackSize);
+		amount -= NewSlot.Quantity;
+
+		for(int j = 0; j < NumRows * NumCols; j++)
+		{
+			if(!Content.Find(j))
+			{
+				Content.Add(j, NewSlot);
+				break;
+			}
+		}
+		if(amount == 0)
+		{
+			OnInventoryUpdated.Broadcast(this);
+			return;
+		}
+	}
+	OnInventoryUpdated.Broadcast(this);
+}
+
+void UInventory::AddItemToInventoryBySlot(FSlotStruct itemSlot)
+{
+	AddItemToInventory(itemSlot.Quantity, *ItemDataTable->FindRow<FItemStruct>(itemSlot.ItemID.RowName, TEXT("")));
+}
+
+void UInventory::AddItemArrayToInventory(TArray<FSlotStruct> itemArray)
+{
+	for (FSlotStruct item : itemArray)
+	{
+		AddItemToInventoryBySlot(item);
+	}
+}
+
 int UInventory::IncreaseSlotByAmount(int slotNum, UInventory* Inventory, int amount)
 {
 	int MaxSlotSize = Inventory->ItemDataTable->FindRow<FItemStruct>(Inventory->Content[slotNum].ItemID.RowName, TEXT(""))->MaxStackSize;
@@ -107,4 +168,14 @@ bool UInventory::TransferSlots(int slotFrom, UInventory* fromInv, int slotTo, UI
 	{
 		return false;
 	}
+}
+
+TArray<FSlotStruct> UInventory::ConvertInventoryToArray(UInventory* fromInv)
+{
+	TArray<FSlotStruct> InvArray;
+	for(TPair<int, FSlotStruct>& SlotPair : fromInv->Content)
+	{
+		InvArray.Add(SlotPair.Value);
+	}
+	return InvArray;
 }

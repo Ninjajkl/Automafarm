@@ -50,7 +50,15 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Inventory")
 		void ReduceSlotByAmount(int slotNum, int amount);
 	UFUNCTION(BlueprintCallable, Category = "Inventory")
+		void AddItemToInventory(int amount, FItemStruct itemType);
+	UFUNCTION(BlueprintCallable, Category = "Inventory")
+		void AddItemToInventoryBySlot(FSlotStruct itemSlot);
+	UFUNCTION(BlueprintCallable, Category = "Inventory")
+		void AddItemArrayToInventory(TArray<FSlotStruct> itemArray);
+	UFUNCTION(BlueprintCallable, Category = "Inventory")
 		static int IncreaseSlotByAmount(int slotNum, UInventory* Inventory, int amount);
 	UFUNCTION(BlueprintCallable, Category = "Inventory")
 		static bool TransferSlots(int slotFrom, UInventory* fromInv, int slotTo, UInventory* toInv);
+	UFUNCTION(BlueprintCallable, Category = "Inventory")
+		static TArray<FSlotStruct> ConvertInventoryToArray(UInventory* fromInv);
 };

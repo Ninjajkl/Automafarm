@@ -10,6 +10,9 @@
 //Generated File
 #include "PivotPaper.generated.h"
 
+class AFarmGameStateBase;
+class UInventory;
+
 UCLASS()
 class AUTOMAFARM_API APivotPaper : public APlaceableObject
 {
@@ -25,16 +28,19 @@ public:
 		TObjectPtr<UPaperFlipbookComponent> Sprite;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"), Category = "PivotPaper")
 		FVector GridLocation;
+
 protected:
+	AFarmGameStateBase* FarmGameState;
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
 public:
 	UFUNCTION()
 		void PlayerMoved(FVector PlayerLoc);
-	virtual void Dismantle();
 	FVector GetPPCWLocation();
 	void SetPPCWRotation(FRotator rotator);
 	virtual void Tick(float DeltaTime) override;
 	virtual void Load();
+	virtual void Dismantle(UInventory* breakingInventory);
+	bool RemoveFromGrid();
 };

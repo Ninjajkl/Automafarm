@@ -16,6 +16,7 @@
 AFarmGameStateBase::AFarmGameStateBase()
 {
 	PrimaryActorTick.bCanEverTick = true;
+	ItemDataTable = LoadObject<UDataTable>(nullptr, TEXT("/Game/Blueprints/DT_ItemDataTable"));
 }
 
 void AFarmGameStateBase::BeginPlay()
@@ -39,6 +40,24 @@ void AFarmGameStateBase::Tick(float DeltaSeconds)
 		GameSecondsPassed -= 3600;
 		OnHourPassed.Broadcast(GameTimeSpan);
 	}
+}
+
+FItemStruct AFarmGameStateBase::GetItemStructFromClass(TSubclassOf<AItem> DataClass)
+{
+	// Iterate through the rows in the ItemDataTable
+	return FItemStruct();
+	const TArray<FName>& RowNames = ItemDataTable->GetRowNames();
+	for (const FName& RowName : RowNames)
+	{
+		FItemStruct* ItemStruct = ItemDataTable->FindRow<FItemStruct>(RowName, FString());
+
+		if (ItemStruct && ItemStruct->Item == DataClass)
+		{
+			// Found a matching item, return its ItemStruct
+			return *ItemStruct;
+		}
+	}
+	return FItemStruct();
 }
 
 //Terrain Functions

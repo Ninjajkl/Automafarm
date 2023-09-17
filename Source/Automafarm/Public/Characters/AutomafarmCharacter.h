@@ -11,6 +11,8 @@
 //Generated File
 #include "AutomafarmCharacter.generated.h"
 
+class AFarmGameStateBase;
+
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FKFOnPlayerMoved,FVector,PlayerLoc);
 
 UCLASS(config=Game)
@@ -81,6 +83,8 @@ public:
 
 
 protected:
+	AFarmGameStateBase* myGameState;
+
 	virtual void BeginPlay();
 
 public:

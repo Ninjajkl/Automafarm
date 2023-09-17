@@ -8,10 +8,6 @@
 //Other Classes
 #include "Components/InstancedStaticMeshComponent.h"
 
-#define PlaceTrace ECC_GameTraceChannel1
-
-AFarmGameStateBase* blockGameState;
-
 // Sets default values
 ABaseBlock::ABaseBlock()
 {
@@ -19,7 +15,12 @@ ABaseBlock::ABaseBlock()
 	BlockMesh->ComponentTags = { FName(TEXT("BlockMesh")) };
 
 	//Get the Game State and store its reference
-	blockGameState = GetWorld() != NULL ? GetWorld()->GetGameState<AFarmGameStateBase>() : NULL;
+	FarmGameState = GetWorld() != NULL ? GetWorld()->GetGameState<AFarmGameStateBase>() : NULL;
+}
+
+void ABaseBlock::BeginPlay()
+{
+	ItemStruct = FarmGameState->GetItemStructFromClass(GetClass());
 }
 
 //Creates an instance of the block
@@ -35,20 +36,30 @@ void ABaseBlock::ClearBlocks()
 	BlockMesh->ClearInstances();
 }
 
-void ABaseBlock::RemoveBlockAt(FVector GridLocation)
+void ABaseBlock::Dismantle(FVector GridLocation, UInventory* breakingInventory)
+{
+	if(RemoveBlockInstance(GridLocation))
+	{
+		breakingInventory->AddItemToInventory(1, FarmGameState->GetItemStructFromClass(GetClass()));
+	}
+}
+
+bool ABaseBlock::RemoveBlockInstance(FVector GridLocation)
 {
 	int32* InstanceIndexPtr = GridLocationInstanceMap.Find(GridLocation);
-	if (InstanceIndexPtr)
+	if (!InstanceIndexPtr || !BlockMesh->RemoveInstance(*InstanceIndexPtr))
 	{
-		BlockMesh->RemoveInstance(*InstanceIndexPtr);
-		blockGameState->LevelMap.Remove(GridLocation);
-		GridLocationInstanceMap.Remove(GridLocation);
-		for (auto& Pair : GridLocationInstanceMap)
+		return false;
+	}
+
+	FarmGameState->LevelMap.Remove(GridLocation);
+	GridLocationInstanceMap.Remove(GridLocation);
+	for (auto& Pair : GridLocationInstanceMap)
+	{
+		if (Pair.Value > *InstanceIndexPtr)
 		{
-			if(Pair.Value > *InstanceIndexPtr)
-			{
-				Pair.Value -= 1;
-			}
+			Pair.Value -= 1;
 		}
 	}
+	return true;
 }
