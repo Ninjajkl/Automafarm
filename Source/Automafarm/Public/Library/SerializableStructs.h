@@ -82,6 +82,8 @@ struct FSerializedInteractableBlock
         FSerializedInventory SerializedInventory;
     UPROPERTY()
         FVector GridLocation;
+    UPROPERTY()
+        FRotator Rotation;
 };
 
 USTRUCT(BlueprintType)

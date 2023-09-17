@@ -16,6 +16,7 @@ void EmptyLinkFunctionForGeneratedCodeAutomafarmCharacter() {}
 	AUTOMAFARM_API UClass* Z_Construct_UClass_UInventory_NoRegister();
 	AUTOMAFARM_API UFunction* Z_Construct_UDelegateFunction_Automafarm_KFOnPlayerMoved__DelegateSignature();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
+	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FRotator();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	ENGINE_API UClass* Z_Construct_UClass_ACharacter();
 	ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
@@ -88,9 +89,10 @@ void FKFOnPlayerMoved_DelegateWrapper(const FMulticastScriptDelegate& KFOnPlayer
 	{
 		P_GET_OBJECT(UClass,Z_Param_placeableClass);
 		P_GET_STRUCT(FVector,Z_Param_TileKey);
+		P_GET_STRUCT(FRotator,Z_Param_CameraRotator);
 		P_FINISH;
 		P_NATIVE_BEGIN;
-		P_THIS->PlaceHeldItem(Z_Param_placeableClass,Z_Param_TileKey);
+		P_THIS->PlaceHeldItem(Z_Param_placeableClass,Z_Param_TileKey,Z_Param_CameraRotator);
 		P_NATIVE_END;
 	}
 	DEFINE_FUNCTION(AAutomafarmCharacter::execValidPlacement)
@@ -465,9 +467,11 @@ void FKFOnPlayerMoved_DelegateWrapper(const FMulticastScriptDelegate& KFOnPlayer
 		{
 			TSubclassOf<APlaceableObject>  placeableClass;
 			FVector TileKey;
+			FRotator CameraRotator;
 		};
 		static const UECodeGen_Private::FClassPropertyParams NewProp_placeableClass;
 		static const UECodeGen_Private::FStructPropertyParams NewProp_TileKey;
+		static const UECodeGen_Private::FStructPropertyParams NewProp_CameraRotator;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
@@ -476,9 +480,11 @@ void FKFOnPlayerMoved_DelegateWrapper(const FMulticastScriptDelegate& KFOnPlayer
 	};
 	const UECodeGen_Private::FClassPropertyParams Z_Construct_UFunction_AAutomafarmCharacter_PlaceHeldItem_Statics::NewProp_placeableClass = { "placeableClass", nullptr, (EPropertyFlags)0x0014000000000080, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AutomafarmCharacter_eventPlaceHeldItem_Parms, placeableClass), Z_Construct_UClass_UClass, Z_Construct_UClass_APlaceableObject_NoRegister, METADATA_PARAMS(0, nullptr) };
 	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AAutomafarmCharacter_PlaceHeldItem_Statics::NewProp_TileKey = { "TileKey", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AutomafarmCharacter_eventPlaceHeldItem_Parms, TileKey), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(0, nullptr) };
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AAutomafarmCharacter_PlaceHeldItem_Statics::NewProp_CameraRotator = { "CameraRotator", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AutomafarmCharacter_eventPlaceHeldItem_Parms, CameraRotator), Z_Construct_UScriptStruct_FRotator, METADATA_PARAMS(0, nullptr) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AAutomafarmCharacter_PlaceHeldItem_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AAutomafarmCharacter_PlaceHeldItem_Statics::NewProp_placeableClass,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AAutomafarmCharacter_PlaceHeldItem_Statics::NewProp_TileKey,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AAutomafarmCharacter_PlaceHeldItem_Statics::NewProp_CameraRotator,
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AAutomafarmCharacter_PlaceHeldItem_Statics::Function_MetaDataParams[] = {
@@ -678,7 +684,7 @@ void FKFOnPlayerMoved_DelegateWrapper(const FMulticastScriptDelegate& KFOnPlayer
 		{ &Z_Construct_UFunction_AAutomafarmCharacter_Interact, "Interact" }, // 2938041174
 		{ &Z_Construct_UFunction_AAutomafarmCharacter_Look, "Look" }, // 1918409255
 		{ &Z_Construct_UFunction_AAutomafarmCharacter_Move, "Move" }, // 1955450160
-		{ &Z_Construct_UFunction_AAutomafarmCharacter_PlaceHeldItem, "PlaceHeldItem" }, // 642534477
+		{ &Z_Construct_UFunction_AAutomafarmCharacter_PlaceHeldItem, "PlaceHeldItem" }, // 2279559787
 		{ &Z_Construct_UFunction_AAutomafarmCharacter_RotateByYaw, "RotateByYaw" }, // 739036121
 		{ &Z_Construct_UFunction_AAutomafarmCharacter_SetCurrHotbarSlot, "SetCurrHotbarSlot" }, // 3820803325
 		{ &Z_Construct_UFunction_AAutomafarmCharacter_ValidPlacement, "ValidPlacement" }, // 3714992961
@@ -798,9 +804,9 @@ void FKFOnPlayerMoved_DelegateWrapper(const FMulticastScriptDelegate& KFOnPlayer
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Characters_AutomafarmCharacter_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AAutomafarmCharacter, AAutomafarmCharacter::StaticClass, TEXT("AAutomafarmCharacter"), &Z_Registration_Info_UClass_AAutomafarmCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAutomafarmCharacter), 1150649438U) },
+		{ Z_Construct_UClass_AAutomafarmCharacter, AAutomafarmCharacter::StaticClass, TEXT("AAutomafarmCharacter"), &Z_Registration_Info_UClass_AAutomafarmCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAutomafarmCharacter), 1529837426U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Characters_AutomafarmCharacter_h_71902980(TEXT("/Script/Automafarm"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Characters_AutomafarmCharacter_h_1828027310(TEXT("/Script/Automafarm"),
 		Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Characters_AutomafarmCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Characters_AutomafarmCharacter_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

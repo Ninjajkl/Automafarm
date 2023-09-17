@@ -124,7 +124,7 @@ void AAutomafarmCharacter::Interact(const FInputActionValue& Value)
 				TSubclassOf<APlaceableObject> PlaceableItemClass = TSubclassOf<APlaceableObject>(ItemStruct->Item);
 				if (ValidPlacement(PlaceableItemClass, SelectedTile))
 				{
-					PlaceHeldItem(PlaceableItemClass, SelectedTile);
+					PlaceHeldItem(PlaceableItemClass, SelectedTile, Camera->GetComponentRotation());
 				}
 			}
 		}
@@ -189,7 +189,7 @@ bool AAutomafarmCharacter::ValidPlacement(TSubclassOf<APlaceableObject> placeabl
 	return true;
 }
 
-void AAutomafarmCharacter::PlaceHeldItem(TSubclassOf<APlaceableObject> placeableClass, FVector TileKey)
+void AAutomafarmCharacter::PlaceHeldItem(TSubclassOf<APlaceableObject> placeableClass, FVector TileKey, FRotator CameraRotator)
 {
 	//Place the item in the World
 	APlaceableObject* defaultPlaceableObject = Cast<APlaceableObject>(placeableClass->GetDefaultObject());
@@ -204,7 +204,7 @@ void AAutomafarmCharacter::PlaceHeldItem(TSubclassOf<APlaceableObject> placeable
 			newPO = myGameState->InstancedObjectMap[placeableClass];
 			break;
 		case ETileType::INTERACTABLEBLOCK:
-			newPO = myGameState->AddInteractableBlock(placeableClass, TileKey);
+			newPO = myGameState->AddInteractableBlock(placeableClass, TileKey, CameraRotator);
 			break;
 		case ETileType::PIVOTPAPER:
 			newPO = myGameState->AddPivotPaper(placeableClass, TileKey, GetFirstPersonCameraComponent()->GetComponentLocation());

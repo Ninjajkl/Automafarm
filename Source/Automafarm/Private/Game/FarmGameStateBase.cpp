@@ -80,10 +80,16 @@ APivotPaper* AFarmGameStateBase::AddPivotPaper(TSubclassOf<APlaceableObject> Piv
 	return newPivotPaper;
 }
 
-AInteractableBlock* AFarmGameStateBase::AddInteractableBlock(TSubclassOf<APlaceableObject> BlockClass, FVector GridLocation)
+AInteractableBlock* AFarmGameStateBase::AddInteractableBlock(TSubclassOf<APlaceableObject> BlockClass, FVector GridLocation, FRotator CameraRotator)
 {
-	AInteractableBlock* newIB = GetWorld()->SpawnActor<AInteractableBlock>(BlockClass, FTransform(GridLocation * UGC::TileLength));
+	FRotator DesiredRotation = FRotator(0.0f, CameraRotator.Yaw+90, 0.0f); // Assuming you only care about yaw
+
+	// Round the rotation values to the nearest 90 degrees
+	DesiredRotation.Yaw = FMath::RoundHalfFromZero(DesiredRotation.Yaw / 90.0f) * 90.0f;
+
+	AInteractableBlock* newIB = GetWorld()->SpawnActor<AInteractableBlock>(BlockClass, UGC::GridToWorldPosition(GridLocation), DesiredRotation);
 	newIB->GridLocation = GridLocation;
+
 	return newIB;
 }
 
@@ -203,6 +209,7 @@ FSerializedInteractableBlock AFarmGameStateBase::SerializeInteractableBlock(AInt
 	SerializedInteractableBlock.Name = InteractableBlock->Name;
 	SerializedInteractableBlock.SerializedInventory = SerializeInventory(InteractableBlock->Inventory);
 	SerializedInteractableBlock.GridLocation = InteractableBlock->GridLocation;
+	SerializedInteractableBlock.Rotation = InteractableBlock->GetActorRotation();
 
 	return SerializedInteractableBlock;
 }
@@ -315,7 +322,7 @@ void AFarmGameStateBase::LoadCrops(TArray<FSerializedCrop> SerializedCrops)
 void AFarmGameStateBase::LoadInteractableBlocks(TArray<FSerializedInteractableBlock> SerializedInteractableBlocks)
 {
 	for (const FSerializedInteractableBlock& SerializedInteractableBlock : SerializedInteractableBlocks) {
-		AInteractableBlock* InteractableBlock = GetWorld()->SpawnActor<AInteractableBlock>(SerializedInteractableBlock.Class, FTransform(SerializedInteractableBlock.GridLocation * UGC::TileLength));
+		AInteractableBlock* InteractableBlock = GetWorld()->SpawnActor<AInteractableBlock>(SerializedInteractableBlock.Class, UGC::GridToWorldPosition(SerializedInteractableBlock.GridLocation), SerializedInteractableBlock.Rotation);
 		InteractableBlock->Name = SerializedInteractableBlock.Name;
 		InteractableBlock->GridLocation = SerializedInteractableBlock.GridLocation;
 		InteractableBlock->Inventory->NumRows = SerializedInteractableBlock.SerializedInventory.NumRows;

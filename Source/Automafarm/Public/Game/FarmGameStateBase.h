@@ -49,7 +49,7 @@ public:
 	void InitializeInstanceableObject(TSubclassOf<APlaceableObject> BlockClass);
 	void AddBlockInstance(TSubclassOf<APlaceableObject> BlockClass, FVector GridLocation);
 	APivotPaper* AddPivotPaper(TSubclassOf<APlaceableObject> PivotClass, FVector GridLocation, FVector PlayerLocation);
-	AInteractableBlock* AddInteractableBlock(TSubclassOf<APlaceableObject> BlockClass, FVector GridLocation);
+	AInteractableBlock* AddInteractableBlock(TSubclassOf<APlaceableObject> BlockClass, FVector GridLocation, FRotator CameraRotator);
 	void AddToLevelMap(APlaceableObject* TileReference, TArray<FVector> TilesToFill, FVector TileKey, ETileType TileType);
 
 	//Saving System Prperties and Functions

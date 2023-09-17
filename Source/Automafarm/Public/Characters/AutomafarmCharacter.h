@@ -73,7 +73,7 @@ public:
 		bool ValidPlacement(TSubclassOf<APlaceableObject> placeableClass, FVector TileKey);
 
 	UFUNCTION(BlueprintCallable, Category = Placement)
-		void PlaceHeldItem(TSubclassOf<APlaceableObject> placeableClass, FVector TileKey);
+		void PlaceHeldItem(TSubclassOf<APlaceableObject> placeableClass, FVector TileKey, FRotator CameraRotator);
 
 	UFUNCTION(BlueprintCallable, Category = Placement)
 		TArray<FVector> RotateByYaw(TArray<FVector> Positions, FVector ForwardVector);
