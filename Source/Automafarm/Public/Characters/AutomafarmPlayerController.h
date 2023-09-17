@@ -3,13 +3,14 @@
 #pragma once
 
 //Custom Classes
-#include "UI/PlayerHud.h"
 //Other Classes
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerController.h"
 #include "InputActionValue.h"
 //Generated File
 #include "AutomafarmPlayerController.generated.h"
+
+class UPlayerHud;
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FKFOnHotbarSlotChanged, int, CurrHotbarSlot);
 
@@ -24,6 +25,8 @@ public:
 
 	UPROPERTY(BlueprintAssignable)
 		FKFOnHotbarSlotChanged OnHotbarSlotChanged;
+	UPROPERTY()
+		bool InMenu = false;
 
 protected:
 	virtual void BeginPlay();

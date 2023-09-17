@@ -1107,6 +1107,11 @@ void FKFOnHotbarSlotChanged_DelegateWrapper(const FMulticastScriptDelegate& KFOn
 #endif
 		static const UECodeGen_Private::FMulticastDelegatePropertyParams NewProp_OnHotbarSlotChanged;
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_InMenu_MetaData[];
+#endif
+		static void NewProp_InMenu_SetBit(void* Obj);
+		static const UECodeGen_Private::FBoolPropertyParams NewProp_InMenu;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_DefaultMappingContext_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_DefaultMappingContext;
@@ -1244,6 +1249,16 @@ void FKFOnHotbarSlotChanged_DelegateWrapper(const FMulticastScriptDelegate& KFOn
 	};
 #endif
 	const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_AAutomafarmPlayerController_Statics::NewProp_OnHotbarSlotChanged = { "OnHotbarSlotChanged", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAutomafarmPlayerController, OnHotbarSlotChanged), Z_Construct_UDelegateFunction_Automafarm_KFOnHotbarSlotChanged__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AAutomafarmPlayerController_Statics::NewProp_OnHotbarSlotChanged_MetaData), Z_Construct_UClass_AAutomafarmPlayerController_Statics::NewProp_OnHotbarSlotChanged_MetaData) }; // 146767424
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAutomafarmPlayerController_Statics::NewProp_InMenu_MetaData[] = {
+		{ "ModuleRelativePath", "Public/Characters/AutomafarmPlayerController.h" },
+	};
+#endif
+	void Z_Construct_UClass_AAutomafarmPlayerController_Statics::NewProp_InMenu_SetBit(void* Obj)
+	{
+		((AAutomafarmPlayerController*)Obj)->InMenu = 1;
+	}
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AAutomafarmPlayerController_Statics::NewProp_InMenu = { "InMenu", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(AAutomafarmPlayerController), &Z_Construct_UClass_AAutomafarmPlayerController_Statics::NewProp_InMenu_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AAutomafarmPlayerController_Statics::NewProp_InMenu_MetaData), Z_Construct_UClass_AAutomafarmPlayerController_Statics::NewProp_InMenu_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAutomafarmPlayerController_Statics::NewProp_DefaultMappingContext_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
@@ -1491,6 +1506,7 @@ void FKFOnHotbarSlotChanged_DelegateWrapper(const FMulticastScriptDelegate& KFOn
 	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AAutomafarmPlayerController_Statics::NewProp_FlipHotbarScrollDirection = { "FlipHotbarScrollDirection", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(AAutomafarmPlayerController), &Z_Construct_UClass_AAutomafarmPlayerController_Statics::NewProp_FlipHotbarScrollDirection_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AAutomafarmPlayerController_Statics::NewProp_FlipHotbarScrollDirection_MetaData), Z_Construct_UClass_AAutomafarmPlayerController_Statics::NewProp_FlipHotbarScrollDirection_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AAutomafarmPlayerController_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAutomafarmPlayerController_Statics::NewProp_OnHotbarSlotChanged,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAutomafarmPlayerController_Statics::NewProp_InMenu,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAutomafarmPlayerController_Statics::NewProp_DefaultMappingContext,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAutomafarmPlayerController_Statics::NewProp_JumpAction,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAutomafarmPlayerController_Statics::NewProp_MoveAction,
@@ -1553,9 +1569,9 @@ void FKFOnHotbarSlotChanged_DelegateWrapper(const FMulticastScriptDelegate& KFOn
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Characters_AutomafarmPlayerController_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AAutomafarmPlayerController, AAutomafarmPlayerController::StaticClass, TEXT("AAutomafarmPlayerController"), &Z_Registration_Info_UClass_AAutomafarmPlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAutomafarmPlayerController), 3737255442U) },
+		{ Z_Construct_UClass_AAutomafarmPlayerController, AAutomafarmPlayerController::StaticClass, TEXT("AAutomafarmPlayerController"), &Z_Registration_Info_UClass_AAutomafarmPlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAutomafarmPlayerController), 881731524U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Characters_AutomafarmPlayerController_h_2179426292(TEXT("/Script/Automafarm"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Characters_AutomafarmPlayerController_h_3794303398(TEXT("/Script/Automafarm"),
 		Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Characters_AutomafarmPlayerController_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Characters_AutomafarmPlayerController_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

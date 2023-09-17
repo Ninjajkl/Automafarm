@@ -3,6 +3,7 @@
 #pragma once
 
 //Custom Classes
+#include "../Characters/AutomafarmPlayerController.h"
 #include "Items/InteractableBlock.h"
 #include "UI/PlayerInventory.h"
 #include "UI/ContainerInventory.h"
@@ -25,9 +26,12 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Inventory")
 		void Init(UInventory* InInventory);
 
+	AAutomafarmPlayerController* PlayerController;
 protected:
 
 public:
+	virtual void NativeConstruct() override;
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Inventory")
 		TSubclassOf<UPlayerInventory> PlayerInventoryClass;
 
@@ -47,4 +51,6 @@ public:
 		void DisplayPlayerInventory();
 	UFUNCTION(BlueprintCallable, Category = "Inventory")
 		void ShowContainer(AInteractableBlock* Container);
+	UFUNCTION(BlueprintCallable, Category = "Inventory")
+		void ExitMenu();
 };

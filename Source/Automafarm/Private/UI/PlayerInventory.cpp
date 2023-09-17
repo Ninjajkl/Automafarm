@@ -25,9 +25,9 @@ void UPlayerInventory::NativePreConstruct()
 void UPlayerInventory::NativeConstruct()
 {
 	APlayerController* playerController = UGameplayStatics::GetPlayerController(GetWorld(), 0);
-	UWidgetBlueprintLibrary::SetInputMode_UIOnlyEx(
+	UWidgetBlueprintLibrary::SetInputMode_GameAndUIEx(
 		playerController,
-		InventoryGrid,
+		this,
 		EMouseLockMode::DoNotLock,
 		false);
 	playerController->SetShowMouseCursor(true);
@@ -41,14 +41,4 @@ void UPlayerInventory::NativeDestruct()
 		UWidgetBlueprintLibrary::SetInputMode_GameOnly(playerController, false);
 		playerController->SetShowMouseCursor(false);
 	}
-}
-
-FReply UPlayerInventory::NativeOnKeyDown(const FGeometry& InGeometry, const FKeyEvent& InKeyEvent)
-{
-	if(InKeyEvent.GetKey() == FKey(EKeys::I))
-	{
-		RemoveFromParent();
-		return FReply::Handled();
-	}
-	return FReply::Handled();
 }

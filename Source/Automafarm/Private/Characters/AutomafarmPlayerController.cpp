@@ -7,6 +7,7 @@
 #include "Items/Crop.h"
 #include "Library/SerializableStructs.h"
 #include "Systems/SaveFarmLevel.h"
+#include "UI/PlayerHud.h"
 //Other Classes
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
@@ -36,6 +37,8 @@ void AAutomafarmPlayerController::BeginPlay()
 		PlayerHud->Init(AutomafarmCharacter->PlayerInventory);
 		PlayerHud->AddToViewport();
 	}
+
+	InMenu = false;
 }
 
 //////////////////////////////////////////////////////////////////////////// Input
@@ -89,7 +92,7 @@ void AAutomafarmPlayerController::SetupInputComponent()
 void AAutomafarmPlayerController::Jump(const FInputActionValue& Value)
 {
 	AAutomafarmCharacter* MyCharacter = Cast<AAutomafarmCharacter>(GetPawn());
-	if (!MyCharacter)
+	if (!MyCharacter || InMenu)
 	{
 		return;
 	}
@@ -100,7 +103,7 @@ void AAutomafarmPlayerController::Jump(const FInputActionValue& Value)
 void AAutomafarmPlayerController::StopJumping(const FInputActionValue& Value)
 {
 	AAutomafarmCharacter* MyCharacter = Cast<AAutomafarmCharacter>(GetPawn());
-	if (!MyCharacter)
+	if (!MyCharacter || InMenu)
 	{
 		return;
 	}
@@ -111,7 +114,7 @@ void AAutomafarmPlayerController::StopJumping(const FInputActionValue& Value)
 void AAutomafarmPlayerController::Move(const FInputActionValue& Value)
 {
 	AAutomafarmCharacter* MyCharacter = Cast<AAutomafarmCharacter>(GetPawn());
-	if (!MyCharacter)
+	if (!MyCharacter || InMenu)
 	{
 		return;
 	}
@@ -122,7 +125,7 @@ void AAutomafarmPlayerController::Move(const FInputActionValue& Value)
 void AAutomafarmPlayerController::Look(const FInputActionValue& Value)
 {
 	AAutomafarmCharacter* MyCharacter = Cast<AAutomafarmCharacter>(GetPawn());
-	if (!MyCharacter)
+	if (!MyCharacter || InMenu)
 	{
 		return;
 	}
@@ -133,7 +136,7 @@ void AAutomafarmPlayerController::Look(const FInputActionValue& Value)
 void AAutomafarmPlayerController::Interact(const FInputActionValue& Value)
 {
 	AAutomafarmCharacter* MyCharacter = Cast<AAutomafarmCharacter>(GetPawn());
-	if (!MyCharacter)
+	if (!MyCharacter || InMenu)
 	{
 		return;
 	}
@@ -144,7 +147,7 @@ void AAutomafarmPlayerController::Interact(const FInputActionValue& Value)
 void AAutomafarmPlayerController::Dismantle(const FInputActionValue& Value)
 {
 	AAutomafarmCharacter* MyCharacter = Cast<AAutomafarmCharacter>(GetPawn());
-	if (!MyCharacter)
+	if (!MyCharacter || InMenu)
 	{
 		return;
 	}
@@ -155,7 +158,11 @@ void AAutomafarmPlayerController::Dismantle(const FInputActionValue& Value)
 
 void AAutomafarmPlayerController::Inventory(const FInputActionValue& Value)
 {
-	if(PlayerHud)
+	if(InMenu)
+	{
+		PlayerHud->ExitMenu();
+	}
+	else if(PlayerHud)
 	{
 		PlayerHud->DisplayPlayerInventory();
 	}
