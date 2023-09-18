@@ -27,6 +27,9 @@ AInteractableBlock::AInteractableBlock()
 void AInteractableBlock::BeginPlay()
 {
 	Super::BeginPlay();
+	//By default, every Interactable block can be Broken and Placed
+	Placeable = true;
+	Renamable = true;
 	ItemStruct = FarmGameState->GetItemStructFromClass(GetClass());
 }
 
@@ -45,6 +48,10 @@ void AInteractableBlock::Interact_Implementation()
 
 void AInteractableBlock::Dismantle(UInventory* breakingInventory)
 {
+	if(!Placeable)
+	{
+		return;
+	}
 	if(RemoveFromGrid())
 	{
 		breakingInventory->AddItemArrayToInventory(Inventory->ConvertInventoryToArray(Inventory));

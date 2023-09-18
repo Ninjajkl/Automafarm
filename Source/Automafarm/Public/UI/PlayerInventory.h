@@ -7,6 +7,7 @@
 //Other Classes
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
+#include "Components/TextBlock.h"
 //Generated File
 #include "PlayerInventory.generated.h"
 

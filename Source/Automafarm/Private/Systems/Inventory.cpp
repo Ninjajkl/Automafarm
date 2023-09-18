@@ -26,7 +26,6 @@ void UInventory::OnRegister()
 void UInventory::BeginPlay()
 {
 	Super::BeginPlay();
-	
 }
 
 // Called every frame
@@ -114,6 +113,55 @@ void UInventory::AddItemArrayToInventory(TArray<FSlotStruct> itemArray)
 	{
 		AddItemToInventoryBySlot(item);
 	}
+}
+
+FSlotStruct UInventory::GetRandomItem()
+{
+	TArray<FItemStruct*> ItemTableRows;
+	ItemDataTable->GetAllRows<FItemStruct>("ContextString", ItemTableRows);
+	int32 RandomIndex = FMath::RandRange(0, ItemTableRows.Num() - 1);
+
+	FSlotStruct NewSlot;
+	FDataTableRowHandle newRowHandle;
+	newRowHandle.DataTable = ItemDataTable;
+	newRowHandle.RowName = (*ItemTableRows[RandomIndex]).Name;
+	NewSlot.ItemID = newRowHandle;
+	NewSlot.Quantity = 1;
+	return NewSlot;
+}
+
+TArray<FSlotStruct> UInventory::GetRandomItems(int amount)
+{
+	TArray<FSlotStruct> RandomItems;
+	TArray<FItemStruct*> ItemTableRows;
+	ItemDataTable->GetAllRows<FItemStruct>("ContextString", ItemTableRows);
+
+	for (int32 i = 0; i < ItemTableRows.Num(); ++i)
+	{
+		// Create a new SlotStruct.
+		FSlotStruct NewSlot;
+		FDataTableRowHandle newRowHandle;
+		newRowHandle.DataTable = ItemDataTable;
+		newRowHandle.RowName = (*ItemTableRows[i]).Name;
+		NewSlot.ItemID = newRowHandle;
+		// Initialize the quantity to 0 initially.
+		NewSlot.Quantity = 0;
+		// Add the new SlotStruct to the list.
+		RandomItems.Add(NewSlot);
+	}
+
+	int32 RemainingAmount = amount;
+	while (RemainingAmount > 0)
+	{
+		int32 RandomQuantity = FMath::RandRange(1, RemainingAmount);
+		int32 RandomIndex = FMath::RandRange(0, ItemTableRows.Num()-1);
+		// Add the random quantity to a slot in RandomItems.
+		RandomItems[RandomIndex].Quantity += RandomQuantity;
+
+		// Reduce the remaining amount by the quantity added.
+		RemainingAmount -= RandomQuantity;
+	}
+	return RandomItems;
 }
 
 int UInventory::IncreaseSlotByAmount(int slotNum, UInventory* Inventory, int amount)

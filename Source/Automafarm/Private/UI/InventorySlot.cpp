@@ -2,7 +2,6 @@
 
 //Header for this Class
 #include "UI/InventorySlot.h"
-#include "UI/DragDropInventorySlot.h"
 //Custom Classes
 #include "Library/Structs.h"
 #include "UI/DragDropInventorySlot.h"

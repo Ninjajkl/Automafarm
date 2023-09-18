@@ -44,6 +44,8 @@ public:
 		TMap<int,FSlotStruct> Content;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Inventory")
 		UDataTable* ItemDataTable = nullptr;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		int32 Currency = 0;
 
 	UFUNCTION(BlueprintCallable, Category = "Inventory")
 		void EmptySlot(int slotNum);
@@ -55,6 +57,10 @@ public:
 		void AddItemToInventoryBySlot(FSlotStruct itemSlot);
 	UFUNCTION(BlueprintCallable, Category = "Inventory")
 		void AddItemArrayToInventory(TArray<FSlotStruct> itemArray);
+	UFUNCTION(BlueprintCallable, Category = "Inventory")
+		FSlotStruct GetRandomItem();
+	UFUNCTION(BlueprintCallable, Category = "Inventory")
+		TArray<FSlotStruct> GetRandomItems(int amount);
 	UFUNCTION(BlueprintCallable, Category = "Inventory")
 		static int IncreaseSlotByAmount(int slotNum, UInventory* Inventory, int amount);
 	UFUNCTION(BlueprintCallable, Category = "Inventory")

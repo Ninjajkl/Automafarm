@@ -29,6 +29,8 @@ AUTOMAFARM_API void FKFOnInventoryUpdated_DelegateWrapper(const FMulticastScript
 	DECLARE_FUNCTION(execConvertInventoryToArray); \
 	DECLARE_FUNCTION(execTransferSlots); \
 	DECLARE_FUNCTION(execIncreaseSlotByAmount); \
+	DECLARE_FUNCTION(execGetRandomItems); \
+	DECLARE_FUNCTION(execGetRandomItem); \
 	DECLARE_FUNCTION(execAddItemArrayToInventory); \
 	DECLARE_FUNCTION(execAddItemToInventoryBySlot); \
 	DECLARE_FUNCTION(execAddItemToInventory); \

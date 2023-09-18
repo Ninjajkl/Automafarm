@@ -100,6 +100,21 @@ void FKFOnInventoryUpdated_DelegateWrapper(const FMulticastScriptDelegate& KFOnI
 		*(int32*)Z_Param__Result=UInventory::IncreaseSlotByAmount(Z_Param_slotNum,Z_Param_Inventory,Z_Param_amount);
 		P_NATIVE_END;
 	}
+	DEFINE_FUNCTION(UInventory::execGetRandomItems)
+	{
+		P_GET_PROPERTY(FIntProperty,Z_Param_amount);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(TArray<FSlotStruct>*)Z_Param__Result=P_THIS->GetRandomItems(Z_Param_amount);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(UInventory::execGetRandomItem)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(FSlotStruct*)Z_Param__Result=P_THIS->GetRandomItem();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(UInventory::execAddItemArrayToInventory)
 	{
 		P_GET_TARRAY(FSlotStruct,Z_Param_itemArray);
@@ -151,6 +166,8 @@ void FKFOnInventoryUpdated_DelegateWrapper(const FMulticastScriptDelegate& KFOnI
 			{ "AddItemToInventoryBySlot", &UInventory::execAddItemToInventoryBySlot },
 			{ "ConvertInventoryToArray", &UInventory::execConvertInventoryToArray },
 			{ "EmptySlot", &UInventory::execEmptySlot },
+			{ "GetRandomItem", &UInventory::execGetRandomItem },
+			{ "GetRandomItems", &UInventory::execGetRandomItems },
 			{ "IncreaseSlotByAmount", &UInventory::execIncreaseSlotByAmount },
 			{ "ReduceSlotByAmount", &UInventory::execReduceSlotByAmount },
 			{ "TransferSlots", &UInventory::execTransferSlots },
@@ -354,6 +371,83 @@ void FKFOnInventoryUpdated_DelegateWrapper(const FMulticastScriptDelegate& KFOnI
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_UInventory_GetRandomItem_Statics
+	{
+		struct Inventory_eventGetRandomItem_Parms
+		{
+			FSlotStruct ReturnValue;
+		};
+		static const UECodeGen_Private::FStructPropertyParams NewProp_ReturnValue;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UInventory_GetRandomItem_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Inventory_eventGetRandomItem_Parms, ReturnValue), Z_Construct_UScriptStruct_FSlotStruct, METADATA_PARAMS(0, nullptr) }; // 3392258304
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UInventory_GetRandomItem_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UInventory_GetRandomItem_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UInventory_GetRandomItem_Statics::Function_MetaDataParams[] = {
+		{ "Category", "Inventory" },
+		{ "ModuleRelativePath", "Public/Systems/Inventory.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UInventory_GetRandomItem_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UInventory, nullptr, "GetRandomItem", nullptr, nullptr, Z_Construct_UFunction_UInventory_GetRandomItem_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UInventory_GetRandomItem_Statics::PropPointers), sizeof(Z_Construct_UFunction_UInventory_GetRandomItem_Statics::Inventory_eventGetRandomItem_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UInventory_GetRandomItem_Statics::Function_MetaDataParams), Z_Construct_UFunction_UInventory_GetRandomItem_Statics::Function_MetaDataParams) };
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UInventory_GetRandomItem_Statics::PropPointers) < 2048);
+	static_assert(sizeof(Z_Construct_UFunction_UInventory_GetRandomItem_Statics::Inventory_eventGetRandomItem_Parms) < MAX_uint16);
+	UFunction* Z_Construct_UFunction_UInventory_GetRandomItem()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UInventory_GetRandomItem_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UInventory_GetRandomItems_Statics
+	{
+		struct Inventory_eventGetRandomItems_Parms
+		{
+			int32 amount;
+			TArray<FSlotStruct> ReturnValue;
+		};
+		static const UECodeGen_Private::FIntPropertyParams NewProp_amount;
+		static const UECodeGen_Private::FStructPropertyParams NewProp_ReturnValue_Inner;
+		static const UECodeGen_Private::FArrayPropertyParams NewProp_ReturnValue;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UInventory_GetRandomItems_Statics::NewProp_amount = { "amount", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Inventory_eventGetRandomItems_Parms, amount), METADATA_PARAMS(0, nullptr) };
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UInventory_GetRandomItems_Statics::NewProp_ReturnValue_Inner = { "ReturnValue", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FSlotStruct, METADATA_PARAMS(0, nullptr) }; // 3392258304
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_UInventory_GetRandomItems_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Inventory_eventGetRandomItems_Parms, ReturnValue), EArrayPropertyFlags::None, METADATA_PARAMS(0, nullptr) }; // 3392258304
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UInventory_GetRandomItems_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UInventory_GetRandomItems_Statics::NewProp_amount,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UInventory_GetRandomItems_Statics::NewProp_ReturnValue_Inner,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UInventory_GetRandomItems_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UInventory_GetRandomItems_Statics::Function_MetaDataParams[] = {
+		{ "Category", "Inventory" },
+		{ "ModuleRelativePath", "Public/Systems/Inventory.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UInventory_GetRandomItems_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UInventory, nullptr, "GetRandomItems", nullptr, nullptr, Z_Construct_UFunction_UInventory_GetRandomItems_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UInventory_GetRandomItems_Statics::PropPointers), sizeof(Z_Construct_UFunction_UInventory_GetRandomItems_Statics::Inventory_eventGetRandomItems_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UInventory_GetRandomItems_Statics::Function_MetaDataParams), Z_Construct_UFunction_UInventory_GetRandomItems_Statics::Function_MetaDataParams) };
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UInventory_GetRandomItems_Statics::PropPointers) < 2048);
+	static_assert(sizeof(Z_Construct_UFunction_UInventory_GetRandomItems_Statics::Inventory_eventGetRandomItems_Parms) < MAX_uint16);
+	UFunction* Z_Construct_UFunction_UInventory_GetRandomItems()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UInventory_GetRandomItems_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	struct Z_Construct_UFunction_UInventory_IncreaseSlotByAmount_Statics
 	{
 		struct Inventory_eventIncreaseSlotByAmount_Parms
@@ -554,6 +648,10 @@ void FKFOnInventoryUpdated_DelegateWrapper(const FMulticastScriptDelegate& KFOnI
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_ItemDataTable_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_ItemDataTable;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Currency_MetaData[];
+#endif
+		static const UECodeGen_Private::FIntPropertyParams NewProp_Currency;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -569,6 +667,8 @@ void FKFOnInventoryUpdated_DelegateWrapper(const FMulticastScriptDelegate& KFOnI
 		{ &Z_Construct_UFunction_UInventory_AddItemToInventoryBySlot, "AddItemToInventoryBySlot" }, // 1480647045
 		{ &Z_Construct_UFunction_UInventory_ConvertInventoryToArray, "ConvertInventoryToArray" }, // 2853085954
 		{ &Z_Construct_UFunction_UInventory_EmptySlot, "EmptySlot" }, // 1754113738
+		{ &Z_Construct_UFunction_UInventory_GetRandomItem, "GetRandomItem" }, // 4036426556
+		{ &Z_Construct_UFunction_UInventory_GetRandomItems, "GetRandomItems" }, // 1866367580
 		{ &Z_Construct_UFunction_UInventory_IncreaseSlotByAmount, "IncreaseSlotByAmount" }, // 450269668
 		{ &Z_Construct_UFunction_UInventory_ReduceSlotByAmount, "ReduceSlotByAmount" }, // 1890114649
 		{ &Z_Construct_UFunction_UInventory_TransferSlots, "TransferSlots" }, // 44560670
@@ -624,6 +724,13 @@ void FKFOnInventoryUpdated_DelegateWrapper(const FMulticastScriptDelegate& KFOnI
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UInventory_Statics::NewProp_ItemDataTable = { "ItemDataTable", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UInventory, ItemDataTable), Z_Construct_UClass_UDataTable_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UInventory_Statics::NewProp_ItemDataTable_MetaData), Z_Construct_UClass_UInventory_Statics::NewProp_ItemDataTable_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UInventory_Statics::NewProp_Currency_MetaData[] = {
+		{ "Category", "Inventory" },
+		{ "ModuleRelativePath", "Public/Systems/Inventory.h" },
+	};
+#endif
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UInventory_Statics::NewProp_Currency = { "Currency", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UInventory, Currency), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UInventory_Statics::NewProp_Currency_MetaData), Z_Construct_UClass_UInventory_Statics::NewProp_Currency_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UInventory_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UInventory_Statics::NewProp_OnInventoryUpdated,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UInventory_Statics::NewProp_NumRows,
@@ -632,6 +739,7 @@ void FKFOnInventoryUpdated_DelegateWrapper(const FMulticastScriptDelegate& KFOnI
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UInventory_Statics::NewProp_Content_Key_KeyProp,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UInventory_Statics::NewProp_Content,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UInventory_Statics::NewProp_ItemDataTable,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UInventory_Statics::NewProp_Currency,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_UInventory_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<UInventory>::IsAbstract,
@@ -671,9 +779,9 @@ void FKFOnInventoryUpdated_DelegateWrapper(const FMulticastScriptDelegate& KFOnI
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Systems_Inventory_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UInventory, UInventory::StaticClass, TEXT("UInventory"), &Z_Registration_Info_UClass_UInventory, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UInventory), 2877031338U) },
+		{ Z_Construct_UClass_UInventory, UInventory::StaticClass, TEXT("UInventory"), &Z_Registration_Info_UClass_UInventory, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UInventory), 1870225965U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Systems_Inventory_h_3299474128(TEXT("/Script/Automafarm"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Systems_Inventory_h_475405697(TEXT("/Script/Automafarm"),
 		Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Systems_Inventory_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Systems_Inventory_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

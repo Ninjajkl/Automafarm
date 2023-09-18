@@ -243,6 +243,7 @@ FSerializedInventory AFarmGameStateBase::SerializeInventory(UInventory* Inventor
 	SerializedInventory.NumRows = Inventory->NumRows;
 	SerializedInventory.NumCols = Inventory->NumCols;
 	SerializedInventory.Content = Inventory->Content;
+	SerializedInventory.Currency = Inventory->Currency;
 	return SerializedInventory;
 }
 
@@ -325,9 +326,7 @@ void AFarmGameStateBase::LoadInteractableBlocks(TArray<FSerializedInteractableBl
 		AInteractableBlock* InteractableBlock = GetWorld()->SpawnActor<AInteractableBlock>(SerializedInteractableBlock.Class, UGC::GridToWorldPosition(SerializedInteractableBlock.GridLocation), SerializedInteractableBlock.Rotation);
 		InteractableBlock->Name = SerializedInteractableBlock.Name;
 		InteractableBlock->GridLocation = SerializedInteractableBlock.GridLocation;
-		InteractableBlock->Inventory->NumRows = SerializedInteractableBlock.SerializedInventory.NumRows;
-		InteractableBlock->Inventory->NumCols = SerializedInteractableBlock.SerializedInventory.NumCols;
-		InteractableBlock->Inventory->Content = SerializedInteractableBlock.SerializedInventory.Content;
+		InteractableBlock->Inventory = LoadInventory(SerializedInteractableBlock.SerializedInventory);
 		AddToLevelMap(InteractableBlock, InteractableBlock->TilesToFill, InteractableBlock->GridLocation, ETileType::INTERACTABLEBLOCK);
 	}
 }
@@ -346,7 +345,15 @@ void AFarmGameStateBase::LoadPlayerController(FSerializedPlayerController Serial
 void AFarmGameStateBase::LoadPlayerCharacter(FSerializedPlayerCharacter SerializedPlayerCharacter, AAutomafarmCharacter* PlayerCharacter)
 {
 	PlayerCharacter->SetActorTransform(SerializedPlayerCharacter.Transform);
-	PlayerCharacter->PlayerInventory->NumRows = SerializedPlayerCharacter.SerializedInventory.NumRows;
-	PlayerCharacter->PlayerInventory->NumCols = SerializedPlayerCharacter.SerializedInventory.NumCols;
-	PlayerCharacter->PlayerInventory->Content = SerializedPlayerCharacter.SerializedInventory.Content;
+	PlayerCharacter->PlayerInventory = LoadInventory(SerializedPlayerCharacter.SerializedInventory);
+}
+
+UInventory* AFarmGameStateBase::LoadInventory(FSerializedInventory SerializedInventory)
+{
+	UInventory* loadedInventory = NewObject<UInventory>();
+	loadedInventory->NumRows = SerializedInventory.NumRows;
+	loadedInventory->NumCols = SerializedInventory.NumCols;
+	loadedInventory->Content = SerializedInventory.Content;
+	loadedInventory->Currency = SerializedInventory.Currency;
+	return loadedInventory;
 }

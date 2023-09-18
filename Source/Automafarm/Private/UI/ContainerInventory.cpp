@@ -25,6 +25,7 @@ void UContainerInventory::Init(UInventory* InInventory, AInteractableBlock* InCo
 		ContainerNameTextBox->OnTextChanged.AddDynamic(this, &UContainerInventory::OnCNameTextChanged);
 		ContainerNameTextBox->OnTextCommitted.AddDynamic(this, &UContainerInventory::OnCNameTextCommitted);
 		ContainerNameTextBox->SetText(Container->Name);
+		ContainerNameTextBox->SetIsReadOnly(!Container->Renamable);
 	}
 }
 
@@ -36,7 +37,7 @@ void UContainerInventory::NativeConstruct()
 		playerController,
 		this,
 		EMouseLockMode::DoNotLock,
-		true);
+		false);
 	playerController->SetShowMouseCursor(true);
 }
 

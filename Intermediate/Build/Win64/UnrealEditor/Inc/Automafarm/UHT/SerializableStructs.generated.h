@@ -43,28 +43,28 @@ template<> AUTOMAFARM_API UScriptStruct* StaticStruct<struct FSerializedCrop>();
 
 template<> AUTOMAFARM_API UScriptStruct* StaticStruct<struct FSerializedInventory>();
 
-#define FID_Projects_Automafarm_Source_Automafarm_Public_Library_SerializableStructs_h_75_GENERATED_BODY \
+#define FID_Projects_Automafarm_Source_Automafarm_Public_Library_SerializableStructs_h_77_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FSerializedInteractableBlock_Statics; \
 	AUTOMAFARM_API static class UScriptStruct* StaticStruct();
 
 
 template<> AUTOMAFARM_API UScriptStruct* StaticStruct<struct FSerializedInteractableBlock>();
 
-#define FID_Projects_Automafarm_Source_Automafarm_Public_Library_SerializableStructs_h_92_GENERATED_BODY \
+#define FID_Projects_Automafarm_Source_Automafarm_Public_Library_SerializableStructs_h_94_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FSerializedTimeSystem_Statics; \
 	AUTOMAFARM_API static class UScriptStruct* StaticStruct();
 
 
 template<> AUTOMAFARM_API UScriptStruct* StaticStruct<struct FSerializedTimeSystem>();
 
-#define FID_Projects_Automafarm_Source_Automafarm_Public_Library_SerializableStructs_h_103_GENERATED_BODY \
+#define FID_Projects_Automafarm_Source_Automafarm_Public_Library_SerializableStructs_h_105_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FSerializedPlayerCharacter_Statics; \
 	AUTOMAFARM_API static class UScriptStruct* StaticStruct();
 
 
 template<> AUTOMAFARM_API UScriptStruct* StaticStruct<struct FSerializedPlayerCharacter>();
 
-#define FID_Projects_Automafarm_Source_Automafarm_Public_Library_SerializableStructs_h_114_GENERATED_BODY \
+#define FID_Projects_Automafarm_Source_Automafarm_Public_Library_SerializableStructs_h_116_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FSerializedPlayerController_Statics; \
 	AUTOMAFARM_API static class UScriptStruct* StaticStruct();
 

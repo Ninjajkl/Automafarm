@@ -20,6 +20,7 @@ void UPlayerInventory::NativePreConstruct()
 	if (pChar) {
 		InventoryGrid->RefreshInventory(pChar->PlayerInventory);
 	}
+
 }
 
 void UPlayerInventory::NativeConstruct()

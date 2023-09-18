@@ -19,6 +19,7 @@ void EmptyLinkFunctionForGeneratedCodeFarmGameStateBase() {}
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FTimespan();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	ENGINE_API UClass* Z_Construct_UClass_AGameStateBase();
+	ENGINE_API UClass* Z_Construct_UClass_UDataTable_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_Automafarm();
 // End Cross Module References
 	struct Z_Construct_UDelegateFunction_Automafarm_KFOnHourPassed__DelegateSignature_Statics
@@ -96,6 +97,10 @@ void FKFOnHourPassed_DelegateWrapper(const FMulticastScriptDelegate& KFOnHourPas
 #endif
 		static const UECodeGen_Private::FMapPropertyParams NewProp_InstancedObjectMap;
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_ItemDataTable_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_ItemDataTable;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_GameTimeSpan_MetaData[];
 #endif
 		static const UECodeGen_Private::FStructPropertyParams NewProp_GameTimeSpan;
@@ -159,6 +164,13 @@ void FKFOnHourPassed_DelegateWrapper(const FMulticastScriptDelegate& KFOnHourPas
 #endif
 	const UECodeGen_Private::FMapPropertyParams Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_InstancedObjectMap = { "InstancedObjectMap", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AFarmGameStateBase, InstancedObjectMap), EMapPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_InstancedObjectMap_MetaData), Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_InstancedObjectMap_MetaData) };
 #if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_ItemDataTable_MetaData[] = {
+		{ "Category", "Terrain" },
+		{ "ModuleRelativePath", "Public/Game/FarmGameStateBase.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_ItemDataTable = { "ItemDataTable", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AFarmGameStateBase, ItemDataTable), Z_Construct_UClass_UDataTable_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_ItemDataTable_MetaData), Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_ItemDataTable_MetaData) };
+#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_GameTimeSpan_MetaData[] = {
 		{ "Category", "TimeSystem" },
 #if !UE_BUILD_SHIPPING
@@ -200,6 +212,7 @@ void FKFOnHourPassed_DelegateWrapper(const FMulticastScriptDelegate& KFOnHourPas
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_InstancedObjectMap_ValueProp,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_InstancedObjectMap_Key_KeyProp,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_InstancedObjectMap,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_ItemDataTable,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_GameTimeSpan,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_TimeMultiplier,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFarmGameStateBase_Statics::NewProp_StartingHour,
@@ -243,9 +256,9 @@ void FKFOnHourPassed_DelegateWrapper(const FMulticastScriptDelegate& KFOnHourPas
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Game_FarmGameStateBase_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AFarmGameStateBase, AFarmGameStateBase::StaticClass, TEXT("AFarmGameStateBase"), &Z_Registration_Info_UClass_AFarmGameStateBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AFarmGameStateBase), 1615199570U) },
+		{ Z_Construct_UClass_AFarmGameStateBase, AFarmGameStateBase::StaticClass, TEXT("AFarmGameStateBase"), &Z_Registration_Info_UClass_AFarmGameStateBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AFarmGameStateBase), 2734985035U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Game_FarmGameStateBase_h_716070072(TEXT("/Script/Automafarm"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Game_FarmGameStateBase_h_2796720391(TEXT("/Script/Automafarm"),
 		Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Game_FarmGameStateBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_Game_FarmGameStateBase_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

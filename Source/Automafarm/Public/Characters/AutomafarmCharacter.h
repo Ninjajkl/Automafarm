@@ -20,9 +20,6 @@ class AAutomafarmCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
-	/** Pawn mesh: 1st person view (arms; seen only by self) */
-	UPROPERTY(VisibleDefaultsOnly, Category=Mesh)
-		USkeletalMeshComponent* Mesh1P;
 
 	/** First person camera */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
@@ -61,10 +58,6 @@ public:
 	UFUNCTION(BlueprintCallable, Category = Input)
 		void Dismantle(const FInputActionValue& Value);
 
-	/** Returns Mesh1P subobject **/
-	UFUNCTION(BlueprintCallable, Category = Getters)
-		USkeletalMeshComponent* GetMesh1P() const { return Mesh1P; }
-
 	/** Returns FirstPersonCameraComponent subobject **/
 	UFUNCTION(BlueprintCallable, Category = Getters)
 		UCameraComponent* GetFirstPersonCameraComponent() const { return FirstPersonCameraComponent; }
@@ -89,4 +82,3 @@ protected:
 
 public:
 };
-

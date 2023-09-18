@@ -33,7 +33,7 @@ void UPlayerHud::DisplayPlayerInventory()
 void UPlayerHud::ShowContainer(AInteractableBlock* Container)
 {
 	PlayerController->InMenu = true;
-	ContainerInventory = CreateWidget<UContainerInventory>(this, ContainerInventoryClass);
+	ContainerInventory = CreateWidget<UContainerInventory>(this, Container->ContainerInventoryClass);
 	ContainerInventory->Init(Container->Inventory, Container);
 	ContainerInventory->AddToViewport();
 }

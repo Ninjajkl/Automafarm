@@ -13,6 +13,7 @@
 
 class AFarmGameStateBase;
 class UInventory;
+class UContainerInventory;
 
 UCLASS()
 class AUTOMAFARM_API AInteractableBlock : public APlaceableObject, public IInteractable
@@ -31,12 +32,16 @@ protected:
 
 public:
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Inventory")
 		UInventory* Inventory;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Inventory")
+		TSubclassOf<UContainerInventory> ContainerInventoryClass;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "InteractableBlock")
 		UStaticMeshComponent* StaticMesh;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "InteractableBlock")
 		FText Name;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		bool Renamable;
 	UPROPERTY()
 		FVector GridLocation;
 

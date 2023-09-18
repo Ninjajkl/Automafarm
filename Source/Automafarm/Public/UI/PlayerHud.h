@@ -35,9 +35,6 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Inventory")
 		TSubclassOf<UPlayerInventory> PlayerInventoryClass;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Inventory")
-		TSubclassOf<UContainerInventory> ContainerInventoryClass;
-
 	UPROPERTY(BlueprintReadOnly, Category = "Inventory")
 		UPlayerInventory* PlayerInventory = nullptr;
 

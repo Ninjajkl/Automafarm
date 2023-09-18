@@ -72,6 +72,9 @@
     <ClCompile Include="..\..\Source\Automafarm\Private\Items\Crop.cpp">
       <Filter>Source\Automafarm\Private\Items</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Automafarm\Private\Items\Farmtruck.cpp">
+      <Filter>Source\Automafarm\Private\Items</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Automafarm\Private\Items\InteractableBlock.cpp">
       <Filter>Source\Automafarm\Private\Items</Filter>
     </ClCompile>
@@ -144,6 +147,9 @@
     <ClCompile Include="..\..\Source\Automafarm\Private\UI\SlotPreview.cpp">
       <Filter>Source\Automafarm\Private\UI</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Automafarm\Private\UI\TruckSlot.cpp">
+      <Filter>Source\Automafarm\Private\UI</Filter>
+    </ClCompile>
     <Filter Include="Source\Automafarm\Public">
       <UniqueIdentifier>{584B8870-FEA6-3050-A161-80F16E029F5F}</UniqueIdentifier>
     </Filter>
@@ -169,6 +175,9 @@
       <Filter>Source\Automafarm\Public\Items</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Automafarm\Public\Items\Crop.h">
+      <Filter>Source\Automafarm\Public\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Automafarm\Public\Items\Farmtruck.h">
       <Filter>Source\Automafarm\Public\Items</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Automafarm\Public\Items\InteractableBlock.h">
@@ -241,6 +250,9 @@
       <Filter>Source\Automafarm\Public\UI</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Automafarm\Public\UI\SlotPreview.h">
+      <Filter>Source\Automafarm\Public\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Automafarm\Public\UI\TruckSlot.h">
       <Filter>Source\Automafarm\Public\UI</Filter>
     </ClInclude>
   </ItemGroup>

@@ -202,10 +202,6 @@ void EmptyLinkFunctionForGeneratedCodePlayerHud() {}
 #endif
 		static const UECodeGen_Private::FClassPropertyParams NewProp_PlayerInventoryClass;
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_ContainerInventoryClass_MetaData[];
-#endif
-		static const UECodeGen_Private::FClassPropertyParams NewProp_ContainerInventoryClass;
-#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_PlayerInventory_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_PlayerInventory;
@@ -248,13 +244,6 @@ void EmptyLinkFunctionForGeneratedCodePlayerHud() {}
 #endif
 	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_UPlayerHud_Statics::NewProp_PlayerInventoryClass = { "PlayerInventoryClass", nullptr, (EPropertyFlags)0x0014000000000005, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UPlayerHud, PlayerInventoryClass), Z_Construct_UClass_UClass, Z_Construct_UClass_UPlayerInventory_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UPlayerHud_Statics::NewProp_PlayerInventoryClass_MetaData), Z_Construct_UClass_UPlayerHud_Statics::NewProp_PlayerInventoryClass_MetaData) };
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UPlayerHud_Statics::NewProp_ContainerInventoryClass_MetaData[] = {
-		{ "Category", "Inventory" },
-		{ "ModuleRelativePath", "Public/UI/PlayerHud.h" },
-	};
-#endif
-	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_UPlayerHud_Statics::NewProp_ContainerInventoryClass = { "ContainerInventoryClass", nullptr, (EPropertyFlags)0x0014000000000005, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UPlayerHud, ContainerInventoryClass), Z_Construct_UClass_UClass, Z_Construct_UClass_UContainerInventory_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UPlayerHud_Statics::NewProp_ContainerInventoryClass_MetaData), Z_Construct_UClass_UPlayerHud_Statics::NewProp_ContainerInventoryClass_MetaData) };
-#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UPlayerHud_Statics::NewProp_PlayerInventory_MetaData[] = {
 		{ "Category", "Inventory" },
 		{ "EditInline", "true" },
@@ -281,7 +270,6 @@ void EmptyLinkFunctionForGeneratedCodePlayerHud() {}
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UPlayerHud_Statics::NewProp_Hotbar = { "Hotbar", nullptr, (EPropertyFlags)0x001000000008001c, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UPlayerHud, Hotbar), Z_Construct_UClass_UHotbar_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UPlayerHud_Statics::NewProp_Hotbar_MetaData), Z_Construct_UClass_UPlayerHud_Statics::NewProp_Hotbar_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UPlayerHud_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPlayerHud_Statics::NewProp_PlayerInventoryClass,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPlayerHud_Statics::NewProp_ContainerInventoryClass,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPlayerHud_Statics::NewProp_PlayerInventory,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPlayerHud_Statics::NewProp_ContainerInventory,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPlayerHud_Statics::NewProp_Hotbar,
@@ -324,9 +312,9 @@ void EmptyLinkFunctionForGeneratedCodePlayerHud() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_UI_PlayerHud_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UPlayerHud, UPlayerHud::StaticClass, TEXT("UPlayerHud"), &Z_Registration_Info_UClass_UPlayerHud, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPlayerHud), 3571072550U) },
+		{ Z_Construct_UClass_UPlayerHud, UPlayerHud::StaticClass, TEXT("UPlayerHud"), &Z_Registration_Info_UClass_UPlayerHud, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPlayerHud), 3594374083U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_UI_PlayerHud_h_949507872(TEXT("/Script/Automafarm"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_UI_PlayerHud_h_688743785(TEXT("/Script/Automafarm"),
 		Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_UI_PlayerHud_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_Automafarm_Source_Automafarm_Public_UI_PlayerHud_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

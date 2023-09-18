@@ -11,7 +11,6 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class APlaceableObject;
 class UCameraComponent;
-class USkeletalMeshComponent;
 struct FInputActionValue;
 #ifdef AUTOMAFARM_AutomafarmCharacter_generated_h
 #error "AutomafarmCharacter.generated.h already included, missing '#pragma once' in AutomafarmCharacter.h"
@@ -32,7 +31,6 @@ AUTOMAFARM_API void FKFOnPlayerMoved_DelegateWrapper(const FMulticastScriptDeleg
 	DECLARE_FUNCTION(execPlaceHeldItem); \
 	DECLARE_FUNCTION(execValidPlacement); \
 	DECLARE_FUNCTION(execGetFirstPersonCameraComponent); \
-	DECLARE_FUNCTION(execGetMesh1P); \
 	DECLARE_FUNCTION(execDismantle); \
 	DECLARE_FUNCTION(execInteract); \
 	DECLARE_FUNCTION(execLook); \

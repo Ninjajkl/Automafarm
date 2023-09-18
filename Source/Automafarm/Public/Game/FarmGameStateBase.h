@@ -38,7 +38,8 @@ public:
 		TMap<FVector, FTileStruct> LevelMap;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Terrain")
 		TMap<TSubclassOf<APlaceableObject>, APlaceableObject*> InstancedObjectMap;
-	UDataTable* ItemDataTable = nullptr;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Terrain")
+		UDataTable* ItemDataTable = nullptr;
 
 	//Datatable Reference Functions
 	
@@ -76,6 +77,7 @@ private:
 	void LoadTimeSystem(FSerializedTimeSystem SerializedTimeSystem);
 	void LoadPlayerController(FSerializedPlayerController SerializedPlayerController, AAutomafarmPlayerController* PlayerController);
 	void LoadPlayerCharacter(FSerializedPlayerCharacter SerializedPlayerCharacter, AAutomafarmCharacter* PlayerCharacter);
+	UInventory* LoadInventory(FSerializedInventory SerializedInventory);
 
 public:
 	//Time System Properties and Functions

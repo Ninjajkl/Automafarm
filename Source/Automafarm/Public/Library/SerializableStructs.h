@@ -67,6 +67,8 @@ struct FSerializedInventory
         int NumCols;
     UPROPERTY()
         TMap<int, FSlotStruct> Content;
+    UPROPERTY()
+        int32 Currency;
 };
 
 USTRUCT(BlueprintType)
