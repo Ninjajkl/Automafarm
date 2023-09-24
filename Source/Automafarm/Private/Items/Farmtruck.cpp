@@ -15,4 +15,5 @@ void AFarmtruck::BeginPlay()
 
 	//Make sure the truck cannot be placed or dismantled
 	Placeable = false;
+	Renamable = false;
 }

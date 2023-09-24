@@ -260,10 +260,14 @@ void AFarmGameStateBase::LoadLevelSave()
 		LoadTimeSystem(LoadedFarmSave->SerializedTimeSystem);
 
 		AAutomafarmPlayerController* PlayerController = Cast<AAutomafarmPlayerController>(GetWorld()->GetFirstPlayerController());
-		LoadPlayerController(LoadedFarmSave->SerializedPlayerController, PlayerController);
+		if (PlayerController) {
+			LoadPlayerController(LoadedFarmSave->SerializedPlayerController, PlayerController);
+		}
 
 		AAutomafarmCharacter* PlayerCharacter = Cast<AAutomafarmCharacter>(GetWorld()->GetFirstPlayerController()->GetPawn());
-		LoadPlayerCharacter(LoadedFarmSave->SerializedPlayerCharacter, PlayerCharacter);
+		if (PlayerCharacter) {
+			LoadPlayerCharacter(LoadedFarmSave->SerializedPlayerCharacter, PlayerCharacter);
+		}
 
 		//Log that the Save succeeded
 		UE_LOG(LogTemp, Warning, TEXT("LOADED: %s"), *LoadedFarmSave->SaveSlotName);

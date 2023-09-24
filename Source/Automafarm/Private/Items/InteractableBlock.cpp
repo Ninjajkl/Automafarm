@@ -18,9 +18,6 @@ AInteractableBlock::AInteractableBlock()
 
 	// Create an Inventory Component
 	Inventory = CreateDefaultSubobject<UInventory>("Inventory");
-
-	//Get the Game State and store its reference
-	FarmGameState = GetWorld() != NULL ? GetWorld()->GetGameState<AFarmGameStateBase>() : NULL;
 }
 
 // Called when the game starts
@@ -30,6 +27,7 @@ void AInteractableBlock::BeginPlay()
 	//By default, every Interactable block can be Broken and Placed
 	Placeable = true;
 	Renamable = true;
+	FarmGameState = GetWorld() != NULL ? GetWorld()->GetGameState<AFarmGameStateBase>() : NULL;
 	ItemStruct = FarmGameState->GetItemStructFromClass(GetClass());
 }
 
