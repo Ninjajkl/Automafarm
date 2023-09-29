@@ -154,6 +154,7 @@ void AAutomafarmCharacter::Dismantle(const FInputActionValue& Value)
 		{
 			PivotPaperActor->Dismantle(PlayerInventory);
 			firstHit = false;
+			return;
 			continue;
 		}
 		// If the overlapping hit is of an InteractableBlock, BaseBlock, or Unknown:
