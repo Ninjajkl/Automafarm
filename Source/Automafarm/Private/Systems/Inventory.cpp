@@ -13,7 +13,7 @@ UInventory::UInventory()
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = false;
 	//static ConstructorHelpers::FObjectFinder<UDataTable> DataTableAsset(TEXT("/Game/Blueprints/DT_ItemDataTable"));
-	ItemDataTable = LoadObject<UDataTable>(nullptr,TEXT("/Game/Blueprints/DT_ItemDataTable"));
+	//ItemDataTable = LoadObject<UDataTable>(nullptr,TEXT("/Game/Blueprints/DT_ItemDataTable"));
 }
 
 void UInventory::OnRegister()
@@ -26,6 +26,7 @@ void UInventory::OnRegister()
 void UInventory::BeginPlay()
 {
 	Super::BeginPlay();
+	ItemDataTable = LoadObject<UDataTable>(nullptr, TEXT("/Game/Blueprints/DT_ItemDataTable"));
 }
 
 // Called every frame

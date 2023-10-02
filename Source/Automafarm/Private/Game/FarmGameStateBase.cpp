@@ -12,6 +12,7 @@
 //Other Classes
 #include "Kismet/GameplayStatics.h"
 
+class IGameSaveSystem;
 
 AFarmGameStateBase::AFarmGameStateBase()
 {
@@ -251,7 +252,15 @@ FSerializedInventory AFarmGameStateBase::SerializeInventory(UInventory* Inventor
 
 void AFarmGameStateBase::LoadLevelSave()
 {
-	if (USaveFarmLevel* LoadedFarmSave = Cast<USaveFarmLevel>(UGameplayStatics::LoadGameFromSlot("TerrainSaveSlot", 0)))
+	FString DefaultTerrainPath = FPaths::ProjectContentDir() + TEXT("InitialLevels/DefaultTerrain.sav");
+	USaveFarmLevel* LoadedFarmSave = Cast<USaveFarmLevel>(UGameplayStatics::LoadGameFromSlot("SaveSlot", 0));
+	TArray<uint8> ObjectBytes;
+	if (!LoadedFarmSave && FFileHelper::LoadFileToArray(ObjectBytes, *DefaultTerrainPath))
+	{
+		LoadedFarmSave = Cast<USaveFarmLevel>(UGameplayStatics::LoadGameFromMemory(ObjectBytes));
+	}
+
+	if (LoadedFarmSave)
 	{
 		LoadInstanceableBlocks(LoadedFarmSave->SerializedBaseBlocks);
 		LoadPivotPapers(LoadedFarmSave->SerializedPivotPapers);
@@ -350,6 +359,7 @@ void AFarmGameStateBase::LoadPlayerCharacter(FSerializedPlayerCharacter Serializ
 {
 	PlayerCharacter->SetActorTransform(SerializedPlayerCharacter.Transform);
 	PlayerCharacter->PlayerInventory = LoadInventory(SerializedPlayerCharacter.SerializedInventory);
+	PlayerCharacter->PlayerInventory->ItemDataTable = LoadObject<UDataTable>(nullptr, TEXT("/Game/Blueprints/DT_ItemDataTable"));
 }
 
 UInventory* AFarmGameStateBase::LoadInventory(FSerializedInventory SerializedInventory)

@@ -119,6 +119,7 @@ void AAutomafarmCharacter::Interact(const FInputActionValue& Value)
 		else if (PlayerInventory->Content.Contains(CurrHotbarSlot)) {
 			FSlotStruct& Slot = PlayerInventory->Content[CurrHotbarSlot];
 			// Retrieve the FItemStruct from the ItemDataTable using the ItemID
+
 			FItemStruct* ItemStruct = PlayerInventory->ItemDataTable->FindRow<FItemStruct>(Slot.ItemID.RowName, TEXT(""));
 			//Check if held item is Placeable
 			if (ItemStruct->Item.GetDefaultObject()->Placeable) {

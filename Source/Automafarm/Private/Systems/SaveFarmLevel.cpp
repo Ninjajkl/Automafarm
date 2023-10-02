@@ -4,6 +4,6 @@
 
 USaveFarmLevel::USaveFarmLevel()
 {
-    SaveSlotName = TEXT("TerrainSaveSlot");
+    SaveSlotName = TEXT("SaveSlot");
     UserIndex = 0;
 }
